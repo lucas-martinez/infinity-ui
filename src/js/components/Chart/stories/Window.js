@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Chart, RangeSelector, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Chart, RangeSelector, Stack, Text } from 'js';
+import { grommet } from 'js/themes';
 
 import { calcs } from '../calcs';
 import { generateData } from './data';

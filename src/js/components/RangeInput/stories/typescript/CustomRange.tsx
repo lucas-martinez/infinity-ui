@@ -1,12 +1,10 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { Box, Grommet, RangeInput } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
-
 import { Volume } from 'grommet-icons';
+import React from 'react';
+import isChromatic from 'storybook-chromatic/isChromatic';
+import { Box, Grommet, RangeInput } from '../../../../../js';
+import { grommet } from '../../../../../js/themes';
+import { deepMerge } from '../../../../../js/utils';
 
 const customThemeRangeInput = deepMerge(grommet, {
   global: {

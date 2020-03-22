@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Calendar, Grommet, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Calendar, Grommet, Heading } from 'js';
+import { grommet } from 'js/themes';
 
 import { Blank, Previous, Next } from 'grommet-icons';
 

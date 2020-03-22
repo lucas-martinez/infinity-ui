@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { Add } from 'grommet-icons';
 
-import { Anchor, Box, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box, Grommet } from 'js';
+import { grommet } from 'js/themes';
 
 const Colors = () => {
   return (

@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
-import { Box, Grommet, Tab, Tabs } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, Tab, Tabs } from 'js';
+import { grommet } from 'js/themes';
 
 const UncontrolledTabs = ({ plain = false }) => (
   <Grommet theme={grommet} full>

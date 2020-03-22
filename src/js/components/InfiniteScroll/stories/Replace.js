@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import { grommet } from 'grommet/themes';
+import { grommet } from 'js/themes';
 
-import { Grommet, Box, InfiniteScroll, Text } from 'grommet';
+import { Grommet, Box, InfiniteScroll, Text } from 'js';
 
 const allItems = Array(240)
   .fill()

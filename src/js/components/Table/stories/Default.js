@@ -11,8 +11,8 @@ import {
   TableHeader,
   TableRow,
   Text,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'js';
+import { grommet } from 'js/themes';
 import { data, columns } from './data';
 
 const DefaultTable = () => (

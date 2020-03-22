@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Image } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Image } from 'js';
+import { grommet } from 'js/themes';
 
 const Fallback = () => (
   <Grommet theme={grommet}>

@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { Box, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, Select } from '../../../../../js';
+import { grommet } from '../../../../../js/themes';
 
 // the prefix name of the Create option entry
 const prefix = 'Create';

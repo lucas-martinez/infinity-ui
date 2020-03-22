@@ -7,7 +7,7 @@ A single field in a form. FormField wraps an input component with
 ## Usage
 
 ```javascript
-import { FormField } from 'grommet';
+import { FormField } from 'js';
 <FormField />
 ```
 

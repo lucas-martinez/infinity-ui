@@ -9,8 +9,8 @@ import {
   Grommet,
   Text,
   TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'js';
+import { grommet } from 'js/themes';
 
 const renderPanelHeader = (title: string, active: boolean) => (
   <Box direction="row" align="center" pad="medium" gap="small">

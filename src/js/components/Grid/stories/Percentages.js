@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Grid } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Grid } from 'js';
+import { grommet } from 'js/themes';
 
 const Percentages = () => (
   <Grommet theme={grommet} full>

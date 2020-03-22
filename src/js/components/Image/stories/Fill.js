@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Image, Anchor } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Image, Anchor } from 'js';
+import { grommet } from 'js/themes';
 
 const Fill = () => {
   return (

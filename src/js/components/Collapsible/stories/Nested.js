@@ -1,10 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { FormDown, FormNext } from 'grommet-icons';
-
-import { Box, Button, Collapsible, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import React from 'react';
+import { Box, Button, Collapsible, Grommet, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const MenuButton = ({ label, open, submenu, ...rest }) => {
   const Icon = open ? FormDown : FormNext;

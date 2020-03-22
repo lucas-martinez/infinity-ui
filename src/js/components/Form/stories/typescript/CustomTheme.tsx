@@ -1,10 +1,9 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { grommet, Box, FormField, TextArea, Grommet } from 'grommet';
-import { deepMerge } from 'grommet/utils';
-import { ThemeType } from 'grommet/themes';
+import { Box, FormField, grommet, Grommet, TextArea } from '../../../../../js';
+import { ThemeType } from '../../../../../js/themes';
+import { deepMerge } from '../../../../../js/utils';
 
 const customFormFieldTheme: ThemeType = {
   global: {

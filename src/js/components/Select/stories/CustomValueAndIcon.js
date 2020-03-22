@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { CaretDown } from 'grommet-icons';
 
-import { Box, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, Select } from 'js';
+import { grommet } from 'js/themes';
 
 const CustomSelect = ({ ...rest }) => {
   const options = ['one', 'two'];

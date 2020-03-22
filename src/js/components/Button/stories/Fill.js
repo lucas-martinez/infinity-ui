@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, Button, Grommet } from 'grommet';
+import { grommet, Box, Button, Grommet } from 'js';
 
 const FillButtons = props => (
   <Grommet theme={grommet}>

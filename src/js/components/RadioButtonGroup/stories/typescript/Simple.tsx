@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { RadioButtonGroup } from 'grommet';
+import { RadioButtonGroup } from '../../../../../js';
 
 export const App = () => {
   const postMethods = [

@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Add } from 'grommet-icons';
 
-import { Box, Button, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Grommet, Text } from 'js';
+import { grommet } from 'js/themes';
 
 const PlainButton = props => (
   <Grommet theme={grommet}>

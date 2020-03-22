@@ -1,20 +1,19 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   RadioButtonGroup,
   RangeInput,
   Select,
   TextArea,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from '../../../../../js';
+import { grommet } from '../../../../../js/themes';
 
 const Example = () => (
   <Grommet full theme={grommet}>

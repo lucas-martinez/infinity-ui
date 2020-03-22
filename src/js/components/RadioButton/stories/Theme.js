@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Button, RadioButton } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Grommet, Box, Button, RadioButton } from 'js';
+import { grommet } from 'js/themes';
+import { deepMerge } from 'js/utils';
 
 const theme = deepMerge(grommet, {
   radioButton: {

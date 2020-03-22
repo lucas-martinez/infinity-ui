@@ -13,7 +13,7 @@ import {
   TableCell,
   TableHeader,
   Text,
-} from 'grommet';
+} from 'js';
 
 const InfiniteScrollInTable = () => {
   const step = 25;

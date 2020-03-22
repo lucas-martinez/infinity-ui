@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { Gremlin } from 'grommet-icons';
 
-import { Box, Grommet, grommet, List, Text } from 'grommet';
+import { Box, Grommet, grommet, List, Text } from 'js';
 
 export const data = ['Boise', 'Fort Collins', 'Bay Area', 'North Carolina'];
 

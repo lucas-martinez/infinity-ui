@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Drop, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Drop, Grommet } from 'js';
+import { grommet } from 'js/themes';
 
 const SimpleDrop = () => {
   const targetRef = useRef();

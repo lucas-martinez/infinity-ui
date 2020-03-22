@@ -7,7 +7,7 @@ export const doc = Grommet => {
     .availableAt(getAvailableAtBadge('Grommet'))
     .description('The top level Grommet container.')
     .usage(
-      `import { Grommet } from 'grommet';
+      `import { Grommet } from 'js';
 <Grommet>...</Grommet>`,
     )
     .intrinsicElement('div');

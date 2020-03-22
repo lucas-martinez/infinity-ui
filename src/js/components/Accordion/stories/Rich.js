@@ -17,8 +17,8 @@ import {
   Heading,
   Text,
   ThemeContext,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'js';
+import { grommet } from 'js/themes';
 
 const richAccordionTheme = {
   accordion: {

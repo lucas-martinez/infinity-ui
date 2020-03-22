@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import { grommet } from 'grommet/themes';
-import { AnnounceContext, Box, Grommet, Heading, Text } from 'grommet';
+import { grommet } from 'js/themes';
+import { AnnounceContext, Box, Grommet, Heading, Text } from 'js';
 
 const Announcer = ({ announce, message, mode, role }) => {
   React.useEffect(() => {

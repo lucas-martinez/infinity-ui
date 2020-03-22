@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet } from 'grommet/themes';
-import { Box, Text, ThemeContext, Grommet } from 'grommet';
+import { grommet } from 'js/themes';
+import { Box, Text, ThemeContext, Grommet } from 'js';
 
 const ExternalComponentWithTheme = () => (
   <Grommet theme={grommet}>

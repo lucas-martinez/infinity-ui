@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Chart, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Chart, Text } from 'js';
+import { grommet } from 'js/themes';
 
 const LabelledChart = ({ color, label, value }) => (
   <Box flex={false} basis="xsmall" align="center" gap="small">

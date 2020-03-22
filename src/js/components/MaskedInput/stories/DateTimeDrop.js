@@ -9,8 +9,8 @@ import {
   Calendar,
   MaskedInput,
   DropButton,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'js';
+import { grommet } from 'js/themes';
 import { Schedule } from 'grommet-icons';
 
 const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {

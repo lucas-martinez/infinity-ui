@@ -11,7 +11,7 @@ export const doc = FormField => {
       control like TextInput, TextArea, Select, etc.`,
     )
     .usage(
-      `import { FormField } from 'grommet';
+      `import { FormField } from 'js';
 <FormField />`,
     )
     .intrinsicElement('div');

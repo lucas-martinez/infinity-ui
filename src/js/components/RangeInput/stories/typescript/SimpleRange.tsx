@@ -1,9 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { Box, Grommet, RangeInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, RangeInput } from '../../../../../js';
+import { grommet } from '../../../../../js/themes';
 
 const SimpleRangeInput = () => {
   const [value, setValue] = React.useState(5);

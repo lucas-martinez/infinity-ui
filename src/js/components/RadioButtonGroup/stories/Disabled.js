@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, RadioButtonGroup } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, RadioButtonGroup } from 'js';
+import { grommet } from 'js/themes';
 
 const DisabledRadioButtonGroup = ({ value: initialValue, ...props }) => {
   const [value, setValue] = useState(initialValue);

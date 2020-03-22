@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, MaskedInput } from 'grommet';
+import { Box, Grommet, MaskedInput } from 'js';
 import { MailOption } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+import { grommet } from 'js/themes';
 
 const EmailMaskedInput = () => {
   const [value, setValue] = React.useState('');

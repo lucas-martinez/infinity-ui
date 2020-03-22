@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, RadioButtonGroup, ThemeContext } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Box, Grommet, RadioButtonGroup, ThemeContext } from 'js';
+import { grommet } from 'js/themes';
+import { deepMerge } from 'js/utils';
 
 const customTheme = deepMerge(grommet, {
   radioButton: {

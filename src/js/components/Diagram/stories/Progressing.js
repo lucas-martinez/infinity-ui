@@ -1,8 +1,8 @@
 import React, { useReducer, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Diagram, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Diagram, Stack, Text } from 'js';
+import { grommet } from 'js/themes';
 
 const Node = ({ id, ...rest }) => (
   <Box

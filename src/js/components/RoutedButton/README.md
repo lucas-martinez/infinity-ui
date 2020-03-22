@@ -5,7 +5,7 @@ A button with support for React Router.
 ## Usage
 
 ```javascript
-import { RoutedButton } from 'grommet';
+import { RoutedButton } from 'js';
 <RoutedButton primary path='/documentation' />
 ```
 

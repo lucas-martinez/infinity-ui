@@ -5,7 +5,7 @@ Markdown formatting using Grommet components.
 ## Usage
 
 ```javascript
-import { Markdown } from 'grommet';
+import { Markdown } from 'js';
       <Markdown>{content}</Markdown>
 ```
 

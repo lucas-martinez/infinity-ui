@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, WorldMap } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, WorldMap } from 'js';
+import { grommet } from 'js/themes';
 
 const SimpleWorldMap = () => {
   const [places, setPlaces] = React.useState();

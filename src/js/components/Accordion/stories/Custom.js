@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { SubtractCircle, AddCircle } from 'grommet-icons';
 
-import { Accordion, AccordionPanel, Box, Grommet, Text } from 'grommet';
+import { Accordion, AccordionPanel, Box, Grommet, Text } from 'js';
 
 const CustomAccordionTheme = {
   accordion: {

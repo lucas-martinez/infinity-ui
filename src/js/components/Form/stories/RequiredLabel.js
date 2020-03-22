@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, FormField, Form, Text, Button, Grommet } from 'grommet';
+import { grommet, Box, FormField, Form, Text, Button, Grommet } from 'js';
 
 const FormFieldLabel = props => {
   const { required, label, ...rest } = props;

@@ -1,11 +1,14 @@
 {
+  "extends": "../../tsconfig.json",
   "compileOnSave": true,
   "compilerOptions": {
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
     "outDir": "./dist/",
     "sourceMap": true,
+    "noEmit": false,
     "noImplicitAny": false,
     "module": "esnext",
     "target": "es6",
@@ -15,12 +18,13 @@
     "strict": false,
     "baseUrl": "./",
     "paths": {
-      "grommet": ["src/js"],
-      "grommet/themes": ["src/js/themes"],
-      "grommet/utils": ["src/js/utils"]
+      "js": ["src/js"],
+      "js/themes": ["src/js/themes"],
+      "js/utils": ["src/js/utils"]
     },
+    "rootDir": "src",
     "typeRoots": ["./node_modules/@types/", "./src/@types/"]
   },
   "exclude": ["node_modules"],
-  "include": ["src/**/*"]
+  "include": ["src", "src/**/*"]
 }

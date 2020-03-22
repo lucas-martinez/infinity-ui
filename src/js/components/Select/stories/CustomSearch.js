@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
 
-import { Box, Button, CheckBox, Grommet, Select, Text } from 'grommet';
+import { Box, Button, CheckBox, Grommet, Select, Text } from 'js';
 
 import { theme as customSearchTheme } from './theme';
 import { SearchInputContext } from './components/SearchInputContext';

@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, Grommet, Main, Nav } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Anchor, Box, Grommet, Main, Nav } from 'js';
+import { grommet } from 'js/themes';
+import { deepMerge } from 'js/utils';
 
 const navItems = [
   { label: 'HTML', href: '#' },

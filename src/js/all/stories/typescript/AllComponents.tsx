@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import { aruba } from 'grommet-theme-aruba';
+import { dxc } from 'grommet-theme-dxc';
+import { hp } from 'grommet-theme-hp';
+import { hpe } from 'grommet-theme-hpe';
+import { v1 } from 'grommet-theme-v1';
+import React, { useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
 import {
-  Grommet,
   Accordion,
   AccordionPanel,
   Anchor,
@@ -17,6 +20,7 @@ import {
   Distribution,
   FormField,
   Grid,
+  Grommet,
   Heading,
   MaskedInput,
   Menu,
@@ -33,14 +37,9 @@ import {
   TextArea,
   TextInput,
   Video,
-} from 'grommet';
-import { dark, generate, grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
-import { hpe } from 'grommet-theme-hpe';
-import { aruba } from 'grommet-theme-aruba';
-import { hp } from 'grommet-theme-hp';
-import { dxc } from 'grommet-theme-dxc';
-import { v1 } from 'grommet-theme-v1';
+} from '../../../../js';
+import { dark, generate, grommet } from '../../../../js/themes';
+import { deepMerge } from '../../../../js/utils';
 
 const Node = ({ id, ...rest }) => (
   <Box

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet, Box, Form, FormField, CheckBox, Grommet } from 'grommet';
+import { grommet, Box, Form, FormField, CheckBox, Grommet } from 'js';
 
 const FormFieldCheckBox = props => (
   <Grommet theme={grommet}>

@@ -7,7 +7,7 @@ export const doc = Markdown => {
     .availableAt(getAvailableAtBadge('Markdown'))
     .description('Markdown formatting using Grommet components.')
     .usage(
-      `import { Markdown } from 'grommet';
+      `import { Markdown } from 'js';
       <Markdown>{content}</Markdown>`,
     )
     .intrinsicElement('div');

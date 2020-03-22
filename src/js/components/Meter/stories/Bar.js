@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Meter } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Meter } from 'js';
+import { grommet } from 'js/themes';
 
 const BarMeter = () => {
   const value = 30;

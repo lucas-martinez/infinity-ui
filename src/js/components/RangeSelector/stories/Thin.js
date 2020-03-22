@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { render } from 'react-dom';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, RangeSelector, Stack, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, RangeSelector, Stack, Text } from 'js';
+import { grommet } from 'js/themes';
 
 const RANGE_MIN = 0;
 const RANGE_MAX = 100;

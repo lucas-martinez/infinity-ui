@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Heading } from 'grommet';
-import { deepMerge } from 'grommet/utils';
-import { grommet } from 'grommet/themes';
+import { Grommet, Heading } from 'js';
+import { deepMerge } from 'js/utils';
+import { grommet } from 'js/themes';
 
 const letterSpace = {
   1: {

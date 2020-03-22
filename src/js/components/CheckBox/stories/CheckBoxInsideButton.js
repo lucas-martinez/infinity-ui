@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, CheckBox, Grommet, Text } from 'js';
+import { grommet } from 'js/themes';
 
 const CheckBoxInsideButton = () => {
   const [checked, setChecked] = useState(false);

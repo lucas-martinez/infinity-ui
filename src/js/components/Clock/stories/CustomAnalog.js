@@ -1,7 +1,6 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, Clock } from 'grommet';
+import React from 'react';
+import { Box, Clock, Grommet } from '../../../../js';
 
 const analogClockTheme = {
   clock: {

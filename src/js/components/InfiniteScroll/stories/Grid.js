@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grid, Grommet, Box, Image, InfiniteScroll, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grid, Grommet, Box, Image, InfiniteScroll, Text } from 'js';
+import { grommet } from 'js/themes';
 
 import { allItems } from './Basics';
 

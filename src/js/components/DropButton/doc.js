@@ -13,7 +13,7 @@ export const doc = DropButton => {
       `,
     )
     .usage(
-      `import { DropButton } from 'grommet';
+      `import { DropButton } from 'js';
 <DropButton dropContent={...} />`,
     )
     .intrinsicElement('button');

@@ -5,7 +5,7 @@ The top level Grommet container.
 ## Usage
 
 ```javascript
-import { Grommet } from 'grommet';
+import { Grommet } from 'js';
 <Grommet>...</Grommet>
 ```
 

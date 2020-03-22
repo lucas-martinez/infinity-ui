@@ -8,7 +8,7 @@ import {
   Twitter,
 } from 'grommet-icons';
 
-import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'grommet';
+import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'js';
 
 const Media = () => (
   <Box direction="row" gap="xxsmall" justify="center">

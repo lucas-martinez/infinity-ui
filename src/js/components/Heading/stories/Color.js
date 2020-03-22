@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Heading } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Heading } from 'js';
+import { grommet } from 'js/themes';
 
 const Color = () => (
   <Grommet theme={grommet}>

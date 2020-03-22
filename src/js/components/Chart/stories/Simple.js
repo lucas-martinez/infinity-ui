@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Chart } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Chart } from 'js';
+import { grommet } from 'js/themes';
 
 const BarChart = () => (
   <Grommet theme={grommet}>

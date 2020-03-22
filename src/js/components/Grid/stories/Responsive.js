@@ -1,10 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Grid, Heading, ResponsiveContext } from 'grommet';
+import { Grommet, Box, Grid, Heading, ResponsiveContext } from 'js';
 
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { grommet } from 'js/themes';
+import { deepMerge } from 'js/utils';
 
 // Two responsive grids
 //    - First one with a known number of elements

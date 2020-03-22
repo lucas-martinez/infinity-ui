@@ -2,8 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { FormDown } from 'grommet-icons';
 
-import { Grommet, Box, Calendar, DropButton, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, Calendar, DropButton, Text } from 'js';
+import { grommet } from 'js/themes';
 
 const CalendarDropButton = () => {
   const [date, setDate] = React.useState();

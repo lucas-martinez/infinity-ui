@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-
 import { withTheme } from 'styled-components';
-
-import { parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
-
-import {
-  StyledAnalog,
-  StyledHour,
-  StyledMinute,
-  StyledSecond,
-} from './StyledClock';
+import { parseMetricToNum } from '../../utils';
+import { StyledAnalog, StyledHour, StyledMinute, StyledSecond } from './StyledClock';
 
 // this will serve both minutes and hours (360 / 6)
 const ANGLE_UNIT = 6;
@@ -134,3 +126,4 @@ Object.setPrototypeOf(Analog.defaultProps, defaultProps);
 const AnalogWrapper = compose(withTheme)(Analog);
 
 export { AnalogWrapper as Analog };
+

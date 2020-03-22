@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 
-import { grommet, Box, Heading, Grommet, Paragraph } from 'grommet';
+import { grommet, Box, Heading, Grommet, Paragraph } from 'infinity-ui';
 
 class App extends Component {
   render() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Button, CheckBox, Grid, Grommet, Layer, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, CheckBox, Grid, Grommet, Layer, Select } from 'js';
+import { grommet } from 'js/themes';
 
 const positions = ['left', 'right', 'top', 'bottom', 'center'];
 

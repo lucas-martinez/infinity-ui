@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
-import { Box, Text, ThemeContext, Grommet, Select } from 'grommet';
+import { grommet } from 'js/themes';
+import { deepMerge } from 'js/utils';
+import { Box, Text, ThemeContext, Grommet, Select } from 'js';
 
 const customTheme = deepMerge(grommet, {
   global: {

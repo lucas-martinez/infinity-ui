@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box } from 'grommet';
+import { Grommet, Box } from 'js';
 import { grommet } from '../../../themes';
 
 const BackgroundBox = () => (

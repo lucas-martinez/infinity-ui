@@ -1,10 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { Notification } from 'grommet-icons';
-
-import { Box, Button, Collapsible, Heading, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import React from 'react';
+import { Box, Button, Collapsible, Grommet, Heading, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const HorizontalCollapsible = () => {
   const [openNotification, setOpenNotification] = React.useState();

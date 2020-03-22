@@ -1,10 +1,9 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { Grommet, Box, Menu, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
 import { FormDown } from 'grommet-icons';
+import React from 'react';
+import isChromatic from 'storybook-chromatic/isChromatic';
+import { Box, Grommet, Menu, Text } from '../../../../../js';
+import { grommet } from '../../../../../js/themes';
 
 const CustomMenu = () => (
   <Grommet theme={grommet}>

@@ -1,15 +1,13 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
-
 import {
   Bookmark,
   CircleInformation,
-  FormSubtract,
   FormAdd,
+  FormSubtract,
   User,
 } from 'grommet-icons';
-
+import React from 'react';
+import isChromatic from 'storybook-chromatic/isChromatic';
 import {
   Accordion,
   AccordionPanel,
@@ -18,8 +16,8 @@ import {
   Heading,
   Text,
   ThemeContext,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from '../../../../../js';
+import { grommet } from '../../../../../js/themes';
 
 const richAccordionTheme = {
   accordion: {
