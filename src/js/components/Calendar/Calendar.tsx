@@ -1,37 +1,13 @@
-import React, {
-  forwardRef,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-  useEffect,
-} from 'react';
+import React, { forwardRef, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-
+import { A11yTitleType, AlignSelfType, AnimateType, GridAreaType, MarginType } from "../../utils";
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Heading } from '../Heading';
 import { Keyboard } from '../Keyboard';
-
-import {
-  StyledCalendar,
-  StyledDay,
-  StyledDayContainer,
-  StyledWeek,
-  StyledWeeks,
-  StyledWeeksContainer,
-} from './StyledCalendar';
-import {
-  addDays,
-  addMonths,
-  betweenDates,
-  daysApart,
-  endOfMonth,
-  startOfMonth,
-  subtractDays,
-  subtractMonths,
-  withinDates,
-} from './utils';
+import { StyledCalendar, StyledDay, StyledDayContainer, StyledWeek, StyledWeeks, StyledWeeksContainer } from './StyledCalendar';
+import { addDays, addMonths, betweenDates, daysApart, endOfMonth, startOfMonth, subtractDays, subtractMonths, withinDates } from './utils';
+import { DivIntrinsicProps } from '../intrinsic-elements';
 
 const headingPadMap = {
   small: 'xsmall',
@@ -78,6 +54,28 @@ const buildDisplayBounds = (reference, firstDayOfWeek) => {
   return [start, end];
 };
 
+export interface CalendarProps extends Omit<DivIntrinsicProps, 'onSelect'> {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
+  animate?: AnimateType
+  bounds?: string[];
+  date?: string;
+  dates?: (string | string[])[];
+  daysOfWeek?: boolean;
+  disabled?: (string | string[])[];
+  firstDayOfWeek?: 0 | 1;
+  header?: ((...args: any[]) => any);
+  locale?: string;
+  onReference?: ((reference: string) => void);
+  onSelect?: ((select: string[]) => any);
+  range?: boolean;
+  reference?: string;
+  showAdjacentDays?: boolean;
+  size?: "small" | "medium" | "large" | string;
+}
+
 const Calendar = forwardRef(
   (
     {
@@ -97,7 +95,7 @@ const Calendar = forwardRef(
       showAdjacentDays = true,
       size = 'medium',
       ...rest
-    },
+    }: CalendarProps,
     ref,
   ) => {
     const theme = useContext(ThemeContext);
@@ -107,7 +105,7 @@ const Calendar = forwardRef(
     useEffect(() => setDate(dateProp), [dateProp]);
 
     // set dates when caller changes it, allows us to change it internally too
-    const [dates, setDates] = useState(datesProp);
+    const [dates, setDates] = useState<CalendarProps['dates']>(datesProp);
     useEffect(() => setDates(datesProp), [datesProp]);
 
     // set reference based on what the caller passed or date/dates.
@@ -124,8 +122,8 @@ const Calendar = forwardRef(
     const [displayBounds, setDisplayBounds] = useState(
       buildDisplayBounds(reference, firstDayOfWeek),
     );
-    const [targetDisplayBounds, setTargetDisplayBounds] = useState();
-    const [slide, setSlide] = useState();
+    const [targetDisplayBounds, setTargetDisplayBounds] = useState<any[]>();
+    const [slide, setSlide] = useState<any>();
 
     // When the reference changes, we need to update the displayBounds.
     // This is easy when we aren't animating. If we are animating,
@@ -189,11 +187,11 @@ const Calendar = forwardRef(
       [reference],
     );
 
-    const [focus, setFocus] = useState();
-    const [active, setActive] = useState();
+    const [focus, setFocus] = useState<boolean>();
+    const [active, setActive] = useState<any>();
     // when working on a range, remember the last selected date so we know
     // how to handle subsequent date selection
-    const [lastSelectedDate, setLastSelectedDate] = useState();
+    const [lastSelectedDate, setLastSelectedDate] = useState<any>();
 
     const changeReference = useCallback(
       nextReference => {
@@ -319,7 +317,7 @@ const Calendar = forwardRef(
 
     const renderDaysOfWeek = () => {
       let day = new Date(displayBounds[0]);
-      const days = [];
+      const days: any[] = [];
       while (days.length < 7) {
         days.push(
           <StyledDayContainer key={days.length} sizeProp={size}>
@@ -333,7 +331,7 @@ const Calendar = forwardRef(
       return <StyledWeek>{days}</StyledWeek>;
     };
 
-    const weeks = [];
+    const weeks: any[] = [];
     let day = new Date(displayBounds[0]);
     let days;
     let firstDayInMonth;
@@ -419,7 +417,7 @@ const Calendar = forwardRef(
                 previousInBound: betweenDates(previousMonth, validBounds),
                 nextInBound: betweenDates(nextMonth, validBounds),
               })
-            : renderCalendarHeader(previousMonth, nextMonth)}
+            : renderCalendarHeader()}
           {daysOfWeek && renderDaysOfWeek()}
           <Keyboard
             onEnter={() => selectDate(active.toISOString())}
@@ -474,3 +472,4 @@ if (process.env.NODE_ENV !== 'production') {
 const CalendarWrapper = CalendarDoc || Calendar;
 
 export { CalendarWrapper as Calendar };
+

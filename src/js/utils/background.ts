@@ -56,7 +56,7 @@ export const backgroundIsDark = (backgroundArg, theme) => {
   return result;
 };
 
-export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
+export const backgroundStyle = (backgroundArg, theme, textColorArg: any | undefined = undefined) => {
   // for Grommet component, if the background isn't defined, don't set it
   if (backgroundArg === undefined) {
     return undefined;
@@ -67,7 +67,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg) => {
   const textColor = textColorArg || theme.global.colors.text;
 
   if (typeof background === 'object') {
-    const styles = [];
+    const styles: any[] = [];
     if (background.image) {
       let color;
       if (background.dark === false) {

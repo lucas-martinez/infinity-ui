@@ -1,22 +1,20 @@
 import React, { forwardRef, useContext, useEffect, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-
-import { removeUndefined } from '../../utils/object';
 import { defaultProps } from '../../default-props';
+import { normalizeColor } from '../../utils';
+import { removeUndefined } from '../../utils/object';
 import { Box } from '../Box';
 import { FormContext } from '../Form/FormContext';
-
+import { InputIntrinsicProps } from '../intrinsic-elements';
 import {
   StyledCheckBox,
   StyledCheckBoxBox,
-  StyledCheckBoxIcon,
   StyledCheckBoxContainer,
+  StyledCheckBoxIcon,
   StyledCheckBoxInput,
-  StyledCheckBoxToggle,
   StyledCheckBoxKnob,
+  StyledCheckBoxToggle,
 } from './StyledCheckBox';
-
-import { normalizeColor } from '../../utils';
 
 const stopLabelClick = event => {
   // prevents clicking on the label trigging the event twice
@@ -25,6 +23,17 @@ const stopLabelClick = event => {
     event.stopPropagation();
   }
 };
+
+export interface CheckBoxProps extends InputIntrinsicProps {
+  checked?: boolean;
+  disabled?: boolean;
+  id?: string;
+  label?: React.ReactNode;
+  name?: string;
+  reverse?: boolean;
+  toggle?: boolean;
+  indeterminate?: boolean;
+}
 
 const CheckBox = forwardRef(
   (
@@ -42,7 +51,7 @@ const CheckBox = forwardRef(
       toggle,
       indeterminate,
       ...rest
-    },
+    }: CheckBoxProps,
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;

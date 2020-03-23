@@ -1,19 +1,23 @@
-import React, {
-  Children,
-  useContext,
-  useEffect,
-  useState,
-  useRef,
-} from 'react';
-
-import { normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
+import React, { Children, useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from '../../contexts';
-
+import { defaultProps } from '../../default-props';
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType, normalizeColor } from "../../utils";
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { DivIntrinsicProps } from '../intrinsic-elements';
 import { Keyboard } from '../Keyboard';
 import { Stack } from '../Stack';
+
+export interface CarouselProps extends DivIntrinsicProps {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  controls?: boolean | "arrows" | "selectors";
+  gridArea?: GridAreaType;
+  margin?: MarginType;
+  fill?: boolean;
+  play?: number;
+  initialChild?: number;
+}
 
 const Carousel = ({
   initialChild,
@@ -24,13 +28,13 @@ const Carousel = ({
   onFocus,
   onBlur,
   ...rest
-}) => {
+}: CarouselProps) => {
   const theme = useContext(ThemeContext) || defaultProps.theme;
-  const [focus, setFocus] = useState();
+  const [focus, setFocus] = useState<any>();
 
-  const timerRef = useRef();
+  const timerRef = useRef<any>();
 
-  const [indexes, setIndexes] = useState({
+  const [indexes, setIndexes] = useState<any>({
     activeIndex: initialChild,
   });
 
@@ -98,7 +102,7 @@ const Carousel = ({
     theme,
   );
 
-  const selectors = [];
+  const selectors: any[] = [];
   const wrappedChildren = Children.map(children, (child, index) => {
     selectors.push(
       <Button
@@ -228,3 +232,4 @@ if (process.env.NODE_ENV !== 'production') {
 const CarouselWrapper = CarouselDoc || Carousel;
 
 export { CarouselWrapper as Carousel };
+

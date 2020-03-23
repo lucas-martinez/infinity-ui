@@ -626,7 +626,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
 StyledBox.defaultProps = {};
 Object.setPrototypeOf(StyledBox.defaultProps, defaultProps);
 
-const StyledBoxGap = styled.div`
+const StyledBoxGap = styled.div<any>`
   flex: 0 0 auto;
   align-self: stretch;
   ${props =>

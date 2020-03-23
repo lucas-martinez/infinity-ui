@@ -1,11 +1,16 @@
 import React, { forwardRef, useContext, useMemo, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-
 import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Collapsible } from '../Collapsible';
 import { Heading } from '../Heading';
+import { DivIntrinsicProps } from '../intrinsic-elements';
+
+export interface AccordionPanelProps extends DivIntrinsicProps {
+  label?: string | React.ReactNode;
+  header?: React.ReactNode;
+}
 
 const AccordionPanel = forwardRef(
   (
@@ -22,7 +27,7 @@ const AccordionPanel = forwardRef(
       onFocus,
       onBlur,
       ...rest
-    },
+    }: AccordionPanelProps,
     ref,
   ) => {
     const theme = useContext(ThemeContext);
@@ -111,3 +116,4 @@ if (process.env.NODE_ENV !== 'production') {
 const AccordionPanelWrapper = AccordionPanelDoc || AccordionPanel;
 
 export { AccordionPanelWrapper as AccordionPanel };
+

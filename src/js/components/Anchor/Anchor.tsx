@@ -5,15 +5,42 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
-
-import { normalizeColor } from '../../utils';
-
+import {
+  A11yTitleType,
+  AlignSelfType,
+  ColorType,
+  GridAreaType,
+  MarginType,
+  normalizeColor,
+  PolymorphicType,
+} from '../../utils';
 import { Box } from '../Box';
-
+import { AnchorIntrinsicProps } from '../intrinsic-elements';
 import { StyledAnchor } from './StyledAnchor';
+
+export interface AnchorProps extends Omit<AnchorIntrinsicProps, 'color'> {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  color?: ColorType;
+  disabled?: boolean;
+  gridArea?: GridAreaType;
+  href?: string;
+  icon?: JSX.Element;
+  label?: React.ReactNode;
+  margin?: MarginType;
+  reverse?: boolean;
+  size?:
+    | 'xsmall'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'xlarge'
+    | 'xxlarge'
+    | string;
+  as?: PolymorphicType;
+}
 
 const Anchor = forwardRef(
   (
@@ -30,11 +57,11 @@ const Anchor = forwardRef(
       onFocus,
       reverse,
       ...rest
-    },
+    }: AnchorProps,
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [focus, setFocus] = useState();
+    const [focus, setFocus] = useState<boolean>();
 
     useEffect(() => {
       if ((icon || label) && children) {

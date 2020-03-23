@@ -1,9 +1,28 @@
 import React, { Children, cloneElement, useState } from 'react';
-
 import { Box } from '../Box';
+import { DivIntrinsicProps } from '../intrinsic-elements';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  AnimateType,
+  GridAreaType,
+  MarginType,
+} from '../../utils';
 
 const activeAsArray = active =>
   typeof active === 'number' ? [active] : active;
+
+export interface AccordionProps extends DivIntrinsicProps {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
+  activeIndex?: number | number[];
+  animate?: AnimateType;
+  onActive?: (activeIndexes: number[]) => void;
+  multiple?: boolean;
+  messages?: { tabContents?: string };
+}
 
 const Accordion = ({
   activeIndex,
@@ -12,9 +31,9 @@ const Accordion = ({
   multiple,
   onActive,
   ...rest
-}) => {
-  const [activeIndexes, setActiveIndexes] = useState([]);
-  const [stateActiveIndex, setStateActiveIndex] = useState();
+}: AccordionProps) => {
+  const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
+  const [stateActiveIndex, setStateActiveIndex] = useState<number | number[]>();
 
   // Derived state from props
   // https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
@@ -28,7 +47,7 @@ const Accordion = ({
   }
 
   const onPanelChange = index => {
-    let nextActiveIndexes = [...(activeIndexes || [])];
+    let nextActiveIndexes: any[] = [...(activeIndexes || [])];
 
     const nextActiveIndex = nextActiveIndexes.indexOf(index);
     if (nextActiveIndex > -1) {

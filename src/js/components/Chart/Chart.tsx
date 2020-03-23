@@ -1,17 +1,90 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
-
 import { ThemeContext } from 'styled-components';
-
-import { normalizeColor, parseMetricToNum } from '../../utils';
-
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GapType,
+  GridAreaType,
+  MarginType,
+  normalizeColor,
+  parseMetricToNum,
+} from '../../utils';
 import { StyledChart } from './StyledChart';
 import { normalizeBounds, normalizeValues } from './utils';
+import { SvgIntrinsicProps } from '../intrinsic-elements';
 
 const gradientMaskColor = '#ffffff';
 
 // use constants so re-renders don't re-trigger effects
 const defaultSize = { height: 'small', width: 'medium' };
 const defaultValues = [];
+
+export interface ChartProps extends Omit<SvgIntrinsicProps, 'color'> {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
+  bounds?: number[][];
+  color?:
+    | string
+    | { color?: string; opacity?: 'weak' | 'medium' | 'strong' | boolean }
+    | { color: string; value: number | number[] }[];
+  dash?: boolean;
+  gap?: GapType;
+  onClick?: (...args: any[]) => any;
+  onHover?: (...args: any[]) => any;
+  overflow?: boolean;
+  round?: boolean;
+  size?:
+    | 'xxsmall'
+    | 'xsmall'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'xlarge'
+    | 'full'
+    | {
+        height?:
+          | 'xxsmall'
+          | 'xsmall'
+          | 'small'
+          | 'medium'
+          | 'large'
+          | 'xlarge'
+          | 'full'
+          | string;
+        width?:
+          | 'xxsmall'
+          | 'xsmall'
+          | 'small'
+          | 'medium'
+          | 'large'
+          | 'xlarge'
+          | 'full'
+          | string;
+      }
+    | string;
+  thickness?:
+    | 'hair'
+    | 'xsmall'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'xlarge'
+    | 'none'
+    | string;
+  type?: 'bar' | 'line' | 'area' | 'point';
+  values: (
+    | number
+    | number[]
+    | {
+        label?: string;
+        onClick?: (...args: any[]) => any;
+        onHover?: (...args: any[]) => any;
+        value: number | number[];
+      }
+  )[];
+}
 
 const Chart = React.forwardRef(
   (
@@ -30,7 +103,7 @@ const Chart = React.forwardRef(
       type = 'bar',
       values: propsValues = defaultValues,
       ...rest
-    },
+    }: ChartProps,
     ref,
   ) => {
     const theme = useContext(ThemeContext);

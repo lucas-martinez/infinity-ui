@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-
-import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { genericStyles } from '../../utils';
 
-const StyledChart = styled.svg`
+const StyledChart = styled.svg<any>`
   display: block;
   max-width: 100%;
   overflow: visible;

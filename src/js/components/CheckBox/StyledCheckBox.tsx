@@ -16,7 +16,7 @@ const hoverStyle = css`
   }
 `;
 
-const StyledCheckBoxIcon = styled.svg`
+const StyledCheckBoxIcon = styled.svg<any>`
   box-sizing: border-box;
   stroke-width: ${props => props.theme.checkBox.check.thickness};
   stroke: ${props =>
@@ -66,7 +66,7 @@ const StyledCheckBoxInput = styled.input`
 StyledCheckBoxInput.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxInput.defaultProps, defaultProps);
 
-const StyledCheckBoxBox = styled.div`
+const StyledCheckBoxBox = styled.div<any>`
   ${props => props.focus && focusStyle};
   ${props => props.theme.checkBox.check.extend};
 `;
@@ -74,7 +74,7 @@ const StyledCheckBoxBox = styled.div`
 StyledCheckBoxBox.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxBox.defaultProps, defaultProps);
 
-const StyledCheckBoxToggle = styled.span`
+const StyledCheckBoxToggle = styled.span<any>`
   box-sizing: border-box;
   vertical-align: middle;
   display: inline-block;
@@ -96,7 +96,7 @@ const StyledCheckBoxToggle = styled.span`
 StyledCheckBoxToggle.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxToggle.defaultProps, defaultProps);
 
-const StyledCheckBoxKnob = styled.span`
+const StyledCheckBoxKnob = styled.span<any>`
   box-sizing: border-box;
   position: relative;
   display: inherit;

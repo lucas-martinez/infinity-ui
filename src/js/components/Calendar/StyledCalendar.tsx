@@ -26,7 +26,7 @@ const StyledCalendar = styled.div`
 StyledCalendar.defaultProps = {};
 Object.setPrototypeOf(StyledCalendar.defaultProps, defaultProps);
 
-const StyledWeeksContainer = styled.div`
+const StyledWeeksContainer = styled.div<any>`
   overflow: hidden;
   ${props =>
     `height: ${parseMetricToNum(props.theme.calendar[props.sizeProp].daySize) *
@@ -62,7 +62,7 @@ const slideStyle = props => {
   `;
 };
 
-const StyledWeeks = styled.div`
+const StyledWeeks = styled.div<any>`
   position: relative;
   ${props => props.slide && slideStyle(props)};
 `;
@@ -70,7 +70,7 @@ const StyledWeeks = styled.div`
 StyledWeeks.defaultProps = {};
 Object.setPrototypeOf(StyledWeeks.defaultProps, defaultProps);
 
-const StyledWeek = styled.div`
+const StyledWeek = styled.div<any>`
   display: flex;
   flex-direction: row;
   flex-justify: between;
@@ -79,7 +79,7 @@ const StyledWeek = styled.div`
 StyledWeek.defaultProps = {};
 Object.setPrototypeOf(StyledWeek.defaultProps, defaultProps);
 
-const StyledDayContainer = styled.div`
+const StyledDayContainer = styled.div<any>`
   flex: 0 0 auto;
 `;
 
@@ -94,7 +94,7 @@ const daySizeStyle = props => {
   `;
 };
 
-const StyledDay = styled.div`
+const StyledDay = styled.div<any>`
   display: flex;
   justify-content: center;
   align-items: center;

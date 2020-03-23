@@ -1,19 +1,57 @@
 import React, {
-  cloneElement,
   Children,
+  cloneElement,
   forwardRef,
   useContext,
   useState,
 } from 'react';
-
 import { ThemeContext } from 'styled-components';
-import { colorIsDark, normalizeBackground, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
-
+import {
+  A11yTitleType,
+  AlignSelfType,
+  BackgroundType,
+  colorIsDark,
+  ColorType,
+  FillType,
+  GapType,
+  GridAreaType,
+  MarginType,
+  normalizeBackground,
+  normalizeColor,
+  Omit,
+  PolymorphicType,
+} from '../../utils';
 import { Box } from '../Box';
-
 import { StyledButton } from './StyledButton';
 
+export type ButtonType = ButtonProps &
+  Omit<JSX.IntrinsicElements['button'], 'color'>;
+
+export interface ButtonProps
+  extends Omit<JSX.IntrinsicElements['button'], 'color'> {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
+  active?: boolean;
+  color?: ColorType;
+  disabled?: boolean;
+  fill?: FillType;
+  focusIndicator?: boolean;
+  gap?: GapType;
+  hoverIndicator?: BackgroundType | boolean;
+  href?: string;
+  target?: '_self' | '_blank' | '_parent' | '_top';
+  icon?: JSX.Element;
+  label?: React.ReactNode;
+  plain?: boolean;
+  primary?: boolean;
+  reverse?: boolean;
+  size?: 'small' | 'medium' | 'large';
+  type?: 'button' | 'reset' | 'submit';
+  as?: PolymorphicType;
+}
 const Button = forwardRef(
   (
     {
@@ -39,11 +77,11 @@ const Button = forwardRef(
       type = 'button',
       as,
       ...rest
-    },
+    }: ButtonProps,
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [focus, setFocus] = useState();
+    const [focus, setFocus] = useState<boolean>();
 
     if ((icon || label) && children) {
       console.warn(
@@ -63,7 +101,7 @@ const Button = forwardRef(
         theme,
       );
 
-      return colorIsDark(backgroundColor, theme);
+      return colorIsDark(backgroundColor);
     };
 
     const [hover, setHover] = useState(false);
