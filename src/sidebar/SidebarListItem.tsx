@@ -1,6 +1,6 @@
 import React, { cloneElement, MouseEventHandler, useCallback, useMemo } from 'react';
 import styled, { css } from 'styled-components';
-import Icon from '../icons/Icon';
+import Icon from '../components/Icon/Icon';
 import { Box, BoxProps } from '../js/components/Box';
 import { Text } from '../js/components/Text';
 import { SidebarItemState } from './SidebarState';

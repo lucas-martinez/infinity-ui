@@ -1,5 +1,5 @@
 import React, { ReactNode, ReactNodeArray, useMemo, useState } from 'react';
-import { ThemeType } from '../js';
+import { ThemeType } from '../../js';
 import ChooseThemeContext, { ThemeValueType } from './ChooseThemeContext';
 
 export interface ChooseThemeProviderProps extends Partial<ThemeValueType> {

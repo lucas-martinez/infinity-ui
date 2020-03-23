@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css, ThemeProps } from 'styled-components';
-import { Box, BoxProps } from '../js/components/Box';
-import { ExtendedTheme } from '../themes/cobalt';
-import pick from '../themes/pick';
+import { Box, BoxProps } from '../../js/components/Box';
+import { ExtendedTheme } from '../../themes/cobalt';
+import pick from '../../themes/pick';
 
 export interface BreadcrumbsProps extends BoxProps {
   children?: React.ReactNode | React.ReactNodeArray;

@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import Alert from '../../components/Alert';
+import Alert from '../../Alert/Alert';
 import { Box } from '../../js/components';
 
 const SimpleAccordion = ({ animate = false, multiple = false, ...rest }) => (

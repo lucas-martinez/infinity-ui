@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { GrommetProps, ThemeType } from '../js';
+import { GrommetProps, ThemeType } from '../../js';
 
 export interface ThemeValueType extends Pick<GrommetProps, 'theme' | 'themeMode'> {
   baseSize?: number;

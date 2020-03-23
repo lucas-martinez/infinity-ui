@@ -1,8 +1,8 @@
 import React from 'react';
-import { icon } from '../themes/cobalt/icon';
-import icons from '../themes/cobalt/icons';
+import { icon } from '../../themes/cobalt/icon';
+import icons from '../../themes/cobalt/icons';
 import styled, { css } from 'styled-components';
-import pick from '../themes/pick';
+import pick from '../../themes/pick';
 
 export interface IconProps {
   active?: boolean;

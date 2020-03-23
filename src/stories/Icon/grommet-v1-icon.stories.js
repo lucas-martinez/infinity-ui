@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import { Box, Grid, Heading } from 'grommet/components';
 import React from 'react';
-import Icon from '../../components/GrommetIcon';
+import Icon from '../../components/Icon/GrommetIcon';
 import iconNames from './iconNames';
 import iconNames from './iconNames';
 const v1IconNames = [

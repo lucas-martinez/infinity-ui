@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css, ThemeProps } from 'styled-components';
-import { Anchor, AnchorProps } from '../js/components/Anchor';
-import { ExtendedTheme } from '../themes/cobalt';
-import pick from '../themes/pick';
+import { Anchor, AnchorProps } from '../../js/components/Anchor';
+import { ExtendedTheme } from '../../themes/cobalt';
+import pick from '../../themes/pick';
 
 export interface BreadcrumbsLinkProps extends AnchorProps {
   active?: boolean;

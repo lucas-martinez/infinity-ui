@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { css, ThemeProps } from 'styled-components';
-import { Box, BoxProps } from '../js/components/Box';
-import { deepMerge } from '../js/utils';
-import { ExtendedTheme } from '../themes/cobalt';
-import pick from '../themes/pick';
+import { Box, BoxProps } from '../../js/components/Box';
+import { deepMerge } from '../../js/utils';
+import { ExtendedTheme } from '../../themes/cobalt';
+import pick from '../../themes/pick';
 
 export interface AlertProps extends BoxProps {
   large?: boolean;

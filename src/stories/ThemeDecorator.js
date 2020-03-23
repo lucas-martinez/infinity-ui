@@ -8,8 +8,8 @@ import { v1 } from 'grommet-theme-v1';
 import { Box, CheckBox, Grid, Grommet, Select } from 'js/components';
 import { base, dark, grommet } from 'js/themes';
 import React, { useContext, useEffect, useMemo } from 'react';
-import ErrorBoundary from '../components/ErrorBoundary';
-import { ChooseThemeContext, ChooseThemeProvider } from '../contexts';
+import ErrorBoundary from '../components/Error/ErrorBoundary';
+import { ChooseThemeContext, ChooseThemeProvider } from '../components/Theme';
 import hercules from '../themes/hercules';
 
 export const themes = {

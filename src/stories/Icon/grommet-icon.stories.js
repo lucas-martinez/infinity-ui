@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import GrommetIcon from '../../components/GrommetIcon';
+import GrommetIcon from '../../components/Icon/GrommetIcon';
 import { Grid, Heading } from '../../js/components';
 import { Box } from '../../js/nents/Box';
 import iconNames from './iconNames';

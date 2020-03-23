@@ -1,22 +1,39 @@
 import React, { Component } from 'react';
 import { createGlobalStyle } from 'styled-components';
-
 import { ResponsiveContext, ThemeContext } from '../../contexts';
+import { base as baseTheme, ThemeType } from '../../themes';
 import {
   backgroundIsDark,
+  BackgroundType,
   deepMerge,
   getBreakpoint,
   getDeviceBreakpoint,
   normalizeColor,
 } from '../../utils';
-import { base as baseTheme } from '../../themes';
+import { ThemedStyledElementProps } from '../intrinsic-elements';
 import { StyledGrommet } from './StyledGrommet';
+
+export interface GrommetProps extends ThemedStyledElementProps<HTMLDivElement> {
+  background?: BackgroundType;
+  cssVars?: boolean;
+  dir?: 'rtl';
+  full?: boolean;
+  plain?: boolean;
+  theme: ThemeType;
+  themeMode?: 'dark' | 'light';
+  userAgent?: string;
+}
+
+interface GrommetState {
+  theme: ThemeType;
+  responsive?: ThemeType;
+}
 
 const FullGlobalStyle = createGlobalStyle`
   body { margin: 0; }
 `;
 
-class Grommet extends Component {
+class Grommet extends Component<GrommetProps, GrommetState> {
   static displayName = 'Grommet';
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -68,7 +85,13 @@ class Grommet extends Component {
     return null;
   }
 
-  state = {};
+  constructor (props: GrommetProps) {
+    super(props);
+    
+    this.state = { theme: props.theme };
+  }
+
+  state: GrommetState;
 
   componentDidMount() {
     window.addEventListener('resize', this.onResize);

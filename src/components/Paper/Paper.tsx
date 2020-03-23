@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { css, ThemeProps } from 'styled-components';
-import { Box, BoxProps } from '../js/components/Box';
-import { ElevationType } from '../js/utils';
-import { ExtendedTheme } from '../themes/cobalt';
+import { Box, BoxProps } from '../../js/components/Box';
+import { ElevationType } from '../../js/utils';
+import { ExtendedTheme } from '../../themes/cobalt';
 
 export interface PaperProps extends BoxProps {
   shadow?: ElevationType | 'depth1' | 'depth2';

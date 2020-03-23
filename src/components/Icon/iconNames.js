@@ -560,5 +560,5 @@ export default [
   'Youtube',
   'ZoomIn',
   'ZoomOut',
-  'Blank'
+  'Blank',
 ];

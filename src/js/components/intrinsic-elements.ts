@@ -30,7 +30,7 @@ export interface ButtonIntrinsicProps
   extends ThemedStyledElementProps<HTMLButtonElement> {}
 
 export interface DivIntrinsicProps
-  extends ThemedStyledElementProps <HTMLDivElement> {}
+  extends ThemedStyledElementProps<HTMLDivElement> {}
 
 export interface FormIntrinsicProps
   extends ThemedStyledElementProps<HTMLFormElement> {}
