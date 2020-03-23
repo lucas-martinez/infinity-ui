@@ -42,7 +42,7 @@ const StyledLayer = styled.div<any>`
     if (props.position === 'hidden') {
       return hiddenPositionStyle;
     }
-    const styles = [];
+    const styles: any[] = [];
     if (props.targetBounds) {
       const { left, right, top, bottom } = props.targetBounds;
       styles.push(`

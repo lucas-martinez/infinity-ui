@@ -138,7 +138,7 @@ export const buildFooterValues = (columns, data) => {
 // looks at the groupBy property of each data object and returns an
 // array with one item for each unique value of that property.
 export const buildGroups = (columns, data, groupBy) => {
-  let result;
+  let result: any[];
   if (groupBy) {
     result = [];
     const groupMap = {};

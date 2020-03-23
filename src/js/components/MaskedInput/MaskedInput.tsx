@@ -23,7 +23,7 @@ import {
 
 const parseValue = (mask, value) => {
   // break the value up into mask parts
-  const valueParts = []; // { part, beginIndex, endIndex }
+  const valueParts: any[] = []; // { part, beginIndex, endIndex }
   let valueIndex = 0;
   let maskIndex = 0;
   while (

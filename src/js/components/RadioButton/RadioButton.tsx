@@ -1,25 +1,42 @@
 import React, { forwardRef, useContext, useState } from 'react';
 import { ThemeContext } from 'styled-components';
-
-import { Box } from '../Box';
 import { defaultProps } from '../../default-props';
 import { normalizeColor, removeUndefined } from '../../utils';
-
+import { Box } from '../Box';
+import { InputIntrinsicProps } from '../intrinsic-elements';
 import {
   StyledRadioButton,
+  StyledRadioButtonBox,
   StyledRadioButtonContainer,
   StyledRadioButtonIcon,
   StyledRadioButtonInput,
-  StyledRadioButtonBox,
 } from './StyledRadioButton';
+
+export interface RadioButtonProps extends InputIntrinsicProps {
+  checked?: boolean;
+  disabled?: boolean;
+  id?: string;
+  label?: React.ReactNode;
+  name: string;
+}
 
 const RadioButton = forwardRef(
   (
-    { checked, children, disabled, focus, id, label, name, onChange, ...rest },
+    {
+      checked,
+      children,
+      disabled,
+      focus,
+      id,
+      label,
+      name,
+      onChange,
+      ...rest
+    }: RadioButtonProps,
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [hover, setHover] = useState();
+    const [hover, setHover] = useState<boolean>();
     const normalizedLabel =
       typeof label === 'string' ? <span>{label}</span> : label;
 

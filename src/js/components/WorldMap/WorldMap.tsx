@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-
 import { withTheme } from 'styled-components';
-
 import { defaultProps } from '../../default-props';
 import { normalizeColor, parseMetricToNum } from '../../utils';
-
 import { StyledWorldMap } from './StyledWorldMap';
 
 // The graphic is drawn as a rectangular grid using coordinates spaced
@@ -17,7 +14,14 @@ const CONTINENTS = [
   {
     name: 'Australia',
     origin: [74, 32],
-    area: [[4, 0], [7, 1], [15, 7], [13, 9], [0, 6], [0, 2]],
+    area: [
+      [4, 0],
+      [7, 1],
+      [15, 7],
+      [13, 9],
+      [0, 6],
+      [0, 2],
+    ],
     dots: [
       [4, 0, 1],
       [2, 1, 6],
@@ -210,7 +214,16 @@ const CONTINENTS = [
   {
     name: 'South America',
     origin: [22, 26],
-    area: [[2, 0], [5, 0], [11, 4], [11, 8], [3, 18], [2, 17], [0, 4], [0, 3]],
+    area: [
+      [2, 0],
+      [5, 0],
+      [11, 4],
+      [11, 8],
+      [3, 18],
+      [2, 17],
+      [0, 4],
+      [0, 3],
+    ],
     dots: [
       [2, 0, 4],
       [1, 1, 7],
@@ -236,7 +249,15 @@ const CONTINENTS = [
   {
     name: 'North America',
     origin: [0, 0],
-    area: [[21, 0], [39, 0], [39, 6], [22, 26], [16, 23], [2, 12], [0, 7]],
+    area: [
+      [21, 0],
+      [39, 0],
+      [39, 6],
+      [22, 26],
+      [16, 23],
+      [2, 12],
+      [0, 7],
+    ],
     dots: [
       [22, 0, 6],
       [29, 0, 1],
@@ -367,7 +388,7 @@ const buildContinentState = ({ area, dots, origin }) => {
   const stateDots = dots
     .map(segment => {
       const count = segment[2];
-      const spots = [];
+      const spots: any[] = [];
       for (let i = 0; i < count; i += 1) spots.push('h0');
       const dotCommands = spots.join(' m10,0 ');
       const x = FACTOR * (origin[0] + segment[0] + 1);
@@ -483,7 +504,7 @@ const buildInteractiveProps = (
   },
 });
 
-class WorldMap extends Component {
+class WorldMap extends Component<any, any> {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (!prevState.continents) {
       return updateState(buildState(), nextProps);
@@ -491,7 +512,8 @@ class WorldMap extends Component {
     return updateState(prevState, nextProps);
   }
 
-  state = {};
+  state: any = {};
+  containerRef: any;
 
   onMouseOver = () => {
     // track when we're over the map to avoid dealing with mouse moves

@@ -1,12 +1,32 @@
 import React, { Component } from 'react';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GridAreaType,
+  MarginType,
+} from '../../utils';
 import { Analog } from './Analog';
 import { Digital } from './Digital';
+
+export interface ClockProps {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
+  hourLimit?: '12' | '24' | '12' | '24';
+  onChange?: (...args: any[]) => void;
+  precision?: 'hours' | 'minutes' | 'seconds';
+  run?: boolean | 'backward' | 'forward';
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  time?: string;
+  type?: 'analog' | 'digital';
+}
 
 const TIME_REGEXP = /T([0-9]{2}):([0-9]{2})(?::([0-9.,]{2,}))?/;
 const DURATION_REGEXP = /^(-|\+)?P.*T(?:([-+]?[0-9,.]*)H)?(?:([-+]?[0-9,.]*)M)?(?:([-+]?[0-9,.]*)S)?$/;
 
 const parseTime = (time, hourLimit) => {
-  const result = {};
+  const result: any = {};
   if (time) {
     let match = DURATION_REGEXP.exec(time);
     if (match) {
@@ -39,7 +59,11 @@ const parseTime = (time, hourLimit) => {
   return result;
 };
 
-class Clock extends Component {
+interface ClockState {
+  elements?: any;
+}
+
+class Clock extends Component<ClockProps, ClockState> {
   static defaultProps = {
     hourLimit: 24,
     precision: 'seconds',
@@ -65,7 +89,8 @@ class Clock extends Component {
     return null;
   }
 
-  state = {};
+  state: ClockState = {};
+  timer: any;
 
   componentDidMount() {
     const { run } = this.props;
@@ -188,4 +213,3 @@ if (process.env.NODE_ENV !== 'production') {
 const ClockWrapper = ClockDoc || Clock;
 
 export { ClockWrapper as Clock };
-

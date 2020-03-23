@@ -6,7 +6,7 @@ export const locations = [
   'San Francisco',
 ];
 
-export const data = [];
+export const data: any[] = [];
 
 for (let i = 0; i < 40; i += 1) {
   data.push({

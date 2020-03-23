@@ -32,8 +32,8 @@ const Circle = props => {
 
   let startValue = 0;
   let startAngle = 0;
-  const paths = [];
-  let pathCaps = [];
+  const paths: any[] = [];
+  let pathCaps: any[] = [];
   (values || [])
     .filter(v => v.value > 0)
     .forEach((valueArg, index) => {

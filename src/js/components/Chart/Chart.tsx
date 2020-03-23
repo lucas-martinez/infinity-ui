@@ -17,7 +17,7 @@ const gradientMaskColor = '#ffffff';
 
 // use constants so re-renders don't re-trigger effects
 const defaultSize = { height: 'small', width: 'medium' };
-const defaultValues = [];
+const defaultValues: any[] = [];
 
 export interface ChartProps extends Omit<SvgIntrinsicProps, 'color'> {
   a11yTitle?: A11yTitleType;

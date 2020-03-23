@@ -27,7 +27,7 @@ const textAlignStyle = css<any>`
   text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;
 
-const StyledParagraph = styled.p`
+const StyledParagraph = styled.p<any>`
   ${genericStyles}
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}

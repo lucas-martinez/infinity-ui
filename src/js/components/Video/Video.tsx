@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
 import { compose } from 'recompose';
-
 import { withTheme } from 'styled-components';
-
 import { defaultProps } from '../../default-props';
-
+import { throttle } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
+import { withForwardRef } from '../hocs';
 import { Menu } from '../Menu';
 import { Meter } from '../Meter';
 import { Stack } from '../Stack';
 import { Text } from '../Text';
-import { withForwardRef } from '../hocs';
-import { throttle } from '../../utils';
-
 import {
   StyledVideo,
   StyledVideoContainer,
@@ -298,7 +294,7 @@ class Video extends Component {
             this.setState({ captions: [{ active }] });
           }
         } else {
-          const nextCaptions = [];
+          const nextCaptions: any[] = [];
           let set = false;
           for (let i = 0; i < textTracks.length; i += 1) {
             const track = textTracks[i];
@@ -518,9 +514,6 @@ if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   VideoDoc = require('./doc').doc(Video);
 }
-const VideoWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(VideoDoc || Video);
+const VideoWrapper = compose(withTheme, withForwardRef)(VideoDoc || Video);
 
 export { VideoWrapper as Video };

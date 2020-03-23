@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { Box, Grommet, Select } from 'js';
 import { grommet } from 'js/themes';
 
-const defaultOptions = [];
+const defaultOptions: any[] = [];
 for (let i = 1; i <= 200; i += 1) {
   defaultOptions.push(`option ${i}`);
 }

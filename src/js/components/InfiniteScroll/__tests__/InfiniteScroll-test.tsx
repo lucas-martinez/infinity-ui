@@ -6,7 +6,7 @@ import { Grommet } from '../../Grommet';
 import { InfiniteScroll } from '..';
 
 describe('InfiniteScroll', () => {
-  const items = [];
+  const items: any[] = [];
   while (items.length < 4) items.push(items.length);
 
   test('basic', () => {

@@ -165,7 +165,7 @@ const InfiniteScroll = ({
   const firstIndex = beginPage * step;
   const lastIndex = Math.min((endPage + 1) * step, items.length) - 1;
 
-  const result = [];
+  const result: any[] = [];
 
   if (replace && pageHeight && firstIndex) {
     let marker = (

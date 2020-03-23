@@ -1,8 +1,25 @@
-import React, { Component } from 'react';
+import React, { Component, ReactNodeArray } from 'react';
 import { Box } from '../Box';
 import { StyledDigitalDigit, StyledDigitalNext, StyledDigitalPrevious } from './StyledClock';
+import { DivIntrinsicProps } from '../intrinsic-elements';
+import { ClockProps } from './Clock';
 
-class Digit extends Component {
+interface DigitalProps extends ClockProps, Omit<DivIntrinsicProps, 'onChange'> {
+  elements: any;
+}
+
+interface DigitProps extends Omit<DivIntrinsicProps, 'onChange'> {
+  number: any;
+  run: any;
+  size: any;
+}
+
+interface DigitState {
+  number?: any;
+  previous?: any;
+}
+
+class Digit extends Component<DigitProps, DigitState> {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { number } = nextProps;
     if (number !== prevState.number) {
@@ -11,7 +28,8 @@ class Digit extends Component {
     return null;
   }
 
-  state = {};
+  state: DigitState = {};
+  timer: any;
 
   componentDidUpdate(prevProps, prevState) {
     const { previous } = this.state;
@@ -50,10 +68,14 @@ class Digit extends Component {
   }
 }
 
-const Element = ({ number, run, sep, size }) => {
+interface ElementProps extends DigitProps {
+  sep?: boolean;
+}
+
+const Element: React.FC<ElementProps> = ({ number, run, sep, size }: ElementProps) => {
   const tens = Math.floor(number / 10);
   const ones = number % 10;
-  const result = [
+  const result: ReactNodeArray = [
     <Digit key="tens" run={run} size={size} number={tens} />,
     <Digit key="ones" run={run} size={size} number={ones} />,
   ];
@@ -64,10 +86,14 @@ const Element = ({ number, run, sep, size }) => {
       </StyledDigitalDigit>,
     );
   }
-  return result;
+  return (
+    <>
+      {result}
+    </>
+  );
 };
 
-export const Digital = props => {
+export const Digital = (props: DigitalProps) => {
   const { elements, precision, run, size, ...rest } = props;
   let seconds;
   if (precision === 'seconds') {

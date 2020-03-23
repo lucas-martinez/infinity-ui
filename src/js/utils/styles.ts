@@ -50,7 +50,7 @@ export const edgeStyle = (
         : ''};
     `;
   }
-  const result = [];
+  const result: any[] = [];
   if (data.horizontal) {
     result.push(css<any>`
       ${kind}-left: ${theme.global.edgeSize[data.horizontal] ||

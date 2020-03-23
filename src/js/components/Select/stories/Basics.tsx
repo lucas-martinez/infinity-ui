@@ -70,8 +70,8 @@ SimpleSelect.defaultProps = {
   theme: undefined,
 };
 
-const defaultOptions = [];
-const objectOptions = [];
+const defaultOptions: any[] = [];
+const objectOptions: any[] = [];
 for (let i = 1; i <= 200; i += 1) {
   defaultOptions.push(`option ${i}`);
   objectOptions.push({

@@ -1,8 +1,23 @@
 import React from 'react';
-
+import { A11yTitleType, AlignSelfType, ColorType, GridAreaType, MarginType, PolymorphicType, TextAlignType } from "../../utils";
 import { StyledHeading } from './StyledHeading';
+import { HeadingIntrinsicProps } from '../intrinsic-elements';
 
-const Heading = props => {
+export interface HeadingProps extends Omit<HeadingIntrinsicProps, 'color'> {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  as?: PolymorphicType;
+  color?: ColorType;
+  gridArea?: GridAreaType;
+  level?: "1" | "2" | "3" | "4" | "5" | "6" | 1 | 2 | 3 | 4 | 5 | 6;
+  margin?: MarginType;
+  responsive?: boolean;
+  size?: "small" | "medium" | "large" | "xlarge" | string;
+  textAlign?: TextAlignType;
+  truncate?: boolean;
+}
+
+const Heading = (props: HeadingProps) => {
   const {
     color, // munged to avoid styled-components putting it in the DOM
     level,
@@ -12,9 +27,9 @@ const Heading = props => {
   // enforce level to be a number
   return (
     <StyledHeading
-      as={`h${level}`}
+      as={`h${level!}`}
       colorProp={color}
-      level={+level}
+      level={+level!}
       {...rest}
     />
   );
@@ -33,3 +48,4 @@ if (process.env.NODE_ENV !== 'production') {
 const HeadingWrapper = HeadingDoc || Heading;
 
 export { HeadingWrapper as Heading };
+

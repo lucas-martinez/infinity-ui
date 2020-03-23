@@ -23,7 +23,7 @@ const ZoomChart = ({ data, max }) => {
   const startDate = new Date(reference);
   startDate.setDate(reference.getDate() - intervalDays[interval]);
 
-  const values = [];
+  const values: any[] = [];
   data.some(d => {
     const date = new Date(d.time);
     if (date > reference) {

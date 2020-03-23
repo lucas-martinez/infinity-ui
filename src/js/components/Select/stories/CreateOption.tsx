@@ -7,7 +7,7 @@ import { grommet } from 'js/themes';
 // the prefix name of the Create option entry
 const prefix = 'Create';
 
-const defaultOptions = [];
+const defaultOptions: any[] = [];
 for (let i = 1; i <= 5; i += 1) {
   defaultOptions.push(`option ${i}`);
 }

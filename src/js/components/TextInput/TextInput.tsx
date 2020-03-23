@@ -1,31 +1,15 @@
-import React, {
-  forwardRef,
-  isValidElement,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { forwardRef, isValidElement, useContext, useEffect, useRef, useState } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-
+import { AnnounceContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
-
+import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
+import { FormContext } from '../Form/FormContext';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
-import { FormContext } from '../Form/FormContext';
-import { AnnounceContext } from '../../contexts';
-import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
-
-import {
-  StyledTextInput,
-  StyledTextInputContainer,
-  StyledPlaceholder,
-  StyledIcon,
-  StyledSuggestions,
-} from './StyledTextInput';
+import { StyledIcon, StyledPlaceholder, StyledSuggestions, StyledTextInput, StyledTextInputContainer } from './StyledTextInput';
 
 const renderLabel = suggestion => {
   if (suggestion && typeof suggestion === 'object') {
@@ -393,3 +377,4 @@ if (process.env.NODE_ENV !== 'production') {
 const TextInputWrapper = TextInputDoc || TextInput;
 
 export { TextInputWrapper as TextInput };
+

@@ -1,5 +1,5 @@
 export const findScrollParents = (element, horizontal) => {
-  const result = [];
+  const result: any[] = [];
   if (element) {
     let parent = element.parentNode;
     while (parent && parent.getBoundingClientRect) {
@@ -40,7 +40,7 @@ export const getFirstFocusableDescendant = element => {
 
 export const getBodyChildElements = () => {
   const excludeMatch = /^(script|link)$/i;
-  const children = [];
+  const children: any[] = [];
   [].forEach.call(document.body.children, node => {
     if (!excludeMatch.test(node.tagName)) {
       children.push(node);

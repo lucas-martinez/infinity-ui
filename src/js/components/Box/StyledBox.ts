@@ -148,7 +148,7 @@ const roundStyle = (data, responsive, theme) => {
   const breakpoint =
     theme.box.responsiveBreakpoint &&
     theme.global.breakpoints[theme.box.responsiveBreakpoint];
-  const styles = [];
+  const styles: any[] = [];
   if (typeof data === 'object') {
     const size =
       ROUND_MAP[data.size] ||
@@ -560,7 +560,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
     breakpoint && breakpoint.edgeSize[gap] && breakpoint.edgeSize[gap];
   const hasBetweenBorder =
     border === 'between' || (border && border.side === 'between');
-  const styles = [];
+  const styles: any[] = [];
   if (directionProp === 'column' || directionProp === 'column-reverse') {
     const height = theme.global.edgeSize[gap] || gap;
     styles.push(

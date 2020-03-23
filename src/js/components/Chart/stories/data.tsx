@@ -1,6 +1,6 @@
 // generate a data set
 export const generateData = (count, max) => {
-  const data = [];
+  const data: any[] = [];
   let value = max / 2;
   let increase = true;
   let date = new Date();

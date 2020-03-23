@@ -78,7 +78,7 @@ const Animated = () => {
     return () => clearInterval(timer);
   }, [toogleDraw]);
 
-  const connections = [];
+  const connections: any[] = [];
 
   if (draw) {
     connections.push(connection('4', '1', { anchor: 'vertical' }));

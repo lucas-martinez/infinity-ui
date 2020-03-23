@@ -333,7 +333,7 @@ const Calendar = forwardRef(
 
     const weeks: any[] = [];
     let day = new Date(displayBounds[0]);
-    let days;
+    let days: any[];
     let firstDayInMonth;
 
     while (day.getTime() < displayBounds[1].getTime()) {

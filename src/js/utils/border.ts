@@ -3,7 +3,7 @@ import { normalizeColor } from './colors';
 import { breakpointStyle } from './mixins';
 
 export const borderStyle = (data, responsive, theme) => {
-  const styles = [];
+  const styles: any[] = [];
   const color = normalizeColor(data.color || 'border', theme);
   const borderSize = data.size || 'xsmall';
   const style = data.style || 'solid';

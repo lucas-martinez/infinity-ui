@@ -1,20 +1,23 @@
-import React from 'react';
 import Markdown from 'markdown-to-jsx';
-
+import React from 'react';
 import { deepMerge } from '../../utils';
-
-import { Heading } from '../Heading';
-import { Paragraph } from '../Paragraph';
 import { Anchor } from '../Anchor';
+import { Heading } from '../Heading';
 import { Image } from '../Image';
+import { Paragraph } from '../Paragraph';
 import { Table } from '../Table';
 import { TableBody } from '../TableBody';
 import { TableCell } from '../TableCell';
 import { TableFooter } from '../TableFooter';
 import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
+import { DivIntrinsicProps } from '../intrinsic-elements';
 
-const GrommetMarkdown = ({ components, options, theme, ...rest }) => {
+export interface MarkdownProps extends DivIntrinsicProps {
+  components?: {};
+}
+
+const GrommetMarkdown = ({ components, options, theme, ...rest }: MarkdownProps) => {
   const heading = [1, 2, 3, 4].reduce((obj, level) => {
     const result = { ...obj };
     result[`h${level}`] = {
@@ -53,3 +56,4 @@ if (process.env.NODE_ENV !== 'production') {
 const GrommetMarkdownWrapper = GrommetMarkdownDoc || GrommetMarkdown;
 
 export { GrommetMarkdownWrapper as Markdown };
+

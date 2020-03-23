@@ -29,7 +29,7 @@ export const breakpointStyle = (breakpoint, content) => css<any>`
 `;
 
 export const findAllByType = (component, type) => {
-  let matches = [];
+  let matches: any[] = [];
 
   if (component.type === type) {
     matches.push(component);
