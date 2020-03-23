@@ -18,7 +18,7 @@ import { css } from 'styled-components';
 import { ColorType, DeepReadonly } from '../utils';
 import { normalizeColor } from '../utils/colors';
 import { deepFreeze, deepMerge } from '../utils/object';
-import ThemeType from './ThemeType';
+import ThemeType from '../components/Theme/ThemeType';
 
 const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
