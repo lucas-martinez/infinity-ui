@@ -18,6 +18,7 @@ import {
   ThemeContext,
 } from '../../../../../js';
 import { grommet } from '../../../../../js/themes';
+import { ThemeExtend } from '../../../Theme/ThemeExtend';
 
 const richAccordionTheme = {
   accordion: {
@@ -108,7 +109,7 @@ const RichAccordion = () => {
               <strong>About #announcements</strong>
             </Heading>
           </Box>
-          <ThemeContext.Extend value={richAccordionTheme}>
+          <ThemeExtend value={richAccordionTheme}>
             <Accordion
               multiple
               onActive={activeIndexes => {
@@ -231,7 +232,7 @@ const RichAccordion = () => {
                 </Box>
               </RichPanel>
             </Accordion>
-          </ThemeContext.Extend>
+          </ThemeExtend>
         </Box>
       </Box>
     </Grommet>

@@ -5,6 +5,7 @@ import { Box } from '../../..';
 
 import { ThemeContext } from '../../../../contexts';
 import { normalizeColor } from '../../../../utils';
+import { ThemeExtend } from '../../../Theme/ThemeExtend';
 
 const searchingStyle = css<any>`
   position: relative;
@@ -84,7 +85,7 @@ export const SearchBorderBox = ({ children, searching, ...rest }) => {
   };
 
   return (
-    <ThemeContext.Extend value={boxBorderTheme}>
+    <ThemeExtend value={boxBorderTheme}>
       <Box
         focus={focus}
         searching={searching}
@@ -94,6 +95,6 @@ export const SearchBorderBox = ({ children, searching, ...rest }) => {
       >
         {children}
       </Box>
-    </ThemeContext.Extend>
+    </ThemeExtend>
   );
 };

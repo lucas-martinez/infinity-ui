@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { Box, Drop, Grommet, Text, ThemeContext } from '../../../../js';
 import { grommet } from '../../../../js/themes';
+import { ThemeExtend } from '../../Theme/ThemeExtend';
 
 const OneDrop = ({ align, target }) => (
   <Drop align={align} target={target} stretch={false}>
@@ -55,7 +56,7 @@ Set.propTypes = {
 
 const AllDrops = () => (
   <Grommet theme={grommet}>
-    <ThemeContext.Extend
+    <ThemeExtend
       value={{
         global: {
           drop: { background: { color: 'white', opacity: 'medium' } },
@@ -155,7 +156,7 @@ const AllDrops = () => (
         />
         <Set label="(center vertical and horizontal)" aligns={[{}]} />
       </Box>
-    </ThemeContext.Extend>
+    </ThemeExtend>
   </Grommet>
 );
 

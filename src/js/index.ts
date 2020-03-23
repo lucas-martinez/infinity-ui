@@ -64,6 +64,6 @@ export * from './components/Video';
 export * from './components/WorldMap';
 export * from './contexts/AnnounceContext';
 export * from './contexts/ResponsiveContext';
-export * from './contexts/ThemeContext';
+export * from './components/Theme';
 export * from './themes/';
 export { defaultProps, extendDefaultTheme } from './default-props';
