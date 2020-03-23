@@ -35,7 +35,7 @@ const resizeStyle = resize => {
   return 'resize: none;';
 };
 
-const StyledTextArea = styled.textarea`
+const StyledTextArea = styled.textarea<any>`
   ${inputStyle} width: 100%;
   ${props => props.resize !== undefined && resizeStyle(props.resize)}
 

@@ -8,7 +8,7 @@ const disabledStyle = `
   cursor: default;
 `;
 
-const StyledRadioButtonContainer = styled.label`
+const StyledRadioButtonContainer = styled.label<any>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -30,7 +30,7 @@ const StyledRadioButtonContainer = styled.label`
 StyledRadioButtonContainer.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonContainer.defaultProps, defaultProps);
 
-const StyledRadioButtonInput = styled.input`
+const StyledRadioButtonInput = styled.input<any>`
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -42,7 +42,7 @@ const StyledRadioButtonInput = styled.input`
 StyledRadioButtonInput.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonInput.defaultProps, defaultProps);
 
-const StyledRadioButtonIcon = styled.svg`
+const StyledRadioButtonIcon = styled.svg<any>`
   box-sizing: border-box;
   width: ${props =>
     props.theme.radioButton.icon.size || props.theme.radioButton.size};
@@ -59,7 +59,7 @@ const StyledRadioButtonIcon = styled.svg`
 StyledRadioButtonIcon.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonIcon.defaultProps, defaultProps);
 
-const StyledRadioButtonBox = styled.div`
+const StyledRadioButtonBox = styled.div<any>`
   ${props => props.focus && focusStyle};
   ${props => props.theme.radioButton.check.extend};
 `;
@@ -67,7 +67,7 @@ const StyledRadioButtonBox = styled.div`
 StyledRadioButtonBox.defaultProps = {};
 Object.setPrototypeOf(StyledRadioButtonBox.defaultProps, defaultProps);
 
-const StyledRadioButton = styled.div`
+const StyledRadioButton = styled.div<any>`
   ${props => props.theme.radioButton && props.theme.radioButton.extend};
 `;
 

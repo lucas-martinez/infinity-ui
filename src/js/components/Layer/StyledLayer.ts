@@ -30,7 +30,7 @@ const responsiveLayerStyle = `
   min-height: 100vh;
 `;
 
-const StyledLayer = styled.div`
+const StyledLayer = styled.div<any>`
   ${baseStyle}
   background: transparent;
   position: relative;
@@ -67,7 +67,7 @@ const StyledLayer = styled.div`
 StyledLayer.defaultProps = {};
 Object.setPrototypeOf(StyledLayer.defaultProps, defaultProps);
 
-const StyledOverlay = styled.div`
+const StyledOverlay = styled.div<any>`
   position: absolute;
   ${props => {
     if (props.responsive && props.theme.layer.responsiveBreakpoint) {
@@ -669,7 +669,7 @@ const responsiveContainerStyle = css`
   width: 100vw;
 `;
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.div<any>`
   ${props => (!props.modal ? baseStyle : '')} display: flex;
   flex-direction: column;
   min-height: ${props => props.theme.global.size.xxsmall};

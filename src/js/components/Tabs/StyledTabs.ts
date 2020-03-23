@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const StyledTabsHeader = styled.div`
+const StyledTabsHeader = styled.div<any>`
   ${props => props.theme.tabs.header.extend};
 `;
 
@@ -22,7 +22,7 @@ const flexStyle = css`
     `${FLEX_MAP[props.flex]}${props.flex !== true ? ' auto' : ''}`};
 `;
 
-const StyledTabPanel = styled.div`
+const StyledTabPanel = styled.div<any>`
   min-height: 0;
   ${props => props.flex && flexStyle} ${props => props.theme.tabs.panel.extend};
 `;
@@ -30,7 +30,7 @@ const StyledTabPanel = styled.div`
 StyledTabPanel.defaultProps = {};
 Object.setPrototypeOf(StyledTabPanel.defaultProps, defaultProps);
 
-const StyledTabs = styled.div`
+const StyledTabs = styled.div<any>`
   ${genericStyles} ${props => props.theme.tabs.extend};
 `;
 

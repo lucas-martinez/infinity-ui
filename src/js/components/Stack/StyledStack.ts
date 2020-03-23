@@ -11,7 +11,7 @@ const fillStyle = `
   display: flex;
 `;
 
-const StyledStack = styled.div`
+const StyledStack = styled.div<any>`
   position: relative;
   ${genericStyles}
   ${props => props.fillContainer && fillStyle}
@@ -71,7 +71,7 @@ const styleMap = {
   `,
 };
 
-const StyledStackLayer = styled.div`
+const StyledStackLayer = styled.div<any>`
   position: ${props => (props.guiding ? 'relative' : 'absolute')};
   ${props => props.guiding && 'display: block;'}
   ${props => !props.guiding && `${styleMap[props.anchor || 'fill']};`}

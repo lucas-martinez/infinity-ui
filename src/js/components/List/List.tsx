@@ -9,7 +9,7 @@ import { Text } from '../Text';
 import { focusStyle, genericStyles } from '../../utils';
 import { withFocus, withForwardRef } from '../hocs';
 
-const StyledList = styled.ul`
+const StyledList = styled.ul<any>`
   list-style: none;
   ${props => !props.margin && 'margin: 0;'}
   padding: 0;

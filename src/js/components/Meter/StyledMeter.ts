@@ -8,7 +8,7 @@ const roundStyle = css`
 `;
 
 // overflow: hidden is needed for ie11
-const StyledMeter = styled.svg`
+const StyledMeter = styled.svg<any>`
   max-width: 100%;
   overflow: hidden;
 

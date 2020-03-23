@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
-
-import { focusStyle, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { focusStyle, normalizeColor } from '../../utils';
 
 const disabledStyle = `
   opacity: 0.5;
@@ -31,7 +30,7 @@ const StyledCheckBoxIcon = styled.svg<any>`
 StyledCheckBoxIcon.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxIcon.defaultProps, defaultProps);
 
-const StyledCheckBoxContainer = styled.label`
+const StyledCheckBoxContainer = styled.label<any>`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -46,7 +45,7 @@ const StyledCheckBoxContainer = styled.label`
 StyledCheckBoxContainer.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxContainer.defaultProps, defaultProps);
 
-const StyledCheckBoxInput = styled.input`
+const StyledCheckBoxInput = styled.input<any>`
   opacity: 0;
   -moz-appearance: none;
   width: 0;
@@ -117,19 +116,12 @@ const StyledCheckBoxKnob = styled.span<any>`
 StyledCheckBoxKnob.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBoxKnob.defaultProps, defaultProps);
 
-const StyledCheckBox = styled.div`
+const StyledCheckBox = styled.div<any>`
   flex-shrink: 0;
 `;
 
 StyledCheckBox.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBox.defaultProps, defaultProps);
 
-export {
-  StyledCheckBoxIcon,
-  StyledCheckBoxContainer,
-  StyledCheckBoxInput,
-  StyledCheckBoxBox,
-  StyledCheckBoxToggle,
-  StyledCheckBoxKnob,
-  StyledCheckBox,
-};
+export { StyledCheckBoxIcon, StyledCheckBoxContainer, StyledCheckBoxInput, StyledCheckBoxBox, StyledCheckBoxToggle, StyledCheckBoxKnob, StyledCheckBox, };
+

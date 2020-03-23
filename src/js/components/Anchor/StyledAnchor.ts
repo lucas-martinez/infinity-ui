@@ -24,7 +24,7 @@ const sizeStyle = props => {
   `;
 };
 
-const StyledAnchor = styled.a`
+const StyledAnchor = styled.a<any>`
   box-sizing: border-box;
   ${props => sizeStyle(props)}
   color: ${props =>

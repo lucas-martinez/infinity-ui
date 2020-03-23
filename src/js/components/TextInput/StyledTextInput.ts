@@ -21,7 +21,7 @@ const plainStyle = css`
   border: none;
 `;
 
-const StyledTextInput = styled.input`
+const StyledTextInput = styled.input<any>`
   ${inputStyle} width: 100%;
 
   ${props => props.size && sizeStyle(props)}
@@ -51,7 +51,7 @@ const StyledTextInput = styled.input`
 StyledTextInput.defaultProps = {};
 Object.setPrototypeOf(StyledTextInput.defaultProps, defaultProps);
 
-const StyledTextInputContainer = styled.div`
+const StyledTextInputContainer = styled.div<any>`
   position: relative;
   width: 100%;
 
@@ -64,7 +64,7 @@ const StyledTextInputContainer = styled.div`
 StyledTextInputContainer.defaultProps = {};
 Object.setPrototypeOf(StyledTextInputContainer.defaultProps, defaultProps);
 
-const StyledPlaceholder = styled.div`
+const StyledPlaceholder = styled.div<any>`
   position: absolute;
   left: ${props =>
     parseMetricToNum(props.theme.global.input.padding) -
@@ -84,7 +84,7 @@ const StyledPlaceholder = styled.div`
 StyledPlaceholder.defaultProps = {};
 Object.setPrototypeOf(StyledPlaceholder.defaultProps, defaultProps);
 
-const StyledIcon = styled.div`
+const StyledIcon = styled.div<any>`
   position: absolute;
   display: flex;
   justify: center;
@@ -97,7 +97,7 @@ const StyledIcon = styled.div`
       : `left: ${props.theme.global.input.padding};`}
 `;
 
-const StyledSuggestions = styled.ol`
+const StyledSuggestions = styled.ol<any>`
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   margin: 0;

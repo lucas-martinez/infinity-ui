@@ -14,7 +14,7 @@ const fitStyle = css`
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
-const StyledVideo = styled.video`
+const StyledVideo = styled.video<any>`
   max-width: 100%;
   ${props => props.fit && fitStyle} ::cue {
     background: ${props => props.theme.video.captions.background};
@@ -26,7 +26,7 @@ const StyledVideo = styled.video`
 StyledVideo.defaultProps = {};
 Object.setPrototypeOf(StyledVideo.defaultProps, defaultProps);
 
-const StyledVideoContainer = styled.div`
+const StyledVideoContainer = styled.div<any>`
   flex: 1 1;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,7 @@ const positionStyle = css`
   bottom: 0;
 `;
 
-const StyledVideoControls = styled.div`
+const StyledVideoControls = styled.div<any>`
   flex: 0 0;
   ${props => props.over && positionStyle} opacity: 0;
   transition: opacity 0.3s;
@@ -67,7 +67,7 @@ const headStyle = css`
   }
 `;
 
-const StyledVideoScrubber = styled.div`
+const StyledVideoScrubber = styled.div<any>`
   cursor: pointer;
   width: 100%;
   height: 100%;

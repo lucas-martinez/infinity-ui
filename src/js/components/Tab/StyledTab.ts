@@ -22,7 +22,7 @@ const tabHoverStyle = css`
   }
 `;
 
-const StyledTab = styled.div`
+const StyledTab = styled.div<any>`
   ${genericStyles}
   ${props => !props.plain && props.theme.tab.hover && tabHoverStyle}
   ${props => props.theme.tab.extend}

@@ -14,7 +14,7 @@ const plainStyle = css`
   border: none;
 `;
 
-export const StyledMaskedInput = styled.input`
+export const StyledMaskedInput = styled.input<any>`
   ${inputStyle} width: 100%;
 
   ${props => props.size && sizeStyle(props)} ${props =>
@@ -36,12 +36,12 @@ export const StyledMaskedInput = styled.input`
   ${props => props.theme.maskedInput && props.theme.maskedInput.extend};
 `;
 
-export const StyledMaskedInputContainer = styled.div`
+export const StyledMaskedInputContainer = styled.div<any>`
   position: relative;
   width: 100%;
 `;
 
-export const StyledIcon = styled.div`
+export const StyledIcon = styled.div<any>`
   position: absolute;
   display: flex;
   justify: center;

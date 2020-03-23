@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 
-const StyledDiagram = styled.svg`
+const StyledDiagram = styled.svg<any>`
   max-width: 100%;
   width: 100%;
   height: 100%;

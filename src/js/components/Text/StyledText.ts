@@ -46,7 +46,7 @@ const wordBreakStyle = css`
   word-break: ${props => props.wordBreak};
 `;
 
-const StyledText = styled.span`
+const StyledText = styled.span<any>`
   ${genericStyles}
   ${props => sizeStyle(props)}
   ${props => props.textAlign && textAlignStyle}

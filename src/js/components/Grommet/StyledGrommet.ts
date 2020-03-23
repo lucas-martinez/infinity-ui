@@ -9,7 +9,7 @@ const fullStyle = css`
   overflow: auto;
 `;
 
-const StyledGrommet = styled.div`
+const StyledGrommet = styled.div<any>`
   ${props => !props.plain && baseStyle}
   ${props => props.full && fullStyle}
   ${props => props.theme.global.font.face}

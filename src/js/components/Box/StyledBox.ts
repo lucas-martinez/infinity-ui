@@ -499,7 +499,7 @@ const widthStyle = css`
 `;
 
 // NOTE: basis must be after flex! Otherwise, flex overrides basis
-const StyledBox = styled.div`
+const StyledBox = styled.div<any>`
   display: flex;
   box-sizing: border-box;
   outline: none;

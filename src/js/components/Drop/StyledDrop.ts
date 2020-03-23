@@ -27,7 +27,7 @@ const dropKeyFrames = keyframes`
   }
 `;
 
-const StyledDrop = styled.div`
+const StyledDrop = styled.div<any>`
   ${baseStyle}
 
   border-radius: ${props => props.theme.global.drop.border.radius};

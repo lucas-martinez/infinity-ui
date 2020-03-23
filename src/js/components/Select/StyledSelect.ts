@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { sizeStyle } from '../../utils';
 
-export const StyledContainer = styled.div`
+export const StyledContainer = styled.div<any>`
   /* IE11 hack to get drop contents to not overflow */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     width: 100%;

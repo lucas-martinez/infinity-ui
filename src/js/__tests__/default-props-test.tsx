@@ -6,7 +6,7 @@ import 'jest-styled-components';
 
 import { grommet, defaultProps, extendDefaultTheme, Box, Grommet } from '..';
 
-const CustomBox = styled.div`
+const CustomBox = styled.div<any>`
   background: ${props => props.theme.global.colors.brand};
 `;
 CustomBox.defaultProps = {};

@@ -33,7 +33,7 @@ const StyledSecond = styled.line`
 StyledSecond.defaultProps = {};
 Object.setPrototypeOf(StyledSecond.defaultProps, defaultProps);
 
-const StyledAnalog = styled.svg`
+const StyledAnalog = styled.svg<any>`
   width: ${props => props.theme.clock.analog.size[props.size]};
   height: ${props => props.theme.clock.analog.size[props.size]};
 
@@ -54,7 +54,7 @@ const sizeStyle = props => {
   `;
 };
 
-const StyledDigitalDigit = styled.div`
+const StyledDigitalDigit = styled.div<any>`
   position: relative;
   width: 0.8em;
   text-align: center;
@@ -75,7 +75,7 @@ const previousDown = keyframes`
   100% { transform: translateY(100%); }
 `;
 
-const StyledDigitalPrevious = styled.div`
+const StyledDigitalPrevious = styled.div<any>`
   position: absolute;
   top: 0;
   left: 0;
@@ -99,7 +99,7 @@ const nextDown = keyframes`
   100% { transform: translateY(0); }
 `;
 
-const StyledDigitalNext = styled.div`
+const StyledDigitalNext = styled.div<any>`
   position: absolute;
   top: 0;
   left: 0;

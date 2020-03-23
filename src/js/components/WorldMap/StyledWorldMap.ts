@@ -26,7 +26,7 @@ const fillStyle = fillProp => {
 };
 
 // undefined fillProp has width for backwards compatibility
-const StyledWorldMap = styled.svg`
+const StyledWorldMap = styled.svg<any>`
   ${genericStyles}
   ${props =>
     props.fillProp !== undefined ? fillStyle(props.fillProp) : 'width: 100%;'}

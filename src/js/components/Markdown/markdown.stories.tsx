@@ -35,7 +35,7 @@ const SimpleMarkdown = () => (
   </Grommet>
 );
 
-const StyledPre = styled.pre`
+const StyledPre = styled.pre<any>`
   background-color: #7d4cdb;
 `;
 

@@ -46,7 +46,7 @@ const firefoxMicrosoftThumbStyle = css`
 `;
 
 /* eslint-disable max-len */
-const StyledRangeInput = styled.input`
+const StyledRangeInput = styled.input<any>`
   box-sizing: border-box;
   position: relative;
   -webkit-appearance: none;

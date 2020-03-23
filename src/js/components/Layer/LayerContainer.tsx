@@ -13,7 +13,7 @@ import { backgroundIsDark, findVisibleParent } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
 
-const HiddenAnchor = styled.a`
+const HiddenAnchor = styled.a<any>`
   width: 0;
   height: 0;
   overflow: hidden;
