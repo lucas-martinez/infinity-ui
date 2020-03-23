@@ -1,6 +1,6 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
-import QuantumIcon from '../../components/Icon/QuantumIcon';
+import QuantumIcon from '../../components/IconQ/QuantumIcon';
 import { Grid, Heading } from '../../js/components';
 import { Box } from '../../js/nents/Box';
 import icons from '../../themes/cobalt/icons';

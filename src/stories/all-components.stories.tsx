@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React, { useContext, useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import { ChooseThemeContext } from '../components/Theme';
+import { ChooseThemeContext } from '../components/ThemeQ';
 import {
   Accordion,
   AccordionPanel,

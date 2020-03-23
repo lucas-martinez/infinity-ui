@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
-import BreadcrumbsLink from '../../components/Breadcrumbs/BreadcrumbsLink';
+import Breadcrumbs from '../../components/BreadcrumbsQ/Breadcrumbs';
+import BreadcrumbsLink from '../../components/BreadcrumbsQ/BreadcrumbsLink';
 import { Box } from '../../js/components';
 
 const SimpleAccordion = ({ animate = false, multiple = false, ...rest }) => (

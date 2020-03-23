@@ -1,8 +1,8 @@
 import { css } from 'styled-components';
 import { PartialThemeGenerator } from '.';
 import { AlertProps } from '../../Alert/Alert';
-import { BreadcrumbsProps } from '../../components/Breadcrumbs/Breadcrumbs';
-import { PaperProps } from '../../components/Paper/Paper';
+import { BreadcrumbsProps } from '../../components/BreadcrumbsQ/Breadcrumbs';
+import { PaperProps } from '../../components/PaperQ/Paper';
 import { alert } from './alert';
 import { breadcrumbs, breadcrumbsSeparation } from './breadcrumbs';
 import { icon } from './icon';

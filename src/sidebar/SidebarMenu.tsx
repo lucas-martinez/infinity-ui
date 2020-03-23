@@ -1,6 +1,6 @@
 import React, { ReactNode, ReactNodeArray, useCallback, useMemo, useRef, useState } from 'react';
 import styled, { css } from 'styled-components';
-import Icon from '../components/Icon/Icon';
+import Icon from '../components/IconQ/Icon';
 import { Box, BoxProps } from '../js/components/Box';
 import { Collapsible } from '../js/components/Collapsible';
 import { Drop } from '../js/components/Drop';

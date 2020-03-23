@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import Paper from '../../components/Paper/Paper';
+import Paper from '../../components/PaperQ/Paper';
 import { Box } from '../../js/components';
 
 

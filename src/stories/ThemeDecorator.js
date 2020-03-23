@@ -9,7 +9,7 @@ import { Box, CheckBox, Grid, Grommet, Select } from 'js/components';
 import { base, dark, grommet } from 'js/themes';
 import React, { useContext, useEffect, useMemo } from 'react';
 import ErrorBoundary from '../components/Error/ErrorBoundary';
-import { ChooseThemeContext, ChooseThemeProvider } from '../components/Theme';
+import { ChooseThemeContext, ChooseThemeProvider } from '../components/ThemeQ';
 import hercules from '../themes/hercules';
 
 export const themes = {
