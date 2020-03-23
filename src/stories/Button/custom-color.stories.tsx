@@ -1,7 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import { Box, Button, grommet, Grommet } from '../../js/components';
+import { Box, Button, Grommet } from '../../js/components';
+import { grommet } from '../../js/themes';
 import { deepMerge } from '../../js/utils';
 
 const customButtonColor = deepMerge(grommet, {

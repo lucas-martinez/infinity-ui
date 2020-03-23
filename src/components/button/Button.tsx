@@ -1,5 +1,5 @@
-import { ButtonProps } from 'js/components/Button';
 import React from 'react';
+import { ButtonProps } from '../../js/components/Button';
 import { ButtonColor } from '../../themes/cobalt/button/base/styling';
 import BaseButton from './BaseButton';
 import FlatButton from './FlatButton';

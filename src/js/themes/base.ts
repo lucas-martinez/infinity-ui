@@ -49,7 +49,7 @@ const lightColors = [
 ];
 const focusColor = accentColors[0];
 
-const colors = {
+const colors: any = {
   active: rgba(221, 221, 221, 0.5),
   'background-back': {
     dark: '#33333308',

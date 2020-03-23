@@ -5,8 +5,8 @@ import { Box, Meter, Stack, Text } from '../../js/components';
 
 const MultipleValues = () => {
   const total = 100;
-  const [active, setActive] = useState();
-  const [label, setLabel] = useState();
+  const [active, setActive] = useState<number>();
+  const [label, setLabel] = useState<string>();
 
   return (
     <>

@@ -8,7 +8,7 @@ interface StyledButtonProps extends Omit<ButtonProps, 'color'> {
   colorValue?: string;
 }
 
-const disabled = ({ style: { disabled } }: BaseButtonStyling, props: StyledButtonProps) => css`
+const disabled = ({ style: { disabled } }: any /* BaseButtonStyling */, props: StyledButtonProps) => css`
   color: ${pick(disabled.color)};
   ${props.colorValue || props.plain ? '' : backgroundColor(disabled)}
   ${props.colorValue || props.plain || !disabled.borderColor ? '' : borderColor(disabled)}

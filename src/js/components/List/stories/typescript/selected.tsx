@@ -12,7 +12,7 @@ export const locations = [
   'San Francisco',
 ];
 
-export const data = [];
+export const data: any[] = [];
 
 for (let i = 0; i < 40; i += 1) {
   data.push({
@@ -33,8 +33,8 @@ const SelectedItem = () => {
         <List
           data={data.slice(0, 10)}
           itemProps={
-            selected >= 0
-              ? { [selected]: { background: 'accent-1' } }
+            selected! >= 0
+              ? { [selected!]: { background: 'accent-1' } }
               : undefined
           }
           onClickItem={event =>

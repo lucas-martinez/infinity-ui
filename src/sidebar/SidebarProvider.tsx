@@ -20,7 +20,7 @@ export interface SidebarProviderProps {
 }
 
 const SidebarProvider = ({ children }: SidebarProviderProps) => {
-  const base = useContext<ThemeWithSidebar>(ThemeContext);
+  const base = useContext<ThemeWithSidebar>(ThemeContext as any);
   const theme = useMemo(() => (base && base.sidebar) || createSidebarTheme(base), [base]);
   const [state, dispatch] = useReducer(reduce, INITIAL_STATE);
   const actions = useMemo(() => bindActions(dispatch), [dispatch]);

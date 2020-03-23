@@ -1,8 +1,7 @@
 import { storiesOf } from '@storybook/react';
-import { Box, Button, Collapsible, Text } from 'grommet/components';
 import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
+import { Box, Button, Collapsible, Text } from '../../js/components';
 
 const SimpleCollapsible = props => {
   const [open, setOpen] = React.useState(false);

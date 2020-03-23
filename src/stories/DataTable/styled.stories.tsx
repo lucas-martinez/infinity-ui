@@ -8,7 +8,7 @@ const StyledDataTable = () => (
   <>
     <Box align="center" pad="large">
       <DataTable
-        columns={columns}
+        columns={columns as any[]}
         data={DATA}
         step={10}
         pad={{ horizontal: 'large', vertical: 'medium' }}

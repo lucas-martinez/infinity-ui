@@ -3,7 +3,8 @@ import { Diamond } from 'grommet-icons';
 import React, { useEffect, useReducer } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
 import { css } from 'styled-components';
-import { Box, Diagram, Grommet, grommet, Stack, Text } from '../../js/components';
+import { Box, Diagram, Grommet, Stack, Text } from '../../js/components';
+import { grommet } from '../../js/themes';
 import { deepMerge } from '../../js/utils';
 import { data } from './data';
 

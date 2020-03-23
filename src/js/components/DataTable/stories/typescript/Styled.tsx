@@ -1,15 +1,15 @@
 import { storiesOf } from '@storybook/react';
-import { Box, DataTable, Grommet } from '../../../../../js';
-import { grommet } from '../../../../../js/themes';
 import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
+import { Box, DataTable, Grommet } from '../../../../../js';
+import { grommet } from '../../../../../js/themes';
 import { columns, DATA } from '../data';
 
 const StyledDataTable = () => (
   <Grommet theme={grommet}>
     <Box align="center" pad="large">
       <DataTable
-        columns={columns}
+        columns={columns as any[]}
         data={DATA}
         step={10}
         pad={{ horizontal: 'large', vertical: 'medium' }}

@@ -6,7 +6,7 @@ import { Box, Tab, Tabs } from '../../js/components';
 
 
 const ControlledTabs = () => {
-  const [index, setIndex] = React.useState();
+  const [index, setIndex] = React.useState<number>();
 
   const onActive = (nextIndex: number) => setIndex(nextIndex);
 

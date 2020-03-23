@@ -1,8 +1,7 @@
 import { storiesOf } from '@storybook/react';
-import { Box, Distribution, Text } from 'grommet/components';
 import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
+import { Box, Distribution, Text } from '../../js/components';
 
 const SimpleDistribution = () => (
   <>

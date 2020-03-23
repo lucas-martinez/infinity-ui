@@ -10,7 +10,7 @@ const ClickableDataTable = () => (
     <Box align="center" pad="large">
       {/* eslint-disable no-alert */}
       <DataTable
-        columns={columns}
+        columns={columns as any[]}
         data={DATA}
         step={10}
         onClickRow={event => console.log(event.datum)}

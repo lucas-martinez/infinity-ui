@@ -1,9 +1,8 @@
-import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { Grommet, Box, Menu, ThemeType } from 'js';
 import { Next } from 'grommet-icons';
+import * as React from 'react';
+import isChromatic from 'storybook-chromatic/isChromatic';
+import { Box, Grommet, Menu, ThemeType } from '../../../../../js';
 
 const customBreakpoints: ThemeType = {
   global: {
