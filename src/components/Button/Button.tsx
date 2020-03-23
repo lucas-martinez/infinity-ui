@@ -1,4 +1,4 @@
-import React from './node_modules/react';
+import React from 'react';
 import { ButtonProps } from '../../js/components/Button';
 import { ButtonColor } from '../../themes/cobalt/button/base/styling';
 import BaseButton from './BaseButton';
