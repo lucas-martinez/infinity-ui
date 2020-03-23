@@ -19,17 +19,13 @@ import {
   MarginType,
   normalizeBackground,
   normalizeColor,
-  Omit,
   PolymorphicType,
 } from '../../utils';
 import { Box } from '../Box';
+import { ButtonIntrinsicProps } from '../intrinsic-elements';
 import { StyledButton } from './StyledButton';
 
-export type ButtonType = ButtonProps &
-  Omit<JSX.IntrinsicElements['button'], 'color'>;
-
-export interface ButtonProps
-  extends Omit<JSX.IntrinsicElements['button'], 'color'> {
+export interface ButtonProps extends ButtonIntrinsicProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   gridArea?: GridAreaType;

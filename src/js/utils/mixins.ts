@@ -4,7 +4,7 @@ export const parseMetricToNum = fontAsString => {
   if (fontAsString.match(/\s/) && process.env.NODE_ENV !== 'production') {
     console.warn(`Invalid single measurement value: "${fontAsString}"`);
   }
-  return parseFloat(fontAsString.match(/\d+(\.\d+)?/), 10);
+  return parseFloat(fontAsString.match(/\d+(\.\d+)?/));
 };
 
 export const fontSize = (size, lineHeight) => css<any>`

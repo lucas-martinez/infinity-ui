@@ -1,13 +1,24 @@
-import React, { cloneElement, Children, useState } from 'react';
+import React, { Children, cloneElement, useState } from 'react';
 import { compose } from 'recompose';
-
 import { withTheme } from 'styled-components';
-
 import { defaultProps } from '../../default-props';
-
+import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../utils";
 import { Box } from '../Box';
-
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
+import { DivIntrinsicProps } from '../intrinsic-elements';
+
+export interface TabsProps extends DivIntrinsicProps {
+  a11yTitle?: A11yTitleType;
+  activeIndex?: number;
+  alignSelf?: AlignSelfType;
+  children: React.ReactNode;
+  flex?: "grow" | "shrink" | boolean;
+  gridArea?: GridAreaType;
+  justify?: "start" | "center" | "end";
+  margin?: MarginType;
+  messages?: {tabContents?: string};
+  onActive?: ((index: number) => void);
+}
 
 const Tabs = ({
   children,
@@ -16,7 +27,7 @@ const Tabs = ({
   messages = { tabContents: 'Tab Contents' },
   theme,
   ...rest
-}) => {
+}: TabsProps) => {
   const { activeIndex: propsActiveIndex, onActive } = rest;
   const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
 
@@ -104,3 +115,4 @@ if (process.env.NODE_ENV !== 'production') {
 const TabsWrapper = compose(withTheme)(TabsDoc || Tabs);
 
 export { TabsWrapper as Tabs };
+

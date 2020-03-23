@@ -3,7 +3,7 @@ import { A11yTitleType, AlignSelfType, ColorType, GridAreaType, MarginType, Poly
 import { StyledHeading } from './StyledHeading';
 import { HeadingIntrinsicProps } from '../intrinsic-elements';
 
-export interface HeadingProps extends Omit<HeadingIntrinsicProps, 'color'> {
+export interface HeadingProps extends HeadingIntrinsicProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   as?: PolymorphicType;

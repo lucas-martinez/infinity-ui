@@ -2,7 +2,17 @@ import React, { Component } from 'react';
 import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  ColorType,
+  FillType,
+  GridAreaType,
+  MarginType,
+  normalizeColor,
+  parseMetricToNum,
+} from '../../utils';
+import { SvgIntrinsicProps } from '../intrinsic-elements';
 import { StyledWorldMap } from './StyledWorldMap';
 
 // The graphic is drawn as a rectangular grid using coordinates spaced
@@ -504,7 +514,41 @@ const buildInteractiveProps = (
   },
 });
 
-class WorldMap extends Component<any, any> {
+export interface WorldMapProps extends SvgIntrinsicProps {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  color?: ColorType;
+  continents?: {
+    color?: string | { dark?: string; light?: string };
+    name:
+      | 'Africa'
+      | 'Asia'
+      | 'Australia'
+      | 'Europe'
+      | 'North America'
+      | 'South America';
+    onClick?: (...args: any[]) => any;
+    onHover?: (...args: any[]) => any;
+  }[];
+  fill?: FillType;
+  gridArea?: GridAreaType;
+  hoverColor?: string | { dark?: string; light?: string };
+  margin?: MarginType;
+  onSelectPlace?: (place: number[]) => void;
+  places?: {
+    color?: string | { dark?: string; light?: string };
+    name?: string;
+    location: number[];
+    onClick?: (...args: any[]) => any;
+    onHover?: (...args: any[]) => any;
+  }[];
+}
+
+interface WorldMapState {
+
+}
+
+class WorldMap extends Component<WorldMapProps, WorldMapState> {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (!prevState.continents) {
       return updateState(buildState(), nextProps);

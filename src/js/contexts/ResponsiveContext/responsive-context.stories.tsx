@@ -24,7 +24,7 @@ const customBreakpoints = deepMerge(grommet, {
 const ResponsiveGrid = ({ children, areas, ...props }) => {
   const size = React.useContext(ResponsiveContext);
   return (
-    <Grid areas={areas[size]} {...props}>
+    <Grid areas={areas[size!]} {...props}>
       {children}
     </Grid>
   );

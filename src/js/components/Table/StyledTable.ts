@@ -1,12 +1,11 @@
 import styled, { css } from 'styled-components';
-
+import { defaultProps } from '../../default-props';
 import {
   backgroundStyle,
   borderStyle,
   edgeStyle,
   genericStyles,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 
 const SIZE_MAP = {
   '1/2': '50%',

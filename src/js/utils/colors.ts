@@ -106,7 +106,7 @@ export const colorIsDark = color => {
   return brightness < 125;
 };
 
-export const getRGBA = (color, opacity) => {
+export const getRGBA = (color, opacity: any = undefined) => {
   if (color && canExtractRGBArray(color)) {
     const [red, green, blue, alpha] = getRGBArray(color);
     let normalizedAlpha;

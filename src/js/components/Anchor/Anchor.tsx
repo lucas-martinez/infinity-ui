@@ -20,7 +20,7 @@ import { Box } from '../Box';
 import { AnchorIntrinsicProps } from '../intrinsic-elements';
 import { StyledAnchor } from './StyledAnchor';
 
-export interface AnchorProps extends Omit<AnchorIntrinsicProps, 'color'> {
+export interface AnchorProps extends AnchorIntrinsicProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   color?: ColorType;

@@ -41,7 +41,7 @@ export const getFirstFocusableDescendant = element => {
 export const getBodyChildElements = () => {
   const excludeMatch = /^(script|link)$/i;
   const children: any[] = [];
-  [].forEach.call(document.body.children, node => {
+  [].forEach.call(document.body.children, (node: any) => {
     if (!excludeMatch.test(node.tagName)) {
       children.push(node);
     }
@@ -129,13 +129,13 @@ export const findVisibleParent = element => {
   return undefined;
 };
 
-export const isNodeAfterScroll = (node, target = window) => {
+export const isNodeAfterScroll = (node, target: any = window) => {
   const { bottom } = node.getBoundingClientRect();
   const { height, top } = target.getBoundingClientRect();
   return bottom >= top + height;
 };
 
-export const isNodeBeforeScroll = (node, target = window) => {
+export const isNodeBeforeScroll = (node, target: any = window) => {
   const { top } = node.getBoundingClientRect();
   const { top: targetTop } = target.getBoundingClientRect();
   return top <= targetTop;

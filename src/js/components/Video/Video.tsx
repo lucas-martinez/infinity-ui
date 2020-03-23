@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
-import { throttle } from '../../utils';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GridAreaType,
+  MarginType,
+  throttle,
+} from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { withForwardRef } from '../hocs';
@@ -16,16 +22,17 @@ import {
   StyledVideoControls,
   StyledVideoScrubber,
 } from './StyledVideo';
+import { VideoIntrinsicProps } from '../intrinsic-elements';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
 
 const formatTime = time => {
-  let minutes = Math.round(time / 60);
+  let minutes: number | string = Math.round(time / 60);
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let seconds = Math.round(time) % 60;
+  let seconds: number | string = Math.round(time) % 60;
   if (seconds < 10) {
     seconds = `0${seconds}`;
   }
@@ -58,7 +65,35 @@ const videoEvents = [
   'onWaiting',
 ];
 
-class Video extends Component {
+export interface VideoProps extends VideoIntrinsicProps {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  autoPlay?: boolean;
+  controls?: 'false' | 'over' | 'below';
+  fit?: 'cover' | 'contain';
+  gridArea?: GridAreaType;
+  loop?: boolean;
+  margin?: MarginType;
+  mute?: boolean;
+}
+
+interface VideoState {
+  captions: any[];
+  currentTime: any;
+  duration: any;
+  focus?: any;
+  height?: any;
+  interacting: any;
+  percentagePlayed: any;
+  playing: any;
+  scrubberRef: any;
+  scrubTime: any;
+  videoRef: any;
+  volume: any;
+  width?: any;
+}
+
+class Video extends Component<VideoProps, VideoState> {
   static getDerivedStateFromProps(nextProps, prevState) {
     const { forwardRef } = nextProps;
     const { videoRef } = prevState;
@@ -69,13 +104,16 @@ class Video extends Component {
     return null;
   }
 
-  state = {
+  state: VideoState = {
     captions: [],
     scrubberRef: React.createRef(),
     videoRef: React.createRef(),
   };
 
   hasPlayed = false;
+  interactionTimer: any;
+  mediaEventProps: any;
+  unmounted: any;
 
   constructor(props) {
     super(props);

@@ -10,7 +10,7 @@ import {
 import { ParagraphIntrinsicProps } from '../intrinsic-elements';
 import { StyledParagraph } from './StyledParagraph';
 
-export interface ParagraphProps extends Omit<ParagraphIntrinsicProps, 'color'> {
+export interface ParagraphProps extends ParagraphIntrinsicProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   color?: ColorType;

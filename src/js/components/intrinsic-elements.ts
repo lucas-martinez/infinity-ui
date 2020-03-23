@@ -1,12 +1,99 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { ColorType } from '../utils';
+import { ThemeProps } from 'styled-components';
+import { ThemeType } from '../themes';
 
-export type AnchorIntrinsicProps = DetailedHTMLProps<HTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>;
-export type ButtonIntrinsicProps = DetailedHTMLProps<HTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
-export type DivIntrinsicProps = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
-export type FormIntrinsicProps = DetailedHTMLProps<HTMLAttributes<HTMLFormElement>, HTMLFormElement>;
-export type HeadingIntrinsicProps = DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
-export type InputIntrinsicProps = DetailedHTMLProps<HTMLAttributes<HTMLInputElement>, HTMLInputElement>;
-export type ParagraphIntrinsicProps = DetailedHTMLProps<HTMLAttributes<HTMLParagraphElement>, HTMLParagraphElement>;
-export type SelectIntrinsicProps = DetailedHTMLProps<HTMLAttributes<HTMLSelectElement>, HTMLSelectElement>;
-export type SpanIntrinsicProps = DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>;
-export type SvgIntrinsicProps = DetailedHTMLProps<HTMLAttributes<SVGElement>, SVGElement>;
+export type ElementProps<T> = DetailedHTMLProps<HTMLAttributes<T>, T>;
+
+export interface ThemedElementProps<T>
+  extends ElementProps<T>, ThemeProps<ThemeType> {
+}
+
+export interface ThemedStyledElementProps<T>
+  extends Omit<ThemedElementProps<T>, 'color'> {
+  color?: ColorType;
+}
+
+export interface AnchorIntrinsicProps
+  extends ThemedStyledElementProps<HTMLAnchorElement> {}
+
+export interface AreaIntrinsicProps
+  extends ThemedStyledElementProps<HTMLAreaElement> {}
+
+export interface AudioIntrinsicProps
+  extends ThemedStyledElementProps<HTMLAudioElement> {}
+
+export interface BodyIntrinsicProps
+  extends ThemedStyledElementProps<HTMLBodyElement> {}
+
+export interface ButtonIntrinsicProps
+  extends ThemedStyledElementProps<HTMLButtonElement> {}
+
+export interface DivIntrinsicProps
+  extends ThemedStyledElementProps <HTMLDivElement> {}
+
+export interface FormIntrinsicProps
+  extends ThemedStyledElementProps<HTMLFormElement> {}
+
+export interface HeadingIntrinsicProps
+  extends ThemedStyledElementProps<HTMLHeadingElement> {}
+
+export interface InputIntrinsicProps
+  extends ThemedStyledElementProps<HTMLInputElement> {}
+
+export interface ParagraphIntrinsicProps
+  extends ThemedStyledElementProps<HTMLParagraphElement> {}
+
+export interface SelectIntrinsicProps
+  extends ThemedStyledElementProps<HTMLSelectElement> {}
+
+export interface SpanIntrinsicProps
+  extends ThemedStyledElementProps<HTMLSpanElement> {}
+
+export interface SvgIntrinsicProps
+  extends ThemedStyledElementProps<SVGElement> {}
+
+export interface TableIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTableElement> {}
+
+export interface TableColIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTableColElement> {}
+
+export interface TableCaptionIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTableCaptionElement> {}
+
+export interface TableCellIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTableCellElement> {}
+
+export interface TableDataCellIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTableDataCellElement> {}
+
+export interface TableHeaderCellIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTableHeaderCellElement> {}
+
+export interface TableRowIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTableRowElement> {}
+
+export interface TableSectionIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTableSectionElement> {}
+
+export interface TemplateIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTemplateElement> {}
+
+export interface TextAreaIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTextAreaElement> {}
+
+export interface TitleIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTitleElement> {}
+
+export interface TrackIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTrackElement> {}
+
+export interface UListIntrinsicProps
+  extends ThemedStyledElementProps<HTMLUListElement> {}
+
+export interface VideoIntrinsicProps
+  extends ThemedStyledElementProps<HTMLVideoElement> {}
+
+export interface WebViewIntrinsicProps
+  extends ThemedStyledElementProps<HTMLWebViewElement> {}

@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { compose } from 'recompose';
-
 import { withTheme } from 'styled-components';
-
 import { defaultProps } from '../../default-props';
-
+import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Text } from '../Text';
 import { withForwardRef } from '../hocs';
-import { normalizeColor } from '../../utils';
-
+import { Text } from '../Text';
 import { StyledTab } from './StyledTab';
+import { ButtonIntrinsicProps } from '../intrinsic-elements';
+
+export interface TabProps extends Omit<ButtonIntrinsicProps, 'title'> {
+  active?: any;
+  forwardRef?: any;
+  plain?: boolean;
+  onActivate?: any;
+  title?: React.ReactNode;
+}
 
 const Tab = ({
   active,
@@ -23,8 +28,8 @@ const Tab = ({
   onMouseOut,
   theme,
   ...rest
-}) => {
-  const [over, setOver] = useState(undefined);
+}: TabProps) => {
+  const [over, setOver] = useState<any>(undefined);
   let normalizedTitle = title;
   const tabStyles = {};
 
@@ -56,7 +61,7 @@ const Tab = ({
       normalizedTitle = <Text {...theme.tab.active}>{title}</Text>;
     } else {
       normalizedTitle = (
-        <Text color={over ? theme.tab.hover.color : theme.tab.color}>
+        <Text color={over ? theme?.tab?.hover?.color : theme.tab.color}>
           {title}
         </Text>
       );
@@ -114,9 +119,6 @@ let TabDoc;
 if (process.env.NODE_ENV !== 'production') {
   TabDoc = require('./doc').doc(Tab); // eslint-disable-line global-require
 }
-const TabWrapper = compose(
-  withTheme,
-  withForwardRef,
-)(TabDoc || Tab);
+const TabWrapper = compose(withTheme, withForwardRef)(TabDoc || Tab);
 
 export { TabWrapper as Tab };

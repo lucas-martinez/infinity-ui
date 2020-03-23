@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-
-import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
+import { genericStyles } from '../../utils';
+
 
 const StyledTabsHeader = styled.div<any>`
   ${props => props.theme.tabs.header.extend};
@@ -38,3 +38,4 @@ StyledTabs.defaultProps = {};
 Object.setPrototypeOf(StyledTabs.defaultProps, defaultProps);
 
 export { StyledTabsHeader, StyledTabPanel, StyledTabs };
+

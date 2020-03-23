@@ -158,7 +158,7 @@ const columnsStyle = props => {
   `;
 };
 
-const rowsStyle = props => {
+const rowsStyle = (props: any) => {
   if (Array.isArray(props.rowsProp)) {
     return css<any>`
       grid-template-rows: ${props.rowsProp
@@ -180,7 +180,7 @@ const rowsStyle = props => {
   `;
 };
 
-const areasStyle = props => {
+const areasStyle = (props: any) => {
   // translate areas objects into grid-template-areas syntax
   if (!Array.isArray(props.rowsProp) || !Array.isArray(props.columns)) {
     console.warn('Grid `areas` requires `rows` and `columns` to be arrays.');
@@ -206,7 +206,7 @@ const areasStyle = props => {
     .join(' ')};`;
 };
 
-const StyledGrid = styled.div.attrs(props => ({
+const StyledGrid = styled.div.attrs((props: any) => ({
   'aria-label': props.a11yTitleProp,
 }))`
   display: grid;

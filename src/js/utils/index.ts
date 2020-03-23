@@ -89,21 +89,3 @@ declare const breakpointEdgeSize: {
   xlarge?: string;
 };
 export type BreakpointEdgeSize = typeof breakpointEdgeSize;
-
-export interface BreakpointBorderSize {
-  xsmall?: string;
-  small?: string;
-  medium?: string;
-  large?: string;
-  xlarge?: string;
-}
-
-export interface BreakpointSize {          
-  xxsmall?: string;
-  xsmall?: string;
-  small?: string;
-  medium?: string;
-  large?: string;
-  xlarge?: string;
-  full?: string;
-}
