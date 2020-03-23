@@ -30,7 +30,7 @@ const radiusStyle = props => {
 const fontStyle = props => {
   const size = props.sizeProp || 'medium';
   const data = props.theme.text[size];
-  return css`
+  return css<any>`
     font-size: ${data.size};
     line-height: ${data.height};
   `;
@@ -40,18 +40,18 @@ const padStyle = props => {
   const size = props.sizeProp;
 
   if (size && props.theme.button.size && props.theme.button.size[size]) {
-    return css`
+    return css<any>`
       ${props.theme.button.size[size].pad.vertical}
       ${props.theme.button.size[size].pad.horizontal}
     `;
   }
-  return css`
+  return css<any>`
     ${props.theme.button.padding.vertical}
     ${props.theme.button.padding.horizontal}
   `;
 };
 
-const basicStyle = props => css`
+const basicStyle = props => css<any>`
   border: ${props.theme.button.border.width} solid
     ${normalizeColor(
       props.colorValue || props.theme.button.border.color || 'control',
@@ -63,7 +63,7 @@ const basicStyle = props => css`
   ${fontStyle(props)}
 `;
 
-const primaryStyle = props => css`
+const primaryStyle = props => css<any>`
   ${backgroundStyle(
     normalizeColor(
       props.colorValue || props.theme.button.primary.color || 'control',
@@ -85,13 +85,13 @@ function getHoverColor(props) {
   );
 }
 
-const hoverStyle = css`
+const hoverStyle = css<any>`
   &:hover {
     ${props =>
       props.hoverIndicator &&
       getHoverIndicatorStyle(props.hoverIndicator, props.theme)} ${props =>
       !props.plain &&
-      css`
+      css<any>`
         box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};
       `};
   }
@@ -115,7 +115,7 @@ const fillStyle = fillContainer => {
   return undefined;
 };
 
-const plainStyle = props => css`
+const plainStyle = props => css<any>`
   color: ${normalizeColor(props.colorValue || 'inherit', props.theme)};
   border: none;
   padding: 0;

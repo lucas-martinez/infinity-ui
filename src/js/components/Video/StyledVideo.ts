@@ -8,7 +8,7 @@ const FIT_MAP = {
   contain: 'contain',
 };
 
-const fitStyle = css`
+const fitStyle = css<any>`
   flex: 1 1;
   min-height: 0;
   object-fit: ${props => FIT_MAP[props.fit]};
@@ -38,7 +38,7 @@ const StyledVideoContainer = styled.div<any>`
 StyledVideoContainer.defaultProps = {};
 Object.setPrototypeOf(StyledVideoContainer.defaultProps, defaultProps);
 
-const positionStyle = css`
+const positionStyle = css<any>`
   position: absolute;
   left: 0;
   right: 0;
@@ -55,7 +55,7 @@ const StyledVideoControls = styled.div<any>`
 StyledVideoControls.defaultProps = {};
 Object.setPrototypeOf(StyledVideoControls.defaultProps, defaultProps);
 
-const headStyle = css`
+const headStyle = css<any>`
   ::after {
     content: '';
     height: 100%;

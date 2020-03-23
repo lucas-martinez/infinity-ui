@@ -8,7 +8,7 @@ const FIT_MAP = {
   contain: 'contain',
 };
 
-const fitStyle = css`
+const fitStyle = css<any>`
   flex: 1 1;
   overflow: hidden;
   object-fit: ${props => FIT_MAP[props.fit]};

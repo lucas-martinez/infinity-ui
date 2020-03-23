@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
-import { defaultProps } from '../../default-props';
+
 import { focusStyle, normalizeColor } from '../../utils';
+import { defaultProps } from '../../default-props';
 
 const disabledStyle = `
   opacity: 0.5;
@@ -123,5 +124,12 @@ const StyledCheckBox = styled.div<any>`
 StyledCheckBox.defaultProps = {};
 Object.setPrototypeOf(StyledCheckBox.defaultProps, defaultProps);
 
-export { StyledCheckBoxIcon, StyledCheckBoxContainer, StyledCheckBoxInput, StyledCheckBoxBox, StyledCheckBoxToggle, StyledCheckBoxKnob, StyledCheckBox, };
-
+export {
+  StyledCheckBoxIcon,
+  StyledCheckBoxContainer,
+  StyledCheckBoxInput,
+  StyledCheckBoxBox,
+  StyledCheckBoxToggle,
+  StyledCheckBoxKnob,
+  StyledCheckBox,
+};

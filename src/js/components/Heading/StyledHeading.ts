@@ -12,7 +12,7 @@ const sizeStyle = props => {
     const data = levelStyle[size];
     const styles =  
     [
-      css`
+      css<any>`
         font-size: ${data ? data.size : size};
         line-height: ${data ? data.height : 'normal'};
         max-width: ${data ? data.maxWidth : levelStyle.medium.maxWidth};
@@ -49,12 +49,12 @@ const sizeStyle = props => {
 const fontFamily = props => {
   const { font } = props.theme.heading.level[props.level];
   if (font && font.family) {
-    return css`
+    return css<any>`
       font-family: ${font.family};
     `;
   }
   return props.theme.heading.font
-    ? css`
+    ? css<any>`
         font-family: ${props.theme.heading.font.family};
       `
     : '';
@@ -66,7 +66,7 @@ const TEXT_ALIGN_MAP = {
   start: 'left',
 };
 
-const textAlignStyle = css`
+const textAlignStyle = css<any>`
   text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;
 
@@ -76,7 +76,7 @@ const truncateStyle = `
   text-overflow: ellipsis;
 `;
 
-const colorStyle = css`
+const colorStyle = css<any>`
   color: ${props => normalizeColor(props.colorProp, props.theme)};
 `;
 

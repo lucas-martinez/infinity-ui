@@ -36,7 +36,7 @@ export const borderStyle = (data, responsive, theme) => {
       );
     }
   } else if (side === 'end' || side === 'start') {
-    styles.push(css`border-inline-${side}: ${value};`);
+    styles.push(css<any>`border-inline-${side}: ${value};`);
     if (responsiveValue) {
       styles.push(
         breakpointStyle(
@@ -48,7 +48,7 @@ export const borderStyle = (data, responsive, theme) => {
       );
     }
   } else if (side === 'vertical') {
-    styles.push(css`
+    styles.push(css<any>`
       border-left: ${value};
       border-right: ${value};
     `);
@@ -64,7 +64,7 @@ export const borderStyle = (data, responsive, theme) => {
       );
     }
   } else if (side === 'horizontal') {
-    styles.push(css`
+    styles.push(css<any>`
       border-top: ${value};
       border-bottom: ${value};
     `);
@@ -83,7 +83,7 @@ export const borderStyle = (data, responsive, theme) => {
     // no-op
   } else {
     styles.push(
-      css`
+      css<any>`
         border: ${value};
       `,
     );

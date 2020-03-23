@@ -7,7 +7,7 @@ export const parseMetricToNum = fontAsString => {
   return parseFloat(fontAsString.match(/\d+(\.\d+)?/), 10);
 };
 
-export const fontSize = (size, lineHeight) => css`
+export const fontSize = (size, lineHeight) => css<any>`
   font-size: ${props =>
     `${(parseMetricToNum(size) /
       parseMetricToNum(props.theme.global.font.size)) *
@@ -21,7 +21,7 @@ export const fontSize = (size, lineHeight) => css`
         parseMetricToNum(size))}px`};
 `;
 
-export const breakpointStyle = (breakpoint, content) => css`
+export const breakpointStyle = (breakpoint, content) => css<any>`
   @media only screen ${breakpoint.value &&
       `and (max-width: ${breakpoint.value}px)`} {
     ${content};

@@ -77,7 +77,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg: any | undefi
       } else if (!textColorArg) {
         color = 'inherit';
       }
-      styles.push(css`
+      styles.push(css<any>`
         background-image: ${background.image};
         background-repeat: ${background.repeat || 'no-repeat'};
         background-position: ${background.position || 'center center'};
@@ -94,7 +94,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg: any | undefi
             ? theme.global.opacity.medium
             : theme.global.opacity[background.opacity] || background.opacity,
         ) || color;
-      styles.push(css`
+      styles.push(css<any>`
         background-color: ${backgroundColor};
         ${(!background.opacity || background.opacity !== 'weak') &&
           `color: ${normalizeColor(
@@ -106,11 +106,11 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg: any | undefi
       `);
     }
     if (background.dark === false) {
-      styles.push(css`
+      styles.push(css<any>`
         color: ${textColor.light || textColor};
       `);
     } else if (background.dark) {
-      styles.push(css`
+      styles.push(css<any>`
         color: ${textColor.dark || textColor};
       `);
     }
@@ -119,7 +119,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg: any | undefi
 
   if (background) {
     if (background.lastIndexOf('url', 0) === 0) {
-      return css`
+      return css<any>`
         background: ${background} no-repeat center center;
         background-size: cover;
       `;
@@ -127,7 +127,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg: any | undefi
     const backgroundColor = normalizeColor(background, theme);
     if (backgroundColor) {
       const backgroundDark = colorIsDark(backgroundColor);
-      return css`
+      return css<any>`
         background: ${backgroundColor};
         color: ${normalizeColor(
           textColor[
@@ -144,7 +144,7 @@ export const backgroundStyle = (backgroundArg, theme, textColorArg: any | undefi
   return undefined;
 };
 
-export const activeStyle = css`
+export const activeStyle = css<any>`
   ${props =>
     backgroundStyle(
       normalizeColor(props.theme.global.active.background, props.theme),
@@ -153,7 +153,7 @@ export const activeStyle = css`
     )}
 `;
 
-export const selectedStyle = css`
+export const selectedStyle = css<any>`
   ${props =>
     backgroundStyle(
       normalizeColor(props.theme.global.selected.background, props.theme),
@@ -169,7 +169,7 @@ export const getHoverIndicatorStyle = (hoverIndicator, theme) => {
   } else {
     background = hoverIndicator;
   }
-  return css`
+  return css<any>`
     ${backgroundStyle(background, theme, theme.global.hover.color)}
   `;
 };

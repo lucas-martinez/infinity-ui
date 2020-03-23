@@ -6,7 +6,7 @@ import { Box, Grommet, CheckBox } from 'js';
 import { grommet } from 'js/themes';
 import { deepMerge } from 'js/utils';
 
-const checkboxCheckStyle = css`
+const checkboxCheckStyle = css<any>`
   background-color: #2196f3;
   border-color: #2196f3;
 `;

@@ -4,6 +4,7 @@ import React, {
   useContext,
   useMemo,
   useState,
+  ReactNode,
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
@@ -218,12 +219,12 @@ const Box = forwardRef(
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
 
-    const focusable = useMemo(() => onClick && !(tabIndex < 0), [
+    const focusable = useMemo(() => onClick && !(tabIndex! < 0), [
       onClick,
       tabIndex,
     ]);
 
-    const [focus, setFocus] = useState();
+    const [focus, setFocus] = useState<boolean>();
 
     const clickProps = useMemo(() => {
       if (focusable) {
@@ -259,9 +260,9 @@ const Box = forwardRef(
       console.warn('Box must have a gap to use border between');
     }
 
-    let contents = children;
+    let contents: ReactNode | ReactNodeArray = children;
     if (gap) {
-      contents: any[] = [];
+      contents = [];
       let firstIndex;
       Children.forEach(children, (child, index) => {
         if (child) {

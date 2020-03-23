@@ -17,7 +17,7 @@ const FLEX_MAP = {
   shrink: '0 1',
 };
 
-const flexStyle = css`
+const flexStyle = css<any>`
   flex: ${props =>
     `${FLEX_MAP[props.flex]}${props.flex !== true ? ' auto' : ''}`};
 `;

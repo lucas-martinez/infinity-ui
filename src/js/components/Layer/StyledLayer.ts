@@ -8,7 +8,7 @@ import {
 } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const hiddenPositionStyle = css`
+const hiddenPositionStyle = css<any>`
   left: -100%;
   right: 100%;
   z-index: -1;
@@ -263,7 +263,7 @@ const getAnimationStyle = (props, position, full) => {
     keys = keyframes`0% { opacity: 0 } 100% { opacity: 1 }`;
   }
   return keys
-    ? css`
+    ? css<any>`
         animation: ${keys} ${animationDuration / 1000.0}s ease-in-out forwards;
       `
     : '';
@@ -277,28 +277,28 @@ const getAnimationStyle = (props, position, full) => {
 // as well so they must take into account the non-animated positioning.
 const POSITIONS = {
   center: {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: 50%;
       transform: translateX(-50%);
       ${props => getAnimationStyle(props, 'center', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: 50%;
       transform: translateY(-50%);
       ${props => getAnimationStyle(props, 'center', 'horizontal')}
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       ${props => getAnimationStyle(props, 'center', 'true')}
     `,
-    false: () => css`
+    false: () => css<any>`
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -307,21 +307,21 @@ const POSITIONS = {
   },
 
   top: {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: 50%;
       transform: translate(-50%, 0%);
       ${props => getAnimationStyle(props, 'top', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: ${bounds.top}px;
       transform: translateY(0);
       ${props => getAnimationStyle(props, 'top', 'horizontal')}
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
@@ -329,7 +329,7 @@ const POSITIONS = {
       transform: translateY(0);
       ${props => getAnimationStyle(props, 'top', 'true')}
     `,
-    false: bounds => css`
+    false: bounds => css<any>`
       top: ${bounds.top}px;
       left: 50%;
       transform: translate(-50%, 0);
@@ -338,21 +338,21 @@ const POSITIONS = {
   },
 
   bottom: {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: 50%;
       transform: translate(-50%, 0);
       ${props => getAnimationStyle(props, 'bottom', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       left: ${bounds.left}px;
       right: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       transform: translateY(0);
       ${props => getAnimationStyle(props, 'bottom', 'horizontal')}
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
@@ -360,7 +360,7 @@ const POSITIONS = {
       transform: translateY(0);
       ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    false: bounds => css`
+    false: bounds => css<any>`
       bottom: ${bounds.bottom}px;
       left: 50%;
       transform: translate(-50%, 0);
@@ -369,21 +369,21 @@ const POSITIONS = {
   },
 
   left: {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'left', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: 50%;
       transform: translate(0, -50%);
       ${props => getAnimationStyle(props, 'left', 'horizontal')}
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
@@ -391,7 +391,7 @@ const POSITIONS = {
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'left', 'true')}
     `,
-    false: bounds => css`
+    false: bounds => css<any>`
       left: ${bounds.left}px;
       top: 50%;
       transform: translate(0, -50%);
@@ -400,21 +400,21 @@ const POSITIONS = {
   },
 
   right: {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       right: ${bounds.right}px;
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'right', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: 50%;
       transform: translate(0, -50%);
       ${props => getAnimationStyle(props, 'right', 'horizontal')}
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
@@ -422,7 +422,7 @@ const POSITIONS = {
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'right', 'true')}
     `,
-    false: bounds => css`
+    false: bounds => css<any>`
       right: ${bounds.right}px;
       top: 50%;
       transform: translate(0, -50%);
@@ -431,21 +431,21 @@ const POSITIONS = {
   },
 
   start: {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       inset-inline-start: ${bounds.start}px;
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'start', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       inset-inline-start: ${bounds.start}px;
       inset-inline-end: ${bounds.end}px;
       top: 50%;
       transform: translate(0, -50%);
       ${props => getAnimationStyle(props, 'start', 'horizontal')}
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       inset-inline-start: ${bounds.start}px;
@@ -453,7 +453,7 @@ const POSITIONS = {
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'start', 'true')}
     `,
-    false: bounds => css`
+    false: bounds => css<any>`
       inset-inline-start: ${bounds.start}px;
       top: 50%;
       transform: translate(0, -50%);
@@ -462,21 +462,21 @@ const POSITIONS = {
   },
 
   end: {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       inset-inline-end: ${bounds.end}px;
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'end', 'vertical')}
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       inset-inline-start: ${bounds.start}px;
       inset-inline-end: ${bounds.end}px;
       top: 50%;
       transform: translate(0, -50%);
       ${props => getAnimationStyle(props, 'end', 'horizontal')}
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       inset-inline-start: ${bounds.start}px;
@@ -484,7 +484,7 @@ const POSITIONS = {
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'end', 'true')}
     `,
-    false: bounds => css`
+    false: bounds => css<any>`
       inset-inline-end: ${bounds.end}px;
       top: 50%;
       transform: translate(0, -50%);
@@ -493,21 +493,21 @@ const POSITIONS = {
   },
 
   'top-right': {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       right: ${bounds.right}px;
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'top', 'true')};
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: 0;
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'top', 'true')};
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
@@ -515,7 +515,7 @@ const POSITIONS = {
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'top', 'true')};
     `,
-    false: bounds => css`
+    false: bounds => css<any>`
       top: ${bounds.top}px;
       right: ${bounds.right}px;
       transform: translateY(0);
@@ -524,21 +524,21 @@ const POSITIONS = {
   },
 
   'top-left': {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'top', 'true')}
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       top: 0;
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'top', 'true')}
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
@@ -546,7 +546,7 @@ const POSITIONS = {
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'top', 'true')}
     `,
-    false: bounds => css`
+    false: bounds => css<any>`
       top: ${bounds.top}px;
       left: ${bounds.left}px;
       transform: translateY(0);
@@ -555,21 +555,21 @@ const POSITIONS = {
   },
 
   'bottom-right': {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       right: ${bounds.right}px;
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       bottom: ${bounds.bottom}px;
       transform: translateY(0);
       ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
@@ -577,7 +577,7 @@ const POSITIONS = {
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    false: bounds => css`
+    false: bounds => css<any>`
       bottom: ${bounds.bottom}px;
       right: ${bounds.right}px;
       transform: translateY(0);
@@ -586,21 +586,21 @@ const POSITIONS = {
   },
 
   'bottom-left': {
-    vertical: bounds => css`
+    vertical: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    horizontal: bounds => css`
+    horizontal: bounds => css<any>`
       left: ${bounds.left}px;
       right: ${bounds.right}px;
       bottom: ${bounds.bottom}px;
       transform: translateY(0);
       ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    true: bounds => css`
+    true: bounds => css<any>`
       top: ${bounds.top}px;
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
@@ -608,7 +608,7 @@ const POSITIONS = {
       transform: translateX(0);
       ${props => getAnimationStyle(props, 'bottom', 'true')}
     `,
-    false: bounds => css`
+    false: bounds => css<any>`
       bottom: ${bounds.bottom}px;
       left: ${bounds.left}px;
       transform: translateY(0);
@@ -617,7 +617,7 @@ const POSITIONS = {
   },
 };
 
-const desktopContainerStyle = css`
+const desktopContainerStyle = css<any>`
   position: ${props => (props.modal ? 'absolute' : 'fixed')};
   max-height: ${props =>
     `calc(100% - ${getBounds(
@@ -654,7 +654,7 @@ const desktopContainerStyle = css`
     ''};
 `;
 
-const responsiveContainerStyle = css`
+const responsiveContainerStyle = css<any>`
   position: relative;
   max-height: none;
   max-width: none;

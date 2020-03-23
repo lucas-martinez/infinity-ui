@@ -17,7 +17,7 @@ const SIZE_MAP = {
   '2/3': '66.66%',
 };
 
-const sizeStyle = css`
+const sizeStyle = css<any>`
   width: ${props =>
     SIZE_MAP[props.size] || props.theme.global.size[props.size]};
   max-width: ${props =>

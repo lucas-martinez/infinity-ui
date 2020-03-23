@@ -6,7 +6,7 @@ import { Box } from '../../..';
 import { ThemeContext } from '../../../../contexts';
 import { normalizeColor } from '../../../../utils';
 
-const searchingStyle = css`
+const searchingStyle = css<any>`
   position: relative;
   outline: none;
   box-shadow: none;
@@ -47,7 +47,7 @@ const searchingStyle = css`
   }
 `;
 
-const defaultStyle = css`
+const defaultStyle = css<any>`
   position: relative;
   outline: none;
 

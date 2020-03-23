@@ -3,11 +3,11 @@ import styled, { css } from 'styled-components';
 import { genericStyles, normalizeColor } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const tabHoverStyle = css`
+const tabHoverStyle = css<any>`
   &:hover {
     ${props =>
       props.theme.tab.hover.background &&
-      css`
+      css<any>`
         background: ${normalizeColor(
           props.theme.tab.hover.background,
           props.theme,
@@ -15,7 +15,7 @@ const tabHoverStyle = css`
       `}
     ${props =>
       props.theme.tab.hover.color &&
-      css`
+      css<any>`
         color: ${normalizeColor(props.theme.tab.hover.color, props.theme)};
       `}
     ${props => props.theme.tab.hover.extend};

@@ -3,7 +3,7 @@ import { backgroundStyle } from './background';
 import { normalizeColor } from './colors';
 import { breakpointStyle, parseMetricToNum } from './mixins';
 
-export const baseStyle = css`
+export const baseStyle = css<any>`
   font-family: ${props => props.theme.global.font.family};
   font-size: ${props => props.theme.global.font.size};
   line-height: ${props => props.theme.global.font.height};
@@ -17,7 +17,7 @@ export const baseStyle = css`
   -webkit-font-smoothing: antialiased;
 `;
 
-export const controlBorderStyle = css`
+export const controlBorderStyle = css<any>`
   border: ${props => props.theme.global.control.border.width} solid
     ${props =>
       normalizeColor(
@@ -38,7 +38,7 @@ export const edgeStyle = (
     responsiveBreakpoint && theme.global.breakpoints[responsiveBreakpoint];
 
   if (typeof data === 'string') {
-    return css`
+    return css<any>`
       ${kind}: ${theme.global.edgeSize[data] || data};
       ${responsive && breakpoint
         ? breakpointStyle(
@@ -52,7 +52,7 @@ export const edgeStyle = (
   }
   const result = [];
   if (data.horizontal) {
-    result.push(css`
+    result.push(css<any>`
       ${kind}-left: ${theme.global.edgeSize[data.horizontal] ||
         data.horizontal};
       ${kind}-right: ${theme.global.edgeSize[data.horizontal] ||
@@ -71,7 +71,7 @@ export const edgeStyle = (
     `);
   }
   if (data.vertical) {
-    result.push(css`
+    result.push(css<any>`
       ${kind}-top: ${theme.global.edgeSize[data.vertical] || data.vertical};
       ${kind}-bottom: ${theme.global.edgeSize[data.vertical] || data.vertical};
       ${responsive && breakpoint
@@ -86,7 +86,7 @@ export const edgeStyle = (
     `);
   }
   if (data.top) {
-    result.push(css`
+    result.push(css<any>`
       ${kind}-top: ${theme.global.edgeSize[data.top] || data.top};
       ${responsive && breakpoint
         ? breakpointStyle(
@@ -99,7 +99,7 @@ export const edgeStyle = (
     `);
   }
   if (data.bottom) {
-    result.push(css`
+    result.push(css<any>`
       ${kind}-bottom: ${theme.global.edgeSize[data.bottom] || data.bottom};
       ${responsive && breakpoint
         ? breakpointStyle(
@@ -112,7 +112,7 @@ export const edgeStyle = (
     `);
   }
   if (data.left) {
-    result.push(css`
+    result.push(css<any>`
       ${kind}-left: ${theme.global.edgeSize[data.left] || data.left};
       ${responsive && breakpoint
         ? breakpointStyle(
@@ -125,7 +125,7 @@ export const edgeStyle = (
     `);
   }
   if (data.right) {
-    result.push(css`
+    result.push(css<any>`
       ${kind}-right: ${theme.global.edgeSize[data.right] || data.right};
       ${responsive && breakpoint
         ? breakpointStyle(
@@ -138,7 +138,7 @@ export const edgeStyle = (
     `);
   }
   if (data.start) {
-    result.push(css`
+    result.push(css<any>`
       ${kind}-inline-start: ${theme.global.edgeSize[data.start] || data.start};
       ${responsive && breakpoint
         ? breakpointStyle(
@@ -151,7 +151,7 @@ export const edgeStyle = (
     `);
   }
   if (data.end) {
-    result.push(css`
+    result.push(css<any>`
       ${kind}-inline-end: ${theme.global.edgeSize[data.end] || data.end};
       ${responsive && breakpoint
         ? breakpointStyle(
@@ -183,7 +183,7 @@ export const fillStyle = fillProp => {
 };
 
 // focus also supports clickable elements inside svg
-export const focusStyle = css`
+export const focusStyle = css<any>`
   > circle,
   > ellipse,
   > line,
@@ -208,7 +208,7 @@ export const focusStyle = css`
   }
 `;
 
-export const inputStyle = css`
+export const inputStyle = css<any>`
   box-sizing: border-box;
   font-size: inherit;
   font-family: inherit;
@@ -222,7 +222,7 @@ export const inputStyle = css`
   color: inherit;
   ${props =>
     props.theme.global.input.weight &&
-    css`
+    css<any>`
       font-weight: ${props.theme.global.input.weight};
     `} margin: 0;
 
@@ -238,23 +238,23 @@ export const inputStyle = css`
 
 export const overflowStyle = overflowProp => {
   if (typeof overflowProp === 'string') {
-    return css`
+    return css<any>`
       overflow: ${overflowProp};
     `;
   }
 
-  return css`
+  return css<any>`
     ${overflowProp.horizontal &&
       `overflow-x: ${overflowProp.horizontal};`} ${overflowProp.vertical &&
       `overflow-y: ${overflowProp.vertical};`};
   `;
 };
 
-const placeholderColor = css`
+const placeholderColor = css<any>`
   color: ${props => props.theme.global.colors.placeholder};
 `;
 
-export const placeholderStyle = css`
+export const placeholderStyle = css<any>`
   &::-webkit-input-placeholder {
     ${placeholderColor};
   }
@@ -275,7 +275,7 @@ const ALIGN_SELF_MAP = {
   stretch: 'stretch',
 };
 
-export const genericStyles = css`
+export const genericStyles = css<any>`
   ${props =>
     props.alignSelf && `align-self: ${ALIGN_SELF_MAP[props.alignSelf]};`}
   ${props => props.gridArea && `grid-area: ${props.gridArea};`}
@@ -291,12 +291,12 @@ export const genericStyles = css`
     )}
 `;
 
-export const disabledStyle = componentStyle => css`
+export const disabledStyle = componentStyle => css<any>`
   opacity: ${props =>
     componentStyle || props.theme.global.control.disabled.opacity};
   cursor: default;
 `;
 
-export const sizeStyle = (name, value, theme) => css`
+export const sizeStyle = (name, value, theme) => css<any>`
   ${name}: ${theme.global.size[value] || value};
 `;

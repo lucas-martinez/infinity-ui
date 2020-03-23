@@ -23,7 +23,7 @@ const ALIGN_MAP = {
   stretch: 'stretch',
 };
 
-const alignStyle = css`
+const alignStyle = css<any>`
   align-items: ${props => ALIGN_MAP[props.align]};
 `;
 
@@ -36,7 +36,7 @@ const ALIGN_CONTENT_MAP = {
   stretch: 'stretch',
 };
 
-const alignContentStyle = css`
+const alignContentStyle = css<any>`
   align-content: ${props => ALIGN_CONTENT_MAP[props.alignContent]};
 `;
 
@@ -51,7 +51,7 @@ const BASIS_MAP = {
   '2/3': '66.66%',
 };
 
-const basisStyle = css`
+const basisStyle = css<any>`
   flex-basis: ${props =>
     BASIS_MAP[props.basis] ||
     props.theme.global.size[props.basis] ||
@@ -64,7 +64,7 @@ const basisStyle = css`
 // TODO: revisit this
 const directionStyle = (direction, theme) => {
   const styles = [
-    css`
+    css<any>`
       min-width: 0;
       min-height: 0;
       flex-direction: ${direction === 'row-responsive' ? 'row' : direction};
@@ -89,7 +89,7 @@ const directionStyle = (direction, theme) => {
   return styles;
 };
 
-const elevationStyle = css`
+const elevationStyle = css<any>`
   box-shadow: ${props =>
     props.theme.global.elevation[props.theme.dark ? 'dark' : 'light'][
       props.elevationProp
@@ -111,7 +111,7 @@ const flexGrowShrinkProp = flex => {
   return `${flex.grow ? flex.grow : 0} ${flex.shrink ? flex.shrink : 0}`;
 };
 
-const flexStyle = css`
+const flexStyle = css<any>`
   flex: ${props =>
     `${flexGrowShrinkProp(props.flex)}${
       props.flex !== true && !props.basis ? ' auto' : ''
@@ -127,7 +127,7 @@ const JUSTIFY_MAP = {
   start: 'flex-start',
 };
 
-const justifyStyle = css`
+const justifyStyle = css<any>`
   justify-content: ${props => JUSTIFY_MAP[props.justify]};
 `;
 
@@ -136,7 +136,7 @@ const WRAP_MAP = {
   reverse: 'wrap-reverse',
 };
 
-const wrapStyle = css`
+const wrapStyle = css<any>`
   flex-wrap: ${props => WRAP_MAP[props.wrapProp]};
 `;
 
@@ -160,7 +160,7 @@ const roundStyle = (data, responsive, theme) => {
       breakpoint.edgeSize[data.size] &&
       (breakpoint.edgeSize[data.size] || data.size);
     if (data.corner === 'top') {
-      styles.push(css`
+      styles.push(css<any>`
         border-top-left-radius: ${size};
         border-top-right-radius: ${size};
       `);
@@ -176,7 +176,7 @@ const roundStyle = (data, responsive, theme) => {
         );
       }
     } else if (data.corner === 'bottom') {
-      styles.push(css`
+      styles.push(css<any>`
         border-bottom-left-radius: ${size};
         border-bottom-right-radius: ${size};
       `);
@@ -192,7 +192,7 @@ const roundStyle = (data, responsive, theme) => {
         );
       }
     } else if (data.corner === 'left') {
-      styles.push(css`
+      styles.push(css<any>`
         border-top-left-radius: ${size};
         border-bottom-left-radius: ${size};
       `);
@@ -208,7 +208,7 @@ const roundStyle = (data, responsive, theme) => {
         );
       }
     } else if (data.corner === 'right') {
-      styles.push(css`
+      styles.push(css<any>`
         border-top-right-radius: ${size};
         border-bottom-right-radius: ${size};
       `);
@@ -224,7 +224,7 @@ const roundStyle = (data, responsive, theme) => {
         );
       }
     } else if (data.corner) {
-      styles.push(css`
+      styles.push(css<any>`
         border-${data.corner}-radius: ${size};
       `);
       if (responsiveSize) {
@@ -238,7 +238,7 @@ const roundStyle = (data, responsive, theme) => {
         );
       }
     } else {
-      styles.push(css`
+      styles.push(css<any>`
         border-radius: ${size};
       `);
       if (responsiveSize) {
@@ -254,7 +254,7 @@ const roundStyle = (data, responsive, theme) => {
     }
   } else {
     const size = data === true ? 'medium' : data;
-    styles.push(css`
+    styles.push(css<any>`
       border-radius: ${ROUND_MAP[size] || theme.global.edgeSize[size] || size};
     `);
     const responsiveSize = breakpoint && breakpoint.edgeSize[size];
@@ -373,7 +373,7 @@ const animationEnding = type => {
 const animationObjectStyle = (animation, theme) => {
   const bounds = animationBounds(animation.type, animation.size);
   if (bounds) {
-    const animationTransition = css`
+    const animationTransition = css<any>`
       from {
         ${bounds[0]};
       }
@@ -381,7 +381,7 @@ const animationObjectStyle = (animation, theme) => {
         ${bounds[1]};
       }
     `;
-    return css`${keyframes`${animationTransition}`}
+    return css<any>`${keyframes`${animationTransition}`}
     ${normalizeTiming(
       animation.duration,
       (theme.global.animation[animation.type]
@@ -401,7 +401,7 @@ const animationItemStyle = (item, theme) => {
   if (Array.isArray(item)) {
     return item.reduce(
       (style, a, index) =>
-        css`${style}${index > 0 ? ',' : ''} ${animationItemStyle(a, theme)}`,
+        css<any>`${style}${index > 0 ? ',' : ''} ${animationItemStyle(a, theme)}`,
       '',
     );
   }
@@ -445,14 +445,14 @@ const animationInitialStyle = item => {
   return '';
 };
 
-const animationStyle = css`
-  ${props => css`
+const animationStyle = css<any>`
+  ${props => css<any>`
     ${animationInitialStyle(props.animation)}
     animation: ${animationItemStyle(props.animation, props.theme)};
   `};
 `;
 
-const interactiveStyle = css`
+const interactiveStyle = css<any>`
   cursor: pointer;
 
   &:hover {
@@ -464,37 +464,37 @@ const interactiveStyle = css`
 
 const getSize = (props, size) => props.theme.global.size[size] || size;
 
-const heightObjectStyle = css`
+const heightObjectStyle = css<any>`
   ${props =>
     props.heightProp.max &&
-    css`
+    css<any>`
       max-height: ${getSize(props, props.heightProp.max)};
     `};
   ${props =>
     props.heightProp.min &&
-    css`
+    css<any>`
       min-height: ${getSize(props, props.heightProp.min)};
     `};
 `;
 
-const heightStyle = css`
+const heightStyle = css<any>`
   height: ${props => getSize(props, props.heightProp)};
 `;
 
-const widthObjectStyle = css`
+const widthObjectStyle = css<any>`
   ${props =>
     props.widthProp.max &&
-    css`
+    css<any>`
       max-width: ${getSize(props, props.widthProp.max)};
     `};
   ${props =>
     props.widthProp.min &&
-    css`
+    css<any>`
       min-width: ${getSize(props, props.widthProp.min)};
     `};
 `;
 
-const widthStyle = css`
+const widthStyle = css<any>`
   width: ${props => getSize(props, props.widthProp)};
 `;
 
@@ -564,7 +564,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
   if (directionProp === 'column' || directionProp === 'column-reverse') {
     const height = theme.global.edgeSize[gap] || gap;
     styles.push(
-      css`
+      css<any>`
         height: ${height};
       `,
     );
@@ -576,7 +576,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
         typeof border === 'string' ? 'top' : { ...border, side: 'top' };
       const borderSize = border.size || 'xsmall';
       const borderHeight = theme.global.borderSize[borderSize] || borderSize;
-      styles.push(css`
+      styles.push(css<any>`
         position: relative;
         &:after {
           content: '';
@@ -607,7 +607,7 @@ const gapStyle = (directionProp, gap, responsive, border, theme) => {
         typeof border === 'string' ? 'left' : { ...border, side: 'left' };
       const borderSize = border.size || 'xsmall';
       const borderWidth = theme.global.borderSize[borderSize] || borderSize;
-      styles.push(css`
+      styles.push(css<any>`
         position: relative;
         &:after {
           content: '';

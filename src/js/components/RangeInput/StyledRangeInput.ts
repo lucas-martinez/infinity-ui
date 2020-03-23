@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { focusStyle, normalizeColor, parseMetricToNum } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const rangeTrackStyle = css`
+const rangeTrackStyle = css<any>`
   box-sizing: border-box;
   width: 100%;
   height: ${props => props.theme.rangeInput.track.height};
@@ -15,7 +15,7 @@ const rangeTrackStyle = css`
     props.theme.rangeInput.track.extend}
 `;
 
-const rangeThumbStyle = css`
+const rangeThumbStyle = css<any>`
   box-sizing: border-box;
   position: relative;
   border-radius: ${props => props.theme.global.spacing};
@@ -35,7 +35,7 @@ const rangeThumbStyle = css`
     props.theme.rangeInput.thumb.extend}
 `;
 
-const firefoxMicrosoftThumbStyle = css`
+const firefoxMicrosoftThumbStyle = css<any>`
   ${rangeThumbStyle} margin-top: 0px;
   height: ${props => props.theme.global.spacing};
   width: ${props => props.theme.global.spacing};
@@ -79,7 +79,7 @@ const StyledRangeInput = styled.input<any>`
 
     ${props =>
       !props.disabled &&
-      css`
+      css<any>`
         &:hover {
           box-shadow: 0px 0px 0px 2px
             ${normalizeColor(
@@ -104,7 +104,7 @@ const StyledRangeInput = styled.input<any>`
 
   ${props =>
     !props.disabled &&
-    css`
+    css<any>`
       &:hover::-moz-range-thumb {
         box-shadow: 0px 0px 0px 2px
           ${normalizeColor(

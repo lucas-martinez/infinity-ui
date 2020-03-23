@@ -765,7 +765,7 @@ export const generate: (
     rangeInput: {
       track: {
         height: '4px',
-        color: css`
+        color: css<any>`
           ${props => rgba(normalizeColor('border', props.theme), 0.2)};
         `,
       },

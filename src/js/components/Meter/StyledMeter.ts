@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { genericStyles } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const roundStyle = css`
+const roundStyle = css<any>`
   border-radius: ${props => props.theme.global.edgeSize[props.round.size]};
 `;
 

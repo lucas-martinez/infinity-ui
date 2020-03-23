@@ -7,12 +7,12 @@ const sizeStyle = props => {
   const size = props.size || 'medium';
   const data = props.theme.text[size];
   if (data) {
-    return css`
+    return css<any>`
       font-size: ${data.size};
       line-height: ${data.height};
     `;
   }
-  return css`
+  return css<any>`
     font-size: ${size};
     line-height: normal;
   `;
@@ -24,7 +24,7 @@ const TEXT_ALIGN_MAP = {
   start: 'left',
 };
 
-const textAlignStyle = css`
+const textAlignStyle = css<any>`
   text-align: ${props => TEXT_ALIGN_MAP[props.textAlign]};
 `;
 
@@ -34,15 +34,15 @@ const truncateStyle = `
   text-overflow: ellipsis;
 `;
 
-const colorStyle = css`
+const colorStyle = css<any>`
   color: ${props => normalizeColor(props.colorProp, props.theme)};
 `;
 
-const weightStyle = css`
+const weightStyle = css<any>`
   font-weight: ${props => props.weight};
 `;
 
-const wordBreakStyle = css`
+const wordBreakStyle = css<any>`
   word-break: ${props => props.wordBreak};
 `;
 

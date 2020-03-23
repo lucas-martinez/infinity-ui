@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { baseStyle } from '../../utils';
 import { defaultProps } from '../../default-props';
 
-const fullStyle = css`
+const fullStyle = css<any>`
   width: 100vw;
   height: 100vh;
   overflow: auto;

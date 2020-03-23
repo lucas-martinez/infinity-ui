@@ -48,7 +48,7 @@ const sizeStyle = props => {
   // size is a combination of the level and size properties
   const size = props.size || 'medium';
   const data = props.theme.clock.digital.text[size];
-  return css`
+  return css<any>`
     font-size: ${data.size};
     line-height: ${data.height};
   `;

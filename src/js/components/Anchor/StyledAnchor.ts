@@ -13,12 +13,12 @@ const sizeStyle = props => {
   if (props.size) {
     const size = props.size || 'medium';
     const data = props.theme.text[size];
-    return css`
+    return css<any>`
       font-size: ${data.size};
       line-height: ${data.height};
     `;
   }
-  return css`
+  return css<any>`
     font-size: inherit;
     line-height: inherit;
   `;
@@ -41,7 +41,7 @@ const StyledAnchor = styled.a<any>`
   ${props =>
     !props.disabled &&
     props.theme.anchor.hover &&
-    css`
+    css<any>`
     &:hover {
       ${props.theme.anchor.hover.textDecoration &&
         `text-decoration: ${props.theme.anchor.hover.textDecoration};`}

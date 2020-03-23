@@ -4,13 +4,13 @@ import { focusStyle, inputStyle, placeholderStyle } from '../../utils';
 
 const sizeStyle = props => {
   const data = props.theme.text[props.size];
-  return css`
+  return css<any>`
     font-size: ${data.size};
     line-height: ${data.height};
   `;
 };
 
-const plainStyle = css`
+const plainStyle = css<any>`
   border: none;
 `;
 

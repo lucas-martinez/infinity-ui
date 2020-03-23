@@ -24,7 +24,7 @@ const StyledDataTable = styled(Table)`
 StyledDataTable.defaultProps = {};
 Object.setPrototypeOf(StyledDataTable.defaultProps, defaultProps);
 
-const hoverStyle = css`
+const hoverStyle = css<any>`
   ${props =>
     backgroundStyle(
       normalizeColor(

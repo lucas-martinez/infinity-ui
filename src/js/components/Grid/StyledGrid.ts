@@ -26,7 +26,7 @@ const ALIGN_MAP = {
   stretch: 'stretch',
 };
 
-const alignStyle = css`
+const alignStyle = css<any>`
   align-items: ${props => ALIGN_MAP[props.align]};
 `;
 
@@ -39,7 +39,7 @@ const ALIGN_CONTENT_MAP = {
   stretch: 'stretch',
 };
 
-const alignContentStyle = css`
+const alignContentStyle = css<any>`
   align-content: ${props => ALIGN_CONTENT_MAP[props.alignContent]};
 `;
 
@@ -50,7 +50,7 @@ const JUSTIFY_MAP = {
   stretch: 'stretch',
 };
 
-const justifyStyle = css`
+const justifyStyle = css<any>`
   justify-items: ${props => JUSTIFY_MAP[props.justify]};
 `;
 
@@ -63,7 +63,7 @@ const JUSTIFY_CONTENT_MAP = {
   stretch: 'stretch',
 };
 
-const justifyContentStyle = css`
+const justifyContentStyle = css<any>`
   justify-content: ${props => JUSTIFY_CONTENT_MAP[props.justifyContent]};
 `;
 
@@ -131,7 +131,7 @@ const sizeFor = (size, props, isRow) => {
 
 const columnsStyle = props => {
   if (Array.isArray(props.columns)) {
-    return css`
+    return css<any>`
       grid-template-columns: ${props.columns
         .map(s => {
           if (Array.isArray(s)) {
@@ -143,14 +143,14 @@ const columnsStyle = props => {
     `;
   }
   if (typeof props.columns === 'object') {
-    return css`
+    return css<any>`
       grid-template-columns: repeat(
         ${getRepeatCount(props.columns.count)},
         ${getRepeatSize(props.columns.size, props.theme)}
       );
     `;
   }
-  return css`
+  return css<any>`
     grid-template-columns: repeat(
       auto-fill,
       ${getRepeatSize(props.columns, props.theme)}
@@ -160,7 +160,7 @@ const columnsStyle = props => {
 
 const rowsStyle = props => {
   if (Array.isArray(props.rowsProp)) {
-    return css`
+    return css<any>`
       grid-template-rows: ${props.rowsProp
         .map(s => {
           if (Array.isArray(s)) {
@@ -175,7 +175,7 @@ const rowsStyle = props => {
         .join(' ')};
     `;
   }
-  return css`
+  return css<any>`
     grid-auto-rows: ${props.theme.global.size[props.rowsProp]};
   `;
 };

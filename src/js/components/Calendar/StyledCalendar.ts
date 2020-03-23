@@ -10,7 +10,7 @@ import { defaultProps } from '../../default-props';
 
 const sizeStyle = props => {
   const data = props.theme.calendar[props.sizeProp];
-  return css`
+  return css<any>`
     font-size: ${data.fontSize};
     line-height: ${data.lineHeight};
     width: ${props.theme.global.size[props.sizeProp]};
@@ -49,7 +49,7 @@ const slideStyle = props => {
 
   const translateYFrom = direction === 'down' ? `-${amount}px` : '0';
   const translateYTo = direction === 'up' ? `-${amount}px` : '0';
-  const slideTransition = css`
+  const slideTransition = css<any>`
     0% {
       transform: translateY(${translateYFrom});
     }
@@ -57,7 +57,7 @@ const slideStyle = props => {
       transform: translateY(${translateYTo});
     }
   `;
-  return css`
+  return css<any>`
     animation: ${keyframes`${slideTransition}`} ${slideDuration} forwards;
   `;
 };
@@ -88,7 +88,7 @@ Object.setPrototypeOf(StyledDayContainer.defaultProps, defaultProps);
 
 const daySizeStyle = props => {
   const data = props.theme.calendar[props.sizeProp];
-  return css`
+  return css<any>`
     width: ${data.daySize};
     height: ${data.daySize};
   `;

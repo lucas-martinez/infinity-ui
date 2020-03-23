@@ -38,7 +38,7 @@ const customTheme = deepMerge(grommet, {
       bottom: undefined,
       horizontal: 'small',
     },
-    extend: ({ theme }) => css`
+    extend: ({ theme }) => css<any>`
       border-radius: ${theme.global.control.border.radius};
       box-shadow: ${theme.global.elevation.light.small};
     `,
@@ -48,13 +48,13 @@ const customTheme = deepMerge(grommet, {
     gap: 'medium',
     header: {
       background: 'dark-2',
-      extend: ({ theme }) => css`
+      extend: ({ theme }) => css<any>`
         padding: ${theme.global.edgeSize.small};
         box-shadow: ${theme.global.elevation.light.medium};
       `,
     },
     panel: {
-      extend: ({ theme }) => css`
+      extend: ({ theme }) => css<any>`
         padding: ${theme.global.edgeSize.large};
         box-shadow: ${theme.global.elevation.light.medium};
       `,
