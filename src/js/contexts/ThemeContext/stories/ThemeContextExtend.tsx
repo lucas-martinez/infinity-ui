@@ -1,8 +1,8 @@
 import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
-import { Box, Grommet, Select, Text, ThemeContext } from '../../../../js';
-import { grommet } from '../../../../js/themes';
-import { deepMerge } from '../../../../js/utils';
+import { Box, Grommet, Select, Text, ThemeContext } from '../../..';
+import { grommet } from '../../../themes';
+import { deepMerge } from '../../../utils';
 
 const customTheme = deepMerge(grommet, {
   global: {
@@ -36,7 +36,7 @@ const GlobalThemeWithThemeContext = () => {
           />
         </Box>
         <Box>
-          <ThemeContext.Extend
+          <ThemeExtend
             value={{
               global: {
                 focus: {
@@ -58,13 +58,13 @@ const GlobalThemeWithThemeContext = () => {
               options={options}
               onChange={({ option }) => setValueBlue(option)}
             />
-          </ThemeContext.Extend>
+          </ThemeExtend>
         </Box>
       </Box>
     </Grommet>
   );
 };
 
-storiesOf('Theme', module).add('ThemeContext.Extend', () => (
+storiesOf('Theme', module).add('ThemeExtend', () => (
   <GlobalThemeWithThemeContext />
 ));

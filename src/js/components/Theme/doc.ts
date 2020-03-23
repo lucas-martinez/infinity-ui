@@ -8,7 +8,7 @@ export const doc = ThemeContext => {
     .description('A means of tweaking the theme for contained components.')
     .usage(
       "import { ThemeContext } from 'js';\n" +
-        '<ThemeContext.Extend value={value} />',
+        '<ThemeExtend value={value} />',
     );
 
   DocumentedThemeContext.propTypes = {
