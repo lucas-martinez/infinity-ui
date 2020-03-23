@@ -1,9 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Close, Send, User } from 'grommet-icons';
-
-import { Box, Button, Grommet, Text } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Button, Grommet, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const IconPlain = () => (
   <Grommet theme={grommet}>

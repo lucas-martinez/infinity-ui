@@ -1,8 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Grid, Heading } from 'js';
-import { grommet } from 'js/themes';
+import PropTypes from 'prop-types';
+import React from 'react';
+import { Grid, Grommet, Heading } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const H = ({ level, size }) => (
   <Heading level={level} size={size}>

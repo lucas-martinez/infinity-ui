@@ -1,8 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Heading } from 'js';
-import { grommet } from 'js/themes';
-import { deepMerge } from 'js/utils';
+import React from 'react';
+import { Grommet, Heading } from '../../../../js';
+import { grommet } from '../../../../js/themes';
+import { deepMerge } from '../../../../js/utils';
 
 const customlevel = deepMerge(grommet, {
   heading: {

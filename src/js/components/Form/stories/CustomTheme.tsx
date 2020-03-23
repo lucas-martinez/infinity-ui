@@ -1,22 +1,21 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { deepMerge } from 'js/utils';
-
+import React from 'react';
 import {
-  grommet,
   Box,
   Button,
   CheckBox,
   Form,
   FormField,
+  grommet,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
   Select,
   TextArea,
   TextInput,
-  Grommet,
-} from 'js';
+} from '../../../../js';
+import { deepMerge } from '../../../../js/utils';
 
 const customFormFieldTheme = {
   global: {

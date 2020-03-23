@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Chart, Stack, Text } from 'js';
-import { grommet } from 'js/themes';
-
+import React, { useEffect, useState } from 'react';
+import { Box, Chart, Grommet, Stack, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 import { calcs } from '../calcs';
 
 const RichChart = () => {

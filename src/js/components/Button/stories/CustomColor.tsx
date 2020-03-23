@@ -1,7 +1,6 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { grommet, Grommet, Box, Button } from 'js';
+import React from 'react';
+import { Box, Button, grommet, Grommet } from '../../../../js';
 import { deepMerge } from '../../../utils';
 
 const customButtonColor = deepMerge(grommet, {
@@ -45,12 +44,7 @@ const Colored = props => (
         onClick={() => {}}
         {...props}
       />
-      <Button
-        plain
-        label="plain inherit"
-        onClick={() => {}}
-        {...props}
-      />
+      <Button plain label="plain inherit" onClick={() => {}} {...props} />
     </Box>
   </Grommet>
 );

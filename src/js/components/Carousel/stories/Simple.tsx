@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
-
-import { Grommet, Box, Carousel } from 'js';
+import React from 'react';
+import { Box, Carousel, Grommet } from '../../../../js';
 
 const SimpleCarousel = ({ initialChild, ...props }) => {
   return (

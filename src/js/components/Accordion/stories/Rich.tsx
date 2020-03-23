@@ -1,14 +1,12 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import {
   Bookmark,
   CircleInformation,
-  FormSubtract,
   FormAdd,
+  FormSubtract,
   User,
 } from 'grommet-icons';
-
+import React from 'react';
 import {
   Accordion,
   AccordionPanel,
@@ -17,8 +15,8 @@ import {
   Heading,
   Text,
   ThemeContext,
-} from 'js';
-import { grommet } from 'js/themes';
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const richAccordionTheme = {
   accordion: {

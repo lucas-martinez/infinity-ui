@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Grommet, Box, FormField, TextInput } from 'js';
-import { grommet } from 'js/themes';
+import React, { useState } from 'react';
+import { Box, FormField, Grommet, TextInput } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 import { allSuggestions } from './data';
 
 const FormFieldTextInput = props => {

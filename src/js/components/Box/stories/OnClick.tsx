@@ -1,9 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction } from 'grommet-icons';
-
-import { Grommet, Box, Text } from 'js';
-import { grommet } from '../../../themes';
+import React from 'react';
+import { Box, Grommet, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const OnClickBox = () => (
   <Grommet theme={grommet}>

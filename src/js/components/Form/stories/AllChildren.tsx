@@ -1,21 +1,20 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
+import React from 'react';
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   MaskedInput,
   RadioButtonGroup,
   RangeInput,
   Select,
   TextArea,
   TextInput,
-} from 'js';
-import { grommet } from 'js/themes';
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const Example = () => (
   <Grommet full theme={grommet}>

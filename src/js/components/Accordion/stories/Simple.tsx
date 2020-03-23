@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Accordion, AccordionPanel, Box, Grommet } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Accordion, AccordionPanel, Box, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const SimpleAccordion = props => {
   const { animate, multiple, ...rest } = props;

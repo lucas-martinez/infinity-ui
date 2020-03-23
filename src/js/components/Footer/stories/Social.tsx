@@ -1,14 +1,20 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import {
-  Grommet as GrommetIcon,
   FacebookOption,
+  Grommet as GrommetIcon,
   Instagram,
   Twitter,
 } from 'grommet-icons';
-
-import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'js';
+import React from 'react';
+import {
+  Anchor,
+  Box,
+  Footer,
+  grommet,
+  Grommet,
+  Main,
+  Text,
+} from '../../../../js';
 
 const Media = () => (
   <Box direction="row" gap="xxsmall" justify="center">

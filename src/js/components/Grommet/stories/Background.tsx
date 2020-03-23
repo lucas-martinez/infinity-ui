@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { grommet, Grommet, Box, Text } from 'js';
 import { hpe } from 'grommet-theme-hpe';
+import React from 'react';
+import { Box, grommet, Grommet, Text } from '../../../../js';
 
 const Background = () => {
   const themeColor = 'background-back';

@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Button, Calendar, Grommet, Text } from 'js';
-import { grommet } from 'js/themes';
-
-import { FormPreviousLink, FormNextLink } from 'grommet-icons';
+import { FormNextLink, FormPreviousLink } from 'grommet-icons';
+import React, { useState } from 'react';
+import { Box, Button, Calendar, Grommet, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const CustomHeaderCalendar = () => {
   const [date, setDate] = useState();

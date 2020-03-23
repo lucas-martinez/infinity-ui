@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Button, Calendar, Grommet, Heading } from 'js';
-import { grommet } from 'js/themes';
-
-import { Blank, Previous, Next } from 'grommet-icons';
+import { Blank, Next, Previous } from 'grommet-icons';
+import React, { useState } from 'react';
+import { Box, Button, Calendar, Grommet, Heading } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const now = new Date();
 const next = new Date(now);

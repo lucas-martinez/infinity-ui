@@ -1,8 +1,7 @@
-import React, { useReducer, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Diagram, Stack, Text } from 'js';
-import { grommet } from 'js/themes';
+import React, { useEffect, useReducer } from 'react';
+import { Box, Diagram, Grommet, Stack, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const Node = ({ id, ...rest }) => (
   <Box

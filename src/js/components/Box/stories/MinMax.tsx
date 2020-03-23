@@ -1,8 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
+import { Box, Grommet, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
-import { Grommet, Box, Text } from 'js';
-import { grommet } from '../../../themes';
 
 const MinMaxSizesBox = () => (
   <Grommet theme={grommet}>

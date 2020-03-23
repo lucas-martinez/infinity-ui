@@ -1,13 +1,15 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Chart, Text } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Chart, Grommet, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const LabelledChart = ({ color, label, value }) => (
   <Box flex={false} basis="xsmall" align="center" gap="small">
     <Chart
-      bounds={[[0, 2], [0, 400]]}
+      bounds={[
+        [0, 2],
+        [0, 400],
+      ]}
       type="bar"
       values={[{ value: [1, value] }]}
       color={color}

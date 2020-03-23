@@ -1,10 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Button } from 'js';
-import { grommet } from 'js/themes';
-
 import { Add } from 'grommet-icons';
+import React from 'react';
+import { Box, Button, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const MultipleButton = () => (
   <Grommet theme={grommet}>

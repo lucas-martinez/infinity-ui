@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Drop, Grommet } from 'js';
-import { grommet } from 'js/themes';
+import React, { useEffect, useRef, useState } from 'react';
+import { Box, Drop, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 import { deepMerge } from '../../../utils/object';
 
 const customTheme = deepMerge(grommet, {

@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Chart, Heading } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Chart, Grommet, Heading } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const type = 'bar';
 let value = 10;

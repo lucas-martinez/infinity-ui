@@ -1,8 +1,15 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { Grommet as GrommetIcon } from 'grommet-icons';
-import { Anchor, Box, Footer, grommet, Grommet, Main, Text } from 'js';
+import React from 'react';
+import {
+  Anchor,
+  Box,
+  Footer,
+  grommet,
+  Grommet,
+  Main,
+  Text,
+} from '../../../../js';
 import { threeColumns as data } from './data';
 
 const FooterAnchor = ({ ...rest }) => (

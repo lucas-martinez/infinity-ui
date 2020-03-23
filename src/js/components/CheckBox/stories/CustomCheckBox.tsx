@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, CheckBox } from 'js';
-import { grommet } from 'js/themes';
-import { normalizeColor, deepMerge } from 'js/utils';
-
 import { FormCheckmark } from 'grommet-icons';
+import React, { useState } from 'react';
+import { Box, CheckBox, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
+import { deepMerge, normalizeColor } from '../../../../js/utils';
 
 const customCheckBoxTheme = {
   checkBox: {

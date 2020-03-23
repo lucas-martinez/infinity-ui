@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { grommet, Box, FormField, Select, Grommet } from 'js';
+import React, { useState } from 'react';
+import { Box, FormField, grommet, Grommet, Select } from '../../../../js';
 import { allOptions } from './data';
 
 const FormFieldSelect = props => {

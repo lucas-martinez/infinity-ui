@@ -1,9 +1,14 @@
-import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Chart, RangeSelector, Stack, Text } from 'js';
-import { grommet } from 'js/themes';
-
+import React, { useMemo, useState } from 'react';
+import {
+  Box,
+  Chart,
+  Grommet,
+  RangeSelector,
+  Stack,
+  Text,
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 import { calcs } from '../calcs';
 import { generateData } from './data';
 

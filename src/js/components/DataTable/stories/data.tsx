@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Box, Meter, Text } from 'js';
+import { Box, Meter, Text } from '../../../../js';
 
 const amountFormatter = new Intl.NumberFormat('en-US', {
   style: 'currency',

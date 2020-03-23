@@ -1,8 +1,7 @@
-import React, { useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Button, Drop, Grommet } from 'js';
-import { grommet } from 'js/themes';
+import React, { useRef, useState } from 'react';
+import { Box, Button, Drop, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const TooltipDrop = () => {
   const [over, setOver] = useState();

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, CheckBox, Grommet } from 'js';
-import { grommet } from 'js/themes';
+import React, { useState } from 'react';
+import { Box, CheckBox, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const boxStyle = {
   position: 'relative',

@@ -1,8 +1,12 @@
-import React, { useMemo, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
+import { aruba } from 'grommet-theme-aruba';
+import { dxc } from 'grommet-theme-dxc';
+import { hp } from 'grommet-theme-hp';
+import { hpe } from 'grommet-theme-hpe';
+import { hpe as hpeV0 } from 'grommet-theme-hpe-v0';
+import { v1 } from 'grommet-theme-v1';
+import React, { useMemo, useState } from 'react';
 import {
-  Grommet,
   Accordion,
   AccordionPanel,
   Anchor,
@@ -17,6 +21,7 @@ import {
   Distribution,
   FormField,
   Grid,
+  Grommet,
   Heading,
   Menu,
   Meter,
@@ -32,16 +37,10 @@ import {
   TextArea,
   TextInput,
   Video,
-} from 'js';
-import { grommet, dark } from 'js/themes';
-import { generate } from 'js/themes/base';
-import { deepMerge } from 'js/utils';
-import { hpe } from 'grommet-theme-hpe';
-import { hpe as hpeV0 } from 'grommet-theme-hpe-v0';
-import { aruba } from 'grommet-theme-aruba';
-import { hp } from 'grommet-theme-hp';
-import { dxc } from 'grommet-theme-dxc';
-import { v1 } from 'grommet-theme-v1';
+} from '../../../js';
+import { dark, grommet } from '../../../js/themes';
+import { generate } from '../../../js/themes/base';
+import { deepMerge } from '../../../js/utils';
 
 const Node = ({ id, ...rest }) => (
   <Box

@@ -8,8 +8,8 @@ import {
   Grommet,
   Text,
   TextInput,
-} from 'js';
-import { grommet } from 'js/themes';
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const renderPanelHeader = (title, active) => (
   <Box direction="row" align="center" pad="medium" gap="small">

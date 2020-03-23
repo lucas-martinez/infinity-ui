@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Calendar, Grommet } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Calendar, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 // When the first day of the month is Sunday, and the request of firstDayOfWeek
 // is Monday, we are verifing we are not missing a week, issue 3253.

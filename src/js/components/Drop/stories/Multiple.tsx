@@ -1,6 +1,5 @@
-import React, { useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
+import React, { useRef, useState } from 'react';
 import {
   Box,
   Button,
@@ -9,8 +8,8 @@ import {
   Grommet,
   Layer,
   TextInput,
-} from 'js';
-import { grommet } from 'js/themes';
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const MultipleDrop = () => {
   const [showDrop, setShowDrop] = useState(false);

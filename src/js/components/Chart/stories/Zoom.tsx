@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Button, Chart, Stack, Text } from 'js';
-import { grommet } from 'js/themes';
 import { Next, Previous } from 'grommet-icons';
-
+import React, { useState } from 'react';
+import { Box, Button, Chart, Grommet, Stack, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 import { calcs } from '../calcs';
 import { generateData } from './data';
 

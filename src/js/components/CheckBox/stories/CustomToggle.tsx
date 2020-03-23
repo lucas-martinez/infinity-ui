@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 import { css } from 'styled-components';
-
-import { Box, Grommet, CheckBox } from 'js';
-import { grommet } from 'js/themes';
-import { deepMerge } from 'js/utils';
+import { Box, CheckBox, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
+import { deepMerge } from '../../../../js/utils';
 
 const checkboxCheckStyle = css<any>`
   background-color: #2196f3;

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Calendar, Grommet } from 'js';
-import { grommet } from 'js/themes';
+import React, { useState } from 'react';
+import { Box, Calendar, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const SimpleCalendar = () => {
   const [date, setDate] = useState();

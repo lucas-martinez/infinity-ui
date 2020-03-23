@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, CheckBox } from 'js';
-import { grommet } from 'js/themes';
+import React, { useState } from 'react';
+import { Box, CheckBox, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const IndeterminateCheckBox = () => {
-  const [checked, setChecked] = useState([]);
+  const [checked, setChecked] = useState<any[]>([]);
   const checkboxes = ['fruits', 'vegetables', 'olive oil'];
 
   const onCheckAll = event => {

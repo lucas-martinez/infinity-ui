@@ -1,10 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { Add } from 'grommet-icons';
-
-import { Anchor, Box, Grommet } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Anchor, Box, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const Colors = () => {
   return (

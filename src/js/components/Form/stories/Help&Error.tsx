@@ -1,7 +1,6 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { grommet, Box, FormField, TextInput, Grommet } from 'js';
+import React from 'react';
+import { Box, FormField, grommet, Grommet, TextInput } from '../../../../js';
 
 const FormFieldHelpError = props => (
   <Grommet theme={grommet}>

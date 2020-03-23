@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Text } from 'js';
-import { grommet } from '../../../themes';
+import React from 'react';
+import { Box, Grommet, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const BorderBox = () => (
   <Grommet theme={grommet}>

@@ -1,18 +1,16 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { deepMerge } from 'js/utils';
-
+import React from 'react';
 import {
-  grommet,
   Anchor,
   Box,
   Button,
+  grommet,
   Grommet,
   Menu,
   Text,
   TextInput,
-} from 'js';
+} from '../../../js';
+import { deepMerge } from '../../../js/utils';
 
 const customFocus = deepMerge(grommet, {
   global: {

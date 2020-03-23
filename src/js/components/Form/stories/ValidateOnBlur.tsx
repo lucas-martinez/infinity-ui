@@ -1,9 +1,15 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Button, Grommet, Form, FormField, TextInput } from 'js';
 import { StatusGood } from 'grommet-icons';
-import { grommet } from 'js/themes';
+import React from 'react';
+import {
+  Box,
+  Button,
+  Form,
+  FormField,
+  Grommet,
+  TextInput,
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const Example = () => (
   <Grommet full theme={grommet}>

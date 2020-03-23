@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Distribution, Text } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Distribution, Grommet, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const SimpleDistribution = () => (
   <Grommet theme={grommet} full>

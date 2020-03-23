@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
+import React, { useState } from 'react';
 import {
   Box,
   Button,
   CheckBox,
-  Grommet,
   Form,
   FormField,
+  Grommet,
   TextInput,
-} from 'js';
-import { grommet } from 'js/themes';
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const Example = () => {
   const [haveAlias, setHaveAlias] = useState();

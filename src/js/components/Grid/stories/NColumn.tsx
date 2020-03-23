@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Grid } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Grid, Grommet } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const NColumnGrid = () => (
   <Grommet theme={grommet} full>

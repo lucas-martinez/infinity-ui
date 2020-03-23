@@ -1,8 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
+import { Anchor, Box, Grommet, Paragraph } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
-import { Anchor, Box, Grommet, Paragraph } from 'js';
-import { grommet } from 'js/themes';
 
 const Inline = () => {
   return (

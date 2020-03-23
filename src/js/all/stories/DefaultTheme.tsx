@@ -1,10 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { base } from 'js/themes';
-import { deepMerge } from 'js/utils';
-
-import { Box, extendDefaultTheme } from 'js';
+import React from 'react';
+import { Box, extendDefaultTheme } from '../../../js';
+import { base } from '../../../js/themes';
+import { deepMerge } from '../../../js/utils';
 
 extendDefaultTheme(
   deepMerge(base, {

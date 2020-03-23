@@ -1,7 +1,6 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Footer, grommet, Grommet, Main, Text } from 'js';
+import React from 'react';
+import { Box, Footer, grommet, Grommet, Main, Text } from '../../../../js';
 
 const Simple = () => (
   <Grommet theme={grommet}>

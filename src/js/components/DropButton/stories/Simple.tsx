@@ -1,10 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { Close } from 'grommet-icons';
-
-import { Grommet, Box, Button, DropButton, Heading, Text } from 'js';
-import { grommet } from 'js/themes';
+import PropTypes from 'prop-types';
+import React from 'react';
+import {
+  Box,
+  Button,
+  DropButton,
+  Grommet,
+  Heading,
+  Text,
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const DropContent = ({ onClose }) => (
   <Box pad="small">

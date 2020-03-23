@@ -1,9 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { SubtractCircle, AddCircle } from 'grommet-icons';
-
-import { Accordion, AccordionPanel, Box, Grommet, Text } from 'js';
+import { AddCircle, SubtractCircle } from 'grommet-icons';
+import React from 'react';
+import { Accordion, AccordionPanel, Box, Grommet, Text } from '../../../../js';
 
 const CustomAccordionTheme = {
   accordion: {
