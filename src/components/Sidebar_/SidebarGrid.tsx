@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css, ThemeProps } from 'styled-components';
-import { Grid, GridProps } from '../../js/components//Grid';
+import { Grid, GridProps } from '../../js/components/Grid';
 import { ExtendedTheme } from '../../themes/cobalt';
 import pick from '../../themes/pick';
 
