@@ -1,9 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, TextArea } from 'js';
-import { grommet } from 'js/themes';
-import { deepMerge } from 'js/utils';
+import React from 'react';
+import { Box, Grommet, TextArea } from '../../../../js';
+import { grommet } from '../../../../js/themes';
+import { deepMerge } from '../../../../js/utils';
 
 const customTheme = deepMerge(grommet, {
   textArea: {

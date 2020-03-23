@@ -1,12 +1,9 @@
-import React, { useRef, useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { FormClose } from 'grommet-icons';
-
-import { Box, Button, CheckBox, Grommet, Select, Text } from 'js';
-
-import { theme as customSearchTheme } from './theme';
+import React, { useEffect, useRef, useState } from 'react';
+import { Box, Button, CheckBox, Grommet, Select, Text } from '../../../../js';
 import { SearchInputContext } from './components/SearchInputContext';
+import { theme as customSearchTheme } from './theme';
 
 const allContentPartners = [
   {

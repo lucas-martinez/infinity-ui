@@ -1,8 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, TextInput } from 'js';
-import { grommet } from 'js/themes';
 import { Search } from 'grommet-icons';
+import React from 'react';
+import { Box, Grommet, TextInput } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const IconTextInput = () => {
   return (

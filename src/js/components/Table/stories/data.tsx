@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Text } from 'js';
+import { Text } from '../../../../js';
 
 // Always should store amount in cents to avoid precision errors
 export const data = [

@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, RangeSelector, Stack, Text } from 'js';
-import { grommet } from 'js/themes';
-import { deepMerge } from 'js/utils';
+import React, { useState } from 'react';
+import { Box, Grommet, RangeSelector, Stack, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
+import { deepMerge } from '../../../../js/utils';
 
 const customThemeRangeSelector = deepMerge(grommet, {
   global: {

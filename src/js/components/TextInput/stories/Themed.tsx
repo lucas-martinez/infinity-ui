@@ -1,9 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, TextInput } from 'js';
-import { grommet } from 'js/themes';
-import { deepMerge } from 'js/utils';
+import React from 'react';
+import { Box, Grommet, TextInput } from '../../../../js';
+import { grommet } from '../../../../js/themes';
+import { deepMerge } from '../../../../js/utils';
 
 const suggestions = Array(100)
   .fill()

@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, Text, Heading } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Grommet, Heading, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const wordBreakValues = ['normal', 'break-all', 'keep-all', 'break-word'];
 

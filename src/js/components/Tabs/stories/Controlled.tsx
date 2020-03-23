@@ -1,8 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
-import { Box, Grommet, Tab, Tabs } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Grommet, Tab, Tabs } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const ControlledTabs = () => {
   const [index, setIndex] = React.useState();

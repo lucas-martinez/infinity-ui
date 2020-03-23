@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, RadioButtonGroup } from 'js';
-import { grommet } from 'js/themes';
 import { Ascend, Descend } from 'grommet-icons';
+import React, { useState } from 'react';
+import { Box, Grommet, RadioButtonGroup } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const ChildrenRadioButtonGroup = () => {
   const [value, setValue] = useState();

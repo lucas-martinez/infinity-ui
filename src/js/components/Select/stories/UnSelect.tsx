@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, Select, Button } from 'js';
-import { grommet } from 'js/themes';
+import React, { useState } from 'react';
+import { Box, Button, Grommet, Select } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const optionList = [
   'One',
@@ -49,7 +48,7 @@ const UnSelect = () => {
           disabled={!value}
           plain
           label="Clear All"
-        />    
+        />
       </Box>
     </Grommet>
   );

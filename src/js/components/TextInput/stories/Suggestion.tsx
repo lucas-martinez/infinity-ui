@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, TextInput } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Grommet, TextInput } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const suggestions = Array(100)
   .fill()

@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, RangeSelector, Stack, Text } from 'js';
-import { grommet } from 'js/themes';
+import React, { useState } from 'react';
+import { Box, Grommet, RangeSelector, Stack, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
   const [range, setRange] = useState([12, 16]);

@@ -1,6 +1,5 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
+import React from 'react';
 import {
   Box,
   Grommet,
@@ -11,8 +10,8 @@ import {
   TableHeader,
   TableRow,
   Text,
-} from 'js';
-import { data, columns } from './data';
+} from '../../../../js';
+import { columns, data } from './data';
 
 const customTheme = {
   global: {

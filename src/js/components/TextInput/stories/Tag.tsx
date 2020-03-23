@@ -1,9 +1,15 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Button, Grommet, Keyboard, Text, TextInput } from 'js';
-import { grommet } from 'js/themes';
 import { FormClose } from 'grommet-icons';
+import React from 'react';
+import {
+  Box,
+  Button,
+  Grommet,
+  Keyboard,
+  Text,
+  TextInput,
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const allSuggestions = ['sony', 'sonar', 'foo', 'bar'];
 

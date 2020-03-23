@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, Select } from 'js';
-import { grommet } from 'js/themes';
-import { deepMerge } from 'js/utils';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { Box, Grommet, Select } from '../../../../js';
+import { grommet } from '../../../../js/themes';
+import { deepMerge } from '../../../../js/utils';
 
 const colors = {
   selected: 'neutral-3',

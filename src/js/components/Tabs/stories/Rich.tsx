@@ -1,9 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
 import { CircleInformation, Currency } from 'grommet-icons';
-import { Box, Grommet, FormField, Tab, Tabs, Text, TextInput } from 'js';
-import { grommet } from 'js/themes';
+import PropTypes from 'prop-types';
+import React from 'react';
+import {
+  Box,
+  FormField,
+  Grommet,
+  Tab,
+  Tabs,
+  Text,
+  TextInput,
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const RichTabs = () => (
   <Grommet theme={grommet}>

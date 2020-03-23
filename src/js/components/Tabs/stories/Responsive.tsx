@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction, Car, TreeOption } from 'grommet-icons';
-import { Box, Grommet, Tab, Tabs } from 'js';
-import { grommet } from 'js/themes';
+import React, { useState } from 'react';
+import { Box, Grommet, Tab, Tabs } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const ResponsiveTabs = () => {
   const [index, setIndex] = useState();

@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, RadioButton } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Grommet, RadioButton } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const DisabledRadioButton = () => {
   return (

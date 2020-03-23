@@ -1,6 +1,6 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Form, TextInput, Text } from 'js';
+import React from 'react';
+import { Box, Form, Text, TextInput } from '../../../../js';
 
 const StyledPlaceholder = () => {
   return (

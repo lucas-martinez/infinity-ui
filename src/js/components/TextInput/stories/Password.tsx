@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Hide, View } from 'grommet-icons';
-
-import { Box, TextInput, Button } from 'js';
+import React from 'react';
+import { Box, Button, TextInput } from '../../../../js';
 
 const PasswordInput = () => {
   const [value, setValue] = React.useState('');

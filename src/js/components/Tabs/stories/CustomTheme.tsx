@@ -1,13 +1,10 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { css } from 'styled-components';
-
 import { CircleInformation, Currency } from 'grommet-icons';
-
-import { Grommet, FormField, Tab, Tabs, TextInput } from 'js';
-import { grommet } from 'js/themes';
-import { deepMerge } from 'js/utils';
-
+import React from 'react';
+import { css } from 'styled-components';
+import { FormField, Grommet, Tab, Tabs, TextInput } from '../../../../js';
+import { grommet } from '../../../../js/themes';
+import { deepMerge } from '../../../../js/utils';
 import { RichTabTitle } from './Rich';
 
 const customTheme = deepMerge(grommet, {

@@ -1,19 +1,18 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
+import React, { useState } from 'react';
 import {
   Box,
-  Heading,
   grommet,
   Grommet,
+  Heading,
   InfiniteScroll,
   Table,
-  TableRow,
   TableBody,
   TableCell,
   TableHeader,
+  TableRow,
   Text,
-} from 'js';
+} from '../../../../js';
 
 const InfiniteScrollInTable = () => {
   const step = 25;

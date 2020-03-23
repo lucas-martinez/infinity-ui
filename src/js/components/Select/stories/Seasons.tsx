@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { FormClose } from 'grommet-icons';
-
-import { Box, Button, Grommet, Select, Text } from 'js';
-import { grommet } from 'js/themes';
+import React, { useState } from 'react';
+import { Box, Button, Grommet, Select, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const allSeasons = [
   'S01',

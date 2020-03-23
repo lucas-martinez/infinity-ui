@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, Select } from 'js';
-import { grommet } from 'js/themes';
+import React, { useState } from 'react';
+import { Box, Grommet, Select } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const defaultOptions: any[] = [];
 for (let i = 1; i <= 200; i += 1) {

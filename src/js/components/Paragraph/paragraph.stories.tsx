@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Paragraph } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Grommet, Paragraph } from '../../../js';
+import { grommet } from '../../../js/themes';
 
 const sizes = ['xxlarge', 'xlarge', 'large', 'medium', 'small'];
 

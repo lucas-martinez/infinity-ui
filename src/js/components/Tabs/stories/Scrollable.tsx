@@ -1,8 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { TreeOption } from 'grommet-icons';
-import { Box, Heading, Grommet, Tab, Tabs } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Grommet, Heading, Tab, Tabs } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const ScrollableTabs = () => (
   <Grommet theme={grommet} full>

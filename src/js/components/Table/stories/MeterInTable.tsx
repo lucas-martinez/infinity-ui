@@ -1,7 +1,6 @@
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
+import React from 'react';
 import {
   Box,
   Grommet,
@@ -11,8 +10,8 @@ import {
   TableCell,
   TableRow,
   Text,
-} from 'js';
-import { grommet } from 'js/themes';
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const values = [20, 40, 60, 80, 100];
 

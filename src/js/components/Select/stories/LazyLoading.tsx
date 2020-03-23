@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, CheckBox, Grommet, Select } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, CheckBox, Grommet, Select } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const dummyOptions = Array(2000)
   .fill()
