@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Grommet, Layer } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Grommet, Layer } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const RTLLayer = () => (
   <Grommet theme={grommet} dir="rtl">

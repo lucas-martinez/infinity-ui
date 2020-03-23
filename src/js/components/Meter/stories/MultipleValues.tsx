@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Meter, Stack, Text } from 'js';
-import { grommet } from 'js/themes';
+import React, { useState } from 'react';
+import { Box, Grommet, Meter, Stack, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const MultipleValues = () => {
   const total = 100;
-  const [ active, setActive ] = useState();
-  const [ label, setLabel ] = useState();
+  const [active, setActive] = useState();
+  const [label, setLabel] = useState();
 
   return (
     <Grommet theme={grommet}>

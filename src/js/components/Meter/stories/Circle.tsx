@@ -1,11 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Meter } from 'js';
-import { grommet } from 'js/themes';
+import React, { useEffect, useRef, useState } from 'react';
+import { Box, Grommet, Meter } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const CircleMeter = () => {
-  const [ value, setValue ] = useState(20);
+  const [value, setValue] = useState(20);
 
   const timer = useRef();
   clearTimeout(timer.current);
@@ -16,7 +15,7 @@ const CircleMeter = () => {
   useEffect(() => {
     return () => {
       clearTimeout(timer.current);
-    }
+    };
   }, []);
 
   return (

@@ -1,17 +1,17 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { Schedule } from 'grommet-icons';
+import React from 'react';
 import {
   Box,
   Button,
+  Calendar,
+  DropButton,
   Grommet,
   Keyboard,
-  Text,
-  Calendar,
   MaskedInput,
-  DropButton,
-} from 'js';
-import { grommet } from 'js/themes';
-import { Schedule } from 'grommet-icons';
+  Text,
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {
   const [date, setDate] = React.useState();

@@ -1,9 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { Gremlin } from 'grommet-icons';
-
-import { Box, Grommet, grommet, List, Text } from 'js';
+import React from 'react';
+import { Box, Grommet, grommet, List, Text } from '../../../../js';
 
 export const data = ['Boise', 'Fort Collins', 'Bay Area', 'North Carolina'];
 

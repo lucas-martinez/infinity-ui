@@ -1,9 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, List, Text } from 'js';
-import { grommet } from 'js/themes';
-
+import React from 'react';
+import { Box, Grommet, List, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 import { data } from './data';
 
 const RenderedList = () => (

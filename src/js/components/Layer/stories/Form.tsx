@@ -1,8 +1,6 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { Add, Close } from 'grommet-icons';
-
+import React from 'react';
 import {
   Box,
   Button,
@@ -13,8 +11,8 @@ import {
   Select,
   TextArea,
   TextInput,
-} from 'js';
-import { grommet } from 'js/themes';
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const FormLayer = () => {
   const [open, setOpen] = React.useState(false);

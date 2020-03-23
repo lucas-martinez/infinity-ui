@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Image } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Grommet, Image } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const Opacity = () => (
   <Grommet theme={grommet}>

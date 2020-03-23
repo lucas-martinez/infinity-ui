@@ -1,16 +1,15 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
+import React from 'react';
 import {
   Anchor,
   Box,
   Grommet,
   Header,
-  Nav,
   Menu,
+  Nav,
   ResponsiveContext,
-} from 'js';
-import { grommet } from 'js/themes';
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const CollapsableNav = () => (
   <Grommet theme={grommet}>

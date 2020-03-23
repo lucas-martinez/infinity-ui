@@ -1,10 +1,10 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { Add, FormClose, StatusGood } from 'grommet-icons';
+import React from 'react';
+import { Box, Button, Grommet, Layer, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
-import { Box, Button, Grommet, Layer, Text } from 'js';
-import { grommet } from 'js/themes';
+
 
 const NotificationLayer = () => {
   const [open, setOpen] = React.useState();

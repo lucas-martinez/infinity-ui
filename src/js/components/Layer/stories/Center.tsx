@@ -1,10 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { Trash } from 'grommet-icons';
-
-import { Box, Button, Grommet, Heading, Layer, Select, Text } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Button, Grommet, Heading, Layer, Select, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const CenterLayer = () => {
   const [open, setOpen] = React.useState();

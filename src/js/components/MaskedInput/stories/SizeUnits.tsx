@@ -1,7 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, MaskedInput } from 'js';
-import { grommet } from 'js/themes';
+import React from 'react';
+import { Box, Grommet, MaskedInput } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const SizeUnitsMaskedInput = () => {
   const [value, setValue] = React.useState('');

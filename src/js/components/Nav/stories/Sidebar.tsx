@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { grommet, Box, Button, Grommet, Nav, Text } from 'js';
+import React, { useState } from 'react';
+import { Box, Button, grommet, Grommet, Nav, Text } from '../../../../js';
 
 const SidebarButton = ({ label, ...rest }) => (
   <Button plain {...rest}>

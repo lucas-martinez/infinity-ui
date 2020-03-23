@@ -1,9 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Menu, Text } from 'js';
-import { grommet } from 'js/themes';
 import { FormDown, Github, Slack } from 'grommet-icons';
+import React from 'react';
+import { Box, Grommet, Menu, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 // This story offers a suggested workaround for issue #3209.
 

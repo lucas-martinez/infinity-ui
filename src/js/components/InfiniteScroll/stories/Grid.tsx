@@ -1,9 +1,14 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grid, Grommet, Box, Image, InfiniteScroll, Text } from 'js';
-import { grommet } from 'js/themes';
-
+import React from 'react';
+import {
+  Box,
+  Grid,
+  Grommet,
+  Image,
+  InfiniteScroll,
+  Text,
+} from '../../../../js';
+import { grommet } from '../../../../js/themes';
 import { allItems } from './Basics';
 
 const GridInfiniteScroll = () => (

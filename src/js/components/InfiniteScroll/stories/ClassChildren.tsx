@@ -1,9 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, InfiniteScroll, Text } from 'js';
-import { grommet } from 'js/themes';
-
+import React from 'react';
+import { Box, Grommet, InfiniteScroll, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 import { allItems } from './Basics';
 
 /* eslint-disable react/prefer-stateless-function */

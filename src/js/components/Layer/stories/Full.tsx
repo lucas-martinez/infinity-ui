@@ -1,8 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
+import { Box, Button, Grommet, Layer } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
-import { Box, Button, Grommet, Layer } from 'js';
-import { grommet } from 'js/themes';
 
 const FullLayer = () => {
   const [showLayer, setShowLayer] = React.useState(false);

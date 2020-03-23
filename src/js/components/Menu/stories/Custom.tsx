@@ -1,9 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Grommet, Box, Menu, Text } from 'js';
-import { grommet } from 'js/themes';
 import { FormDown } from 'grommet-icons';
+import React from 'react';
+import { Box, Grommet, Menu, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const CustomMenu = () => (
   <Grommet theme={grommet}>
