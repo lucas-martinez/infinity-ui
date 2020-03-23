@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, CheckBox, Grommet, Select } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, CheckBox, Grommet, Select } from 'js';
+import { grommet } from 'js/themes';
 
 class Option extends PureComponent {
   render() {

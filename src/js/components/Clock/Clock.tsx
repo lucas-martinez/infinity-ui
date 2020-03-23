@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { Analog } from './Analog';
 import { Digital } from './Digital';
 
@@ -189,3 +188,4 @@ if (process.env.NODE_ENV !== 'production') {
 const ClockWrapper = ClockDoc || Clock;
 
 export { ClockWrapper as Clock };
+

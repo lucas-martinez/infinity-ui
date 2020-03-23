@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Box, Grommet, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, TextInput } from 'js';
+import { grommet } from 'js/themes';
 import { Search } from 'grommet-icons';
 
 const IconTextInput = () => {

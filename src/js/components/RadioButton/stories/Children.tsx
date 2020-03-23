@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Button, RadioButton } from 'grommet';
+import { Grommet, Box, Button, RadioButton } from 'js';
 import { Ascend } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+import { grommet } from 'js/themes';
 
 const ChildrenRadioButton = () => {
   const [selected, setSelected] = React.useState();

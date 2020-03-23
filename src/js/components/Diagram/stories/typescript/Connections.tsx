@@ -1,9 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
 import { Gremlin, IceCream } from 'grommet-icons';
-import { Stack, grommet, Grommet, Box, Diagram } from 'grommet';
-
+import React from 'react';
+import { Box, Diagram, grommet, Grommet, Stack } from '../../../../../js';
 import { DiagramConnectionAnchor, DiagramConnectionType } from '../../index';
 
 const anchor: DiagramConnectionAnchor = 'horizontal';

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, CheckBox } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { normalizeColor, deepMerge } from 'grommet/utils';
+import { Box, Grommet, CheckBox } from 'js';
+import { grommet } from 'js/themes';
+import { normalizeColor, deepMerge } from 'js/utils';
 
 import { FormCheckmark } from 'grommet-icons';
 

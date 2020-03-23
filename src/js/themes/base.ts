@@ -1,6 +1,3 @@
-import { rgba } from 'polished';
-import { css } from 'styled-components';
-
 import { Actions } from 'grommet-icons/icons/Actions';
 import { ClosedCaption } from 'grommet-icons/icons/ClosedCaption';
 import { Expand } from 'grommet-icons/icons/Expand';
@@ -16,9 +13,12 @@ import { Subtract } from 'grommet-icons/icons/Subtract';
 import { Volume } from 'grommet-icons/icons/Volume';
 import { VolumeLow } from 'grommet-icons/icons/VolumeLow';
 import { base as iconBase } from 'grommet-icons/themes/base';
-
-import { deepFreeze, deepMerge } from '../utils/object';
+import { rgba } from 'polished';
+import { css } from 'styled-components';
+import { ColorType, DeepReadonly } from '../utils';
 import { normalizeColor } from '../utils/colors';
+import { deepFreeze, deepMerge } from '../utils/object';
+import ThemeType from './ThemeType';
 
 const brandColor = '#7D4CDB';
 const accentColors = ['#6FFFB0', '#FD6FFF', '#81FCED', '#FFCA58'];
@@ -49,7 +49,7 @@ const lightColors = [
 ];
 const focusColor = accentColors[0];
 
-const colors = {
+const colors: any = {
   active: rgba(221, 221, 221, 0.5),
   'background-back': {
     dark: '#33333308',
@@ -121,7 +121,10 @@ Object.keys(statusColors).forEach(color => {
   colors[`status-${color}`] = statusColors[color];
 });
 
-export const generate = (baseSpacing = 24, scale = 6) => {
+export const generate: (
+  baseSpacing?: number,
+  scale?: number,
+) => DeepReadonly<ThemeType> = (baseSpacing = 24, scale = 6) => {
   // 24
   const baseFontSize = baseSpacing * 0.75; // 18
   const fontScale = baseSpacing / scale; // 4
@@ -949,4 +952,57 @@ export const generate = (baseSpacing = 24, scale = 6) => {
   return deepFreeze(result);
 };
 
-export const base = generate(24);
+export const base: DeepReadonly<ThemeType> = generate(24);
+
+export interface ColorsType {
+  active?: ColorType;
+  black?: ColorType;
+  border?: ColorType;
+  brand?: ColorType;
+  control?: ColorType;
+  focus?: ColorType;
+  placeholder?: ColorType;
+  selected?: ColorType;
+  text?: ColorType;
+  icon?: ColorType;
+  white?: ColorType;
+}
+
+export type Colors = typeof colors & {
+  'accent-1'?: ColorType;
+  'accent-2'?: ColorType;
+  'accent-3'?: ColorType;
+  'accent-4'?: ColorType;
+  'background-back'?: ColorType;
+  'background-contrast'?: ColorType;
+  'background-front'?: ColorType;
+  'neutral-1'?: ColorType;
+  'neutral-2'?: ColorType;
+  'neutral-3'?: ColorType;
+  'neutral-4'?: ColorType;
+  'dark-1'?: ColorType;
+  'dark-2'?: ColorType;
+  'dark-3'?: ColorType;
+  'dark-4'?: ColorType;
+  'dark-5'?: ColorType;
+  'dark-6'?: ColorType;
+  'light-1'?: ColorType;
+  'light-2'?: ColorType;
+  'light-3'?: ColorType;
+  'light-4'?: ColorType;
+  'light-5'?: ColorType;
+  'light-6'?: ColorType;
+  'status-critical'?: ColorType;
+  'status-error'?: ColorType;
+  'status-warning'?: ColorType;
+  'status-ok'?: ColorType;
+  'status-unknown'?: ColorType;
+  'status-disabled'?: ColorType;
+  'graph-0'?: ColorType;
+  'graph-1'?: ColorType;
+  'graph-2'?: ColorType;
+  'graph-3'?: ColorType;
+  'graph-4'?: ColorType;
+  'graph-5'?: ColorType;
+  [x: string]: ColorType;
+};

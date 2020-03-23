@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { Box, Grommet, Clock } from 'grommet';
+import { Box, Clock, Grommet } from '../../../../../js';
 
 const analogClockTheme = {
   clock: {

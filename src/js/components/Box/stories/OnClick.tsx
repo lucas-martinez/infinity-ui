@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Attraction } from 'grommet-icons';
 
-import { Grommet, Box, Text } from 'grommet';
+import { Grommet, Box, Text } from 'js';
 import { grommet } from '../../../themes';
 
 const OnClickBox = () => (

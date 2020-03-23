@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Menu } from 'grommet';
+import { Grommet, Box, Menu } from 'js';
 import { Power, User } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+import { grommet } from 'js/themes';
 
 const Reverse = () => (
   <Grommet theme={grommet}>

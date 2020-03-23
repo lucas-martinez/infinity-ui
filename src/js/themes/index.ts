@@ -1,3 +1,6 @@
 export { base, generate } from './base';
-export { grommet } from './grommet';
 export { dark } from './dark';
+export { grommet } from './grommet';
+import Theme from './ThemeType';
+
+export type ThemeType = Theme;

@@ -11,7 +11,7 @@ import {
   TableHeader,
   TableRow,
   Text,
-} from 'grommet';
+} from 'js';
 import { data, columns } from './data';
 
 const customTheme = {

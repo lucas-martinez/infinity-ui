@@ -9,7 +9,7 @@ or just use children.
 ## Usage
 
 ```javascript
-import { Anchor } from 'grommet';
+import { Anchor } from 'js';
 <Anchor href={location} label='Label' />
 ```
 

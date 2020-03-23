@@ -4,7 +4,7 @@ export const doc = TableCell => {
   const DocumentedTableCell = describe(TableCell)
     .description('A cell of data in a table.')
     .usage(
-      `import { TableCell } from 'grommet';
+      `import { TableCell } from 'js';
 <TableCell />`,
     )
     .intrinsicElement('td');

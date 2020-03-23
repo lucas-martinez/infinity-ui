@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Calendar, Drop, Heading, Grommet, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Calendar, Drop, Heading, Grommet, TextInput } from 'js';
+import { grommet } from 'js/themes';
 
 const OverflowDrop = () => {
   const targetRef = useRef();

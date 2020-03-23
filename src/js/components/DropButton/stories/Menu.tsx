@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, DropButton, Text } from 'grommet';
+import { Grommet, Box, DropButton, Text } from 'js';
 import { Gremlin } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+import { grommet } from 'js/themes';
 
 const renderItems = () => (
   <Box>

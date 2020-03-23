@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, TextArea } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Box, TextArea } from 'js';
+import { grommet } from 'js/themes';
 
 const SimpleTextArea = props => {
   const [value, setValue] = React.useState('');

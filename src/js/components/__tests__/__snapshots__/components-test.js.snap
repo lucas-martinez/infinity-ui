@@ -204,7 +204,7 @@ function",
         "name": "as",
       },
     ],
-    "usage": "import { Anchor } from 'grommet';
+    "usage": "import { Anchor } from 'js';
 <Anchor href={location} label='Label' />",
   },
   "Box": Object {
@@ -898,7 +898,7 @@ reverse",
         "name": "wrap",
       },
     ],
-    "usage": "import { Box } from 'grommet';
+    "usage": "import { Box } from 'js';
 <Box />",
   },
   "Button": Object {
@@ -1183,7 +1183,7 @@ submit",
         "name": "type",
       },
     ],
-    "usage": "import { Button } from 'grommet';
+    "usage": "import { Button } from 'js';
 <Button primary label='Label' />",
   },
   "Calendar": Object {
@@ -1429,7 +1429,7 @@ string",
         "name": "size",
       },
     ],
-    "usage": "import { Calendar } from 'grommet';
+    "usage": "import { Calendar } from 'js';
 <Calendar />",
   },
   "Carousel": [Function],
@@ -1716,7 +1716,7 @@ point",
         "required": true,
       },
     ],
-    "usage": "import { Chart } from 'grommet';
+    "usage": "import { Chart } from 'js';
 <Chart />",
   },
   "CheckBox": Object {
@@ -1792,7 +1792,7 @@ NOTE: This can only be used with non-toggle components",
         "name": "indeterminate",
       },
     ],
-    "usage": "import { CheckBox } from 'grommet';
+    "usage": "import { CheckBox } from 'js';
 <CheckBox />",
   },
   "Clock": [Function],
@@ -1814,7 +1814,7 @@ vertical",
         "name": "direction",
       },
     ],
-    "usage": "import { Collapsible } from 'grommet';
+    "usage": "import { Collapsible } from 'js';
 <Collapsible open>test</Collapsible>",
   },
   "DataTable": [Function],
@@ -1885,7 +1885,7 @@ vertical",
         "required": true,
       },
     ],
-    "usage": "import { Diagram } from 'grommet';
+    "usage": "import { Diagram } from 'js';
 <Diagram />",
   },
   "Distribution": [Function],
@@ -2008,7 +2008,7 @@ string",
         "name": "plain",
       },
     ],
-    "usage": "import { Drop } from 'grommet';
+    "usage": "import { Drop } from 'js';
 <Drop target={reference}>...</Drop>",
   },
   "DropButton": Object {
@@ -2197,7 +2197,7 @@ string",
         "name": "open",
       },
     ],
-    "usage": "import { DropButton } from 'grommet';
+    "usage": "import { DropButton } from 'js';
 <DropButton dropContent={...} />",
   },
   "Footer": [Function],
@@ -2283,7 +2283,7 @@ submit",
         "name": "value",
       },
     ],
-    "usage": "import { Form } from 'grommet';
+    "usage": "import { Form } from 'js';
 <Form />",
   },
   "FormContext": Object {
@@ -2501,7 +2501,7 @@ function
         "name": "validate",
       },
     ],
-    "usage": "import { FormField } from 'grommet';
+    "usage": "import { FormField } from 'js';
 <FormField />",
   },
   "Grid": [Function],
@@ -2655,7 +2655,7 @@ boolean",
         "name": "opacity",
       },
     ],
-    "usage": "import { Image } from 'grommet';
+    "usage": "import { Image } from 'js';
 <Image/>",
   },
   "InfiniteScroll": [Function],
@@ -2831,7 +2831,7 @@ top-right",
         "name": "target",
       },
     ],
-    "usage": "import { Layer } from 'grommet';
+    "usage": "import { Layer } from 'js';
 <Layer />",
   },
   "List": Object {
@@ -3148,7 +3148,7 @@ function",
         "name": "step",
       },
     ],
-    "usage": "import { List } from 'grommet';
+    "usage": "import { List } from 'js';
 <List data={[...]} />",
   },
   "Main": [Function],
@@ -3240,7 +3240,7 @@ number",
         "name": "value",
       },
     ],
-    "usage": "import { MaskedInput } from 'grommet';
+    "usage": "import { MaskedInput } from 'js';
 <MaskedInput id='item' name='item' />",
   },
   "Menu": Object {
@@ -3487,7 +3487,7 @@ string",
         "name": "size",
       },
     ],
-    "usage": "import { Menu } from 'grommet';
+    "usage": "import { Menu } from 'js';
 <Menu />",
   },
   "Meter": [Function],
@@ -3558,7 +3558,7 @@ with the same name so form submissions work.",
         "name": "onChange",
       },
     ],
-    "usage": "import { RadioButton } from 'grommet';
+    "usage": "import { RadioButton } from 'js';
 <RadioButton />",
   },
   "RadioButtonGroup": Object {
@@ -3628,7 +3628,7 @@ object",
         "name": "value",
       },
     ],
-    "usage": "import { RadioButtonGroup } from 'grommet';
+    "usage": "import { RadioButtonGroup } from 'js';
 <RadioButtonGroup />",
   },
   "RangeInput": Object {
@@ -3689,7 +3689,7 @@ string",
         "name": "value",
       },
     ],
-    "usage": "import { RangeInput } from 'grommet';
+    "usage": "import { RangeInput } from 'js';
 <RangeInput />",
   },
   "RangeSelector": Object {
@@ -3803,7 +3803,7 @@ string",
         "required": true,
       },
     ],
-    "usage": "import { RangeSelector } from 'grommet';
+    "usage": "import { RangeSelector } from 'js';
 <RangeSelector />",
   },
   "RoutedAnchor": [Function],
@@ -4179,7 +4179,7 @@ function",
         "name": "emptySearchMessage",
       },
     ],
-    "usage": "import { Select } from 'grommet';
+    "usage": "import { Select } from 'js';
 <Select />",
   },
   "SkipLink": [Function],
@@ -4203,7 +4203,7 @@ function",
         "name": "title",
       },
     ],
-    "usage": "import { Tab } from 'grommet';
+    "usage": "import { Tab } from 'js';
 <Tab />",
   },
   "Table": [Function],
@@ -4211,7 +4211,7 @@ function",
     "description": "The body of a table.",
     "intrinsicElement": "tbody",
     "name": "TableBody",
-    "usage": "import { TableBody } from 'grommet';
+    "usage": "import { TableBody } from 'js';
 <TableBody />",
   },
   "TableCell": Object {
@@ -4259,7 +4259,7 @@ bottom",
         "name": "verticalAlign",
       },
     ],
-    "usage": "import { TableCell } from 'grommet';
+    "usage": "import { TableCell } from 'js';
 <TableCell />",
   },
   "TableFooter": [Function],
@@ -4428,7 +4428,7 @@ currently active tab changes.",
         "name": "onActive",
       },
     ],
-    "usage": "import { Tabs, Tab } from 'grommet';
+    "usage": "import { Tabs, Tab } from 'js';
 <Tabs>
   <Tab title='Tab 1'>...</Tab>
   <Tab title='Tab 2'>...</Tab>
@@ -4512,7 +4512,7 @@ string",
         "name": "size",
       },
     ],
-    "usage": "import { TextArea } from 'grommet';
+    "usage": "import { TextArea } from 'js';
 <TextArea id='item' name='item' />",
   },
   "TextInput": Object {
@@ -4681,7 +4681,7 @@ number",
         "name": "value",
       },
     ],
-    "usage": "import { TextInput } from 'grommet';
+    "usage": "import { TextInput } from 'js';
 <TextInput id='item' name='item' />",
   },
   "Video": Object {
@@ -4832,7 +4832,7 @@ contain",
         "name": "mute",
       },
     ],
-    "usage": "import { Video } from 'grommet';
+    "usage": "import { Video } from 'js';
 <Video />",
   },
   "WorldMap": Object {
@@ -5022,7 +5022,7 @@ boolean",
         "name": "hoverColor",
       },
     ],
-    "usage": "import { WorldMap } from 'grommet';
+    "usage": "import { WorldMap } from 'js';
 <WorldMap />",
   },
   "__esModule": true,

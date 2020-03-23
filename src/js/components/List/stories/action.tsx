@@ -1,9 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, List, Menu } from 'grommet';
+import { Grommet, Box, List, Menu } from 'js';
 import { More } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+import { grommet } from 'js/themes';
 
 import { data } from './data';
 

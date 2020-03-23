@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Calendar, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Calendar, Grommet, Text } from 'js';
+import { grommet } from 'js/themes';
 
 // DSTCalendar has dates specifically chosen to identify issues with
 // crossing the daylight savings time boundary (from California).

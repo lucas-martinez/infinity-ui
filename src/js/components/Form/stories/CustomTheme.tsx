@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { deepMerge } from 'grommet/utils';
+import { deepMerge } from 'js/utils';
 
 import {
   grommet,
@@ -16,7 +16,7 @@ import {
   TextArea,
   TextInput,
   Grommet,
-} from 'grommet';
+} from 'js';
 
 const customFormFieldTheme = {
   global: {

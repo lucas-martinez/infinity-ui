@@ -1,9 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { Grommet, Header, Main, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Grommet, Header, Main, Text } from '../../../../../js';
+import { grommet } from '../../../../../js/themes';
 
 const Simple = () => (
   <Grommet theme={grommet}>

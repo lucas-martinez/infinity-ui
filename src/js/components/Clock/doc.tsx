@@ -1,5 +1,4 @@
 import { describe, PropTypes } from 'react-desc';
-
 import { genericProps, getAvailableAtBadge } from '../../utils';
 
 export const doc = Clock => {
@@ -7,7 +6,7 @@ export const doc = Clock => {
     .availableAt(getAvailableAtBadge('Clock'))
     .description('A clock with timezone awareness.')
     .usage(
-      `import { Clock } from 'grommet';
+      `import { Clock } from 'js';
 <Clock />`,
     )
     .intrinsicElement(['div', 'svg']);

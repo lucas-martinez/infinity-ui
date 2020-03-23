@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Grommet, Layer, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Grommet, Layer, Text } from 'js';
+import { grommet } from 'js/themes';
 
 const PlainLayer = () => (
   <Grommet theme={grommet} full>

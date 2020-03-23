@@ -1,10 +1,9 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { Box, Grommet, MaskedInput } from 'grommet';
 import { MailOption } from 'grommet-icons';
-import { grommet } from 'grommet/themes';
+import React from 'react';
+import isChromatic from 'storybook-chromatic/isChromatic';
+import { Box, Grommet, MaskedInput } from '../../../../../js';
+import { grommet } from '../../../../../js/themes';
 
 const EmailMaskedInput = () => {
   const [value, setValue] = React.useState('');

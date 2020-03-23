@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Grommet, Nav } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Grommet, Nav } from 'js';
+import { grommet } from 'js/themes';
 
 const items = [
   { label: 'Item A', href: '#' },

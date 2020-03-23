@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Anchor, Box, Grommet, Header } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Anchor, Box, Grommet, Header } from 'js';
+import { grommet } from 'js/themes';
 
 export const Avatar = ({ ...rest }) => (
   <Box

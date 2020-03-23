@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { grommet, Box, Button, Grommet } from 'grommet';
+import { Box, Button, grommet, Grommet } from '../../../../../js';
 
 const customTheme = {
   global: {

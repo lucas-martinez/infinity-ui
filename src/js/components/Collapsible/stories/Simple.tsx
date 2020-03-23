@@ -1,8 +1,7 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
-
-import { Box, Button, Collapsible, Grommet, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import React from 'react';
+import { Box, Button, Collapsible, Grommet, Text } from '../../../../js';
+import { grommet } from '../../../../js/themes';
 
 const SimpleCollapsible = props => {
   const [open, setOpen] = React.useState(false);

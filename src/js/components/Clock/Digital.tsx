@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-
 import { Box } from '../Box';
-
-import {
-  StyledDigitalDigit,
-  StyledDigitalNext,
-  StyledDigitalPrevious,
-} from './StyledClock';
+import { StyledDigitalDigit, StyledDigitalNext, StyledDigitalPrevious } from './StyledClock';
 
 class Digit extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {

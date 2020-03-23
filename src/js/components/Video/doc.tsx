@@ -8,7 +8,7 @@ export const doc = Video => {
     .availableAt(getAvailableAtBadge('Video'))
     .description('A video player.')
     .usage(
-      `import { Video } from 'grommet';
+      `import { Video } from 'js';
 <Video />`,
     )
     .intrinsicElement('video');

@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import React, { useState } from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { Grommet, Box, Button, Grid, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Grid, Grommet, Text } from '../../../../../js';
+import { grommet } from '../../../../../js/themes';
 
 const AppGrid = () => {
   const [sidebar, setSidebar] = useState(true);

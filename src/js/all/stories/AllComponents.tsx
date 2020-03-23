@@ -32,10 +32,10 @@ import {
   TextArea,
   TextInput,
   Video,
-} from 'grommet';
-import { grommet, dark } from 'grommet/themes';
-import { generate } from 'grommet/themes/base';
-import { deepMerge } from 'grommet/utils';
+} from 'js';
+import { grommet, dark } from 'js/themes';
+import { generate } from 'js/themes/base';
+import { deepMerge } from 'js/utils';
 import { hpe } from 'grommet-theme-hpe';
 import { hpe as hpeV0 } from 'grommet-theme-hpe-v0';
 import { aruba } from 'grommet-theme-aruba';

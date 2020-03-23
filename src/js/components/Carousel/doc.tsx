@@ -11,7 +11,7 @@ export const doc = Carousel => {
       that all children are the same size.`,
     )
     .usage(
-      `import { Carousel } from 'grommet';
+      `import { Carousel } from 'js';
 <Carousel />`,
     )
     .intrinsicElement('div');

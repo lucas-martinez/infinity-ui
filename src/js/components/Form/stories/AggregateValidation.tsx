@@ -9,8 +9,8 @@ import {
   FormField,
   Text,
   TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'js';
+import { grommet } from 'js/themes';
 
 // This example shows a way to perform validation across multiple fields.
 const Example = () => {

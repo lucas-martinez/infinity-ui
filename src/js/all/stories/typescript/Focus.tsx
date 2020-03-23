@@ -1,19 +1,8 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react';
+import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-
-import { deepMerge } from 'grommet/utils';
-
-import {
-  grommet,
-  Anchor,
-  Box,
-  Button,
-  Grommet,
-  Menu,
-  Text,
-  TextInput,
-} from 'grommet';
+import { Anchor, Box, Button, grommet, Grommet, Menu, Text, TextInput } from '../../../../js';
+import { deepMerge } from '../../../../js/utils';
 
 const customFocus = deepMerge(grommet, {
   global: {

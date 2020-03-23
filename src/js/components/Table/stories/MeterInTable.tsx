@@ -11,8 +11,8 @@ import {
   TableCell,
   TableRow,
   Text,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'js';
+import { grommet } from 'js/themes';
 
 const values = [20, 40, 60, 80, 100];
 

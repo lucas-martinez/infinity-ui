@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Grommet, Box, Grid } from 'grommet';
+import { Grommet, Box, Grid } from 'js';
 import { grommet } from '../../../themes';
 
 const RoundBox = () => (

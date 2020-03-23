@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { Search } from 'grommet-icons';
-import { Box, Image, Grommet, Text, TextInput } from 'grommet';
-import { grommet } from 'grommet/themes';
-import { deepMerge } from 'grommet/utils';
+import { Box, Image, Grommet, Text, TextInput } from 'js';
+import { grommet } from 'js/themes';
+import { deepMerge } from 'js/utils';
 
 const myCustomTheme = deepMerge(grommet, {
   global: {

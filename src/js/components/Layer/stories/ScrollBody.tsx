@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 
 import { FormClose } from 'grommet-icons';
 
-import { Box, Button, Grommet, Layer, Text } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Grommet, Layer, Text } from 'js';
+import { grommet } from 'js/themes';
 
 const ScrollBodyLayer = () => (
   <Grommet theme={grommet}>

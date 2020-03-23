@@ -1,9 +1,9 @@
 import React, { useReducer, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Diagram, Grommet, grommet, Stack, Text } from 'grommet';
+import { Box, Diagram, Grommet, grommet, Stack, Text } from 'js';
 import { Diamond } from 'grommet-icons';
-import { deepMerge } from 'grommet/utils';
+import { deepMerge } from 'js/utils';
 
 import { data } from './data';
 

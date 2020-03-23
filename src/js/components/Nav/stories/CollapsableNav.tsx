@@ -9,8 +9,8 @@ import {
   Nav,
   Menu,
   ResponsiveContext,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'js';
+import { grommet } from 'js/themes';
 
 const CollapsableNav = () => (
   <Grommet theme={grommet}>

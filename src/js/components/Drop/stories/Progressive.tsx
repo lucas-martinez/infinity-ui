@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { Box, Button, Drop, Grommet } from 'grommet';
-import { grommet } from 'grommet/themes';
+import { Box, Button, Drop, Grommet } from 'js';
+import { grommet } from 'js/themes';
 
 const ProgressiveDrop = () => {
   const boxRef = useRef();

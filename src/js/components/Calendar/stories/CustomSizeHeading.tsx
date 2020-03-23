@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { deepMerge } from 'grommet/utils';
+import { deepMerge } from 'js/utils';
 
-import { Box, Calendar, Grommet, grommet } from 'grommet';
+import { Box, Calendar, Grommet, grommet } from 'js';
 
 const customHeading = deepMerge(grommet, {
   calendar: {

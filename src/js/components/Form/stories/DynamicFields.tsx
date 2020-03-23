@@ -9,8 +9,8 @@ import {
   Form,
   FormField,
   TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'js';
+import { grommet } from 'js/themes';
 
 const Example = () => {
   const [haveAlias, setHaveAlias] = useState();

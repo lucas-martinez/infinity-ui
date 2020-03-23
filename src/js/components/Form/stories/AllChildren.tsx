@@ -14,8 +14,8 @@ import {
   Select,
   TextArea,
   TextInput,
-} from 'grommet';
-import { grommet } from 'grommet/themes';
+} from 'js';
+import { grommet } from 'js/themes';
 
 const Example = () => (
   <Grommet full theme={grommet}>

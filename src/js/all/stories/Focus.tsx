@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import { deepMerge } from 'grommet/utils';
+import { deepMerge } from 'js/utils';
 
 import {
   grommet,
@@ -12,7 +12,7 @@ import {
   Menu,
   Text,
   TextInput,
-} from 'grommet';
+} from 'js';
 
 const customFocus = deepMerge(grommet, {
   global: {
