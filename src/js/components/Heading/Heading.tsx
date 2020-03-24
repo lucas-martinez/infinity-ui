@@ -32,10 +32,11 @@ const Heading = (props: HeadingProps) => {
     ...rest
   } = props;
 
+  const tagName: any = `h${level!}`;
   // enforce level to be a number
   return (
     <StyledHeading
-      as={`h${level!}`}
+      as={tagName}
       colorProp={color}
       level={+level!}
       {...rest}

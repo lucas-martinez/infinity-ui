@@ -26,7 +26,7 @@ const HiddenAnchor = styled.a<any>`
 
 const fullBounds = { left: 0, right: 0, top: 0, bottom: 0 };
 
-const LayerContainer = forwardRef<HTMLDivElement, LayerProps>(
+const LayerContainer = forwardRef<HTMLDivElement, LayerProps & { ref: any }>(
   (
     {
       children,

@@ -78,7 +78,7 @@ const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
               onChange,
             })}
           />
-          {children ? (
+          {typeof children === 'function' ? (
             children({ checked, hover })
           ) : (
             <StyledRadioButtonBox

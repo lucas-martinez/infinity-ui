@@ -79,7 +79,7 @@ const colorStyle = css<any>`
   color: ${props => normalizeColor(props.colorProp, props.theme)};
 `;
 
-const StyledHeading = styled.h1<any>`
+const StyledHeading = styled.h1<any & { as?: string }>`
   ${genericStyles}
   ${props => fontFamily(props)}
   ${props => sizeStyle(props)}

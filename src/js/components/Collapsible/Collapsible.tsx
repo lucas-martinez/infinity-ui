@@ -4,6 +4,7 @@ import styled, { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { DivIntrinsicProps } from '../intrinsic-elements';
+import ThemeType from '../Theme/ThemeType';
 
 const animatedBoxProperty = direction =>
   direction === 'horizontal' ? 'width' : 'height';
@@ -28,8 +29,9 @@ export interface CollapsibleProps {
   direction?: 'horizontal' | 'vertical';
 }
 
-class Collapsible extends Component<CollapsibleProps & DivIntrinsicProps> {
-  ref = createRef();
+class Collapsible extends Component<CollapsibleProps & DivIntrinsicProps & { theme: ThemeType }, any> {
+  ref = createRef<any>();
+  animationTimeout: any;
 
   static getDerivedStateFromProps(nextProps, prevState) {
     const { open } = nextProps;
@@ -62,7 +64,7 @@ class Collapsible extends Component<CollapsibleProps & DivIntrinsicProps> {
     const container = this.ref.current;
     if (container) {
       const dimension = animatedBoxProperty(direction);
-      const boudingClientRect = container.getBoundingClientRect();
+      const boudingClientRect = container!.getBoundingClientRect();
       const dimensionSize = boudingClientRect[dimension];
 
       let shouldAnimate = animate && prevState.open !== open;
@@ -132,9 +134,6 @@ class Collapsible extends Component<CollapsibleProps & DivIntrinsicProps> {
     );
   }
 }
-
-Collapsible.defaultProps = {};
-Object.setPrototypeOf(Collapsible.defaultProps, defaultProps);
 
 let CollapsibleDoc;
 if (process.env.NODE_ENV !== 'production') {

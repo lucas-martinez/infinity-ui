@@ -6,7 +6,7 @@ import { DivIntrinsicProps } from '../intrinsic-elements';
 import { Text } from '../Text';
 
 
-const Value = ({ basis, children }: value) => (
+const Value = ({ basis, children }: any) => (
   <Box basis={basis} flex="shrink" overflow="hidden">
     {children}
   </Box>
@@ -46,7 +46,7 @@ const Distribution = ({
   if (values.length === 1) {
     const value = values[0];
     return (
-      <Value value={value} basis={basis!}>
+      <Value basis={basis!}>
         {children && children(value)}
       </Value>
     );

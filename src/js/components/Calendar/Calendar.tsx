@@ -105,7 +105,7 @@ const Calendar = forwardRef<HTMLDivElement, CalendarProps>(
     useEffect(() => setDate(dateProp), [dateProp]);
 
     // set dates when caller changes it, allows us to change it internally too
-    const [dates, setDates] = useState<CalendarProps['dates']>(datesProp);
+    const [dates, setDates] = useState<any /*CalendarProps['dates']*/>(datesProp);
     useEffect(() => setDates(datesProp), [datesProp]);
 
     // set reference based on what the caller passed or date/dates.
@@ -333,12 +333,12 @@ const Calendar = forwardRef<HTMLDivElement, CalendarProps>(
 
     const weeks: any[] = [];
     let day = new Date(displayBounds[0]);
-    let days: any[];
+    let days: any[] = [];
     let firstDayInMonth;
 
     while (day.getTime() < displayBounds[1].getTime()) {
       if (day.getDay() === firstDayOfWeek) {
-        if (days) {
+        if (days.length) {
           weeks.push(<StyledWeek key={day.getTime()}>{days}</StyledWeek>);
         }
         days = [];

@@ -7,19 +7,19 @@ export interface ClockAnalogTheme {
     color: ColorType;
     width: string;
     size: string;
-    shape: string;
+    shape: 'butt' | 'round' | 'square' | 'inherit';
   };
   minute: {
     color: ColorType;
     width: string;
     size: string;
-    shape: string;
+    shape: 'butt' | 'round' | 'square' | 'inherit';
   };
   second: {
     color: ColorType;
     width: string;
     size: string;
-    shape: string;
+    shape: 'butt' | 'round' | 'square' | 'inherit';
   };
   size: {
     small: string;

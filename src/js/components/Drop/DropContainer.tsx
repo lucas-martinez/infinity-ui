@@ -18,6 +18,8 @@ import { Keyboard } from '../Keyboard';
 import { DropProps } from './Drop';
 import { PortalContext } from './PortalContext';
 import { StyledDrop } from './StyledDrop';
+import { Recoverable } from 'repl';
+import useTheme from '../Theme/useTheme';
 
 // using react synthetic event to be able to stop propagation that
 // would otherwise close the layer on ESC.
@@ -73,7 +75,7 @@ const DropContainer = forwardRef<HTMLDivElement, DropContainerProps>(
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
         const target = dropTarget;
-        const container = (ref || dropRef).current;
+        const container = typeof ref !== 'function' ? ref?.current : dropRef.current;
         if (container && target) {
           // clear prior styling
           container.style.left = '';
@@ -244,7 +246,7 @@ const DropContainer = forwardRef<HTMLDivElement, DropContainerProps>(
 
       const onClickDocument = event => {
         // determine which portal id the target is in, if any
-        let clickedPortalId = null;
+        let clickedPortalId: number | null = null;
         let node = event.target;
         while (clickedPortalId === null && node !== document) {
           const attr = node.getAttribute('data-g-portal-id');
@@ -253,9 +255,9 @@ const DropContainer = forwardRef<HTMLDivElement, DropContainerProps>(
         }
         if (
           clickedPortalId === null ||
-          portalContext.indexOf(clickedPortalId) !== -1
+          portalContext.indexOf(clickedPortalId!) !== -1
         ) {
-          onClickOutside(event);
+          onClickOutside && onClickOutside(event);
         }
       };
 
@@ -295,7 +297,11 @@ const DropContainer = forwardRef<HTMLDivElement, DropContainerProps>(
 
     useEffect(() => {
       if (restrictFocus) {
-        (ref || dropRef).current.focus();
+        if (ref && typeof ref !== 'function') {
+          ref.current?.focus();
+        } else if (dropRef) {
+          dropRef.current.focus();
+        }
       }
     }, [ref, restrictFocus]);
 
