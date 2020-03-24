@@ -2,8 +2,9 @@ import React, { cloneElement, useRef, useState } from 'react';
 import { Box } from '../Box';
 import { Heading } from '../Heading';
 import { Layer } from '../Layer';
+import { DivIntrinsicProps } from '../intrinsic-elements';
 
-export interface SkipLinksProps {
+export interface SkipLinksProps extends DivIntrinsicProps {
   children: React.ReactNode;
   messages?: {skipTo?: string};
 }
@@ -45,7 +46,7 @@ const SkipLinks = ({ children, id, messages }: SkipLinksProps) => {
       onBlur={onBlur}
     >
       <Box pad={{ horizontal: 'medium' }}>
-        <Heading level={2}>{messages.skipTo}:</Heading>
+        <Heading level={2}>{messages?.skipTo}:</Heading>
         <Box direction="row" align="center" pad={{ bottom: 'medium' }}>
           {children.map((element, index) =>
             cloneElement(element, {

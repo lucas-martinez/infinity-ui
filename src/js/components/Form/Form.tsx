@@ -171,7 +171,7 @@ const Form = forwardRef<HTMLFormElement, FormProps & FormIntrinsicProps>(
           setTouched({});
           if (onReset) {
             event.persist(); // extract from React's synthetic event pool
-            const adjustedEvent = event;
+            const adjustedEvent: any = event;
             adjustedEvent.value = defaultValue;
             onReset(adjustedEvent);
           }

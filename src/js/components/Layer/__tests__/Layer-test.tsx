@@ -1,14 +1,12 @@
-import React from 'react';
-import 'jest-styled-components';
-import { cleanup, render, fireEvent } from '@testing-library/react';
 import { getByTestId, queryByTestId } from '@testing-library/dom';
-
+import { cleanup, fireEvent, render } from '@testing-library/react';
+import 'jest-styled-components';
+import React from 'react';
+import { Box, Grommet, Layer } from '../..';
 import { createPortal, expectPortal } from '../../../utils/portal';
-
-import { Grommet, Box, Layer } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
-const SimpleLayer = () => {
+const SimpleLayer: React.FC<any> = () => {
   const [showLayer, setShowLayer] = React.useState<any>(true);
 
   React.useEffect(() => setShowLayer(false), []);
@@ -198,7 +196,7 @@ describe('Layer', () => {
       </Grommet>,
     );
 
-    const inputNode = getByTestId(document, 'test-input');
+    const inputNode = getByTestId(document.documentElement, 'test-input');
     fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
     expect(onEsc).toBeCalled();
   });
@@ -210,25 +208,25 @@ describe('Layer', () => {
         <FakeLayer dataTestid="test-layer-node">
           <div data-testid="test-body-node">
             <input />
-            <input tabIndex="10" />
+            <input tabIndex={10} />
           </div>
         </FakeLayer>
       </Grommet>,
     );
     /* eslint-enable jsx-a11y/tabindex-no-positive */
 
-    let bodyNode = getByTestId(document, 'test-body-node');
-    const layerNode = getByTestId(document, 'test-layer-node');
-    const inputNode = getByTestId(document, 'test-input');
+    let bodyNode = getByTestId(document.documentElement, 'test-body-node');
+    const layerNode = getByTestId(document.documentElement, 'test-layer-node');
+    const inputNode = getByTestId(document.documentElement, 'test-input');
     expect(bodyNode).toMatchSnapshot();
     expect(layerNode).toMatchSnapshot();
 
     fireEvent.keyDown(inputNode, { key: 'Esc', keyCode: 27, which: 27 });
     // because of de-animation, we test both the initial and delayed states
-    bodyNode = getByTestId(document, 'test-body-node');
+    bodyNode = getByTestId(document.documentElement, 'test-body-node');
     expect(bodyNode).toMatchSnapshot();
     setTimeout(() => {
-      expect(queryByTestId(document, 'test-layer-node')).toBeNull();
+      expect(queryByTestId(document.documentElement, 'test-layer-node')).toBeNull();
       done();
     }, 300);
   });
@@ -245,9 +243,9 @@ describe('Layer', () => {
     );
     /* eslint-disable jsx-a11y/no-autofocus */
 
-    const layerNode = getByTestId(document, 'focus-layer-test');
+    const layerNode = getByTestId(document.documentElement, 'focus-layer-test');
     expect(layerNode).toMatchSnapshot();
-    expect(document.activeElement.nodeName).toBe('A');
+    expect(document.activeElement?.nodeName).toBe('A');
   });
 
   test('not steal focus from an autofocus focusable element', () => {
@@ -261,8 +259,8 @@ describe('Layer', () => {
       </Grommet>,
     );
     /* eslint-disable jsx-a11y/no-autofocus */
-    const layerNode = getByTestId(document, 'focus-layer-input-test');
-    const inputNode = getByTestId(document, 'focus-input');
+    const layerNode = getByTestId(document.documentElement, 'focus-layer-input-test');
+    const inputNode = getByTestId(document.documentElement, 'focus-input');
     expect(layerNode).toMatchSnapshot();
     expect(document.activeElement).toBe(inputNode);
   });
@@ -294,7 +292,7 @@ describe('Layer', () => {
       </Grommet>,
     );
     setTimeout(() => {
-      expect(queryByTestId(document, 'test-dom-removal')).toBeNull();
+      expect(queryByTestId(document.documentElement, 'test-dom-removal')).toBeNull();
     }, 1000);
   });
 });

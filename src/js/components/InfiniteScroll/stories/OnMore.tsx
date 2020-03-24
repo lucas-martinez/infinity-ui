@@ -4,7 +4,7 @@ import { Box, Grommet, InfiniteScroll, Text } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 import { allItems } from './Basics';
 
-const OnMoreInfiniteScroll = ({ props }) => {
+const OnMoreInfiniteScroll: React.FC<any> = ({ props }) => {
   const [items, setItems] = useState<any>(allItems.slice(0, 50));
 
   const onMore = () => {

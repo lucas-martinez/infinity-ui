@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Box, Grommet, RadioButtonGroup } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
-const SimpleRadioButtonGroup = ({ value: initialValue, ...props }) => {
+const SimpleRadioButtonGroup = ({ value: initialValue, ...props }: any) => {
   const [value, setValue] = useState<any>(initialValue);
 
   return (

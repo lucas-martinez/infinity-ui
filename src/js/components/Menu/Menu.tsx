@@ -51,7 +51,7 @@ export interface MenuProps {
   dropProps?: DropProps;
   gridArea?: GridAreaType;
   icon?: boolean | React.ReactNode;
-  items: object[];
+  items: Record<string, any>[];
   justifyContent?: JustifyContentType;
   label?: string | React.ReactNode;
   margin?: MarginType;
@@ -60,7 +60,7 @@ export interface MenuProps {
   size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
 }
 
-const Menu: React.FC<MenuProps & Omit<ButtonProps, 'icon'>> = props => {
+const Menu: React.FC<MenuProps & Omit<ButtonProps, 'icon'> & { forwardRef: React.RefObject<HTMLDivElement> }> = props => {
   const {
     a11yTitle,
     children,
@@ -84,11 +84,11 @@ const Menu: React.FC<MenuProps & Omit<ButtonProps, 'icon'>> = props => {
   const theme = useTheme();
   const MenuIcon = theme.menu.icons.down;
   const iconColor = normalizeColor('control', theme);
-  const align = dropProps.align || dropAlign;
+  const align = dropProps?.align || dropAlign;
   let controlButtonIndex;
-  if (align.top === 'top') {
+  if (align?.top === 'top') {
     controlButtonIndex = -1;
-  } else if (align.bottom === 'bottom') {
+  } else if (align?.bottom === 'bottom') {
     controlButtonIndex = items.length;
   } else {
     controlButtonIndex = undefined;
@@ -98,9 +98,9 @@ const Menu: React.FC<MenuProps & Omit<ButtonProps, 'icon'>> = props => {
     none: 'none',
     tab: 9,
     // Menu control button included on top of menu items
-    controlTop: align.top === 'top' || undefined,
+    controlTop: align?.top === 'top' || undefined,
     // Menu control button included on the bottom of menu items
-    controlBottom: align.bottom === 'bottom' || undefined,
+    controlBottom: align?.bottom === 'bottom' || undefined,
     controlButtonIndex,
   };
 
@@ -217,7 +217,7 @@ const Menu: React.FC<MenuProps & Omit<ButtonProps, 'icon'>> = props => {
           // make it accessible at the end of all menu items
           buttonRefs[items.length] = r;
         }}
-        a11yTitle={a11yTitle || messages.closeMenu || 'Close Menu'}
+        a11yTitle={a11yTitle || messages?.closeMenu || 'Close Menu'}
         active={activeItemIndex === controlButtonIndex}
         focusIndicator={false}
         hoverIndicator="background"
@@ -249,7 +249,7 @@ const Menu: React.FC<MenuProps & Omit<ButtonProps, 'icon'>> = props => {
       <DropButton
         ref={forwardRef}
         {...rest}
-        a11yTitle={a11yTitle || messages.openMenu || 'Open Menu'}
+        a11yTitle={a11yTitle || messages?.openMenu || 'Open Menu'}
         disabled={disabled}
         dropAlign={align}
         dropTarget={dropTarget}
@@ -265,7 +265,7 @@ const Menu: React.FC<MenuProps & Omit<ButtonProps, 'icon'>> = props => {
             onEnter={onSelectMenuItem}
           >
             <ContainerBox background={dropBackground || theme.menu.background}>
-              {align.top === 'top' ? controlMirror : undefined}
+              {align?.top === 'top' ? controlMirror : undefined}
               <Box overflow="auto">
                 {items.map((item, index) => (
                   // eslint-disable-next-line react/no-array-index-key
@@ -302,7 +302,7 @@ const Menu: React.FC<MenuProps & Omit<ButtonProps, 'icon'>> = props => {
                   </Box>
                 ))}
               </Box>
-              {align.bottom === 'bottom' ? controlMirror : undefined}
+              {align?.bottom === 'bottom' ? controlMirror : undefined}
             </ContainerBox>
           </Keyboard>
         }

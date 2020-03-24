@@ -32,6 +32,7 @@
     "src/components",
     "src/themes",
     "src/stories",
-    "src/**/stories/**",
+    "src/**/stories",
+    "src/**/__tests__",
   ]
 }

@@ -11,15 +11,15 @@ StyledTabsHeader.defaultProps = {};
 Object.setPrototypeOf(StyledTabsHeader.defaultProps, defaultProps);
 
 const FLEX_MAP = {
-  [true]: '1 1',
-  [false]: '0 0',
+  true: '1 1',
+  false: '0 0',
   grow: '1 0',
   shrink: '0 1',
 };
 
 const flexStyle = css<any>`
   flex: ${props =>
-    `${FLEX_MAP[props.flex]}${props.flex !== true ? ' auto' : ''}`};
+    `${FLEX_MAP[String(props.flex)]}${props.flex !== true ? ' auto' : ''}`};
 `;
 
 const StyledTabPanel = styled.div<any>`

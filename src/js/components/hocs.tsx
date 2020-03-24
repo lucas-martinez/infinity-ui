@@ -5,8 +5,12 @@ import hoistNonReactStatics from 'hoist-non-react-statics';
 import { withTheme } from 'styled-components';
 import { AnnounceContext } from '../contexts';
 
-export const withFocus = ({ focusWithMouse } = {}) => WrappedComponent => {
-  class FocusableComponent extends Component {
+interface WithFocusOptions {
+  focusWithMouse?: boolean;
+}
+
+export const withFocus = ({ focusWithMouse }: WithFocusOptions = {}) => WrappedComponent => {
+  class FocusableComponent extends Component<any, any> {
     static getDerivedStateFromProps(nextProps, prevState) {
       const { withFocusRef } = nextProps;
       const { wrappedRef } = prevState;
@@ -18,6 +22,8 @@ export const withFocus = ({ focusWithMouse } = {}) => WrappedComponent => {
     }
 
     mouseActive = false; // not in state because it doesn't affect rendering
+    focusTimer: any;
+    mouseTimer: any;
 
     constructor(props) {
       super(props);
@@ -117,7 +123,7 @@ export const withFocus = ({ focusWithMouse } = {}) => WrappedComponent => {
     }
   }
 
-  const ForwardRef = React.forwardRef((props, ref) => (
+  const ForwardRef: any = React.forwardRef((props, ref) => (
     <FocusableComponent {...props} withFocusRef={ref} />
   ));
 
@@ -130,7 +136,7 @@ export const withFocus = ({ focusWithMouse } = {}) => WrappedComponent => {
 };
 
 export const withForwardRef = WrappedComponent => {
-  const ForwardRefComponent = React.forwardRef((props, ref) => (
+  const ForwardRefComponent: any = React.forwardRef<HTMLElement, any>((props, ref) => (
     <WrappedComponent forwardRef={ref} {...props} />
   ));
 
@@ -143,7 +149,7 @@ export const withForwardRef = WrappedComponent => {
 };
 
 export const withAnnounce = WrappedComponent => {
-  const ForwardRef = React.forwardRef((props, ref) => (
+  const ForwardRef: any = React.forwardRef((props, ref) => (
     <AnnounceContext.Consumer>
       {announce => (
         <WrappedComponent {...props} announce={announce} ref={ref} />

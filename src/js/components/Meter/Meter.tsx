@@ -76,7 +76,6 @@ const Meter: React.FC<MeterProps> = ({
   }
   return content;
 };
-export { MeterWrapper as Meter };
 
 let MeterDoc;
 if (process.env.NODE_ENV !== 'production') {

@@ -4,7 +4,8 @@ export type AnnounceMessage = string;
 export type AnnounceMode = 'off' | 'polite' | 'assertive';
 export type AnnounceValue = (
   message: AnnounceMessage,
-  mode: AnnounceMode,
+  mode?: AnnounceMode,
+  timeout?: number
 ) => void;
 
 const createAnnouncer = () => {

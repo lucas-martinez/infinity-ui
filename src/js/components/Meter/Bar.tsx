@@ -1,28 +1,17 @@
 import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
 import { parseMetricToNum } from '../../utils';
-
+import useTheme from '../Theme/useTheme';
+import { MeterProps } from './Meter';
 import { StyledMeter } from './StyledMeter';
-import { strokeProps, defaultColor } from './utils';
+import { defaultColor, strokeProps } from './utils';
 
-const Bar = props => {
-  const {
-    background,
-    max,
-    round,
-    size,
-    thickness,
-    values,
-    ...rest
-  } = props;
+export const Bar: React.FC<MeterProps> = props => {
+  const { background, max, round, size, thickness, values, ...rest } = props;
+  const theme = useTheme();
   const width =
-    size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
+    size === 'full' ? 288 : parseMetricToNum(theme.global.size[size!] || size);
   const height = parseMetricToNum(
-    theme.global.edgeSize[thickness] || thickness,
+    theme.global.edgeSize[thickness!] || thickness,
   );
   // account for the round cap, if any
   const capOffset = round ? height / 2 : 0;
@@ -36,7 +25,7 @@ const Bar = props => {
       const { color, highlight, label, onHover, value, ...pathRest } = valueArg;
 
       const key = `p-${index}`;
-      const delta = (value * (width - 2 * capOffset)) / max;
+      const delta = (value * (width - 2 * capOffset)) / max!;
       const d = `M ${start},${mid} L ${start + delta},${mid}`;
       const colorName =
         color || defaultColor(index, theme, values ? values.length : 0);
@@ -91,9 +80,3 @@ const Bar = props => {
 Bar.defaultProps = {
   background: 'light-1',
 };
-
-Object.setPrototypeOf(Bar.defaultProps, defaultProps);
-
-const BarWrapper = compose(withTheme)(Bar);
-
-export { BarWrapper as Bar };

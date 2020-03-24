@@ -25,13 +25,13 @@ const customTheme = deepMerge(grommet, {
   },
 });
 
-const CustomRadioButtomGroup = ({ value: initialValue, ...props }) => {
+const CustomRadioButtomGroup = ({ value: initialValue, ...props }: any) => {
   const [value, setValue] = useState<any>(initialValue);
 
   return (
     <Grommet theme={customTheme}>
       <ThemeContext.Consumer>
-        {theme => console.log(JSON.stringify(theme.radioButton))}
+        {theme => { console.log(JSON.stringify(theme?.radioButton)); return null; }}
       </ThemeContext.Consumer>
       <Box align="center" pad="large">
         <RadioButtonGroup

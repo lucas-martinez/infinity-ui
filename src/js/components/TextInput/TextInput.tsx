@@ -208,7 +208,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
 
     const openDrop = () => {
       setShowDrop(true);
-      announce(messages.suggestionIsOpen);
+      announce(messages.suggestionIsOpen!);
       announce(`${suggestions!.length} ${messages.suggestionsCount}`);
       if (onSuggestionsOpen) onSuggestionsOpen();
     };
@@ -402,7 +402,7 @@ const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
             onFocus={event => {
               setFocus(true);
               if (suggestions && suggestions.length > 0) {
-                announce(messages.suggestionsExist);
+                announce(messages.suggestionsExist!);
                 openDrop();
               }
               if (onFocus) onFocus(event);
