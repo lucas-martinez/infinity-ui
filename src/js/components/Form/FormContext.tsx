@@ -15,4 +15,4 @@ const useFormContext = (_, valueProp) => {
   ];
 };
 
-export const FormContext = React.createContext({ useFormContext });
+export const FormContext = React.createContext<any>({ useFormContext });

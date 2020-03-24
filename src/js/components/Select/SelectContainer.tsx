@@ -364,7 +364,7 @@ class SelectContainer extends Component<
     const { activeIndex, search } = this.state;
 
     const customSearchInput = theme.select.searchInput;
-    const SelectTextInput = customSearchInput || TextInput;
+    const SelectTextInput: any = customSearchInput || TextInput;
     const selectOptionsStyle = {
       ...theme.select.options.box,
       ...theme.select.options.container,

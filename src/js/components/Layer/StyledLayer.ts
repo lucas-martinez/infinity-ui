@@ -7,6 +7,7 @@ import {
   parseMetricToNum,
 } from '../../utils';
 import { defaultProps } from '../../default-props';
+import ThemeType from '../Theme/ThemeType';
 
 const hiddenPositionStyle = css<any>`
   left: -100%;
@@ -89,7 +90,7 @@ const StyledOverlay = styled.div<any>`
     )} pointer-events: all;
 `;
 
-const getMargin = (margin, theme, position) => {
+const getMargin = (margin: any, theme: ThemeType, position: string) => {
   const axis =
     position.indexOf('top') !== -1 || position.indexOf('bottom') !== -1
       ? 'vertical'
@@ -103,7 +104,7 @@ const getMargin = (margin, theme, position) => {
     : parseMetricToNum(marginApplied);
 };
 
-const getBounds = (bounds, margin, theme, position = undefined) => {
+const getBounds = (bounds: any, margin: any, theme: ThemeType, position?: string) => {
   if (position) {
     return bounds[position] + getMargin(margin, theme, position);
   }

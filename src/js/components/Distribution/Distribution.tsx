@@ -6,7 +6,7 @@ import { DivIntrinsicProps } from '../intrinsic-elements';
 import { Text } from '../Text';
 
 
-const Value = ({ basis, children }) => (
+const Value = ({ basis, children }: value) => (
   <Box basis={basis} flex="shrink" overflow="hidden">
     {children}
   </Box>
@@ -22,6 +22,7 @@ export interface DistributionProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   basis?: BasisType;
+  direction?: any;
   gridArea?: GridAreaType;
   margin?: MarginType;
   children?: (...args: any[]) => any;
@@ -45,8 +46,8 @@ const Distribution = ({
   if (values.length === 1) {
     const value = values[0];
     return (
-      <Value value={value} basis={basis}>
-        {children(value)}
+      <Value value={value} basis={basis!}>
+        {children && children(value)}
       </Value>
     );
   }
@@ -70,8 +71,8 @@ const Distribution = ({
     if (subIndex === values.length) {
       const value = values[0];
       return (
-        <Value value={value} basis={basis}>
-          {children(value)}
+        <Value value={value} basis={basis!}>
+          {children && children(value)}
         </Value>
       );
     }

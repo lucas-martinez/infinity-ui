@@ -73,7 +73,7 @@ export interface FormFieldProps {
       )[];
 }
 
-const FormField = forwardRef<HTMLInputElement, FormFieldProps & Omit<InputIntrinsicProps, 'placeholder'>>(
+const FormField = forwardRef<HTMLInputElement, FormFieldProps & Omit<InputIntrinsicProps, 'placeholder'> & { checked: boolean, value: any, validate: any }>(
   (
     {
       checked,
@@ -108,7 +108,7 @@ const FormField = forwardRef<HTMLInputElement, FormFieldProps & Omit<InputIntrin
       if (
         context &&
         context.value &&
-        context.value[name] === undefined &&
+        context.value[name!] === undefined &&
         (value !== undefined || checked !== undefined)
       ) {
         context.update(name, value !== undefined ? value : checked, true);
@@ -123,9 +123,9 @@ const FormField = forwardRef<HTMLInputElement, FormFieldProps & Omit<InputIntrin
           let result;
           if (typeof aValidate === 'function') {
             result = aValidate(value2, data);
-          } else if (validate.regexp) {
-            if (!validate.regexp.test(value2)) {
-              result = validate.message || messages.invalid;
+          } else if (validate!.regexp) {
+            if (!validate!.regexp.test(value2)) {
+              result = validate!.message || messages.invalid;
               if (validate.status) {
                 result = { message: error, status: validate.status };
               }
@@ -170,7 +170,7 @@ const FormField = forwardRef<HTMLInputElement, FormFieldProps & Omit<InputIntrin
             name={name}
             label={label}
             checked={
-              formValue[name] !== undefined ? formValue[name] : checked || false
+              formValue[name!] !== undefined ? formValue[name!] : checked || false
             }
             disabled={disabled}
             aria-invalid={invalid || undefined}
@@ -182,7 +182,7 @@ const FormField = forwardRef<HTMLInputElement, FormFieldProps & Omit<InputIntrin
         <Input
           name={name}
           value={
-            formValue[name] !== undefined ? formValue[name] : valueProp || ''
+            formValue[name!] !== undefined ? formValue[name!] : valueProp || ''
           }
           disabled={disabled}
           plain
@@ -217,7 +217,7 @@ const FormField = forwardRef<HTMLInputElement, FormFieldProps & Omit<InputIntrin
     let contents =
       (border &&
         children &&
-        Children.map(children, child => {
+        Children.map(children, (child: any) => {
           if (
             child &&
             child.type &&
@@ -253,8 +253,8 @@ const FormField = forwardRef<HTMLInputElement, FormFieldProps & Omit<InputIntrin
         onBlur: onContextBlur,
         value: formValue,
       } = context;
-      normalizedError = error || errors[name];
-      normalizedInfo = info || infos[name];
+      normalizedError = error || errors[name!];
+      normalizedInfo = info || infos[name!];
       if (!contents) containerRest = {};
       contents = contents || renderInput(formValue, !!normalizedError);
       if (onContextBlur) {

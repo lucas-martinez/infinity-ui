@@ -167,7 +167,10 @@ const InfiniteScroll = ({
     // ride out any animation delays, 100ms empirically measured
     const timer = setTimeout(() => {
       if (show && showRef.current) {
-        findDOMNode(showRef.current).scrollIntoView();
+        const domNode = findDOMNode(showRef.current);
+        if (domNode instanceof HTMLElement) {
+          domNode.scrollIntoView();
+        }
       }
     }, 100);
     return () => clearTimeout(timer);
@@ -191,7 +194,7 @@ const InfiniteScroll = ({
 
   items.slice(firstIndex, lastIndex + 1).forEach((item, index) => {
     const itemsIndex = firstIndex + index;
-    let child = children(item, itemsIndex);
+    let child = children && children(item, itemsIndex);
     // we only need the Refs if we don't know the pageHeight
     if (!pageHeight && itemsIndex === 0) {
       child = (

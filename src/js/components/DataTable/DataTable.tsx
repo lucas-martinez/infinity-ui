@@ -239,7 +239,7 @@ const DataTable = ({
           background={normalizeProp(background, 'body')}
           border={normalizeProp(border, 'body')}
           columns={columns}
-          groupBy={groupBy.property ? groupBy.property : groupBy}
+          groupBy={typeof groupBy === 'string' ? groupBy : groupBy.property}
           groups={groups}
           groupState={groupState}
           pad={normalizeProp(pad, 'body')}
