@@ -49,7 +49,7 @@ const slideStyle = props => {
 
   const translateYFrom = direction === 'down' ? `-${amount}px` : '0';
   const translateYTo = direction === 'up' ? `-${amount}px` : '0';
-  const slideTransition = css<any>`
+  const slideTransition = `
     0% {
       transform: translateY(${translateYFrom});
     }
@@ -73,7 +73,7 @@ Object.setPrototypeOf(StyledWeeks.defaultProps, defaultProps);
 const StyledWeek = styled.div<any>`
   display: flex;
   flex-direction: row;
-  flex-justify: between;
+  justify-content: between;
 `;
 
 StyledWeek.defaultProps = {};

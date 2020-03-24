@@ -1,6 +1,6 @@
 import { PartialThemeGenerator } from '.';
-import { ColorType } from '../../js/utils';
 import spec from './quantum-spec';
+import AlertTheme from '../../components/AlertQ/AlertTheme';
 
 export const alert = {
   border: spec.global.alert.border,
@@ -73,22 +73,6 @@ export const alert = {
   tooltip: {
     arrow: spec.global.alertTooltipArrow,
   },
-};
-
-export type AlertTheme = Omit<Partial<typeof alert>, 'icon' | 'link' | 'tooltip'> & {
-  backgroundColor?: ColorType;
-  depth?: string;
-  icon?: Partial<typeof alert.icon> & {
-    image?: ColorType;
-  };
-  linkColor?: ColorType;
-  position?: string;
-  positionBottom?: string;
-  positionTop?: string;
-  positionLeft?: string;
-  positionRight?: string;
-  tooltipBorderColor?: ColorType;
-  zIndex?: string;
 };
 
 export const alertLarge: Partial<AlertTheme> = {

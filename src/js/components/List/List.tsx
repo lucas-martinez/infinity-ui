@@ -1,13 +1,20 @@
 import React from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
-
+import {
+  A11yTitleType,
+  AlignSelfType,
+  focusStyle,
+  genericStyles,
+  GridAreaType,
+  MarginType,
+} from '../../utils';
 import { Box } from '../Box';
+import { withFocus, withForwardRef } from '../hocs';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { focusStyle, genericStyles } from '../../utils';
-import { withFocus, withForwardRef } from '../hocs';
+import { UListIntrinsicProps } from '../intrinsic-elements';
 
 const StyledList = styled.ul<any>`
   list-style: none;
@@ -28,7 +35,78 @@ const normalize = (item, index, property) => {
   return item[property];
 };
 
-const List = React.forwardRef((props, ref) => {
+type SizeType =
+  | 'xxsmall'
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | string;
+type SideType =
+  | 'top'
+  | 'left'
+  | 'bottom'
+  | 'right'
+  | 'horizontal'
+  | 'vertical'
+  | 'all';
+type PadSizeType =
+  | 'none'
+  | 'xxsmall'
+  | 'xsmall'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
+  | string;
+type PadType =
+  | PadSizeType
+  | {
+      bottom?: PadSizeType;
+      horizontal?: PadSizeType;
+      left?: PadSizeType;
+      right?: PadSizeType;
+      top?: PadSizeType;
+      vertical?: PadSizeType;
+    };
+type BorderType =
+  | boolean
+  | SideType
+  | {
+      color?: string | { dark?: string; light?: string };
+      side?: SideType;
+      size?: SizeType;
+    };
+
+export interface ListProps extends UListIntrinsicProps {
+  a11yTitle?: A11yTitleType;
+  action: any;
+  alignSelf?: AlignSelfType;
+  as?: string;
+  background?:
+    | string
+    | string[]
+    | { light: string | string[]; dark: string | string[] };
+  border?: BorderType;
+  data?: string[] | {}[];
+  focus: any;
+  gridArea?: GridAreaType;
+  itemProps?: {
+    [_: string]: { background?: string; border?: BorderType; pad?: PadType };
+  };
+  margin?: MarginType;
+  onMore?: () => void;
+  onClickItem?:
+    | ((event: React.MouseEvent) => void)
+    | ((event: { item?: {}; index?: number }) => void);
+  pad?: PadType;
+  primaryKey?: string | ((...args: any[]) => any);
+  secondaryKey?: string | ((...args: any[]) => any);
+  step?: number;
+}
+
+const List = React.forwardRef((props: ListProps, ref) => {
   const {
     action,
     as,
@@ -47,7 +125,7 @@ const List = React.forwardRef((props, ref) => {
     onMore,
     ...rest
   } = props;
-  const [active, setActive] = React.useState();
+  const [active, setActive] = React.useState<any>();
 
   return (
     <Keyboard
@@ -56,7 +134,7 @@ const List = React.forwardRef((props, ref) => {
           ? event => {
               event.persist();
               const adjustedEvent = event;
-              adjustedEvent.item = data[active];
+              adjustedEvent.item = data && data[active];
               adjustedEvent.index = active;
               onClickItem(adjustedEvent);
             }

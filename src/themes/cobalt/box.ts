@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import { PartialThemeGenerator } from '.';
-import { AlertProps } from '../../Alert/Alert';
+import { AlertProps } from '../../components/AlertQ/Alert';
 import { BreadcrumbsProps } from '../../components/BreadcrumbsQ/Breadcrumbs';
 import { PaperProps } from '../../components/PaperQ/Paper';
 import { alert } from './alert';

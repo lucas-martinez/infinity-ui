@@ -1,4 +1,4 @@
-import React from './node_modules/ styled, { ThemeProps } from 
+import React from 'react';
 import styled, { ThemeProps } from 'styled-components';
 import { Button, ButtonProps } from '../../js/components/Button';
 import { ExtendedTheme } from '../../themes/cobalt';

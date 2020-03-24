@@ -14,7 +14,7 @@ const fitStyle = css<any>`
   object-fit: ${props => FIT_MAP[props.fit]};
 `;
 
-const StyledImage = styled.img`
+const StyledImage = styled.img<any>`
   ${genericStyles}
   ${props => props.fit && fitStyle}
   ${props => props.fillProp && fillStyle(props.fillProp)}

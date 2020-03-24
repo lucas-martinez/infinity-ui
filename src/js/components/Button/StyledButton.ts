@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-
+import { defaultProps } from '../../default-props';
 import {
   activeStyle,
   backgroundStyle,
@@ -9,7 +9,6 @@ import {
   getHoverIndicatorStyle,
   normalizeColor,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 
 const radiusStyle = props => {
   // border.radius shouldn't impact an only-icon rendering.
@@ -89,7 +88,8 @@ const hoverStyle = css<any>`
   &:hover {
     ${props =>
       props.hoverIndicator &&
-      getHoverIndicatorStyle(props.hoverIndicator, props.theme)} ${props =>
+      getHoverIndicatorStyle(props.hoverIndicator, props.theme)}
+    ${props =>
       !props.plain &&
       css<any>`
         box-shadow: 0px 0px 0px 2px ${getHoverColor(props)};
@@ -123,7 +123,7 @@ const plainStyle = props => css<any>`
 `;
 
 // Deprecate props.theme.button.disabled.opacity in V3
-const StyledButton = styled.button`
+const StyledButton = styled.button<any>`
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;

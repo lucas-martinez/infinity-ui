@@ -1,16 +1,44 @@
 import React, { forwardRef, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-
-import { getNewContainer } from '../../utils';
-
+import {
+  AnimateType,
+  getNewContainer,
+  KeyboardType,
+  MarginType,
+} from '../../utils';
+import { DivIntrinsicProps } from '../intrinsic-elements';
 import { LayerContainer } from './LayerContainer';
 import { animationDuration } from './StyledLayer';
 
-const Layer = forwardRef((props, ref) => {
+export interface LayerProps extends DivIntrinsicProps {
+  animate?: AnimateType;
+  animation?: 'none' | 'slide' | 'fadeIn' | boolean;
+  full?: boolean | 'vertical' | 'horizontal';
+  margin?: MarginType;
+  modal?: boolean;
+  onClickOutside?: (...args: any[]) => any;
+  onEsc?: KeyboardType;
+  plain?: boolean;
+  position?:
+    | 'bottom'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'center'
+    | 'hidden'
+    | 'left'
+    | 'right'
+    | 'top'
+    | 'top-left'
+    | 'top-right';
+  responsive?: boolean;
+  target?: object;
+}
+
+const Layer = forwardRef((props: LayerProps, ref) => {
   const { animate, animation } = props;
-  const [originalFocusedElement, setOriginalFocusedElement] = useState();
+  const [originalFocusedElement, setOriginalFocusedElement] = useState<any>();
   useEffect(() => setOriginalFocusedElement(document.activeElement), []);
-  const [layerContainer, setLayerContainer] = useState();
+  const [layerContainer, setLayerContainer] = useState<any>();
   useEffect(() => setLayerContainer(getNewContainer()), []);
 
   // just a few things to clean up when the Layer is unmounted

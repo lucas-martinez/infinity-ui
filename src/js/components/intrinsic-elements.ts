@@ -6,8 +6,8 @@ import { ThemeType } from '../themes';
 export type ElementProps<T> = DetailedHTMLProps<HTMLAttributes<T>, T>;
 
 export interface ThemedElementProps<T>
-  extends ElementProps<T>, ThemeProps<ThemeType> {
-}
+  extends ElementProps<T>,
+    ThemeProps<ThemeType> {}
 
 export interface ThemedStyledElementProps<T>
   extends Omit<ThemedElementProps<T>, 'color'> {
@@ -37,6 +37,12 @@ export interface FormIntrinsicProps
 
 export interface HeadingIntrinsicProps
   extends ThemedStyledElementProps<HTMLHeadingElement> {}
+
+export interface ImageIntrinsicProps
+  extends ThemedStyledElementProps<HTMLImageElement> {
+    alt?: string;
+    src: string;
+}
 
 export interface InputIntrinsicProps
   extends ThemedStyledElementProps<HTMLInputElement> {}
