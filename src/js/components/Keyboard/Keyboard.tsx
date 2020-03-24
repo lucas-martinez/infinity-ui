@@ -1,4 +1,5 @@
 import { Children, cloneElement, useCallback, useEffect } from 'react';
+import { KeyboardType } from '../../utils';
 
 const KEYS = {
   8: 'onBackspace',
@@ -14,7 +15,28 @@ const KEYS = {
   16: 'onShift',
 };
 
-const Keyboard = ({ target, children, onKeyDown, ...restProps }) => {
+export interface KeyboardProps {
+  target?: 'component' | 'document';
+  onBackspace?: KeyboardType;
+  onComma?: KeyboardType;
+  onDown?: KeyboardType;
+  onEnter?: KeyboardType;
+  onEsc?: KeyboardType;
+  onKeyDown?: KeyboardType;
+  onLeft?: KeyboardType;
+  onRight?: KeyboardType;
+  onShift?: KeyboardType;
+  onSpace?: KeyboardType;
+  onTab?: KeyboardType;
+  onUp?: KeyboardType;
+}
+
+const Keyboard: React.FC<KeyboardProps> = ({
+  target,
+  children,
+  onKeyDown,
+  ...restProps
+}) => {
   const onKeyDownHandler = useCallback(
     (event, ...rest) => {
       const key = event.keyCode ? event.keyCode : event.which;

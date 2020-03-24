@@ -31,7 +31,7 @@ export interface DivIntrinsicProps
   extends ThemedStyledElementProps<HTMLDivElement> {}
 
 export interface FormIntrinsicProps
-  extends ThemedStyledElementProps<HTMLFormElement> {}
+  extends ElementProps<HTMLFormElement> {}
 
 export interface HeadingIntrinsicProps
   extends ThemedStyledElementProps<HTMLHeadingElement> {}

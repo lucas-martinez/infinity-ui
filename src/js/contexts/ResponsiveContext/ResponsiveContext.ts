@@ -1,3 +1,5 @@
 import React from 'react';
 
-export const ResponsiveContext = React.createContext(undefined);
+export type ResponsiveValue = string;
+
+export const ResponsiveContext = React.createContext<ResponsiveValue | undefined>(undefined);

@@ -7,14 +7,19 @@ import React, {
   useState,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
-
-import { parseMetricToNum } from '../../utils';
+import {
+  MarginType,
+  Omit,
+  parseMetricToNum,
+  PlaceHolderType,
+} from '../../utils';
 import { Box } from '../Box';
 import { CheckBox } from '../CheckBox';
+import { FormContext } from '../Form/FormContext';
+import { InputIntrinsicProps } from '../intrinsic-elements';
 import { RadioButtonGroup } from '../RadioButtonGroup';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
-import { FormContext } from '../Form/FormContext';
 
 const grommetInputNames = ['TextInput', 'Select', 'MaskedInput', 'TextArea'];
 const grommetInputPadNames = ['CheckBox', 'RadioButtonGroup', 'RangeInput'];
@@ -35,6 +40,38 @@ const Message = ({ message, ...rest }) => {
   }
   return null;
 };
+
+export interface FormFieldProps {
+  disabled?: boolean;
+  error?: string | React.ReactNode;
+  help?: string | React.ReactNode;
+  htmlFor?: string;
+  info?: string | React.ReactNode;
+  label?: string | React.ReactNode;
+  margin?: MarginType;
+  name?: string;
+  options?: string[];
+  pad?: boolean;
+  // Although Placeholder is not a prop within FormField we Omit the HTML placeholder attribute and replaced with following.
+  placeholder?: PlaceHolderType;
+  required?: boolean;
+  component?: any;
+  validate?:
+    | {
+        regexp?: object;
+        message?: string | React.ReactNode;
+        status?: 'error' | 'info';
+      }
+    | ((...args: any[]) => any)
+    | (
+        | {
+            regexp?: object;
+            message?: string | React.ReactNode;
+            status?: 'error' | 'info';
+          }
+        | ((...args: any[]) => any)
+      )[];
+}
 
 const FormField = forwardRef(
   (
@@ -59,8 +96,8 @@ const FormField = forwardRef(
       validate,
       value: valueProp,
       ...rest
-    },
-    ref,
+    }: FormFieldProps & Omit<InputIntrinsicProps, 'placeholder'>,
+    ref: any,
   ) => {
     const theme = useContext(ThemeContext);
     const context = useContext(FormContext);

@@ -1,5 +1,12 @@
 import React from 'react';
 
+export type AnnounceMessage = string;
+export type AnnounceMode = 'off' | 'polite' | 'assertive';
+export type AnnounceValue = (
+  message: AnnounceMessage,
+  mode: AnnounceMode,
+) => void;
+
 const createAnnouncer = () => {
   const announcer = document.createElement('div');
   announcer.style.left = '-100%';
@@ -12,7 +19,7 @@ const createAnnouncer = () => {
   return announcer;
 };
 
-export const AnnounceContext = React.createContext(
+export const AnnounceContext = React.createContext<AnnounceValue>(
   (message, mode = 'polite', timeout = 500) => {
     // we only create a new container if we don't have one already
     // we create a separate node so that grommet does not set aria-hidden to it

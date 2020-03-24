@@ -1,5 +1,11 @@
 import React, { useMemo } from 'react';
-
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GridAreaType,
+  MarginType,
+  OpacityType,
+} from '../../utils';
 import { Bar } from './Bar';
 import { Circle } from './Circle';
 
@@ -14,7 +20,28 @@ const deriveMax = values => {
   return max;
 };
 
-const Meter = ({
+export interface MeterProps {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  background?: string | { color?: string; opacity?: OpacityType };
+  gridArea?: GridAreaType;
+  margin?: MarginType;
+  max?: number;
+  round?: boolean;
+  size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'full' | string;
+  thickness?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+  type?: 'bar' | 'circle';
+  values?: {
+    color?: string;
+    highlight?: boolean;
+    label?: string;
+    onClick?: (...args: any[]) => any;
+    onHover?: (...args: any[]) => any;
+    value: number;
+  }[];
+}
+
+const Meter: React.FC<MeterProps> = ({
   background = { color: 'light-2', opacity: 'medium' },
   size = 'medium',
   thickness = 'medium',
@@ -49,6 +76,7 @@ const Meter = ({
   }
   return content;
 };
+export { MeterWrapper as Meter };
 
 let MeterDoc;
 if (process.env.NODE_ENV !== 'production') {

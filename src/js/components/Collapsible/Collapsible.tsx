@@ -1,10 +1,9 @@
-import React, { createRef, Component } from 'react';
+import React, { Component, createRef } from 'react';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
-
 import { defaultProps } from '../../default-props';
-
 import { Box } from '../Box';
+import { DivIntrinsicProps } from '../intrinsic-elements';
 
 const animatedBoxProperty = direction =>
   direction === 'horizontal' ? 'width' : 'height';
@@ -24,7 +23,12 @@ const AnimatedBox = styled(Box)`
   `)};
 `;
 
-class Collapsible extends Component {
+export interface CollapsibleProps {
+  open?: boolean;
+  direction?: 'horizontal' | 'vertical';
+}
+
+class Collapsible extends Component<CollapsibleProps & DivIntrinsicProps> {
   ref = createRef();
 
   static getDerivedStateFromProps(nextProps, prevState) {

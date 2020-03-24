@@ -1,8 +1,10 @@
-import React from 'react';
 import PropTypes from 'prop-types';
-
+import React from 'react';
+import { A11yTitleType, AlignSelfType, BasisType, GapType, GridAreaType, MarginType } from "../../utils";
 import { Box } from '../Box';
+import { DivIntrinsicProps } from '../intrinsic-elements';
 import { Text } from '../Text';
+
 
 const Value = ({ basis, children }) => (
   <Box basis={basis} flex="shrink" overflow="hidden">
@@ -15,6 +17,22 @@ Value.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
+
+export interface DistributionProps {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  basis?: BasisType;
+  gridArea?: GridAreaType;
+  margin?: MarginType;
+  children?: (...args: any[]) => any;
+  fill?: boolean;
+  gap?: GapType;
+  values: {
+    value: number;
+    color?: string | { dark?: string; light?: string };
+  }[];
+}
+
 const Distribution = ({
   basis,
   children,
@@ -23,7 +41,7 @@ const Distribution = ({
   gap,
   values,
   ...rest
-}) => {
+}: DistributionProps & DivIntrinsicProps) => {
   if (values.length === 1) {
     const value = values[0];
     return (
@@ -116,6 +134,7 @@ if (process.env.NODE_ENV !== 'production') {
   // eslint-disable-next-line global-require
   DistributionDoc = require('./doc').doc(Distribution);
 }
+
 const DistributionWrapper = DistributionDoc || Distribution;
 
 export { DistributionWrapper as Distribution };

@@ -1,8 +1,7 @@
 import React from 'react';
+import { Box, BoxProps } from '../Box';
 
-import { Box } from '../Box';
-
-const Main = ({ ...rest }) => (
+const Main: React.FC<BoxProps> = ({ ...rest }) => (
   <Box as="main" fill="vertical" flex="grow" overflow="auto" {...rest} />
 );
 
@@ -14,3 +13,4 @@ if (process.env.NODE_ENV !== 'production') {
 const MainWrapper = MainDoc || Main;
 
 export { MainWrapper as Main };
+

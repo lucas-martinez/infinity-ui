@@ -1,10 +1,14 @@
 import React, { cloneElement, useRef, useState } from 'react';
-
 import { Box } from '../Box';
 import { Heading } from '../Heading';
 import { Layer } from '../Layer';
 
-const SkipLinks = ({ children, id, messages }) => {
+export interface SkipLinksProps {
+  children: React.ReactNode;
+  messages?: {skipTo?: string};
+}
+
+const SkipLinks = ({ children, id, messages }: SkipLinksProps) => {
   const [showLayer, setShowLayer] = useState<any>(false);
 
   const layerRef = useRef<any>(null);
@@ -69,3 +73,4 @@ if (process.env.NODE_ENV !== 'production') {
 const SkipLinksWrapper = SkipLinksDoc || SkipLinks;
 
 export { SkipLinksWrapper as SkipLinks };
+

@@ -1,8 +1,7 @@
 import React from 'react';
+import { Box, BoxProps } from '../Box';
 
-import { Box } from '../Box';
-
-const Nav = ({ ...rest }) => (
+const Nav: React.FC<BoxProps> = ({ ...rest }) => (
   <Box as="nav" flex={false} gap="medium" {...rest} />
 );
 
@@ -14,3 +13,4 @@ if (process.env.NODE_ENV !== 'production') {
 const NavWrapper = NavDoc || Nav;
 
 export { NavWrapper as Nav };
+

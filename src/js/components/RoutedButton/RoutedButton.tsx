@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Button, ButtonProps } from '../Button';
 
-import { Button } from '../Button';
+export interface RoutedButtonProps extends ButtonProps {
+  path: string;
+  method?: 'push' | 'replace';
+}
 
-class RoutedButton extends Component {
+class RoutedButton extends Component<RoutedButtonProps> {
   static contextTypes = {
     router: PropTypes.shape({}).isRequired,
   };

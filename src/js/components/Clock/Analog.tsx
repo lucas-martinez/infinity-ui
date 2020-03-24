@@ -6,6 +6,7 @@ import { parseMetricToNum } from '../../utils';
 import { StyledAnalog, StyledHour, StyledMinute, StyledSecond } from './StyledClock';
 import { ClockProps } from './Clock';
 import { DivIntrinsicProps, SvgIntrinsicProps } from '../intrinsic-elements';
+import useTheme from '../Theme/useTheme';
 
 // this will serve both minutes and hours (360 / 6)
 const ANGLE_UNIT = 6;
@@ -62,8 +63,9 @@ class Analog extends Component<AnalogProps, AnalogState> {
   state: AnalogState = {};
 
   render() {
-    const { precision, theme, ...rest } = this.props;
+    const { precision, ...rest } = this.props;
     const { hourAngle, minuteAngle, secondAngle } = this.state;
+    const theme = useTheme();
     const { size, secondSize, minuteSize, hourSize } = getClockDimensions(
       theme,
     );

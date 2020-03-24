@@ -1,8 +1,7 @@
 import React from 'react';
+import { Box, BoxProps } from '../Box';
 
-import { Box } from '../Box';
-
-const Header = ({ ...rest }) => (
+const Header: React.FC<BoxProps> = ({ ...rest }) => (
   <Box
     align="center"
     as="header"

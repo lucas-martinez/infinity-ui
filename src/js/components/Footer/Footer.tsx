@@ -1,8 +1,7 @@
 import React from 'react';
+import { Box, BoxProps } from '../Box';
 
-import { Box } from '../Box';
-
-const Footer = ({ ...rest }) => (
+const Footer = ({ ...rest }: BoxProps) => (
   <Box
     as="footer"
     align="center"

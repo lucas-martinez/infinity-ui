@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { FormIntrinsicProps } from '../intrinsic-elements';
 import { FormContext } from './FormContext';
 
 const defaultMessages = {
@@ -45,6 +46,17 @@ const updateInfos = (nextInfos, name, error) => {
   /* eslint-enable no-param-reassign */
 };
 
+export interface FormProps {
+  errors?: {};
+  infos?: {};
+  messages?: { invalid?: string; required?: string };
+  onChange?: (event: React.ChangeEvent) => void;
+  onSubmit?: (event: React.FormEvent) => void;
+  onReset?: (event: React.SyntheticEvent) => any;
+  validate?: 'blur' | 'submit';
+  value?: {};
+}
+
 const Form = forwardRef(
   (
     {
@@ -58,8 +70,8 @@ const Form = forwardRef(
       validate = 'submit',
       value: valueProp = defaultValue,
       ...rest
-    },
-    ref,
+    }: FormProps & FormIntrinsicProps,
+    ref: any,
   ) => {
     const [value, setValue] = useState<any>(valueProp);
     useEffect(() => {
@@ -81,7 +93,7 @@ const Form = forwardRef(
 
     useEffect(() => {}, [value, errors, infos]);
 
-    const update = useCallback((name, data, initial) => {
+    const update = useCallback((name, data, initial: any = undefined) => {
       setValue(prevValue => {
         const nextValue = { ...prevValue };
         nextValue[name] = data;
@@ -180,7 +192,7 @@ const Form = forwardRef(
           setInfos(nextInfos);
           if (Object.keys(nextErrors).length === 0 && onSubmit) {
             event.persist(); // extract from React's synthetic event pool
-            const adjustedEvent = event;
+            const adjustedEvent: any = event;
             adjustedEvent.value = value;
             adjustedEvent.touched = touched;
             onSubmit(adjustedEvent);

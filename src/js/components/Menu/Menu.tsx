@@ -1,17 +1,24 @@
 import React, { useState } from 'react';
+import PropTypes from 'react-desc/lib/PropTypes';
 import { compose } from 'recompose';
 import styled, { withTheme } from 'styled-components';
-
-import PropTypes from 'react-desc/lib/PropTypes';
 import { defaultProps } from '../../default-props';
-
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GridAreaType,
+  JustifyContentType,
+  MarginType,
+  normalizeColor,
+} from '../../utils';
 import { Box } from '../Box';
-import { Button } from '../Button';
+import { Button, ButtonProps } from '../Button';
 import { DropButton } from '../DropButton';
+import { withForwardRef } from '../hocs';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
-import { withForwardRef } from '../hocs';
-import { normalizeColor } from '../../utils';
+import useTheme from '../Theme/useTheme';
+import { DropProps } from '../Drop/Drop';
 
 const ContainerBox = styled(Box)`
   max-height: inherit;
@@ -24,28 +31,36 @@ const ContainerBox = styled(Box)`
   ${props => props.theme.menu.extend};
 `;
 
-/* Notes on keyboard interactivity (based on W3) // For details reference: https://www.w3.org/TR/wai-aria-practices/#menu
+export interface MenuProps {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  disabled?: boolean;
+  dropAlign?: {
+    top?: 'top' | 'bottom';
+    bottom?: 'top' | 'bottom';
+    left?: 'right' | 'left';
+    right?: 'right' | 'left';
+  };
+  dropBackground?:
+    | string
+    | {
+        color?: string;
+        opacity?: 'weak' | 'medium' | 'strong' | boolean | number;
+      };
+  dropTarget?: object;
+  dropProps?: DropProps;
+  gridArea?: GridAreaType;
+  icon?: boolean | React.ReactNode;
+  items: object[];
+  justifyContent?: JustifyContentType;
+  label?: string | React.ReactNode;
+  margin?: MarginType;
+  messages?: { closeMenu?: string; openMenu?: string };
+  open?: boolean;
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+}
 
-To open menu when menu button is focused:
-- Space/Enter/Up arrow/Down arrow will open menu
-
-To navigate within menu:
-- Up/down arrow keys can be used and will loop through options
-(keeping focus within the Menu)
-- Tab can be used, but once the last menu item is reached, Tab will close the 
-Menu and continue through page content.
-
-To close the menu:
-- Tabbing beyond the first or last menu item.
-- Esc will close the menu
-- Select a menu item
-
-To make a selection:
-- Enter key is pressed.
-- Space is pressed.
-*/
-
-const Menu = props => {
+const Menu: React.FC<MenuProps & Omit<ButtonProps, 'icon'>> = props => {
   const {
     a11yTitle,
     children,
@@ -66,6 +81,7 @@ const Menu = props => {
     size,
     ...rest
   } = props;
+  const theme = useTheme();
   const MenuIcon = theme.menu.icons.down;
   const iconColor = normalizeColor('control', theme);
   const align = dropProps.align || dropAlign;

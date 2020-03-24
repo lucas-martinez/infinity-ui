@@ -45,7 +45,7 @@ const buildStyledChildren = ({
   };
 };
 
-export interface StackProps extends DivIntrinsicProps {
+export interface StackProps {
   a11yTitle?: A11yTitleType;
   alignSelf?: AlignSelfType;
   anchor?:
@@ -72,7 +72,7 @@ const Stack = ({
   guidingChild,
   interactiveChild,
   ...rest
-}: StackProps) => {
+}: StackProps & DivIntrinsicProps) => {
   const toChildIndex = child => {
     let index = child;
 

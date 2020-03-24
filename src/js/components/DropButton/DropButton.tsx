@@ -5,9 +5,24 @@ import React, {
   useRef,
   useState,
 } from 'react';
+import { Button, ButtonProps } from '../Button';
+import { Drop, DropProps } from '../Drop';
+import { ButtonIntrinsicProps } from '../intrinsic-elements';
 
-import { Button } from '../Button';
-import { Drop } from '../Drop';
+export interface DropButtonProps {
+  dropAlign?: {
+    top?: 'top' | 'bottom';
+    bottom?: 'top' | 'bottom';
+    right?: 'left' | 'right';
+    left?: 'left' | 'right';
+  };
+  dropContent: JSX.Element;
+  dropTarget?: object;
+  dropProps?: DropProps;
+  onClose?: (...args: any[]) => any;
+  onOpen?: (...args: any[]) => any;
+  open?: boolean;
+}
 
 const DropButton = forwardRef(
   (
@@ -24,8 +39,8 @@ const DropButton = forwardRef(
       onClose,
       onOpen,
       ...rest
-    },
-    ref,
+    }: DropButtonProps & ButtonProps & ButtonIntrinsicProps,
+    ref: any,
   ) => {
     const [show, setShow] = useState<any>();
     useEffect(() => {

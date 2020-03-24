@@ -4,9 +4,11 @@ import { compose } from 'recompose';
 import { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
-import { normalizeColor, parseMetricToNum } from '../../utils';
+import { normalizeColor, parseMetricToNum, ColorType } from '../../utils';
 
 import { StyledDiagram } from './StyledDiagram';
+import { SvgIntrinsicProps } from '../intrinsic-elements';
+import useTheme from '../Theme/useTheme';
 
 const computeMidPoint = (fromPoint, toPoint) => [
   fromPoint[0] > toPoint[0]
@@ -60,10 +62,27 @@ const findTarget = target => {
   return target;
 };
 
-const Diagram = ({ connections, theme, ...rest }) => {
+export type DiagramConnectionAnchor = "center" | "vertical" | "horizontal";
+export type DiagramConnectionType = "direct" | "curved" | "rectilinear";
+
+export interface DiagramProps {
+  connections: {
+    anchor?: DiagramConnectionAnchor, 
+    color?: ColorType,
+    fromTarget: string | object,
+    label?: string,
+    offset?: "xsmall" | "small" | "medium" | "large" | string,
+    thickness?: "hair" | "xxsmall" | "xsmall" | "small" | "medium" | "large" | string,
+    toTarget: string | object,
+    type?: DiagramConnectionType
+  }[];
+}
+
+const Diagram = ({ connections, ...rest }: DiagramProps & SvgIntrinsicProps) => {
   const [dimensions, setDimensions] = useState<any>({ width: 0, height: 0 });
   const [connectionPoints, setConnectionPoints] = useState<any>();
   const svgRef = useRef<any>();
+  const theme = useTheme();
 
   useEffect(() => {
     setConnectionPoints(undefined);
@@ -97,7 +116,7 @@ const Diagram = ({ connections, theme, ...rest }) => {
   }, [onResize]);
 
   useEffect(() => {
-    const onResizeHandler = event => savedOnResize.current(event);
+    const onResizeHandler = (event: any = undefined) => savedOnResize.current(event);
     onResizeHandler();
 
     window.addEventListener('resize', onResizeHandler);

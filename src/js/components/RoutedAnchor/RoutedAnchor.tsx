@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { Anchor, AnchorProps } from '../Anchor';
 
-import { Anchor } from '../Anchor';
+export interface RoutedAnchorProps extends Omit<AnchorProps, 'href'> {
+  method?: 'push' | 'replace';
+  path: string;
+}
 
-class RoutedAnchor extends Component {
+class RoutedAnchor extends Component<RoutedAnchorProps> {
   static contextTypes = {
     router: PropTypes.shape({}).isRequired,
   };

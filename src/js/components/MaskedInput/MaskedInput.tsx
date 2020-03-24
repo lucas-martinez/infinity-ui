@@ -8,6 +8,7 @@ import React, {
 } from 'react';
 import { ThemeContext } from 'styled-components';
 import { defaultProps } from '../../default-props';
+import { Omit } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
