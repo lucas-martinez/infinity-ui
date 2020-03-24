@@ -42,7 +42,7 @@ export interface AnchorProps extends AnchorIntrinsicProps {
   as?: PolymorphicType;
 }
 
-const Anchor = forwardRef(
+const Anchor = forwardRef<HTMLAnchorElement, AnchorProps>(
   (
     {
       a11yTitle,
@@ -57,7 +57,7 @@ const Anchor = forwardRef(
       onFocus,
       reverse,
       ...rest
-    }: AnchorProps,
+    },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;

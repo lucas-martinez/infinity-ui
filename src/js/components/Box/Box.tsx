@@ -191,7 +191,7 @@ export interface BoxProps extends DivIntrinsicProps {
   wrap?: boolean | 'reverse';
 }
 
-const Box = forwardRef(
+const Box = forwardRef<HTMLDivElement, BoxProps>(
   (
     {
       a11yTitle,
@@ -214,7 +214,7 @@ const Box = forwardRef(
       height, // munged to avoid styled-components putting it in the DOM
       tabIndex,
       ...rest
-    }: BoxProps,
+    },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;

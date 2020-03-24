@@ -86,7 +86,7 @@ const getRGBArray = color => {
   }
   match = color.match(rgbaExp);
   if (match) {
-    return match.splice(1).map(v => parseFloat(v, 10));
+    return match.splice(1).map(v => parseFloat(v));
   }
   match = color.match(hslExp);
   if (match) {

@@ -1,4 +1,4 @@
-export const findScrollParents = (element, horizontal) => {
+export const findScrollParents = (element, horizontal: any = undefined) => {
   const result: any[] = [];
   if (element) {
     let parent = element.parentNode;

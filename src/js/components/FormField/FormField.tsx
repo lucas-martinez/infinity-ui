@@ -73,7 +73,7 @@ export interface FormFieldProps {
       )[];
 }
 
-const FormField = forwardRef(
+const FormField = forwardRef<HTMLInputElement, FormFieldProps & Omit<InputIntrinsicProps, 'placeholder'>>(
   (
     {
       checked,
@@ -96,7 +96,7 @@ const FormField = forwardRef(
       validate,
       value: valueProp,
       ...rest
-    }: FormFieldProps & Omit<InputIntrinsicProps, 'placeholder'>,
+    },
     ref: any,
   ) => {
     const theme = useContext(ThemeContext);

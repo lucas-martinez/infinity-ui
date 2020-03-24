@@ -36,13 +36,13 @@ export interface DropProps extends DivIntrinsicProps {
   plain?: boolean;
 }
 
-const Drop = forwardRef(
+const Drop = forwardRef<HTMLDivElement, DropProps>(
   (
     {
       restrictFocus,
       target: dropTarget, // avoid DOM leakage
       ...rest
-    }: DropProps,
+    },
     ref,
   ) => {
     const [originalFocusedElement, setOriginalFocusedElement] = useState<any>();

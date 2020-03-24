@@ -86,7 +86,7 @@ export interface ChartProps extends Omit<SvgIntrinsicProps, 'color'> {
   )[];
 }
 
-const Chart = React.forwardRef(
+const Chart = React.forwardRef<SVGSVGElement, ChartProps>(
   (
     {
       bounds: propsBounds,
@@ -103,7 +103,7 @@ const Chart = React.forwardRef(
       type = 'bar',
       values: propsValues = defaultValues,
       ...rest
-    }: ChartProps,
+    },
     ref,
   ) => {
     const theme = useContext(ThemeContext);

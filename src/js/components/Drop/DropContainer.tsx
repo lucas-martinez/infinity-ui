@@ -34,7 +34,7 @@ interface DropContainerProps extends DropProps {
   stretch: any;
 }
 
-const DropContainer = forwardRef(
+const DropContainer = forwardRef<HTMLDivElement, DropContainerProps>(
   (
     {
       align = {
@@ -53,7 +53,7 @@ const DropContainer = forwardRef(
       restrictFocus,
       stretch = 'width',
       ...rest
-    }: DropContainerProps,
+    },
     ref,
   ) => {
     const portalContext = useContext(PortalContext) || [];

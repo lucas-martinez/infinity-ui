@@ -13,12 +13,12 @@ class Ref extends Component {
 }
 
 export interface InfiniteScrollProps {
-  children?: ((...args: any[]) => any);
+  children?: (...args: any[]) => any;
   items?: any[];
-  onMore?: ((...args: any[]) => any);
-  renderMarker?: ((...args: any[]) => any);
+  onMore?: (...args: any[]) => any;
+  renderMarker?: (...args: any[]) => any;
   replace?: boolean;
-  scrollableAncestor?: React.ReactNode | "window";
+  scrollableAncestor?: React.ReactNode | 'window';
   show?: number;
   step?: number;
 }
@@ -62,20 +62,20 @@ const InfiniteScroll = ({
   useEffect(() => {
     if (firstPageItemRef.current && lastPageItemRef.current && !pageHeight) {
       /* eslint-disable react/no-find-dom-node */
-      const beginRect = findDOMNode(
-        firstPageItemRef.current,
-      ).getBoundingClientRect();
-      const endRect = findDOMNode(
-        lastPageItemRef.current,
-      ).getBoundingClientRect();
+      const beginNode = findDOMNode(firstPageItemRef.current);
+      const endNode = findDOMNode(lastPageItemRef.current);
+      if (beginNode instanceof Element && endNode instanceof Element) {
+        const beginRect = beginNode.getBoundingClientRect();
+        const endRect = endNode.getBoundingClientRect();
 
-      const nextPageHeight = endRect.top + endRect.height - beginRect.top;
-      // Check if the items are arranged in a single column or not.
-      const nextMultiColumn = nextPageHeight / step < endRect.height;
-      const nextPageArea = endRect.height * endRect.width * step;
-      setPageHeight(nextPageHeight);
-      setPageArea(nextPageArea);
-      setMultiColumn(nextMultiColumn);
+        const nextPageHeight = endRect.top + endRect.height - beginRect.top;
+        // Check if the items are arranged in a single column or not.
+        const nextMultiColumn = nextPageHeight / step < endRect.height;
+        const nextPageArea = endRect.height * endRect.width * step;
+        setPageHeight(nextPageHeight);
+        setPageArea(nextPageArea);
+        setMultiColumn(nextMultiColumn);
+      }
     }
   }, [pageHeight, step]);
 

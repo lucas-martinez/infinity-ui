@@ -83,7 +83,7 @@ export interface SelectProps extends Omit<SelectIntrinsicProps, 'placeholder'> {
   emptySearchMessage?: string;
 }
 
-const Select = forwardRef(
+const Select = forwardRef<HTMLSelectElement, SelectProps>(
   (
     {
       a11yTitle,
@@ -124,7 +124,7 @@ const Select = forwardRef(
       valueKey,
       valueLabel,
       ...rest
-    }: SelectProps,
+    },
     ref,
   ) => {
     const theme = useTheme();

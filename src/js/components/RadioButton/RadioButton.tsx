@@ -15,12 +15,13 @@ import {
 export interface RadioButtonProps extends InputIntrinsicProps {
   checked?: boolean;
   disabled?: boolean;
+  focus?: boolean;
   id?: string;
   label?: React.ReactNode;
   name: string;
 }
 
-const RadioButton = forwardRef(
+const RadioButton = forwardRef<HTMLInputElement, RadioButtonProps>(
   (
     {
       checked,

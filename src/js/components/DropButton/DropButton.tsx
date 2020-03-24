@@ -24,7 +24,7 @@ export interface DropButtonProps {
   open?: boolean;
 }
 
-const DropButton = forwardRef(
+const DropButton = forwardRef<HTMLButtonElement, DropButtonProps & ButtonProps>(
   (
     {
       a11yTitle = 'Open Drop',
@@ -39,7 +39,7 @@ const DropButton = forwardRef(
       onClose,
       onOpen,
       ...rest
-    }: DropButtonProps & ButtonProps & ButtonIntrinsicProps,
+    },
     ref: any,
   ) => {
     const [show, setShow] = useState<any>();

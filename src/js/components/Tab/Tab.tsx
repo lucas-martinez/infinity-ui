@@ -9,6 +9,7 @@ import { withForwardRef } from '../hocs';
 import { Text } from '../Text';
 import { StyledTab } from './StyledTab';
 import { ButtonIntrinsicProps } from '../intrinsic-elements';
+import useTheme from '../Theme/useTheme';
 
 export interface TabProps extends Omit<ButtonIntrinsicProps, 'title'> {
   active?: any;
@@ -18,7 +19,7 @@ export interface TabProps extends Omit<ButtonIntrinsicProps, 'title'> {
   title?: React.ReactNode;
 }
 
-const Tab = ({
+const Tab: React.FC<TabProps> = ({
   active,
   forwardRef,
   plain,
@@ -27,10 +28,11 @@ const Tab = ({
   onMouseOver,
   onMouseOut,
   ...rest
-}: TabProps) => {
+}) => {
   const [over, setOver] = useState<any>(undefined);
   let normalizedTitle = title;
-  const tabStyles = {};
+  const tabStyles: any = {};
+  const theme = useTheme();
 
   const onMouseOverTab = event => {
     setOver(true);

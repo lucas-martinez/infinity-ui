@@ -1,15 +1,10 @@
 import React from 'react';
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
-
-import { defaultProps } from '../../default-props';
 import { arcCommands, parseMetricToNum, translateEndAngle } from '../../utils';
-
+import useTheme from '../Theme/useTheme';
 import { StyledMeter } from './StyledMeter';
-import { strokeProps, defaultColor } from './utils';
+import { defaultColor, strokeProps } from './utils';
 
-const Circle = props => {
+export const Circle: React.FC<any> = props => {
   const {
     background,
     max,
@@ -19,6 +14,7 @@ const Circle = props => {
     values,
     ...rest
   } = props;
+  const theme = useTheme();
   const width =
     size === 'full' ? 288 : parseMetricToNum(theme.global.size[size] || size);
   const height = parseMetricToNum(
@@ -157,10 +153,3 @@ const Circle = props => {
     </StyledMeter>
   );
 };
-
-Circle.defaultProps = {};
-Object.setPrototypeOf(Circle.defaultProps, defaultProps);
-
-const CircleWrapper = compose(withTheme)(Circle);
-
-export { CircleWrapper as Circle };

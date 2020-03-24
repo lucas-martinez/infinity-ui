@@ -39,7 +39,7 @@ export interface RangeSelectorProps extends DivIntrinsicProps {
   values: number[];
 }
 
-const RangeSelector = forwardRef(
+const RangeSelector = forwardRef<HTMLInputElement, RangeSelectorProps>(
   (
     {
       color,
@@ -55,7 +55,7 @@ const RangeSelector = forwardRef(
       step = 1,
       values = [],
       ...rest
-    }: RangeSelectorProps,
+    },
     ref,
   ) => {
     const theme = useTheme();

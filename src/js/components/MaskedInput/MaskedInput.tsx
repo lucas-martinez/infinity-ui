@@ -133,7 +133,7 @@ export interface MaskedInputProps {
   value?: string | number;
 }
 
-const MaskedInput = forwardRef(
+const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps & Omit<InputIntrinsicProps, keyof MaskedInputProps>>(
   (
     {
       focus: focusProp,
@@ -150,7 +150,7 @@ const MaskedInput = forwardRef(
       reverse,
       value: valueProp,
       ...rest
-    }: MaskedInputProps & Omit<InputIntrinsicProps, keyof MaskedInputProps>,
+    },
     ref: any,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;

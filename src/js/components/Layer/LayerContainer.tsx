@@ -4,6 +4,9 @@ import React, {
   useEffect,
   useRef,
   useState,
+  RefAttributes,
+  ForwardRefExoticComponent,
+  PropsWithoutRef,
 } from 'react';
 import styled, { ThemeContext } from 'styled-components';
 
@@ -12,6 +15,7 @@ import { Keyboard } from '../Keyboard';
 import { backgroundIsDark, findVisibleParent } from '../../utils';
 
 import { StyledLayer, StyledContainer, StyledOverlay } from './StyledLayer';
+import { LayerProps } from './Layer';
 
 const HiddenAnchor = styled.a<any>`
   width: 0;
@@ -22,7 +26,7 @@ const HiddenAnchor = styled.a<any>`
 
 const fullBounds = { left: 0, right: 0, top: 0, bottom: 0 };
 
-const LayerContainer = forwardRef(
+const LayerContainer = forwardRef<HTMLDivElement, LayerProps>(
   (
     {
       children,
@@ -42,13 +46,14 @@ const LayerContainer = forwardRef(
   ) => {
     const theme = useContext(ThemeContext);
     const [targetBounds, setTargetBounds] = useState<any>(fullBounds);
-    const anchorRef = useRef<any>();
-    const containerRef = useRef<any>();
-    const layerRef = useRef<any>();
+    const anchorRef = useRef<HTMLAnchorElement>();
+    const containerRef = useRef<HTMLDListElement>();
+    const layerRef = useRef<HTMLDivElement>();
+    const forwardedRef = ref as React.RefObject<HTMLDivElement>;
 
     useEffect(() => {
       if (position !== 'hidden') {
-        const node = layerRef.current || containerRef.current || ref.current;
+        const node = layerRef.current || containerRef.current || forwardedRef?.current;
         if (node && node.scrollIntoView) node.scrollIntoView();
         // Once layer is open we make sure it has focus so that you
         // can start tabbing inside the layer. If the caller put focus
@@ -70,7 +75,7 @@ const LayerContainer = forwardRef(
 
     useEffect(() => {
       if (position !== 'hidden') {
-        const node = layerRef.current || containerRef.current || ref.current;
+        const node = layerRef.current || containerRef.current || forwardedRef?.current;
         if (node && node.scrollIntoView) node.scrollIntoView();
       }
     }, [position, ref]);

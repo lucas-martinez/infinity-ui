@@ -27,6 +27,7 @@ const stopLabelClick = event => {
 export interface CheckBoxProps extends InputIntrinsicProps {
   checked?: boolean;
   disabled?: boolean;
+  focus?: boolean;
   id?: string;
   label?: React.ReactNode;
   name?: string;
@@ -35,7 +36,7 @@ export interface CheckBoxProps extends InputIntrinsicProps {
   indeterminate?: boolean;
 }
 
-const CheckBox = forwardRef(
+const CheckBox = forwardRef<HTMLInputElement, CheckBoxProps>(
   (
     {
       checked: checkedProp,
@@ -51,7 +52,7 @@ const CheckBox = forwardRef(
       toggle,
       indeterminate,
       ...rest
-    }: CheckBoxProps,
+    },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;

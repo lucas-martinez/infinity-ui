@@ -13,7 +13,7 @@ export interface RangeInputProps extends Omit<InputIntrinsicProps, 'onChange'> {
   value?: number | string;
 }
 
-const RangeInput = forwardRef(
+const RangeInput = forwardRef<HTMLInputElement, RangeInputProps>(
   (
     {
       name,
@@ -22,7 +22,7 @@ const RangeInput = forwardRef(
       onBlur,
       value: valueProp,
       ...rest
-    }: RangeInputProps,
+    },
     ref,
   ) => {
     const formContext = useContext(FormContext);

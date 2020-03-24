@@ -8,11 +8,14 @@ import { Heading } from '../Heading';
 import { DivIntrinsicProps } from '../intrinsic-elements';
 
 export interface AccordionPanelProps extends DivIntrinsicProps {
-  label?: string | React.ReactNode;
+  active?: boolean;
+  animate?: boolean;
   header?: React.ReactNode;
+  label?: string | React.ReactNode;
+  onPanelChange?: () => void;
 }
 
-const AccordionPanel = forwardRef(
+const AccordionPanel = forwardRef<HTMLDivElement, AccordionPanelProps>(
   (
     {
       active,
@@ -27,7 +30,7 @@ const AccordionPanel = forwardRef(
       onFocus,
       onBlur,
       ...rest
-    }: AccordionPanelProps,
+    },
     ref,
   ) => {
     const theme = useContext(ThemeContext);

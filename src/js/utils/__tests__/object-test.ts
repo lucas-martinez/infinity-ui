@@ -1,7 +1,7 @@
 import { deepFreeze, deepMerge } from '..';
 
 test('Object freezes', () => {
-  const obj = deepFreeze({ a: 'b' });
+  const obj: any = deepFreeze({ a: 'b' });
 
   try {
     obj.a = 'c';

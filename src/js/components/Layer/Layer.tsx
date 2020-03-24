@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useState, RefObject } from 'react';
 import { createPortal } from 'react-dom';
 import {
   AnimateType,
@@ -34,7 +34,7 @@ export interface LayerProps extends DivIntrinsicProps {
   target?: object;
 }
 
-const Layer = forwardRef((props: LayerProps, ref) => {
+const Layer = forwardRef<HTMLDivElement, LayerProps>((props, ref) => {
   const { animate, animation } = props;
   const [originalFocusedElement, setOriginalFocusedElement] = useState<any>();
   useEffect(() => setOriginalFocusedElement(document.activeElement), []);

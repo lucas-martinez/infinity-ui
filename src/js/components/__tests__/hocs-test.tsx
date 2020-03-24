@@ -1,17 +1,17 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-
 import { findAllByType } from '../../utils';
-
 import { withFocus } from '../hocs';
 
-const TestDiv = React.forwardRef(({ focus, ...rest }, ref) => {
-  return (
-    <div ref={ref} {...rest}>
-      {focus ? 'focus' : 'no focus'}
-    </div>
-  );
-});
+const TestDiv = React.forwardRef<HTMLDivElement, any>(
+  ({ focus, ...rest }, ref) => {
+    return (
+      <div ref={ref} {...rest}>
+        {focus ? 'focus' : 'no focus'}
+      </div>
+    );
+  },
+);
 
 const Test = withFocus()(TestDiv);
 

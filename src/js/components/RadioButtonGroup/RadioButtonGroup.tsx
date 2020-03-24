@@ -29,7 +29,7 @@ export interface RadioButtonGroupProps
   value?: string | object;
 }
 
-const RadioButtonGroup = forwardRef(
+const RadioButtonGroup = forwardRef<HTMLOptGroupElement, RadioButtonGroupProps>(
   (
     {
       children,
@@ -40,7 +40,7 @@ const RadioButtonGroup = forwardRef(
       options: optionsProp,
       value: valueProp,
       ...rest
-    }: RadioButtonGroupProps,
+    },
     ref,
   ) => {
     const formContext = useContext(FormContext);

@@ -94,7 +94,7 @@ export interface TextInputProps
   value?: string | number;
 }
 
-const TextInput = forwardRef(
+const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   (
     {
       defaultValue,

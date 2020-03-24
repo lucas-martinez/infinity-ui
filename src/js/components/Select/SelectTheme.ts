@@ -1,5 +1,5 @@
 import { ReactComponentElement } from 'react';
-import { MarginType, BackgroundType } from '../../utils';
+import { MarginType, BackgroundType, ColorType } from '../../utils';
 import ExtendType from '../Theme/ExtendType';
 
 export default interface SelectTheme {
@@ -13,6 +13,7 @@ export default interface SelectTheme {
   };
   extend: ExtendType;
   icons: {
+    color: ColorType;
     down: any;
     margin: MarginType;
   };

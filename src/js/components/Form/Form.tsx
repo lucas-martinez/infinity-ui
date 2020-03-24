@@ -57,7 +57,7 @@ export interface FormProps {
   value?: {};
 }
 
-const Form = forwardRef(
+const Form = forwardRef<HTMLFormElement, FormProps & FormIntrinsicProps>(
   (
     {
       children,
@@ -70,7 +70,7 @@ const Form = forwardRef(
       validate = 'submit',
       value: valueProp = defaultValue,
       ...rest
-    }: FormProps & FormIntrinsicProps,
+    },
     ref: any,
   ) => {
     const [value, setValue] = useState<any>(valueProp);

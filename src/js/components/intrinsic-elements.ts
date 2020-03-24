@@ -55,7 +55,7 @@ export interface SpanIntrinsicProps
   extends ThemedStyledElementProps<HTMLSpanElement> {}
 
 export interface SvgIntrinsicProps
-  extends ThemedStyledElementProps<SVGElement> {}
+  extends ThemedStyledElementProps<SVGSVGElement> {}
 
 export interface TableIntrinsicProps
   extends ThemedStyledElementProps<HTMLTableElement> {}

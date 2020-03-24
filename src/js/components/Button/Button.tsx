@@ -48,7 +48,7 @@ export interface ButtonProps extends ButtonIntrinsicProps {
   type?: 'button' | 'reset' | 'submit';
   as?: PolymorphicType;
 }
-const Button = forwardRef(
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       a11yTitle,
@@ -73,7 +73,7 @@ const Button = forwardRef(
       type = 'button',
       as,
       ...rest
-    }: ButtonProps,
+    },
     ref,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;

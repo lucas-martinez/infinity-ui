@@ -106,7 +106,7 @@ export interface ListProps extends UListIntrinsicProps {
   step?: number;
 }
 
-const List = React.forwardRef((props: ListProps, ref) => {
+const List = React.forwardRef<HTMLUListElement, ListProps>((props, ref) => {
   const {
     action,
     as,

@@ -16,7 +16,7 @@ export interface TextAreaProps extends TextAreaIntrinsicProps {
   value?: string;
 }
 
-const TextArea = forwardRef(
+const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   (
     {
       fill,
@@ -26,7 +26,7 @@ const TextArea = forwardRef(
       onFocus,
       value: valueProp,
       ...rest
-    }: TextAreaProps,
+    },
     ref,
   ) => {
     const formContext = useContext(FormContext);

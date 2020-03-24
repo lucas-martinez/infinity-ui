@@ -76,7 +76,7 @@ export interface CalendarProps extends Omit<DivIntrinsicProps, 'onSelect'> {
   size?: "small" | "medium" | "large" | string;
 }
 
-const Calendar = forwardRef(
+const Calendar = forwardRef<HTMLDivElement, CalendarProps>(
   (
     {
       animate = true,
@@ -95,7 +95,7 @@ const Calendar = forwardRef(
       showAdjacentDays = true,
       size = 'medium',
       ...rest
-    }: CalendarProps,
+    },
     ref,
   ) => {
     const theme = useContext(ThemeContext);
