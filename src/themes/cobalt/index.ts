@@ -1,14 +1,10 @@
-import { ThemeType } from '../../js';
-import { ColorType, deepMerge, ElevationType } from '../../js/utils';
 import { FlattenInterpolation } from 'styled-components';
-import alert, { AlertTheme } from './alert';
+import ExtendedTheme from '../../components/ThemeQ/PartialExtendedTheme';
+import { ColorType, deepMerge, ElevationType } from '../../js/utils';
+import alert from './alert';
 import anchor from './anchor';
 import box from './box';
-import breadcrumbs, {
-  BreadcrumbsLinkTheme,
-  BreadcrumbsSeparationTheme,
-  BreadcrumbsTheme,
-} from './breadcrumbs';
+import breadcrumbs from './breadcrumbs';
 import button from './button';
 import calendar from './calendar';
 import carousel from './carousel';
@@ -18,14 +14,14 @@ import clock from './clock';
 import code from './code';
 import collapsible from './collapsible';
 import colors from './colors';
-import control, { ControlTheme } from './control';
+import control from './control';
 import dataTable from './dataTable';
 import diagram from './diagram';
 import drop from './drop';
 import font from './font';
-import form, { FormTheme } from './form';
+import form from './form';
 import formField from './formField';
-import grid, { GridTheme } from './grid';
+import grid from './grid';
 import grommet from './grommet';
 import heading from './heading';
 import icon from './icon';
@@ -41,7 +37,7 @@ import radioButton from './radioButton';
 import rangeInput from './rangeInput';
 import rangeSelector from './rangeSelector';
 import select from './select';
-import sidebar, { SidebarTheme } from './sidebar';
+import sidebar from './sidebar';
 import tab from './tab';
 import table from './table';
 import tabs from './tabs';
@@ -61,36 +57,6 @@ export type ComponentTheme<K extends keyof Omit<ExtendedTheme, 'global'>> = Omit
 > & {
   extend: Extend;
 };
-
-export type ExtendType = string | ((...args: any) => void);
-
-export interface ExtendedTheme extends ThemeType {
-  alert: AlertTheme;
-  alertDanger: AlertTheme;
-  alertError: AlertTheme;
-  alertGeneral: AlertTheme;
-  alertInfo: AlertTheme;
-  alertInverse: AlertTheme;
-  alertInverseCrossInterface: AlertTheme;
-  alertInverseDanger: AlertTheme;
-  alertInverseError: AlertTheme;
-  alertInverseInfo: AlertTheme;
-  alertInverseSuccess: AlertTheme;
-  alertInverseWarning: AlertTheme;
-  alertLarge: AlertTheme;
-  alertOverlay: AlertTheme;
-  alertSuccess: AlertTheme;
-  alertWarning: AlertTheme;
-  breadcrumbs: BreadcrumbsTheme;
-  breadcrumbsLink: BreadcrumbsLinkTheme;
-  breadcrumbsSeparation: BreadcrumbsSeparationTheme;
-  control: ControlTheme;
-  form: FormTheme;
-  grid: GridTheme;
-  code: Record<string, any>;
-  paper: Record<string, any>;
-  sidebar: SidebarTheme;
-}
 
 export type PartialTheme<K extends keyof Omit<ExtendedTheme, 'global'>> = {
   [P in K]: Partial<ComponentTheme<K>>;
