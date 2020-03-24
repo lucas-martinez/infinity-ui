@@ -1,20 +1,39 @@
 import React, { forwardRef, useContext, useState } from 'react';
-
 import { FormContext } from '../Form/FormContext';
+import { TextAreaIntrinsicProps } from '../intrinsic-elements';
 import { Keyboard } from '../Keyboard';
-
 import { StyledTextArea } from './StyledTextArea';
+
+export interface TextAreaProps extends TextAreaIntrinsicProps {
+  fill?: boolean;
+  focusIndicator?: boolean;
+  id?: string;
+  name?: string;
+  placeholder?: string;
+  plain?: boolean;
+  resize?: 'vertical' | 'horizontal' | boolean;
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  value?: string;
+}
 
 const TextArea = forwardRef(
   (
-    { fill, name, onBlur, onChange, onFocus, value: valueProp, ...rest },
+    {
+      fill,
+      name,
+      onBlur,
+      onChange,
+      onFocus,
+      value: valueProp,
+      ...rest
+    }: TextAreaProps,
     ref,
   ) => {
     const formContext = useContext(FormContext);
 
     const [value, setValue] = formContext.useFormContext(name, valueProp);
 
-    const [focus, setFocus] = useState();
+    const [focus, setFocus] = useState<any>();
     return (
       <Keyboard
         onEsc={event => {

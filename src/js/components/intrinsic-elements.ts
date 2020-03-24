@@ -5,9 +5,7 @@ import { ThemeType } from '../themes';
 
 export type ElementProps<T> = DetailedHTMLProps<HTMLAttributes<T>, T>;
 
-export interface ThemedElementProps<T>
-  extends ElementProps<T>,
-    ThemeProps<ThemeType> {}
+export interface ThemedElementProps<T> extends ElementProps<T> {}
 
 export interface ThemedStyledElementProps<T>
   extends Omit<ThemedElementProps<T>, 'color'> {
@@ -40,8 +38,8 @@ export interface HeadingIntrinsicProps
 
 export interface ImageIntrinsicProps
   extends ThemedStyledElementProps<HTMLImageElement> {
-    alt?: string;
-    src: string;
+  alt?: string;
+  src: string;
 }
 
 export interface InputIntrinsicProps
@@ -62,6 +60,9 @@ export interface SvgIntrinsicProps
 export interface TableIntrinsicProps
   extends ThemedStyledElementProps<HTMLTableElement> {}
 
+export interface TableBodyIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTableSectionElement> {}
+
 export interface TableColIntrinsicProps
   extends ThemedStyledElementProps<HTMLTableColElement> {}
 
@@ -69,10 +70,15 @@ export interface TableCaptionIntrinsicProps
   extends ThemedStyledElementProps<HTMLTableCaptionElement> {}
 
 export interface TableCellIntrinsicProps
-  extends ThemedStyledElementProps<HTMLTableCellElement> {}
+  extends ThemedStyledElementProps<HTMLTableCellElement> {
+  colSpan?: number;
+}
 
 export interface TableDataCellIntrinsicProps
   extends ThemedStyledElementProps<HTMLTableDataCellElement> {}
+
+export interface TableHeaderIntrinsicProps
+  extends ThemedStyledElementProps<HTMLTableSectionElement> {}
 
 export interface TableHeaderCellIntrinsicProps
   extends ThemedStyledElementProps<HTMLTableHeaderCellElement> {}

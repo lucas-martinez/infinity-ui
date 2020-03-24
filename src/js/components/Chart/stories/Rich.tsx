@@ -5,7 +5,7 @@ import { grommet } from '../../../../js/themes';
 import { calcs } from '../calcs';
 
 const RichChart = () => {
-  const [state, setState] = useState({ values: [], yAxis: [], xAxis: [] });
+  const [state, setState] = useState<any>({ values: [], yAxis: [], xAxis: [] });
 
   useEffect(() => {
     // generate data as a server might

@@ -22,7 +22,7 @@ const customThemeRangeInput = deepMerge(grommet, {
 });
 
 const CustomRangeInput = () => {
-  const [value, setValue] = React.useState(0.4);
+  const [value, setValue] = React.useState<any>(0.4);
 
   const onChange = event => setValue(event.target.value);
 

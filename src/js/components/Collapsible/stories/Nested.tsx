@@ -22,9 +22,9 @@ const MenuButton = ({ label, open, submenu, ...rest }) => {
 };
 
 const NestedCollapsible = () => {
-  const [openMenu1, setOpenMenu1] = React.useState(false);
-  const [openSubmenu1, setOpenSubmenu1] = React.useState(false);
-  const [openMenu2, setOpenMenu2] = React.useState(false);
+  const [openMenu1, setOpenMenu1] = React.useState<any>(false);
+  const [openSubmenu1, setOpenSubmenu1] = React.useState<any>(false);
+  const [openMenu2, setOpenMenu2] = React.useState<any>(false);
 
   return (
     <Grommet theme={grommet}>

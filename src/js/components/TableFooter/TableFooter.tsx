@@ -2,8 +2,11 @@ import React from 'react';
 
 import { TableContext } from '../Table/TableContext';
 import { StyledTableFooter } from '../Table/StyledTable';
+import { TableHeaderIntrinsicProps } from '../intrinsic-elements';
 
-const TableFooter = props => (
+export interface TableFooterProps extends TableHeaderIntrinsicProps {}
+
+const TableFooter = (props: TableFooterProps) => (
   <TableContext.Provider value="footer">
     <StyledTableFooter {...props} />
   </TableContext.Provider>

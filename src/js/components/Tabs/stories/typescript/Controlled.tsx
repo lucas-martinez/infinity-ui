@@ -6,7 +6,7 @@ import isChromatic from 'storybook-chromatic/isChromatic';
 import { grommet } from '../../../../../js/themes';
 
 const ControlledTabs = () => {
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = React.useState<any>(0);
 
   const onActive = (nextIndex: number) => setIndex(nextIndex);
 

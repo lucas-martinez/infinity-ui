@@ -17,7 +17,7 @@ OneDrop.propTypes = {
 };
 
 const Set = ({ aligns, label }) => {
-  const [target, setTarget] = React.useState();
+  const [target, setTarget] = React.useState<any>();
   const targetRef = React.useCallback(setTarget, []);
 
   return (

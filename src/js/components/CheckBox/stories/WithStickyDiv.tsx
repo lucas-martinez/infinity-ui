@@ -10,15 +10,15 @@ const boxStyle = {
 const titleBoxBackground = { color: 'neutral-1' };
 const titleBoxStyle = { position: 'sticky', top: 0 };
 
-const checkboxes = Array(8)
-  .fill()
+const checkboxes = Array<number>(8)
+  .fill(0)
   .map((_, i) => `item ${i + 1}`);
 
 const removeItemFromArray = (array, value) =>
   array.filter(item => item !== value);
 
 const CheckBoxWithStickyDiv = () => {
-  const [checks, setChecks] = useState([]);
+  const [checks, setChecks] = useState<any>([]);
   const onCheck = value => ({ target }) => {
     if (target.checked) {
       setChecks([...checks, value]);

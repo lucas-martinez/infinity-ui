@@ -4,9 +4,9 @@ import { Box, Grommet, Meter } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const CircleMeter = () => {
-  const [value, setValue] = useState(20);
+  const [value, setValue] = useState<any>(20);
 
-  const timer = useRef();
+  const timer = useRef<any>();
   clearTimeout(timer.current);
   timer.current = setTimeout(() => {
     setValue(value < 100 ? value + 8 : 20);

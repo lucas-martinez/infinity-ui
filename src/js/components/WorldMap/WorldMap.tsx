@@ -13,6 +13,7 @@ import {
   parseMetricToNum,
 } from '../../utils';
 import { SvgIntrinsicProps } from '../intrinsic-elements';
+import useTheme from '../Theme/useTheme';
 import { StyledWorldMap } from './StyledWorldMap';
 
 // The graphic is drawn as a rectangular grid using coordinates spaced
@@ -544,11 +545,11 @@ export interface WorldMapProps extends SvgIntrinsicProps {
   }[];
 }
 
-interface WorldMapState {
-
-}
+interface WorldMapState {}
 
 class WorldMap extends Component<WorldMapProps, WorldMapState> {
+  static defaultProps: any = {};
+
   static getDerivedStateFromProps(nextProps, prevState) {
     if (!prevState.continents) {
       return updateState(buildState(), nextProps);
@@ -587,7 +588,6 @@ class WorldMap extends Component<WorldMapProps, WorldMapState> {
       fill, // munged to avoid styled-components putting it in the DOM
       onSelectPlace,
       hoverColor,
-      theme,
       ...rest
     } = this.props;
     delete rest.places;
@@ -606,6 +606,8 @@ class WorldMap extends Component<WorldMapProps, WorldMapState> {
       width,
       height,
     } = this.state;
+
+    const theme = useTheme();
 
     const continents = Object.keys(continentStates).map(name => {
       const {
@@ -703,7 +705,7 @@ class WorldMap extends Component<WorldMapProps, WorldMapState> {
           fill="none"
           fillRule="evenodd"
           onClick={() =>
-            onSelectPlace(coordToLatLon(activeCoords, origin, extent))
+            onSelectPlace && onSelectPlace(coordToLatLon(activeCoords, origin, extent))
           }
         >
           <path

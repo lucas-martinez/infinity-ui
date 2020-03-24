@@ -58,13 +58,13 @@ const DataTable = ({
   ]);
 
   // what column we are actively capturing filter input on
-  const [filtering, setFiltering] = useState();
+  const [filtering, setFiltering] = useState<any>();
 
   // the currently active filters
-  const [filters, setFilters] = useState(initializeFilters(columns));
+  const [filters, setFilters] = useState<any>(initializeFilters(columns));
 
   // which column we are sorting on, with direction
-  const [sort, setSort] = useState(sortProp || {});
+  const [sort, setSort] = useState<any>(sortProp || {});
 
   // the data filtered and sorted, if needed
   const adjustedData = useMemo(
@@ -86,12 +86,12 @@ const DataTable = ({
   ]);
 
   // an object indicating which group values are expanded
-  const [groupState, setGroupState] = useState(
+  const [groupState, setGroupState] = useState<any>(
     buildGroupState(groups, groupBy),
   );
 
   // any customized column widths
-  const [widths, setWidths] = useState({});
+  const [widths, setWidths] = useState<any>({});
 
   // remember that we are filtering on this property
   const onFiltering = property => setFiltering(property);

@@ -16,7 +16,7 @@ const SidebarButton = ({ label, ...rest }) => (
 );
 
 const SidebarNav = () => {
-  const [active, setActive] = useState();
+  const [active, setActive] = useState<any>();
   return (
     <Grommet full theme={grommet}>
       <Box fill direction="row">

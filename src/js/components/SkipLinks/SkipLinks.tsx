@@ -5,9 +5,9 @@ import { Heading } from '../Heading';
 import { Layer } from '../Layer';
 
 const SkipLinks = ({ children, id, messages }) => {
-  const [showLayer, setShowLayer] = useState(false);
+  const [showLayer, setShowLayer] = useState<any>(false);
 
-  const layerRef = useRef(null);
+  const layerRef = useRef<any>(null);
 
   const onFocus = () => {
     setShowLayer(true);

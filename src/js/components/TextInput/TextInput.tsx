@@ -1,15 +1,34 @@
-import React, { forwardRef, isValidElement, useContext, useEffect, useRef, useState } from 'react';
+import React, {
+  forwardRef,
+  isValidElement,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import styled, { ThemeContext } from 'styled-components';
 import { AnnounceContext } from '../../contexts';
 import { defaultProps } from '../../default-props';
-import { isNodeAfterScroll, isNodeBeforeScroll, sizeStyle } from '../../utils';
+import {
+  isNodeAfterScroll,
+  isNodeBeforeScroll,
+  PlaceHolderType,
+  sizeStyle,
+} from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
-import { Drop } from '../Drop';
+import { Drop, DropProps } from '../Drop';
 import { FormContext } from '../Form/FormContext';
 import { InfiniteScroll } from '../InfiniteScroll';
+import { InputIntrinsicProps } from '../intrinsic-elements';
 import { Keyboard } from '../Keyboard';
-import { StyledIcon, StyledPlaceholder, StyledSuggestions, StyledTextInput, StyledTextInputContainer } from './StyledTextInput';
+import {
+  StyledIcon,
+  StyledPlaceholder,
+  StyledSuggestions,
+  StyledTextInput,
+  StyledTextInputContainer,
+} from './StyledTextInput';
 
 const renderLabel = suggestion => {
   if (suggestion && typeof suggestion === 'object') {
@@ -39,6 +58,41 @@ const ContainerBox = styled(Box)`
     width: 100%;
   }
 `;
+
+export interface TextInputProps
+  extends Omit<InputIntrinsicProps, 'onSelect' | 'size' | 'placeholder'> {
+  dropAlign?: {
+    top?: 'top' | 'bottom';
+    bottom?: 'top' | 'bottom';
+    right?: 'left' | 'right';
+    left?: 'left' | 'right';
+  };
+  dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+  dropTarget?: object;
+  dropProps?: DropProps;
+  focusIndicator?: boolean;
+  icon?: JSX.Element;
+  id?: string;
+  messages?: Record<string, string> & {
+    enterSelect?: string;
+    suggestionsCount?: string;
+    suggestionsExist?: string;
+    suggestionIsOpen?: string;
+  };
+  name?: string;
+  onSelect?: (x: {
+    target: React.RefObject<HTMLElement>['current'];
+    suggestion: any;
+  }) => void;
+  onSuggestionsOpen?: (...args: any[]) => any;
+  onSuggestionsClose?: (...args: any[]) => any;
+  placeholder?: PlaceHolderType;
+  plain?: boolean;
+  reverse?: boolean;
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  suggestions?: ({ label?: React.ReactNode; value?: any } | string)[];
+  value?: string | number;
+}
 
 const TextInput = forwardRef(
   (
@@ -72,21 +126,21 @@ const TextInput = forwardRef(
       suggestions,
       value: valueProp,
       ...rest
-    },
-    ref,
+    }: TextInputProps,
+    ref: any,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const announce = useContext(AnnounceContext);
     const formContext = useContext(FormContext);
-    const inputRef = useRef();
-    const dropRef = useRef();
-    const suggestionsRef = useRef();
+    const inputRef = useRef<any>();
+    const dropRef = useRef<any>();
+    const suggestionsRef = useRef<any>();
     const suggestionRefs = {};
 
     const [value, setValue] = formContext.useFormContext(name, valueProp);
 
-    const [focus, setFocus] = useState();
-    const [showDrop, setShowDrop] = useState();
+    const [focus, setFocus] = useState<any>();
+    const [showDrop, setShowDrop] = useState<any>();
 
     // if we have no suggestions, close drop if it's open
     useEffect(() => {
@@ -96,7 +150,7 @@ const TextInput = forwardRef(
       }
     }, [onSuggestionsClose, showDrop, suggestions]);
 
-    const [activeSuggestionIndex, setActiveSuggestionIndex] = useState(-1);
+    const [activeSuggestionIndex, setActiveSuggestionIndex] = useState<any>(-1);
 
     // reset activeSuggestionIndex when the drop is closed
     useEffect(() => {
@@ -108,12 +162,14 @@ const TextInput = forwardRef(
     // announce active suggestion
     useEffect(() => {
       if (activeSuggestionIndex >= 0) {
-        const label = stringLabel(suggestions[activeSuggestionIndex]);
+        const label = stringLabel(suggestions![activeSuggestionIndex]);
         announce(`${label} ${messages.enterSelect}`);
       }
     }, [activeSuggestionIndex, announce, messages, suggestions]);
 
-    const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
+    const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState<any>(
+      -1,
+    );
 
     // set selectedSuggestionIndex based on value and current suggestions
     useEffect(() => {
@@ -153,13 +209,13 @@ const TextInput = forwardRef(
     const openDrop = () => {
       setShowDrop(true);
       announce(messages.suggestionIsOpen);
-      announce(`${suggestions.length} ${messages.suggestionsCount}`);
+      announce(`${suggestions!.length} ${messages.suggestionsCount}`);
       if (onSuggestionsOpen) onSuggestionsOpen();
     };
 
     const closeDrop = () => {
       setShowDrop(false);
-      if (messages.onSuggestionsClose) onSuggestionsClose();
+      // if (messages!.onSuggestionsClose) onSuggestionsClose();
       if (onSuggestionsClose) onSuggestionsClose();
     };
 
@@ -167,7 +223,7 @@ const TextInput = forwardRef(
       event.preventDefault();
       const nextActiveIndex = Math.min(
         activeSuggestionIndex + 1,
-        suggestions.length - 1,
+        suggestions!.length - 1,
       );
       setActiveSuggestionIndex(nextActiveIndex);
     };
@@ -195,10 +251,10 @@ const TextInput = forwardRef(
             closeDrop();
             if (onSelect) {
               const adjustedEvent = event;
-              adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
+              adjustedEvent.suggestion = suggestions![activeSuggestionIndex];
               onSelect(adjustedEvent);
             }
-            setValue(suggestions[activeSuggestionIndex]);
+            setValue(suggestions![activeSuggestionIndex]);
           }}
         >
           <Drop
@@ -287,7 +343,7 @@ const TextInput = forwardRef(
               event.preventDefault();
               event.persist();
               const adjustedEvent = event;
-              adjustedEvent.suggestion = suggestions[activeSuggestionIndex];
+              adjustedEvent.suggestion = suggestions![activeSuggestionIndex];
               adjustedEvent.target = (ref || inputRef).current;
               onSelect(adjustedEvent);
             }
@@ -377,4 +433,3 @@ if (process.env.NODE_ENV !== 'production') {
 const TextInputWrapper = TextInputDoc || TextInput;
 
 export { TextInputWrapper as TextInput };
-

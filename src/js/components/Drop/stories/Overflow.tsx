@@ -11,18 +11,18 @@ import {
 import { grommet } from '../../../../js/themes';
 
 const OverflowDrop = () => {
-  const targetRef = useRef();
-  const inputRef = useRef();
+  const targetRef = useRef<any>();
+  const inputRef = useRef<any>();
 
-  const [date, setDate] = useState(undefined);
-  const [showCalendar, setShowCalendar] = useState(false);
+  const [date, setDate] = useState<any>(undefined);
+  const [showCalendar, setShowCalendar] = useState<any>(false);
 
   const onSelect = nextDate => {
     setDate(nextDate !== date ? nextDate : undefined);
     setShowCalendar(false);
   };
 
-  const [, setShowDrop] = useState(false);
+  const [, setShowDrop] = useState<any>(false);
   useEffect(() => setShowDrop(true), []);
 
   return (

@@ -31,7 +31,7 @@ const OptionBox = styled(Box)`
   ${props => props.selected && selectedStyle}
 `;
 
-class SelectContainer extends Component {
+class SelectContainer extends Component<any, any> {
   static defaultProps = {
     children: null,
     disabled: undefined,
@@ -50,9 +50,11 @@ class SelectContainer extends Component {
 
   optionRefs = {};
 
-  searchRef = createRef();
+  searchRef = createRef<any>();
 
-  optionsRef = createRef();
+  optionsRef = createRef<any>();
+
+  keyboardNavTimer: any;
 
   constructor(props) {
     super(props);

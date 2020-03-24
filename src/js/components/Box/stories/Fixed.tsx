@@ -15,8 +15,8 @@ const FixedSizesBox = () => (
         background="brand"
         overflow={{ horizontal: 'hidden', vertical: 'scroll' }}
       >
-        {Array(20)
-          .fill()
+        {Array<number>(20)
+          .fill(0)
           .map((_, i) => (
             // eslint-disable-next-line react/no-array-index-key
             <Text key={i}>{`Small (${i})`}</Text>

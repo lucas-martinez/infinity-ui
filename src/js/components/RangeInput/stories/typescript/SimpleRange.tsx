@@ -5,7 +5,7 @@ import { Box, Grommet, RangeInput } from '../../../../../js';
 import { grommet } from '../../../../../js/themes';
 
 const SimpleRangeInput = () => {
-  const [value, setValue] = React.useState(5);
+  const [value, setValue] = React.useState<any>(5);
 
   const onChange = event => setValue(event.target.value);
 

@@ -4,8 +4,8 @@ import React from 'react';
 import { Box, Button, TextInput } from '../../../../js';
 
 const PasswordInput = () => {
-  const [value, setValue] = React.useState('');
-  const [reveal, setReveal] = React.useState(false);
+  const [value, setValue] = React.useState<any>('');
+  const [reveal, setReveal] = React.useState<any>(false);
 
   return (
     <Box

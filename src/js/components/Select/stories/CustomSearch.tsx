@@ -57,12 +57,12 @@ const allContentPartners = [
 ];
 
 const CustomSearchSelect = () => {
-  const [selectedContentPartners, setSelectedContentPartners] = useState([]);
-  const [contentPartners, setContentPartners] = useState(allContentPartners);
-  const [searching, setSearching] = useState(false);
-  const [searchQuery, setSerchQuery] = useState('');
+  const [selectedContentPartners, setSelectedContentPartners] = useState<any>([]);
+  const [contentPartners, setContentPartners] = useState<any>(allContentPartners);
+  const [searching, setSearching] = useState<any>(false);
+  const [searchQuery, setSerchQuery] = useState<any>('');
 
-  const selectRef = useRef();
+  const selectRef = useRef<any>();
 
   const clearContentPartners = () => {
     setSelectedContentPartners([]);

@@ -4,12 +4,12 @@ import { Box, Button, Drop, Grommet } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const ProgressiveDrop = () => {
-  const boxRef = useRef();
-  const innerBoxRef = useRef();
+  const boxRef = useRef<any>();
+  const innerBoxRef = useRef<any>();
 
-  const [openDrop, setOpenDrop] = useState(false);
-  const [openInnerDrop, setOpenInnerDrop] = useState(false);
-  const [interactedWithInnerButton, setInteractedWithInnerButton] = useState(
+  const [openDrop, setOpenDrop] = useState<any>(false);
+  const [openInnerDrop, setOpenInnerDrop] = useState<any>(false);
+  const [interactedWithInnerButton, setInteractedWithInnerButton] = useState<any>(
     false,
   );
 

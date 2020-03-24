@@ -14,8 +14,8 @@ import {
 import { grommet } from '../../../../js/themes';
 
 const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {
-  const [date, setDate] = React.useState();
-  const [time, setTime] = React.useState();
+  const [date, setDate] = React.useState<any>();
+  const [time, setTime] = React.useState<any>();
 
   const close = () => onClose(date || initialDate, time || initialTime);
 
@@ -84,9 +84,9 @@ const DropContent = ({ date: initialDate, time: initialTime, onClose }) => {
 };
 
 const DateTimeDropButton = () => {
-  const [date, setDate] = React.useState();
-  const [time, setTime] = React.useState('');
-  const [open, setOpen] = React.useState();
+  const [date, setDate] = React.useState<any>();
+  const [time, setTime] = React.useState<any>('');
+  const [open, setOpen] = React.useState<any>();
 
   const onClose = (nextDate, nextTime) => {
     setDate(nextDate);

@@ -36,6 +36,7 @@ import WorldMapTheme from '../WorldMap/WorldMapTheme';
 import GlobalTheme from './GlobalTheme';
 
 export default interface ThemeType {
+  dark?: boolean;
   global: GlobalTheme;
   accordion: AccordionTheme;
   anchor: AnchorTheme;

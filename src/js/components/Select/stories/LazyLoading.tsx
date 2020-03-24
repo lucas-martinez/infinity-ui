@@ -3,8 +3,8 @@ import React from 'react';
 import { Box, CheckBox, Grommet, Select } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
-const dummyOptions = Array(2000)
-  .fill()
+const dummyOptions = Array<number>(2000)
+  .fill(0)
   .map((_, i) => `option ${i}`)
   .sort((a, b) =>
     a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
@@ -20,8 +20,8 @@ const Option = ({ value, selected }) => {
 };
 
 const LazyLoading = () => {
-  const [selected, setSelected] = React.useState([]);
-  const [options, setOptions] = React.useState(dummyOptions.slice(0, 200));
+  const [selected, setSelected] = React.useState<any>([]);
+  const [options, setOptions] = React.useState<any>(dummyOptions.slice(0, 200));
 
   const onMore = () => {
     setTimeout(() => {

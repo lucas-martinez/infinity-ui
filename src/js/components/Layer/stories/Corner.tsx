@@ -5,7 +5,7 @@ import { Box, Button, Grommet, Layer, Text } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const CornerLayer = () => {
-  const [open, setOpen] = React.useState();
+  const [open, setOpen] = React.useState<any>();
 
   const onOpen = () => setOpen(true);
 

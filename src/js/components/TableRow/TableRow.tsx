@@ -1,8 +1,10 @@
 import React from 'react';
-
+import { TableRowIntrinsicProps } from '../intrinsic-elements';
 import { StyledTableRow } from '../Table/StyledTable';
 
-const TableRow = props => <StyledTableRow {...props} />;
+export interface TableRowProps extends TableRowIntrinsicProps {}
+
+const TableRow = (props: TableRowProps) => <StyledTableRow {...props} />;
 
 let TableRowDoc;
 if (process.env.NODE_ENV !== 'production') {

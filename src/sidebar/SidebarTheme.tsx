@@ -1,4 +1,5 @@
 import React, { ReactNode, ReactNodeArray, useContext, useMemo } from 'react';
+import { ThemeExtend } from '../js/components/Theme/ThemeExtend';
 import { ThemeContext } from '../js/contexts';
 import { ThemeType } from '../js/themes';
 import { deepMerge } from '../js/utils';
@@ -6,8 +7,8 @@ import { deepMerge } from '../js/utils';
 export const createSidebarTheme = (base: ThemeType) => ({
   button: {
     circular: {
-      borderColor: '#627279'
-    }
+      borderColor: '#627279',
+    },
   },
   colors: {
     background: '#203037',
@@ -42,21 +43,21 @@ export const createSidebarTheme = (base: ThemeType) => ({
       hover: {
         icon: {
           color: 'light-3',
-        }
+        },
       },
       icon: {
         color: 'light-4',
-        size: '16px'
+        size: '16px',
       },
       indent: '20px',
       primary: 'light-3',
       secondary: 'light-4',
-    }
+    },
   },
   sidebar: {
     button: {
-      borderTop: ''
-    }
+      borderTop: '',
+    },
   },
   font: {},
   active: {
@@ -91,7 +92,7 @@ export const createSidebarTheme = (base: ThemeType) => ({
     font: {
       weight: 600,
     },
-  }
+  },
 });
 
 type SidebarTheme = ReturnType<typeof createSidebarTheme>;
@@ -100,17 +101,20 @@ export type ThemeWithSidebar = ThemeType & { sidebar: SidebarTheme };
 
 export default SidebarTheme;
 
-export const SidebarThemeProvider = ({ children, value }: { children?: ReactNode | ReactNodeArray, value?: SidebarTheme }) => {
+export const SidebarThemeProvider = ({
+  children,
+  value,
+}: {
+  children?: ReactNode | ReactNodeArray;
+  value?: SidebarTheme;
+}) => {
   const base = useContext<ThemeType>(ThemeContext);
-  const theme = useMemo(
-    () => {
-      const sidebar = createSidebarTheme(base);
-      if (value) {
-        deepMerge(sidebar, value) 
-      }
-      return { sidebar };
-    },
-    [base, value]
-  );
-  return (<ThemeContext.Extend value={theme}>{children}</ThemeContext.Extend>);
+  const theme = useMemo(() => {
+    const sidebar = createSidebarTheme(base);
+    if (value) {
+      deepMerge(sidebar, value);
+    }
+    return { sidebar };
+  }, [base, value]);
+  return <ThemeExtend value={theme}>{children}</ThemeExtend>;
 };

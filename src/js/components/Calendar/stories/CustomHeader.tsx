@@ -5,7 +5,7 @@ import { Box, Button, Calendar, Grommet, Text } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const CustomHeaderCalendar = () => {
-  const [date, setDate] = useState();
+  const [date, setDate] = useState<any>();
 
   const onSelect = nextDate => {
     setDate(nextDate !== date ? nextDate : undefined);

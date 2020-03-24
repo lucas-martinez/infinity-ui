@@ -21,9 +21,8 @@ const Searcher = ({
   onFilter,
   onFiltering,
   property,
-  theme,
 }) => {
-  const inputRef = useRef();
+  const inputRef = useRef<any>();
   const needsFocus = filtering === property;
 
   useEffect(() => {

@@ -12,9 +12,9 @@ import {
 import { grommet } from '../../../../js/themes';
 
 const MultipleDrop = () => {
-  const [showDrop, setShowDrop] = useState(false);
-  const [showLayer, setShowLayer] = useState(false);
-  const targetRef = useRef();
+  const [showDrop, setShowDrop] = useState<any>(false);
+  const [showLayer, setShowLayer] = useState<any>(false);
+  const targetRef = useRef<any>();
 
   return (
     <Grommet theme={grommet} full>

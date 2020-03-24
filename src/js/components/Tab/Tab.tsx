@@ -26,7 +26,6 @@ const Tab = ({
   onActivate,
   onMouseOver,
   onMouseOut,
-  theme,
   ...rest
 }: TabProps) => {
   const [over, setOver] = useState<any>(undefined);

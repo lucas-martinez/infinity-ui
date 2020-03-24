@@ -40,8 +40,8 @@ const compressData = (data, max, count) => {
 };
 
 const WindowChart = ({ data, max }) => {
-  const [hover, setHover] = useState();
-  const [range, setRange] = useState([
+  const [hover, setHover] = useState<any>();
+  const [range, setRange] = useState<any>([
     data.length / 2,
     data.length / 2 + data.length * 0.05,
   ]);

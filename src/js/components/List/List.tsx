@@ -120,7 +120,6 @@ const List = React.forwardRef((props: ListProps, ref) => {
     primaryKey,
     secondaryKey,
     step,
-    theme,
     onClickItem,
     onMore,
     ...rest

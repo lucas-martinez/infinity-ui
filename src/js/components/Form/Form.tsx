@@ -61,19 +61,19 @@ const Form = forwardRef(
     },
     ref,
   ) => {
-    const [value, setValue] = useState(valueProp);
+    const [value, setValue] = useState<any>(valueProp);
     useEffect(() => {
       if (valueProp !== defaultValue) setValue(valueProp);
     }, [valueProp]);
-    const [messages, setMessages] = useState(messagesProp);
+    const [messages, setMessages] = useState<any>(messagesProp);
     useEffect(() => setMessages(messagesProp), [messagesProp]);
-    const [errors, setErrors] = useState(errorsProp || {});
+    const [errors, setErrors] = useState<any>(errorsProp || {});
     useEffect(() => setErrors(errorsProp || {}), [errorsProp]);
-    const [infos, setInfos] = useState(infosProp || {});
+    const [infos, setInfos] = useState<any>(infosProp || {});
     useEffect(() => setInfos(infosProp || {}), [infosProp]);
-    const [touched, setTouched] = useState({});
+    const [touched, setTouched] = useState<any>({});
 
-    const validations = useRef({});
+    const validations = useRef<any>({});
 
     useEffect(() => {
       if (onChange) onChange(value);
@@ -124,7 +124,7 @@ const Form = forwardRef(
 
     const useFormContext = (name, componentValue) => {
       const valueData = name && value[name] !== undefined ? value[name] : '';
-      const [data, setData] = useState(
+      const [data, setData] = useState<any>(
         componentValue !== undefined ? componentValue : valueData,
       );
       // update when the component value or form value changes

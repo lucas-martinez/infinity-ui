@@ -16,7 +16,7 @@ const data = {
 };
 
 const FilteredMaskedInput = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState<any>('');
   const [first, second] = value.split(':');
   const poets = first
     ? Object.keys(data).filter(k =>

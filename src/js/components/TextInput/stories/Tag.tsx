@@ -38,8 +38,8 @@ const Tag = ({ children, onRemove, ...rest }) => {
 };
 
 const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
-  const [currentTag, setCurrentTag] = React.useState('');
-  const [box, setBox] = React.useState();
+  const [currentTag, setCurrentTag] = React.useState<any>('');
+  const [box, setBox] = React.useState<any>();
   const boxRef = React.useCallback(setBox, []);
 
   const updateCurrentTag = event => {
@@ -104,8 +104,8 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
 };
 
 const TagTextInput = () => {
-  const [selectedTags, setSelectedTags] = React.useState(['foo', 'sony']);
-  const [suggestions, setSuggestions] = React.useState(allSuggestions);
+  const [selectedTags, setSelectedTags] = React.useState<any>(['foo', 'sony']);
+  const [suggestions, setSuggestions] = React.useState<any>(allSuggestions);
 
   const onRemoveTag = tag => {
     const removeIndex = selectedTags.indexOf(tag);

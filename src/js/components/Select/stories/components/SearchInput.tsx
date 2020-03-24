@@ -6,7 +6,7 @@ import { SearchBorderBox } from './SearchBorderBox';
 import { SearchInputContext } from './SearchInputContext';
 
 export const SearchInput = props => {
-  const textInputRef = useRef();
+  const textInputRef = useRef<any>();
 
   useEffect(() => {
     const focusTimeout = setTimeout(() => {
@@ -20,7 +20,7 @@ export const SearchInput = props => {
 
   return (
     <SearchInputContext.Consumer>
-      {({ searching }) => (
+      {({ searching }: any) => (
         <SearchBorderBox searching={searching}>
           <TextInput {...props} plain ref={textInputRef} />
         </SearchBorderBox>

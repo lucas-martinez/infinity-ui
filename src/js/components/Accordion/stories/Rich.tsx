@@ -29,7 +29,7 @@ const richAccordionTheme = {
 };
 
 const RichPanel = ({ children, icon, label, ...rest }) => {
-  const [hovering, setHovering] = React.useState(false);
+  const [hovering, setHovering] = React.useState<any>(false);
 
   const renderPanelTitle = () => (
     <Box
@@ -92,7 +92,7 @@ const loading = (
 );
 
 const RichAccordion = () => {
-  const [highlightLoaded, setHighlightLoaded] = React.useState(false);
+  const [highlightLoaded, setHighlightLoaded] = React.useState<any>(false);
 
   return (
     <Grommet full theme={grommet}>

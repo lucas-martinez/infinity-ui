@@ -18,7 +18,7 @@ const allSeasons = [
 ];
 
 const SeasonsSelect = () => {
-  const [selected, setSelected] = useState([]);
+  const [selected, setSelected] = useState<any>([]);
 
   const onRemoveSeason = season => {
     const seasonIndex = allSeasons.indexOf(season);

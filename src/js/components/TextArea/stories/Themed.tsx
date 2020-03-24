@@ -14,7 +14,7 @@ const customTheme = deepMerge(grommet, {
 });
 
 const ThemedTextArea = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState<any>('');
 
   const onChange = event => setValue(event.target.value);
 

@@ -1,9 +1,11 @@
 import React from 'react';
-
-import { TableContext } from '../Table/TableContext';
+import { TableHeaderIntrinsicProps } from '../intrinsic-elements';
 import { StyledTableHeader } from '../Table/StyledTable';
+import { TableContext } from '../Table/TableContext';
 
-const TableHeader = props => (
+export interface TableHeaderProps extends TableHeaderIntrinsicProps {}
+
+const TableHeader = (props: TableHeaderProps) => (
   <TableContext.Provider value="header">
     <StyledTableHeader {...props} />
   </TableContext.Provider>

@@ -13,7 +13,7 @@ delete controlledColumns[4].footer;
 delete controlledColumns[4].aggregate;
 
 const ControlledDataTable = () => {
-  const [checked, setChecked] = React.useState([]);
+  const [checked, setChecked] = React.useState<any>([]);
 
   const onCheck = (event, value) => {
     if (event.target.checked) {

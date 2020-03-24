@@ -6,7 +6,7 @@ import { grommet } from '../../../../js/themes';
 
 // This example shows a way to perform validation across multiple fields.
 const Example = () => {
-  const [value, setValue] = React.useState({ name: 'a', email: 'b' });
+  const [value, setValue] = React.useState<any>({ name: 'a', email: 'b' });
   const message =
     value.name && value.email && value.name[0] !== value.email[0]
       ? 'Mismatched first character'

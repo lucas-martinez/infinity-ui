@@ -6,7 +6,7 @@ import { calcs } from '../calcs';
 import { generateData } from './data';
 
 const ScanChart = props => {
-  const [active, setActive] = useState(undefined);
+  const [active, setActive] = useState<any>(undefined);
 
   const { data, max } = props;
 

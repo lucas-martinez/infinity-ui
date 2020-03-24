@@ -2,21 +2,28 @@ import React, {
   forwardRef,
   isValidElement,
   useContext,
-  useState,
-  useRef,
   useEffect,
+  useRef,
+  useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-
-import { controlBorderStyle, normalizeColor } from '../../utils';
-import { defaultProps } from '../../default-props';
-
+import styled from 'styled-components';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  controlBorderStyle,
+  GridAreaType,
+  MarginType,
+  normalizeColor,
+  PlaceHolderType,
+} from '../../utils';
 import { Box } from '../Box';
+import { DropProps } from '../Drop';
 import { DropButton } from '../DropButton';
-import { Keyboard } from '../Keyboard';
 import { FormContext } from '../Form/FormContext';
+import { SelectIntrinsicProps } from '../intrinsic-elements';
+import { Keyboard } from '../Keyboard';
 import { TextInput } from '../TextInput';
-
+import useTheme from '../Theme/useTheme';
 import { SelectContainer } from './SelectContainer';
 
 const SelectTextInput = styled(TextInput)`
@@ -32,8 +39,49 @@ const StyledSelectDropButton = styled(DropButton)`
   ${props => props.open && props.theme.select.control.open};
 `;
 
-StyledSelectDropButton.defaultProps = {};
-Object.setPrototypeOf(StyledSelectDropButton.defaultProps, defaultProps);
+export interface SelectProps extends Omit<SelectIntrinsicProps, 'placeholder'> {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  gridArea?: GridAreaType;
+  children?: (...args: any[]) => any;
+  closeOnChange?: boolean;
+  disabled?: boolean | (number | string | object)[];
+  disabledKey?: string | ((...args: any[]) => any);
+  dropAlign?: {
+    top?: 'top' | 'bottom';
+    bottom?: 'top' | 'bottom';
+    right?: 'left' | 'right';
+    left?: 'left' | 'right';
+  };
+  dropHeight?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | string;
+  dropTarget?: object;
+  dropProps?: DropProps;
+  focusIndicator?: boolean;
+  icon?: boolean | ((...args: any[]) => any) | React.ReactNode;
+  id?: string;
+  labelKey?: string | ((...args: any[]) => any);
+  margin?: MarginType;
+  messages?: { multiple?: string };
+  multiple?: boolean;
+  name?: string;
+  onChange?: (...args: any[]) => void;
+  onClose?: (...args: any[]) => any;
+  onMore?: (...args: any[]) => any;
+  onOpen?: (...args: any[]) => any;
+  onSearch?: (search: string) => void;
+  options: (string | boolean | number | JSX.Element | object)[];
+  open?: boolean;
+  placeholder?: PlaceHolderType;
+  plain?: boolean;
+  replace?: boolean;
+  searchPlaceholder?: string;
+  selected?: number | number[];
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  value?: string | JSX.Element | object | (string | object)[];
+  valueLabel?: React.ReactNode;
+  valueKey?: string | ((...args: any[]) => any);
+  emptySearchMessage?: string;
+}
 
 const Select = forwardRef(
   (
@@ -76,16 +124,16 @@ const Select = forwardRef(
       valueKey,
       valueLabel,
       ...rest
-    },
+    }: SelectProps,
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
-    const inputRef = useRef();
+    const theme = useTheme();
+    const inputRef = useRef<any>();
     const formContext = useContext(FormContext);
 
     const [value, setValue] = formContext.useFormContext(name, valueProp);
 
-    const [open, setOpen] = useState(propOpen);
+    const [open, setOpen] = useState<any>(propOpen);
     useEffect(() => {
       setOpen(propOpen);
     }, [propOpen]);
@@ -121,8 +169,8 @@ const Select = forwardRef(
       default:
         SelectIcon = icon;
     }
-    let selectValue;
-    let inputValue = '';
+    let selectValue: any;
+    let inputValue: any = '';
     if (valueLabel) {
       selectValue = valueLabel;
     } else if (Array.isArray(value)) {
@@ -210,6 +258,7 @@ const Select = forwardRef(
               replace={replace}
               searchPlaceholder={searchPlaceholder}
               selected={selected}
+              theme={theme}
               value={value}
               valueKey={valueKey}
             >
@@ -270,8 +319,6 @@ const Select = forwardRef(
     );
   },
 );
-
-Select.defaultProps = { ...defaultProps };
 
 Select.displayName = 'Select';
 

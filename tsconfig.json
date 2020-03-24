@@ -27,5 +27,10 @@
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "src/components",
+    "src/themes",
+    "src/stories",
   ]
 }

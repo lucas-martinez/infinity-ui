@@ -31,7 +31,7 @@ const customThemeRangeSelector = deepMerge(grommet, {
 });
 
 const CustomRangeSelector = ({ direction = 'horizontal', ...rest }) => {
-  const [range, setRange] = useState([12, 16]);
+  const [range, setRange] = useState<any>([12, 16]);
   const onChange = values => {
     setRange(values);
   };

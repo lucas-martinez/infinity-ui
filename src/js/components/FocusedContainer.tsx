@@ -14,8 +14,8 @@ export const FocusedContainer = ({
   children,
   ...rest
 }) => {
-  const [bodyOverflowStyle, setBodyOverflowStyle] = useState('');
-  const ref = useRef(null);
+  const [bodyOverflowStyle, setBodyOverflowStyle] = useState<any>('');
+  const ref = useRef<any>(null);
 
   useEffect(() => {
     const removeTrap = () => {

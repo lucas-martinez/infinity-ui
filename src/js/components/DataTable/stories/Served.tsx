@@ -7,7 +7,7 @@ import { grommet } from '../../../../js/themes';
 import { columns, DATA } from './data';
 
 const ServedDataTable = () => {
-  const [data2, setData2] = React.useState(DATA);
+  const [data2, setData2] = React.useState<any>(DATA);
 
   const onSearch = search => {
     let nextData;

@@ -5,7 +5,7 @@ import { Box, Grommet, Tab, Tabs } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const ResponsiveTabs = () => {
-  const [index, setIndex] = useState();
+  const [index, setIndex] = useState<any>();
 
   const onActive = nextIndex => setIndex(nextIndex);
 

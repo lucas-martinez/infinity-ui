@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Box, Grommet, Select } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 import { deepMerge } from '../../../../js/utils';
+import useTheme from '../../Theme/useTheme';
 
 const colors = {
   selected: 'neutral-3',
@@ -41,9 +42,11 @@ const customRoundedTheme = deepMerge(grommet, {
   },
 });
 
-const SimpleSelect = ({ theme, ...rest }) => {
+const SimpleSelect = (props: any) => {
   const options = ['one', 'two'];
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<any>('');
+  const theme = useTheme();
+  
   return (
     <Grommet full theme={theme || grommet}>
       <Box fill align="center" justify="start" pad="large">
@@ -54,7 +57,7 @@ const SimpleSelect = ({ theme, ...rest }) => {
           value={value}
           options={options}
           onChange={({ option }) => setValue(option)}
-          {...rest}
+          {...props}
         />
       </Box>
     </Grommet>
@@ -63,10 +66,6 @@ const SimpleSelect = ({ theme, ...rest }) => {
 
 SimpleSelect.propTypes = {
   theme: PropTypes.shape({}),
-};
-
-SimpleSelect.defaultProps = {
-  theme: undefined,
 };
 
 const defaultOptions: any[] = [];
@@ -83,4 +82,4 @@ for (let i = 1; i <= 200; i += 1) {
 
 storiesOf('Select', module)
   .add('Simple', () => <SimpleSelect />)
-  .add('Custom Theme', () => <SimpleSelect open theme={customRoundedTheme} />);
+  .add('Custom Theme', () => <SimpleSelect open={true} theme={customRoundedTheme} />);

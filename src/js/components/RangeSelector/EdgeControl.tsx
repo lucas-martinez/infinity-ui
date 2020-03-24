@@ -32,7 +32,7 @@ const EdgeControl = ({
   thickness,
   ...rest
 }) => {
-  const [focused, setFocused] = useState(false);
+  const [focused, setFocused] = useState<any>(false);
   const { cursor, fill } = DIRECTION_PROPS[direction];
   const size = parseMetricToNum(theme.global.spacing) / 2;
   const keyboardProps =

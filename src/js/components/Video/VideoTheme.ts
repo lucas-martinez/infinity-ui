@@ -20,5 +20,8 @@ export default interface VideoTheme {
   };
   scrubber: {
     color: ColorType;
+    track: {
+      color: ColorType;
+    }
   };
 }

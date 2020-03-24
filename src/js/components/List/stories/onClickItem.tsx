@@ -5,7 +5,7 @@ import { grommet } from '../../../../js/themes';
 import { data } from './data';
 
 const OnClickItemList = () => {
-  const [clicked, setClicked] = React.useState();
+  const [clicked, setClicked] = React.useState<any>();
   return (
     <Grommet theme={grommet}>
       <Box align="center" pad="large" gap="large">

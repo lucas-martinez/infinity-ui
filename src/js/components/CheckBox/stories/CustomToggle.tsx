@@ -59,7 +59,7 @@ const customToggleTheme = {
 };
 
 const ThemedToggle = props => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState<any>(false);
 
   return (
     <Grommet theme={deepMerge(grommet, customToggleTheme)}>

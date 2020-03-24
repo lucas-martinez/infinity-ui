@@ -5,7 +5,7 @@ import { grommet } from '../../../../js/themes';
 
 
 const FullLayer = () => {
-  const [showLayer, setShowLayer] = React.useState(false);
+  const [showLayer, setShowLayer] = React.useState<any>(false);
 
   return (
     <Grommet theme={grommet} full>

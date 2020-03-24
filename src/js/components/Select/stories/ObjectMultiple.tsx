@@ -16,8 +16,8 @@ for (let i = 1; i <= 200; i += 1) {
 }
 
 const ObjectMultiSelect = () => {
-  const [options, setOptions] = useState(objectOptions);
-  const [value, setValue] = useState('');
+  const [options, setOptions] = useState<any>(objectOptions);
+  const [value, setValue] = useState<any>('');
 
   return (
     <Grommet full theme={grommet}>

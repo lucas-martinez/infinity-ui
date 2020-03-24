@@ -7,7 +7,7 @@ import { grommet } from '../../../../js/themes';
 
 
 const NotificationLayer = () => {
-  const [open, setOpen] = React.useState();
+  const [open, setOpen] = React.useState<any>();
 
   const onOpen = () => setOpen(true);
 

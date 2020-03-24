@@ -64,7 +64,6 @@ const Menu = props => {
     open,
     plain,
     size,
-    theme,
     ...rest
   } = props;
   const MenuIcon = theme.menu.icons.down;
@@ -89,8 +88,8 @@ const Menu = props => {
     controlButtonIndex,
   };
 
-  const [activeItemIndex, setActiveItemIndex] = useState(constants.none);
-  const [isOpen, setOpen] = useState(open || false);
+  const [activeItemIndex, setActiveItemIndex] = useState<any>(constants.none);
+  const [isOpen, setOpen] = useState<any>(open || false);
 
   const onDropClose = () => {
     setActiveItemIndex(constants.none);

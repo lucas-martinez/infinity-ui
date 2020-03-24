@@ -13,6 +13,7 @@ import { Resizer } from './Resizer';
 import { Searcher } from './Searcher';
 import { ExpanderCell } from './ExpanderCell';
 import { StyledDataTableHeader, StyledDataTableRow } from './StyledDataTable';
+import useTheme from '../Theme/useTheme';
 
 const Header = ({
   background,
@@ -29,10 +30,11 @@ const Header = ({
   onToggle,
   pad,
   sort,
-  theme,
   widths,
   ...rest
 }) => {
+  const theme = useTheme();
+  
   return (
     <StyledDataTableHeader {...rest}>
       <StyledDataTableRow>

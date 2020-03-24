@@ -16,7 +16,7 @@ import {
 
 const InfiniteScrollInTable = () => {
   const step = 25;
-  const [results, setResults] = useState(
+  const [results, setResults] = useState<any>(
     Array.from({ length: 50 }, () => Math.floor(Math.random() * 1000000)),
   );
   const load = () => {

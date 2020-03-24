@@ -6,7 +6,7 @@ import { grommet } from '../../../../js/themes';
 
 const CustomSelect = ({ ...rest }) => {
   const options = ['one', 'two'];
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<any>('');
 
   return (
     <Grommet full theme={grommet}>

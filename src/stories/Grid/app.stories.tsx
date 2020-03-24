@@ -5,7 +5,7 @@ import { Box, Button, Grid, Text } from '../../js/components';
 
 
 const AppGrid = () => {
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState<any>(true);
 
   return (
     <>

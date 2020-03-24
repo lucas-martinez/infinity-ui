@@ -15,12 +15,12 @@ const lazyTheme = deepMerge(grommet, {
 const finalLazyPad = 'xlarge';
 
 const LazyDrop = () => {
-  const [pad, setPad] = useState(null);
+  const [pad, setPad] = useState<any>(null);
 
-  const topLeftTargetRef = useRef();
-  const topRightTargetRef = useRef();
-  const bottomLeftTargetRef = useRef();
-  const bottomRightTargetRef = useRef();
+  const topLeftTargetRef = useRef<any>();
+  const topRightTargetRef = useRef<any>();
+  const bottomLeftTargetRef = useRef<any>();
+  const bottomRightTargetRef = useRef<any>();
 
   useEffect(() => {
     setPad('small');

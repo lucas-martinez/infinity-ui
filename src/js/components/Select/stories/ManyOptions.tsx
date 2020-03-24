@@ -3,7 +3,7 @@ import React, { PureComponent } from 'react';
 import { Box, CheckBox, Grommet, Select } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
-class Option extends PureComponent {
+class Option extends PureComponent<any> {
   render() {
     const { value, selected } = this.props;
     return (
@@ -15,16 +15,16 @@ class Option extends PureComponent {
   }
 }
 
-const dummyOptions = Array(2000)
-  .fill()
+const dummyOptions = Array<number>(2000)
+  .fill(0)
   .map((_, i) => `option ${i}`)
   .sort((a, b) =>
     a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }),
   );
 
 const ManyOptions = () => {
-  const [selected, setSelected] = React.useState([]);
-  const [options, setOptions] = React.useState(dummyOptions);
+  const [selected, setSelected] = React.useState<any>([]);
+  const [options, setOptions] = React.useState<any>(dummyOptions);
 
   return (
     <Grommet full theme={grommet}>

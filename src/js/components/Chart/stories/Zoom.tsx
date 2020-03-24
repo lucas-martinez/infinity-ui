@@ -13,10 +13,10 @@ const intervalDays = {
 };
 
 const ZoomChart = ({ data, max }) => {
-  const [reference, setReference] = useState(
+  const [reference, setReference] = useState<any>(
     new Date(data[data.length - 1].time),
   );
-  const [interval, setInterval] = useState(Object.keys(intervalDays)[1]);
+  const [interval, setInterval] = useState<any>(Object.keys(intervalDays)[1]);
 
   const startDate = new Date(reference);
   startDate.setDate(reference.getDate() - intervalDays[interval]);

@@ -4,7 +4,7 @@ import { Box, Button, Collapsible, Grommet, Text } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const SimpleCollapsible = props => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState<any>(false);
 
   return (
     <Grommet theme={grommet}>

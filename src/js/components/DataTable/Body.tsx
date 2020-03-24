@@ -25,10 +25,9 @@ const Body = ({
   rowProps,
   size,
   step,
-  theme,
   ...rest
 }) => {
-  const [active, setActive] = React.useState();
+  const [active, setActive] = React.useState<any>();
   return (
     <Keyboard
       onEnter={

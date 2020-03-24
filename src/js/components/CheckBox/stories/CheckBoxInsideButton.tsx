@@ -4,7 +4,7 @@ import { Box, Button, CheckBox, Grommet, Text } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const CheckBoxInsideButton = () => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState<any>(false);
   const onButtonClick = () => setChecked(!checked);
   const onCheckboxChange = () => {};
 

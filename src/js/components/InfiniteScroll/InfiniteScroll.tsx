@@ -12,6 +12,17 @@ class Ref extends Component {
   }
 }
 
+export interface InfiniteScrollProps {
+  children?: ((...args: any[]) => any);
+  items?: any[];
+  onMore?: ((...args: any[]) => any);
+  renderMarker?: ((...args: any[]) => any);
+  replace?: boolean;
+  scrollableAncestor?: React.ReactNode | "window";
+  show?: number;
+  step?: number;
+}
+
 const InfiniteScroll = ({
   children,
   items = [],
@@ -20,31 +31,31 @@ const InfiniteScroll = ({
   replace,
   show,
   step = 50,
-}) => {
+}: InfiniteScrollProps) => {
   // the last page we have items for
   const lastPage = useMemo(() => Math.floor(items.length / step), [
     items.length,
     step,
   ]);
   // the first page we are displaying
-  const [beginPage, setBeginPage] = useState(0);
+  const [beginPage, setBeginPage] = useState<any>(0);
   // the last page we are displaying
-  const [endPage, setEndPage] = useState(
+  const [endPage, setEndPage] = useState<any>(
     show ? Math.floor((show + step) / step) - 1 : 0,
   );
   // how tall we've measured a page to be
-  const [pageHeight, setPageHeight] = useState();
+  const [pageHeight, setPageHeight] = useState<any>();
   // how much area a page requires
-  const [pageArea, setPageArea] = useState();
+  const [pageArea, setPageArea] = useState<any>();
   // whether the items are laid out in a grid instead of linearly
-  const [multiColumn, setMultiColumn] = useState();
+  const [multiColumn, setMultiColumn] = useState<any>();
   // what we're waiting for onMore to give us
-  const [pendingLength, setPendingLength] = useState(0);
+  const [pendingLength, setPendingLength] = useState<any>(0);
 
-  const belowMarkerRef = useRef();
-  const firstPageItemRef = useRef();
-  const lastPageItemRef = useRef();
-  const showRef = useRef();
+  const belowMarkerRef = useRef<any>();
+  const firstPageItemRef = useRef<any>();
+  const lastPageItemRef = useRef<any>();
+  const showRef = useRef<any>();
 
   // calculating space based on where the first and last items being displayed
   // are located

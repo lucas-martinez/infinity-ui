@@ -7,10 +7,27 @@ import React, {
   useState,
 } from 'react';
 
-import { Box } from '../Box';
+import { Box, BoxProps } from '../Box';
 import { FormContext } from '../Form/FormContext';
 import { Keyboard } from '../Keyboard';
 import { RadioButton } from '../RadioButton';
+
+export interface RadioButtonGroupProps
+  extends Pick<BoxProps, 'children' | 'gap' | 'id'> {
+  disabled?: boolean;
+  name: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement> | any) => void;
+  options: (
+    | string
+    | {
+        disabled?: boolean;
+        id?: string;
+        label?: string | React.ReactNode;
+        value: string;
+      }
+  )[];
+  value?: string | object;
+}
 
 const RadioButtonGroup = forwardRef(
   (
@@ -23,7 +40,7 @@ const RadioButtonGroup = forwardRef(
       options: optionsProp,
       value: valueProp,
       ...rest
-    },
+    }: RadioButtonGroupProps,
     ref,
   ) => {
     const formContext = useContext(FormContext);
@@ -46,9 +63,9 @@ const RadioButtonGroup = forwardRef(
 
     const [value, setValue] = formContext.useFormContext(name, valueProp);
 
-    const [focus, setFocus] = useState();
+    const [focus, setFocus] = useState<any>();
 
-    const optionRefs = useRef([]);
+    const optionRefs = useRef<any>([]);
 
     const valueIndex = React.useMemo(() => {
       let result;

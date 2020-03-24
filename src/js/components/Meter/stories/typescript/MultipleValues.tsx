@@ -6,7 +6,7 @@ import { grommet } from '../../../../../js/themes';
 
 const MultipleValues = () => {
   const total = 100;
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState<any>(0);
   const [label, setLabel] = useState<string | undefined>('');
 
   return (

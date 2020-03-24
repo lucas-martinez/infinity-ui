@@ -4,7 +4,7 @@ import { Box, Grommet, WorldMap } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const SimpleWorldMap = () => {
-  const [places, setPlaces] = React.useState();
+  const [places, setPlaces] = React.useState<any>();
 
   const onSelectPlace = place => {
     setPlaces([{ color: 'accent-1', location: place }]);

@@ -29,7 +29,7 @@ DropContent.propTypes = {
 };
 
 const SimpleDropButton = () => {
-  const [open, setOpen] = React.useState();
+  const [open, setOpen] = React.useState<any>();
   const onOpen = () => {
     setOpen(true);
   };

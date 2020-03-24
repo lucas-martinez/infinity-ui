@@ -5,7 +5,7 @@ import { grommet } from '../../../../js/themes';
 import { allItems } from './Basics';
 
 const OnMoreInfiniteScroll = ({ props }) => {
-  const [items, setItems] = useState(allItems.slice(0, 50));
+  const [items, setItems] = useState<any>(allItems.slice(0, 50));
 
   const onMore = () => {
     setTimeout(() => {

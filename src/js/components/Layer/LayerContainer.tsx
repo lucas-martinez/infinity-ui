@@ -41,10 +41,10 @@ const LayerContainer = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext);
-    const [targetBounds, setTargetBounds] = useState(fullBounds);
-    const anchorRef = useRef();
-    const containerRef = useRef();
-    const layerRef = useRef();
+    const [targetBounds, setTargetBounds] = useState<any>(fullBounds);
+    const anchorRef = useRef<any>();
+    const containerRef = useRef<any>();
+    const layerRef = useRef<any>();
 
     useEffect(() => {
       if (position !== 'hidden') {

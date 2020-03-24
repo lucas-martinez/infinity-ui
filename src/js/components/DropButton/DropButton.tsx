@@ -27,14 +27,14 @@ const DropButton = forwardRef(
     },
     ref,
   ) => {
-    const [show, setShow] = useState();
+    const [show, setShow] = useState<any>();
     useEffect(() => {
       if (open !== undefined && open !== show) {
         setShow(open);
       }
     }, [open, show]);
 
-    const buttonRef = useRef();
+    const buttonRef = useRef<any>();
 
     const onDropClose = useCallback(
       event => {

@@ -76,14 +76,14 @@ const themes = {
 };
 
 const Components = () => {
-  const [baseSize, setBaseSize] = useState(24);
-  const [checkBox, setCheckBox] = useState(true);
-  const [radioButton, setRadioButton] = useState('RadioButton 1');
-  const [rangeSelector, setRangeSelector] = useState([1, 2]);
-  const [themeMode, setThemeMode] = useState();
-  const [themeName, setThemeName] = useState('grommet');
-  const [background, setBackground] = useState(undefined);
-  const [tabIndex, setTabIndex] = useState(0);
+  const [baseSize, setBaseSize] = useState<any>(24);
+  const [checkBox, setCheckBox] = useState<any>(true);
+  const [radioButton, setRadioButton] = useState<any>('RadioButton 1');
+  const [rangeSelector, setRangeSelector] = useState<any>([1, 2]);
+  const [themeMode, setThemeMode] = useState<any>();
+  const [themeName, setThemeName] = useState<any>('grommet');
+  const [background, setBackground] = useState<any>(undefined);
+  const [tabIndex, setTabIndex] = useState<any>(0);
 
   const theme = useMemo(
     () => deepMerge(generate(baseSize), themes[themeName]),

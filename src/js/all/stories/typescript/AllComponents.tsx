@@ -66,18 +66,18 @@ const themes = {
 const daysInMonth = (month: number) => new Date(2019, month, 0).getDate();
 
 const Components = () => {
-  const [baseSize, setBaseSize] = useState(24);
-  const [checkBox, setCheckBox] = useState(true);
-  const [radioButton, setRadioButton] = useState('RadioButton 1');
-  const [rangeSelector, setRangeSelector] = useState([1, 2]);
-  const [themeName] = useState('grommet');
-  const [background] = useState(undefined);
-  const [tabIndex, setTabIndex] = useState(0);
-  const [value, setValue] = useState('');
-  const [date, setDate] = useState('');
-  const [rangeInputValue, setRangeInputValue] = useState(24);
-  const [textAreaValue, setTextAreaValue] = useState('');
-  const [textInputValue, setTextInputValue] = useState('');
+  const [baseSize, setBaseSize] = useState<any>(24);
+  const [checkBox, setCheckBox] = useState<any>(true);
+  const [radioButton, setRadioButton] = useState<any>('RadioButton 1');
+  const [rangeSelector, setRangeSelector] = useState<any>([1, 2]);
+  const [themeName] = useState<any>('grommet');
+  const [background] = useState<any>(undefined);
+  const [tabIndex, setTabIndex] = useState<any>(0);
+  const [value, setValue] = useState<any>('');
+  const [date, setDate] = useState<any>('');
+  const [rangeInputValue, setRangeInputValue] = useState<any>(24);
+  const [textAreaValue, setTextAreaValue] = useState<any>('');
+  const [textInputValue, setTextInputValue] = useState<any>('');
 
   const theme = deepMerge(generate(baseSize), themes[themeName]);
 

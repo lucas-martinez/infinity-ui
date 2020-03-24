@@ -5,7 +5,7 @@ import { Box, Button, Grid, Grommet, Text } from '../../../../../js';
 import { grommet } from '../../../../../js/themes';
 
 const AppGrid = () => {
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState<any>(true);
 
   return (
     <Grommet full theme={grommet}>

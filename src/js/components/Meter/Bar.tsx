@@ -15,7 +15,6 @@ const Bar = props => {
     max,
     round,
     size,
-    theme,
     thickness,
     values,
     ...rest

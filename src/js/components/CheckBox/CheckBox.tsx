@@ -59,7 +59,7 @@ const CheckBox = forwardRef(
 
     const [checked, setChecked] = formContext.useFormContext(name, checkedProp);
 
-    const [focus, setFocus] = useState(focusProp);
+    const [focus, setFocus] = useState<any>(focusProp);
     useEffect(() => setFocus(focusProp), [focusProp]);
 
     useEffect(() => {

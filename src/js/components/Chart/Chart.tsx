@@ -107,16 +107,16 @@ const Chart = React.forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext);
-    const [values, setValues] = useState([]);
-    const [bounds, setBounds] = useState([
+    const [values, setValues] = useState<any>([]);
+    const [bounds, setBounds] = useState<any>([
       [0, 0],
       [0, 0],
     ]);
-    const [containerSize, setContainerSize] = useState([0, 0]);
-    const [size, setSize] = useState([0, 0]);
-    const [scale, setScale] = useState([1, 1]);
-    const [strokeWidth, setStrokeWidth] = useState(0);
-    const containerRef = ref || useRef();
+    const [containerSize, setContainerSize] = useState<any>([0, 0]);
+    const [size, setSize] = useState<any>([0, 0]);
+    const [scale, setScale] = useState<any>([1, 1]);
+    const [strokeWidth, setStrokeWidth] = useState<any>(0);
+    const containerRef = ref || useRef<any>();
 
     // calculations
     useEffect(() => {

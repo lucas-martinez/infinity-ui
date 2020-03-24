@@ -112,7 +112,7 @@ export const SidebarPanel = ({
   variant,
   ...spread
 }: SidebarMenuProps) => {
-  const ref = useRef();
+  const ref = useRef<any>();
   const { variant: sidebarVariant } = useSidebar();
   const collapsed = sidebarVariant === 'collapsed';
   const canPopup = useMemo(
@@ -125,7 +125,7 @@ export const SidebarPanel = ({
       }[variant || 'accordion'] || false),
     [collapsed, variant]
   );
-  const [popup, setOpen] = useState(false);
+  const [popup, setOpen] = useState<any>(false);
   const expandAbove = useMemo<boolean>(
     () =>
       ({

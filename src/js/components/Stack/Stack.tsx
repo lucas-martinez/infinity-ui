@@ -1,5 +1,11 @@
 import React, { Children } from 'react';
-
+import {
+  A11yTitleType,
+  AlignSelfType,
+  GridAreaType,
+  MarginType,
+} from '../../utils';
+import { DivIntrinsicProps } from '../intrinsic-elements';
 import { StyledStack, StyledStackLayer } from './StyledStack';
 
 const buildStyledChildren = ({
@@ -39,6 +45,26 @@ const buildStyledChildren = ({
   };
 };
 
+export interface StackProps extends DivIntrinsicProps {
+  a11yTitle?: A11yTitleType;
+  alignSelf?: AlignSelfType;
+  anchor?:
+    | 'center'
+    | 'left'
+    | 'right'
+    | 'top'
+    | 'bottom'
+    | 'top-left'
+    | 'bottom-left'
+    | 'top-right'
+    | 'bottom-right';
+  fill?: boolean;
+  gridArea?: GridAreaType;
+  guidingChild?: number | 'first' | 'last';
+  interactiveChild?: number | 'first' | 'last';
+  margin?: MarginType;
+}
+
 const Stack = ({
   anchor,
   children,
@@ -46,7 +72,7 @@ const Stack = ({
   guidingChild,
   interactiveChild,
   ...rest
-}) => {
+}: StackProps) => {
   const toChildIndex = child => {
     let index = child;
 

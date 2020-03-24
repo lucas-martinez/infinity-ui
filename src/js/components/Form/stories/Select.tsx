@@ -4,7 +4,7 @@ import { Box, FormField, grommet, Grommet, Select } from '../../../../js';
 import { allOptions } from './data';
 
 const FormFieldSelect = props => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<any>('');
 
   return (
     <Grommet theme={grommet}>

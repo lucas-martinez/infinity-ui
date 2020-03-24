@@ -4,7 +4,7 @@ import { Box, Grommet, RangeSelector, Stack, Text } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const SimpleRangeSelector = ({ direction = 'horizontal', ...rest }) => {
-  const [range, setRange] = useState([12, 16]);
+  const [range, setRange] = useState<any>([12, 16]);
   const onChange = values => {
     setRange(values);
   };

@@ -7,4 +7,4 @@ export const debounce = (cb, timer) => {
   };
 };
 
-export const debounceDelay = ({ theme }) => theme.global.debounceDelay;
+export const debounceDelay = ({ theme }: any) => theme.global.debounceDelay;

@@ -32,7 +32,7 @@ const Image = ({
   src,
   ...rest
 }: ImageProps) => {
-  const [imageMissing, setImageMissing] = useState(false);
+  const [imageMissing, setImageMissing] = useState<any>(false);
   const handleError = event => {
     if (onError) {
       onError(event);

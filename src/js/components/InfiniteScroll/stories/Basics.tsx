@@ -3,8 +3,8 @@ import React from 'react';
 import { Box, Grommet, InfiniteScroll, Text } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
-export const allItems = Array(2000)
-  .fill()
+export const allItems = Array<number>(2000)
+  .fill(0)
   .map((_, i) => `item ${i + 1}`);
 
 const SimpleInfiniteScroll = props => (

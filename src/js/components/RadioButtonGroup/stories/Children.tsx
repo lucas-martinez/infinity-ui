@@ -5,7 +5,7 @@ import { Box, Grommet, RadioButtonGroup } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const ChildrenRadioButtonGroup = () => {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState<any>();
 
   return (
     <Grommet theme={grommet}>

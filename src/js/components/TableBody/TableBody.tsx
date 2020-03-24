@@ -1,11 +1,15 @@
 import React from 'react';
 import { compose } from 'recompose';
-
 import { withForwardRef } from '../hocs';
-import { TableContext } from '../Table/TableContext';
+import { TableHeaderIntrinsicProps } from '../intrinsic-elements';
 import { StyledTableBody } from '../Table/StyledTable';
+import { TableContext } from '../Table/TableContext';
 
-const TableBody = ({ forwardRef, ...rest }) => (
+export interface TableBodyProps extends TableHeaderIntrinsicProps {
+  forwardRef: any;
+}
+
+const TableBody = ({ forwardRef, ...rest }: TableBodyProps) => (
   <TableContext.Provider value="body">
     <StyledTableBody ref={forwardRef} {...rest} />
   </TableContext.Provider>

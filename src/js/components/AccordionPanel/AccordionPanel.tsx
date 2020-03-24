@@ -31,7 +31,7 @@ const AccordionPanel = forwardRef(
     ref,
   ) => {
     const theme = useContext(ThemeContext);
-    const [hover, setHover] = useState(undefined);
+    const [hover, setHover] = useState<any>(undefined);
 
     const iconColor = useMemo(
       () => normalizeColor(theme.accordion.icons.color || 'control', theme),

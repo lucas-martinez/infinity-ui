@@ -9,8 +9,8 @@ for (let i = 1; i <= 200; i += 1) {
 }
 
 const SearchSelect = () => {
-  const [options, setOptions] = useState(defaultOptions);
-  const [value, setValue] = useState('');
+  const [options, setOptions] = useState<any>(defaultOptions);
+  const [value, setValue] = useState<any>('');
 
   return (
     <Grommet full theme={grommet}>

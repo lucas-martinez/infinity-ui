@@ -4,8 +4,8 @@ import { Box, Button, Drop, Grommet } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const TooltipDrop = () => {
-  const [over, setOver] = useState();
-  const ref = useRef();
+  const [over, setOver] = useState<any>();
+  const ref = useRef<any>();
 
   return (
     <Grommet theme={grommet} full>

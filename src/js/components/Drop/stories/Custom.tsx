@@ -15,8 +15,8 @@ const customTheme = deepMerge(grommet, {
 });
 
 const Custom = () => {
-  const [, setShowDrop] = useState(false);
-  const targetRef = useRef();
+  const [, setShowDrop] = useState<any>(false);
+  const targetRef = useRef<any>();
 
   useEffect(() => setShowDrop(true), []);
   return (

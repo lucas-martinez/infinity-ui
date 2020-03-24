@@ -25,7 +25,7 @@ const theme = deepMerge(grommet, {
 });
 
 const ThemeRadioButton = () => {
-  const [selected, setSelected] = React.useState();
+  const [selected, setSelected] = React.useState<any>();
 
   return (
     <Grommet theme={theme}>

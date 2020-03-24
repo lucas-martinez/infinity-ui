@@ -5,7 +5,7 @@ import { grommet } from '../../../../js/themes';
 import { data } from './data';
 
 const SelectionList = () => {
-  const [selected, setSelected] = React.useState();
+  const [selected, setSelected] = React.useState<any>();
 
   return (
     <Grommet theme={grommet}>

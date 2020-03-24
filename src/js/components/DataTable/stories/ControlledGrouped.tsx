@@ -14,7 +14,7 @@ groupColumns[0].footer = groupColumns[1].footer;
 delete groupColumns[1].footer;
 
 const ControlledGroupedDataTable = () => {
-  const [expandedGroups, setExpandedGroups] = useState([DATA[2].location]);
+  const [expandedGroups, setExpandedGroups] = useState<any>([DATA[2].location]);
 
   return (
     <Grommet theme={grommet}>

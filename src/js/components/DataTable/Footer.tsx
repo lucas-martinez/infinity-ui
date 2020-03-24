@@ -19,7 +19,6 @@ const Footer = ({
   groups,
   pad,
   primaryProperty,
-  theme,
   ...rest
 }) => (
   <StyledDataTableFooter {...rest}>

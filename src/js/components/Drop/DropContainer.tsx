@@ -6,18 +6,16 @@ import React, {
   useRef,
 } from 'react';
 import { ThemeContext } from 'styled-components';
-
-import { FocusedContainer } from '../FocusedContainer';
 import {
   backgroundIsDark,
   findScrollParents,
   findVisibleParent,
   parseMetricToNum,
 } from '../../utils';
-import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import { FocusedContainer } from '../FocusedContainer';
 import { Keyboard } from '../Keyboard';
-
+import { DropProps } from './Drop';
 import { PortalContext } from './PortalContext';
 import { StyledDrop } from './StyledDrop';
 
@@ -30,6 +28,11 @@ const preventLayerClose = event => {
     event.stopPropagation();
   }
 };
+
+interface DropContainerProps extends DropProps {
+  dropTarget: any;
+  stretch: any;
+}
 
 const DropContainer = forwardRef(
   (
@@ -50,17 +53,17 @@ const DropContainer = forwardRef(
       restrictFocus,
       stretch = 'width',
       ...rest
-    },
+    }: DropContainerProps,
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
     const portalContext = useContext(PortalContext) || [];
     const portalId = useMemo(() => portalContext.length, [portalContext]);
     const nextPortalContext = useMemo(() => [...portalContext, portalId], [
       portalContext,
       portalId,
     ]);
-    const dropRef = useRef();
+    const dropRef = useRef<any>();
+    const theme = useTheme();
 
     useEffect(() => {
       // We try to preserve the maxHeight as changing it causes any scroll

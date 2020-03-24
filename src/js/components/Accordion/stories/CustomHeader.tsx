@@ -21,7 +21,7 @@ const renderPanelHeader = (title, active) => (
 );
 
 const CustomHeaderAccordion = () => {
-  const [activeIndex, setActiveIndex] = useState([0]);
+  const [activeIndex, setActiveIndex] = useState<any>([0]);
 
   return (
     <Grommet theme={grommet}>

@@ -7,7 +7,7 @@ import { grommet } from '../../../../js/themes';
 import { columns, DATA } from './data';
 
 const Example = () => {
-  const [sort, setSort] = React.useState({
+  const [sort, setSort] = React.useState<any>({
     property: 'name',
     direction: 'desc',
   });

@@ -1,20 +1,43 @@
 import React, {
   forwardRef,
   useCallback,
-  useContext,
   useEffect,
   useRef,
   useState,
 } from 'react';
-import styled, { ThemeContext } from 'styled-components';
-
+import styled from 'styled-components';
+import { ColorType, parseMetricToNum } from '../../utils';
 import { Box } from '../Box';
+import { DivIntrinsicProps } from '../intrinsic-elements';
+import useTheme from '../Theme/useTheme';
 import { EdgeControl } from './EdgeControl';
-import { parseMetricToNum } from '../../utils';
 
 const Container = styled(Box)`
   user-select: none;
 `;
+
+export interface RangeSelectorProps extends DivIntrinsicProps {
+  color?: ColorType;
+  direction?: 'horizontal' | 'vertical';
+  invert?: boolean;
+  max?: number;
+  messages?: { lower?: string; upper?: string };
+  min?: number;
+  onChange: (...args: any[]) => void;
+  opacity?: 'weak' | 'medium' | 'strong' | string | boolean;
+  round?: 'xsmall' | 'small' | 'medium' | 'large' | 'full' | string;
+  size?:
+    | 'xxsmall'
+    | 'xsmall'
+    | 'small'
+    | 'medium'
+    | 'large'
+    | 'xlarge'
+    | 'full'
+    | string;
+  step?: number;
+  values: number[];
+}
 
 const RangeSelector = forwardRef(
   (
@@ -32,14 +55,14 @@ const RangeSelector = forwardRef(
       step = 1,
       values = [],
       ...rest
-    },
+    }: RangeSelectorProps,
     ref,
   ) => {
-    const theme = useContext(ThemeContext) || defaultProps.theme;
-    const [changing, setChanging] = useState();
-    const [lastChange, setLastChange] = useState();
-    const [moveValue, setMoveValue] = useState();
-    const containerRef = useRef();
+    const theme = useTheme();
+    const [changing, setChanging] = useState<any>();
+    const [lastChange, setLastChange] = useState<any>();
+    const [moveValue, setMoveValue] = useState<any>();
+    const containerRef = useRef<any>();
 
     const valueForMouseCoord = useCallback(
       event => {
@@ -133,7 +156,7 @@ const RangeSelector = forwardRef(
       size === 'full'
         ? undefined
         : `${parseMetricToNum(theme.global.edgeSize[size] || size)}px`;
-    const layoutProps = { fill: direction, round };
+    const layoutProps: any = { fill: direction, round };
     if (direction === 'vertical') layoutProps.width = thickness;
     else layoutProps.height = thickness;
     if (size === 'full') layoutProps.alignSelf = 'stretch';
@@ -152,7 +175,7 @@ const RangeSelector = forwardRef(
           style={{ flex: `${lower - min} 0 0` }}
           background={
             invert
-              ? // preserve existing dark, instead of using darknes
+              ? // preserve existing dark, instead of using darkness
                 // of this color
                 {
                   color: color || theme.rangeSelector.background.invert.color,

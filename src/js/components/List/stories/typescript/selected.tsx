@@ -25,7 +25,7 @@ for (let i = 0; i < 40; i += 1) {
 }
 
 const SelectedItem = () => {
-  const [selected, setSelected] = React.useState(undefined);
+  const [selected, setSelected] = React.useState<any>(undefined);
 
   return (
     <Grommet theme={grommet}>

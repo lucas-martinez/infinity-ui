@@ -4,7 +4,7 @@ import { Box, Grommet, TextInput } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const SimpleTextInput = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState<any>('');
 
   const onChange = event => setValue(event.target.value);
 

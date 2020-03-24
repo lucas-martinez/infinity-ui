@@ -6,6 +6,7 @@ import { A11yTitleType, AlignSelfType, GridAreaType, MarginType } from "../../ut
 import { Box } from '../Box';
 import { StyledTabPanel, StyledTabs, StyledTabsHeader } from './StyledTabs';
 import { DivIntrinsicProps } from '../intrinsic-elements';
+import useTheme from '../Theme/useTheme';
 
 export interface TabsProps extends DivIntrinsicProps {
   a11yTitle?: A11yTitleType;
@@ -25,11 +26,10 @@ const Tabs = ({
   flex,
   justify = 'center',
   messages = { tabContents: 'Tab Contents' },
-  theme,
   ...rest
 }: TabsProps) => {
   const { activeIndex: propsActiveIndex, onActive } = rest;
-  const [activeIndex, setActiveIndex] = useState(rest.activeIndex || 0);
+  const [activeIndex, setActiveIndex] = useState<any>(rest.activeIndex || 0);
 
   if (activeIndex !== propsActiveIndex && propsActiveIndex !== undefined) {
     setActiveIndex(propsActiveIndex);
@@ -53,7 +53,7 @@ const Tabs = ({
   let activeTitle;
   const tabs = Children.map(
     children,
-    (tab, index) => {
+    (tab: any, index) => {
       if (!tab) return undefined;
 
       const tabProps = tab.props || {};
@@ -74,10 +74,11 @@ const Tabs = ({
         onActivate: () => activateTab(index),
       });
     },
-    this,
   );
 
   const tabContentTitle = `${activeTitle || ''} ${messages.tabContents}`;
+
+  const theme = useTheme();
 
   return (
     <StyledTabs

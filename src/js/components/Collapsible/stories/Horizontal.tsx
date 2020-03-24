@@ -5,7 +5,7 @@ import { Box, Button, Collapsible, Grommet, Heading, Text } from '../../../../js
 import { grommet } from '../../../../js/themes';
 
 const HorizontalCollapsible = () => {
-  const [openNotification, setOpenNotification] = React.useState();
+  const [openNotification, setOpenNotification] = React.useState<any>();
 
   return (
     <Grommet full theme={grommet}>

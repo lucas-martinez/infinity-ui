@@ -19,7 +19,7 @@ const renderPanelHeader = (title: string, active: boolean) => (
 );
 
 const CustomHeaderAccordion = () => {
-  const [activeIndex, setActiveIndex] = useState([0]);
+  const [activeIndex, setActiveIndex] = useState<any>([0]);
 
   return (
     <>

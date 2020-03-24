@@ -6,7 +6,7 @@ import { grommet } from '../../../../js/themes';
 const daysInMonth = month => new Date(2019, month, 0).getDate();
 
 const DateRangeMaskedInput = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState<any>('');
 
   return (
     <Grommet full theme={grommet}>

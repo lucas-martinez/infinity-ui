@@ -15,7 +15,6 @@ const Circle = props => {
     max,
     round,
     size,
-    theme,
     thickness,
     values,
     ...rest

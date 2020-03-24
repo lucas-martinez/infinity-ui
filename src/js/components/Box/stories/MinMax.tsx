@@ -41,8 +41,8 @@ const MinMaxSizesBox = () => (
           background="brand"
           overflow="auto"
         >
-          {Array(20)
-            .fill()
+          {Array<number>(20)
+            .fill(0)
             .map((_, i) => (
               // eslint-disable-next-line react/no-array-index-key
               <Text key={i}>{`Small (${i})`}</Text>
@@ -57,8 +57,8 @@ const MinMaxSizesBox = () => (
           background="brand"
           overflow="auto"
         >
-          {Array(20)
-            .fill()
+          {Array<number>(20)
+            .fill(0)
             .map((_, i) => (
               // eslint-disable-next-line react/no-array-index-key
               <Text key={i}>{`Small (${i})`}</Text>
@@ -110,8 +110,8 @@ const MinMaxSizesBox = () => (
           background="brand"
           overflow="auto"
         >
-          {Array(20)
-            .fill()
+          {Array<number>(20)
+            .fill(0)
             .map((_, i) => (
               // eslint-disable-next-line react/no-array-index-key
               <Text key={i}>{`Small (${i})`}</Text>

@@ -9,10 +9,10 @@ const next = new Date(now);
 next.setMonth(now.getMonth() + 1, 1);
 
 const DualCalendar = () => {
-  const [date, setDate] = useState();
-  const [dates, setDates] = useState();
-  const [reference1, setReference1] = useState(now);
-  const [reference2, setReference2] = useState(next);
+  const [date, setDate] = useState<any>();
+  const [dates, setDates] = useState<any>();
+  const [reference1, setReference1] = useState<any>(now);
+  const [reference2, setReference2] = useState<any>(next);
 
   const onSelect = arg => {
     if (Array.isArray(arg)) {

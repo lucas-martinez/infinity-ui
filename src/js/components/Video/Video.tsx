@@ -23,6 +23,7 @@ import {
   StyledVideoScrubber,
 } from './StyledVideo';
 import { VideoIntrinsicProps } from '../intrinsic-elements';
+import useTheme from '../Theme/useTheme';
 
 // Split the volume control into 6 segments. Empirically determined.
 const VOLUME_STEP = 0.166667;
@@ -79,21 +80,24 @@ export interface VideoProps extends VideoIntrinsicProps {
 
 interface VideoState {
   captions: any[];
-  currentTime: any;
-  duration: any;
+  currentTime?: any;
+  duration?: any;
   focus?: any;
   height?: any;
-  interacting: any;
-  percentagePlayed: any;
-  playing: any;
+  interacting?: any;
+  percentagePlayed?: any;
+  playing?: any;
   scrubberRef: any;
-  scrubTime: any;
+  scrubTime?: any;
   videoRef: any;
-  volume: any;
+  volume?: any;
   width?: any;
 }
 
 class Video extends Component<VideoProps, VideoState> {
+  static defaultProps: { controls: string } = {
+    controls: 'over',
+  };
   static getDerivedStateFromProps(nextProps, prevState) {
     const { forwardRef } = nextProps;
     const { videoRef } = prevState;
@@ -351,7 +355,7 @@ class Video extends Component<VideoProps, VideoState> {
   };
 
   renderControls() {
-    const { controls, theme } = this.props;
+    const { controls } = this.props;
     const {
       captions,
       currentTime,
@@ -363,6 +367,7 @@ class Video extends Component<VideoProps, VideoState> {
       scrubTime,
       volume,
     } = this.state;
+    const theme = useTheme();
     const over = controls === 'over';
     const background = over
       ? (theme.video.controls && theme.video.controls.background) || {
@@ -491,7 +496,6 @@ class Video extends Component<VideoProps, VideoState> {
       gridArea,
       loop,
       margin,
-      theme,
       ...rest
     } = this.props;
     const { height, videoRef, width } = this.state;

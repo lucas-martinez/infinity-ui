@@ -4,7 +4,7 @@ import isChromatic from 'storybook-chromatic/isChromatic';
 import { Box, Button, Collapsible, Text } from '../../js/components';
 
 const SimpleCollapsible = props => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState<any>(false);
 
   return (
     <>

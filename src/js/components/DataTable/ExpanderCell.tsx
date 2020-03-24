@@ -9,8 +9,10 @@ import { Box } from '../Box';
 import { Button } from '../Button';
 import { TableCell } from '../TableCell';
 import { normalizeColor } from '../../utils';
+import useTheme from '../Theme/useTheme';
 
-const ExpanderCell = ({ context, expanded, onToggle, theme, ...rest }) => {
+const ExpanderCell = ({ context, expanded, onToggle, ...rest }) => {
+  const theme = useTheme();
   let content;
   if (onToggle) {
     const ExpandIcon = theme.dataTable.icons[expanded ? 'contract' : 'expand'];

@@ -61,9 +61,9 @@ const findTarget = target => {
 };
 
 const Diagram = ({ connections, theme, ...rest }) => {
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-  const [connectionPoints, setConnectionPoints] = useState();
-  const svgRef = useRef();
+  const [dimensions, setDimensions] = useState<any>({ width: 0, height: 0 });
+  const [connectionPoints, setConnectionPoints] = useState<any>();
+  const svgRef = useRef<any>();
 
   useEffect(() => {
     setConnectionPoints(undefined);
@@ -88,7 +88,7 @@ const Diagram = ({ connections, theme, ...rest }) => {
   }, [dimensions.width, dimensions.height]);
 
   // Ref that stores resize handler
-  const savedOnResize = useRef();
+  const savedOnResize = useRef<any>();
 
   // Update resize ref value if onResize changes.
   // This allows our effect below to always get latest handler

@@ -100,7 +100,7 @@ const Button = forwardRef(
       return colorIsDark(backgroundColor);
     };
 
-    const [hover, setHover] = useState(false);
+    const [hover, setHover] = useState<any>(false);
 
     const onMouseOverButton = event => {
       setHover(true);

@@ -8,7 +8,7 @@ const RANGE_MIN = 0;
 const RANGE_MAX = 100;
 
 function Thin({ initialRange = [0, 100], label }) {
-  const [range, setRange] = useState(initialRange);
+  const [range, setRange] = useState<any>(initialRange);
 
   return (
     <Box gap="small" pad="xlarge">

@@ -26,7 +26,7 @@ const customTheme = deepMerge(grommet, {
 });
 
 const CustomRadioButtomGroup = ({ value: initialValue, ...props }) => {
-  const [value, setValue] = useState(initialValue);
+  const [value, setValue] = useState<any>(initialValue);
 
   return (
     <Grommet theme={customTheme}>

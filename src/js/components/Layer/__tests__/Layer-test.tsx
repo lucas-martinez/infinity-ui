@@ -9,7 +9,7 @@ import { Grommet, Box, Layer } from '../..';
 import { LayerContainer } from '../LayerContainer';
 
 const SimpleLayer = () => {
-  const [showLayer, setShowLayer] = React.useState(true);
+  const [showLayer, setShowLayer] = React.useState<any>(true);
 
   React.useEffect(() => setShowLayer(false), []);
 
@@ -21,7 +21,7 @@ const SimpleLayer = () => {
 };
 
 const FakeLayer = ({ children, dataTestid }) => {
-  const [showLayer, setShowLayer] = React.useState(false);
+  const [showLayer, setShowLayer] = React.useState<any>(false);
 
   React.useEffect(() => setShowLayer(true), []);
 
@@ -45,7 +45,7 @@ const FakeLayer = ({ children, dataTestid }) => {
 };
 
 const TargetLayer = props => {
-  const [target, setTarget] = React.useState();
+  const [target, setTarget] = React.useState<any>();
   let layer;
   if (target) {
     layer = (

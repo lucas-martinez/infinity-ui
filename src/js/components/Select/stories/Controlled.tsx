@@ -2,12 +2,14 @@ import { storiesOf } from '@storybook/react';
 import React, { useState } from 'react';
 import { Box, Button, Grommet, Select } from '../../../../js';
 import { grommet } from '../../../../js/themes';
+import useTheme from '../../Theme/useTheme';
 
-const SimpleSelect = ({ theme, ...rest }) => {
+const SimpleSelect = ({ ...rest }: any) => {
   const options = ['one', 'two'];
-  const [value, setValue] = useState('');
-  const [open, setOpen] = useState(false);
-
+  const [value, setValue] = useState<any>('');
+  const [open, setOpen] = useState<any>(false);
+  const theme = useTheme();
+  
   return (
     <Grommet full theme={theme || grommet}>
       <Box fill align="center" justify="start" pad="large" gap="small">

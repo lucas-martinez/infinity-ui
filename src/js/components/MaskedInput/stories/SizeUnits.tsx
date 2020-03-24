@@ -4,7 +4,7 @@ import { Box, Grommet, MaskedInput } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const SizeUnitsMaskedInput = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState<any>('');
 
   return (
     <Grommet full theme={grommet}>

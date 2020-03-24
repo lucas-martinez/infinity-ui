@@ -277,7 +277,7 @@ describe('Form', () => {
   test('lazy value', () => {
     const onSubmit = jest.fn();
     const Test = () => {
-      const [test, setTest] = React.useState();
+      const [test, setTest] = React.useState<any>();
       return (
         <Form onSubmit={({ value, touched }) => onSubmit({ value, touched })}>
           <TextInput name="test" value={test} />

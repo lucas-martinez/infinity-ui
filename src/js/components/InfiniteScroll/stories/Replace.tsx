@@ -4,8 +4,8 @@ import isChromatic from 'storybook-chromatic/isChromatic';
 import { Box, Grommet, InfiniteScroll, Text } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
-const allItems = Array(240)
-  .fill()
+const allItems = Array<number>(240)
+  .fill(0)
   .map((_, i) => `item ${i + 1}`);
 
 const InfiniteScrollReplace = props => (

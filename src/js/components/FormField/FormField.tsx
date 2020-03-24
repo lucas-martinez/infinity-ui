@@ -64,7 +64,7 @@ const FormField = forwardRef(
   ) => {
     const theme = useContext(ThemeContext);
     const context = useContext(FormContext);
-    const [value, setValue] = useState(valueProp);
+    const [value, setValue] = useState<any>(valueProp);
     useEffect(() => setValue(valueProp), [valueProp]);
 
     useEffect(() => {
@@ -123,7 +123,7 @@ const FormField = forwardRef(
       return undefined;
     }, [context, error, name, required, validate]);
 
-    const [focus, setFocus] = useState();
+    const [focus, setFocus] = useState<any>();
 
     const renderInput = (formValue, invalid) => {
       const Input = component || TextInput;

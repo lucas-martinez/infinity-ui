@@ -7,18 +7,17 @@ import React, {
   useState,
 } from 'react';
 import { ThemeContext } from 'styled-components';
-
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Drop } from '../Drop';
 import { FormContext } from '../Form/FormContext';
+import { InputIntrinsicProps } from '../intrinsic-elements';
 import { Keyboard } from '../Keyboard';
-
 import {
+  StyledIcon,
   StyledMaskedInput,
   StyledMaskedInputContainer,
-  StyledIcon,
 } from './StyledMaskedInput';
 
 const parseValue = (mask, value) => {
@@ -114,6 +113,25 @@ const parseValue = (mask, value) => {
 
 const defaultMask = [];
 
+export interface MaskedInputProps {
+  focus?: any;
+  icon?: JSX.Element;
+  id?: string;
+  mask?: Array<{
+    length?: number | number[];
+    fixed?: string;
+    options?: string[] | number[];
+    regexp?: {};
+    placeholder?: string;
+  }>;
+  name?: string;
+  onBlur?: (event: React.FocusEvent) => any;
+  plain?: boolean;
+  reverse?: boolean;
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
+  value?: string | number;
+}
+
 const MaskedInput = forwardRef(
   (
     {
@@ -131,26 +149,26 @@ const MaskedInput = forwardRef(
       reverse,
       value: valueProp,
       ...rest
-    },
-    ref,
+    }: MaskedInputProps & Omit<InputIntrinsicProps, keyof MaskedInputProps>,
+    ref: any,
   ) => {
     const theme = useContext(ThemeContext) || defaultProps.theme;
     const formContext = useContext(FormContext);
 
     const [value, setValue] = formContext.useFormContext(name, valueProp);
 
-    const [valueParts, setValueParts] = useState(parseValue(mask, value));
+    const [valueParts, setValueParts] = useState<any>(parseValue(mask, value));
     useEffect(() => {
       setValueParts(parseValue(mask, value));
     }, [mask, value]);
 
-    const inputRef = useRef();
-    const dropRef = useRef();
+    const inputRef = useRef<any>();
+    const dropRef = useRef<any>();
 
-    const [focus, setFocus] = useState(focusProp);
-    const [activeMaskIndex, setActiveMaskIndex] = useState();
-    const [activeOptionIndex, setActiveOptionIndex] = useState();
-    const [showDrop, setShowDrop] = useState();
+    const [focus, setFocus] = useState<any>(focusProp);
+    const [activeMaskIndex, setActiveMaskIndex] = useState<any>();
+    const [activeOptionIndex, setActiveOptionIndex] = useState<any>();
+    const [showDrop, setShowDrop] = useState<any>();
 
     useEffect(() => {
       if (focus) {
@@ -190,7 +208,7 @@ const MaskedInput = forwardRef(
         // https://stackoverflow.com/a/46012210 &&
         // https://github.com/grommet/grommet/pull/3171#discussion_r296415239
         const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
-          window.HTMLInputElement.prototype,
+          HTMLInputElement.prototype,
           'value',
         ).set;
         nativeInputValueSetter.call((ref || inputRef).current, nextValue);

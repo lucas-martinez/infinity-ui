@@ -33,9 +33,9 @@ const getRegExp = text => {
 };
 
 const CreateOption = () => {
-  const [options, setOptions] = useState(defaultOptions);
-  const [value, setValue] = useState('');
-  const [searchValue, setSearchValue] = useState('');
+  const [options, setOptions] = useState<any>(defaultOptions);
+  const [value, setValue] = useState<any>('');
+  const [searchValue, setSearchValue] = useState<any>('');
 
   return (
     <Grommet full theme={grommet}>

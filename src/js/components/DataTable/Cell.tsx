@@ -25,7 +25,6 @@ const Cell = ({
   primaryProperty,
   rowProp,
   scope,
-  theme,
 }) => {
   const value = datumValue(datum, property);
   let content;

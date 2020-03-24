@@ -1,15 +1,35 @@
 import React, { forwardRef, useContext, useState } from 'react';
-
 import { FormContext } from '../Form/FormContext';
 import { StyledRangeInput } from './StyledRangeInput';
+import { InputIntrinsicProps } from '../intrinsic-elements';
+
+export interface RangeInputProps extends Omit<InputIntrinsicProps, 'onChange'> {
+  id?: string;
+  min?: number | string;
+  max?: number | string;
+  name?: string;
+  onChange?: (event: React.ChangeEvent) => void;
+  step?: number;
+  value?: number | string;
+}
 
 const RangeInput = forwardRef(
-  ({ name, onChange, onFocus, onBlur, value: valueProp, ...rest }, ref) => {
+  (
+    {
+      name,
+      onChange,
+      onFocus,
+      onBlur,
+      value: valueProp,
+      ...rest
+    }: RangeInputProps,
+    ref,
+  ) => {
     const formContext = useContext(FormContext);
 
     const [value, setValue] = formContext.useFormContext(name, valueProp);
 
-    const [focus, setFocus] = useState();
+    const [focus, setFocus] = useState<any>();
     return (
       <StyledRangeInput
         ref={ref}

@@ -17,7 +17,7 @@ const optionList = [
 ];
 
 const UnSelect = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState<any>('');
 
   const onChange = e => {
     setValue(e.value);

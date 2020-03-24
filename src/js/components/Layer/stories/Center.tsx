@@ -5,8 +5,8 @@ import { Box, Button, Grommet, Heading, Layer, Select, Text } from '../../../../
 import { grommet } from '../../../../js/themes';
 
 const CenterLayer = () => {
-  const [open, setOpen] = React.useState();
-  const [open2, setOpen2] = React.useState();
+  const [open, setOpen] = React.useState<any>();
+  const [open2, setOpen2] = React.useState<any>();
 
   const onOpen = () => setOpen(true);
 

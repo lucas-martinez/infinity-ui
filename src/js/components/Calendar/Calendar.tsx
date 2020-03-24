@@ -101,7 +101,7 @@ const Calendar = forwardRef(
     const theme = useContext(ThemeContext);
 
     // set date when caller changes it, allows us to change it internally too
-    const [date, setDate] = useState(dateProp);
+    const [date, setDate] = useState<any>(dateProp);
     useEffect(() => setDate(dateProp), [dateProp]);
 
     // set dates when caller changes it, allows us to change it internally too
@@ -109,7 +109,7 @@ const Calendar = forwardRef(
     useEffect(() => setDates(datesProp), [datesProp]);
 
     // set reference based on what the caller passed or date/dates.
-    const [reference, setReference] = useState(
+    const [reference, setReference] = useState<any>(
       normalizeReference(referenceProp, date, dates),
     );
     useEffect(
@@ -119,7 +119,7 @@ const Calendar = forwardRef(
     );
 
     // calculate the bounds we display based on the reference
-    const [displayBounds, setDisplayBounds] = useState(
+    const [displayBounds, setDisplayBounds] = useState<any>(
       buildDisplayBounds(reference, firstDayOfWeek),
     );
     const [targetDisplayBounds, setTargetDisplayBounds] = useState<any[]>();

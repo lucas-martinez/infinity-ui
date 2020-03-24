@@ -4,8 +4,8 @@ import { Box, Grommet, TextInput } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 import { deepMerge } from '../../../../js/utils';
 
-const suggestions = Array(100)
-  .fill()
+const suggestions = Array<number>(100)
+  .fill(0)
   .map((_, i) => `suggestion ${i + 1}`);
 
 const customTheme = deepMerge(grommet, {
@@ -51,7 +51,7 @@ const customTheme = deepMerge(grommet, {
 });
 
 const ThemedTextInput = () => {
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState<any>('');
 
   const onChange = event => setValue(event.target.value);
 

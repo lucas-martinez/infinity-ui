@@ -6,6 +6,7 @@ import { defaultProps } from '../../default-props';
 
 import { Button } from '../Button';
 import { Box } from '../Box';
+import useTheme from '../Theme/useTheme';
 
 const SorterButton = styled(Button)`
   flex-shrink: 1;
@@ -19,9 +20,9 @@ const Sorter = ({
   onSort,
   property,
   sort,
-  theme,
   themeProps,
 }) => {
+  const theme = useTheme();
   let icon;
   if (sort && sort.property === property) {
     const Icon =

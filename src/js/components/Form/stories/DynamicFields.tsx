@@ -12,7 +12,7 @@ import {
 import { grommet } from '../../../../js/themes';
 
 const Example = () => {
-  const [haveAlias, setHaveAlias] = useState();
+  const [haveAlias, setHaveAlias] = useState<any>();
   return (
     <Grommet full theme={grommet}>
       <Box fill align="center" justify="center">

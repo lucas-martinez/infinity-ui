@@ -5,7 +5,7 @@ import { grommet } from '../../../../js/themes';
 import { allSuggestions } from './data';
 
 const FormFieldTextInput = props => {
-  const [state, setState] = useState({
+  const [state, setState] = useState<any>({
     value: '',
     suggestions: allSuggestions,
   });

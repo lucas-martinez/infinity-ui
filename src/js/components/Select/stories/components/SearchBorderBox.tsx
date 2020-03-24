@@ -76,7 +76,7 @@ const defaultStyle = css<any>`
 `;
 
 export const SearchBorderBox = ({ children, searching, ...rest }) => {
-  const [focus, setFocus] = useState(false);
+  const [focus, setFocus] = useState<any>(false);
 
   const boxBorderTheme = {
     box: {

@@ -16,7 +16,7 @@ const customEdge = deepMerge(grommet, {
 });
 
 const CustomEdgeControl = ({ direction = 'horizontal', ...rest }) => {
-  const [range, setRange] = useState([2, 7]);
+  const [range, setRange] = useState<any>([2, 7]);
   const onChange = values => {
     setRange(values);
   };

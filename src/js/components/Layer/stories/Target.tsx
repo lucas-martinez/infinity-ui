@@ -14,15 +14,15 @@ import { grommet } from '../../../../js/themes';
 const positions = ['left', 'right', 'top', 'bottom', 'center'];
 
 const TargetLayer = () => {
-  const [open, setOpen] = React.useState();
-  const [gutter, setGutter] = React.useState('small');
-  const [modal, setModal] = React.useState(true);
-  const [position, setPosition] = React.useState(positions[0]);
+  const [open, setOpen] = React.useState<any>();
+  const [gutter, setGutter] = React.useState<any>('small');
+  const [modal, setModal] = React.useState<any>(true);
+  const [position, setPosition] = React.useState<any>(positions[0]);
   React.useEffect(() => {
     window.dispatchEvent(new Event('resize'));
     return undefined;
   }, [gutter]);
-  const ref = React.useRef();
+  const ref = React.useRef<any>();
   const onOpen = () => setOpen(true);
   const onClose = () => setOpen(undefined);
 

@@ -15,7 +15,7 @@ const richAccordionTheme = {
 };
 
 const RichPanel = ({ children, icon, label }) => {
-  const [hovering, setHovering] = React.useState(false);
+  const [hovering, setHovering] = React.useState<any>(false);
 
   const renderPanelTitle = () => (
     <Box direction="row" align="center" gap="small" pad={{ horizontal: 'small' }}>
@@ -66,7 +66,7 @@ const loading = (
 );
 
 const RichAccordion = () => {
-  const [highlightLoaded, setHighlightLoaded] = React.useState(false);
+  const [highlightLoaded, setHighlightLoaded] = React.useState<any>(false);
 
   return (
     <>

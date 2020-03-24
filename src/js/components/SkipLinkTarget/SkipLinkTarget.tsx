@@ -10,7 +10,12 @@ const HiddenAnchor = styled(Anchor)`
   position: absolute;
 `;
 
-export const SkipLinkTarget = ({ label, ...rest }) => (
+export interface SkipLinkTargetProps {
+  id: string;
+  label?: React.ReactNode;
+}
+
+export const SkipLinkTarget = ({ label, ...rest }: SkipLinkTargetProps) => (
   <HiddenAnchor {...rest} tabIndex="-1" aria-hidden="true">
     {label}
   </HiddenAnchor>

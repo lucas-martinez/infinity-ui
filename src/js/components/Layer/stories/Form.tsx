@@ -15,8 +15,8 @@ import {
 import { grommet } from '../../../../js/themes';
 
 const FormLayer = () => {
-  const [open, setOpen] = React.useState(false);
-  const [select, setSelect] = React.useState('');
+  const [open, setOpen] = React.useState<any>(false);
+  const [select, setSelect] = React.useState<any>('');
 
   const onOpen = () => setOpen(true);
 

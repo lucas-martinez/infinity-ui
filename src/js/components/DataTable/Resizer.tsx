@@ -4,16 +4,18 @@ import styled, { withTheme } from 'styled-components';
 
 import { defaultProps } from '../../default-props';
 import { Box } from '../Box';
+import useTheme from '../Theme/useTheme';
 
 const ResizerBox = styled(Box)`
   cursor: col-resize;
 `;
 
-const Resizer = ({ onResize, property, theme }) => {
-  const [active, setActive] = useState(false);
-  const [start, setStart] = useState();
-  const [width, setWidth] = useState();
-  const ref = useRef();
+const Resizer = ({ onResize, property }) => {
+  const [active, setActive] = useState<any>(false);
+  const [start, setStart] = useState<any>();
+  const [width, setWidth] = useState<any>();
+  const ref = useRef<any>();
+  const theme = useTheme();
 
   const onMouseDown = useCallback(event => {
     if (ref.current) {

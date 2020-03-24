@@ -17,8 +17,8 @@ const customTheme = deepMerge(grommet, {
 
 const GlobalThemeWithThemeContext = () => {
   const options = ['one', 'two', 'three'];
-  const [valueRed, setValueRed] = useState('');
-  const [valueBlue, setValueBlue] = useState('');
+  const [valueRed, setValueRed] = useState<any>('');
+  const [valueBlue, setValueBlue] = useState<any>('');
 
   return (
     <Grommet theme={customTheme}>

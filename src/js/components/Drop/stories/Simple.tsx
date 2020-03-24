@@ -4,9 +4,9 @@ import { Box, Drop, Grommet } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
 const SimpleDrop = () => {
-  const targetRef = useRef();
+  const targetRef = useRef<any>();
 
-  const [, setShowDrop] = useState(false);
+  const [, setShowDrop] = useState<any>(false);
   useEffect(() => {
     setShowDrop(true);
   }, []);
