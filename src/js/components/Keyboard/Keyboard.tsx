@@ -16,6 +16,7 @@ const KEYS = {
 };
 
 export interface KeyboardProps {
+  children: React.ReactElement;
   target?: 'component' | 'document';
   onBackspace?: KeyboardType;
   onComma?: KeyboardType;
@@ -47,7 +48,7 @@ const Keyboard: React.FC<KeyboardProps> = ({
       }
 
       if (onKeyDown) {
-        onKeyDown(event, ...rest);
+        onKeyDown(event);
       }
     },
     [onKeyDown, restProps],

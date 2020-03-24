@@ -6,6 +6,7 @@ export default interface SelectTheme {
   background: BackgroundType;
   container: {
     extend: ExtendType;
+    text: any;
   };
   control: {
     extend: ExtendType;
@@ -18,6 +19,7 @@ export default interface SelectTheme {
     margin: MarginType;
   };
   options: {
+    box: any;
     container: {
       align: string;
       pad: string;

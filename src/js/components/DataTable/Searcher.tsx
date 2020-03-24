@@ -1,29 +1,20 @@
-import React, { useEffect, useRef } from 'react';
-
-import { compose } from 'recompose';
-
-import { withTheme } from 'styled-components';
-
 import { FormSearch } from 'grommet-icons/icons/FormSearch';
-
+import React, { useEffect, useRef } from 'react';
+import { compose } from 'recompose';
+import { withTheme } from 'styled-components';
 import { defaultProps } from '../../default-props';
-
+import { normalizeColor } from '../../utils';
 import { Box } from '../Box';
 import { Button } from '../Button';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
-import { normalizeColor } from '../../utils';
+import useTheme from '../Theme/useTheme';
 
-const Searcher = ({
-  filtering,
-  filters,
-  onFilter,
-  onFiltering,
-  property,
-}) => {
+const Searcher: React.FC<any> = ({ filtering, filters, onFilter, onFiltering, property }) => {
   const inputRef = useRef<any>();
   const needsFocus = filtering === property;
+  const theme = useTheme();
 
   useEffect(() => {
     if (inputRef && needsFocus) {

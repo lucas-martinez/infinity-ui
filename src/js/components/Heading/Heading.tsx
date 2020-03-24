@@ -1,7 +1,15 @@
 import React from 'react';
-import { A11yTitleType, AlignSelfType, ColorType, GridAreaType, MarginType, PolymorphicType, TextAlignType } from "../../utils";
-import { StyledHeading } from './StyledHeading';
+import {
+  A11yTitleType,
+  AlignSelfType,
+  ColorType,
+  GridAreaType,
+  MarginType,
+  PolymorphicType,
+  TextAlignType,
+} from '../../utils';
 import { HeadingIntrinsicProps } from '../intrinsic-elements';
+import { StyledHeading } from './StyledHeading';
 
 export interface HeadingProps extends HeadingIntrinsicProps {
   a11yTitle?: A11yTitleType;
@@ -9,10 +17,10 @@ export interface HeadingProps extends HeadingIntrinsicProps {
   as?: PolymorphicType;
   color?: ColorType;
   gridArea?: GridAreaType;
-  level?: "1" | "2" | "3" | "4" | "5" | "6" | 1 | 2 | 3 | 4 | 5 | 6;
+  level?: '1' | '2' | '3' | '4' | '5' | '6' | 1 | 2 | 3 | 4 | 5 | 6;
   margin?: MarginType;
   responsive?: boolean;
-  size?: "small" | "medium" | "large" | "xlarge" | string;
+  size?: 'small' | 'medium' | 'large' | 'xlarge' | string;
   textAlign?: TextAlignType;
   truncate?: boolean;
 }
@@ -48,4 +56,3 @@ if (process.env.NODE_ENV !== 'production') {
 const HeadingWrapper = HeadingDoc || Heading;
 
 export { HeadingWrapper as Heading };
-

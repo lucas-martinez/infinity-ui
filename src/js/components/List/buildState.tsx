@@ -150,7 +150,7 @@ const groupData = (nextProps, prevState, nextState) => {
   const { columns, groupBy } = nextProps;
   const { data } = nextState;
 
-  let groups: any[];
+  let groups: any[] = [];
   let groupState;
   let expandedState;
   if (groupBy) {

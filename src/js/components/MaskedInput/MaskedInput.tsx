@@ -211,8 +211,8 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps & Omit<InputIn
         const nativeInputValueSetter = Object.getOwnPropertyDescriptor(
           HTMLInputElement.prototype,
           'value',
-        ).set;
-        nativeInputValueSetter.call((ref || inputRef).current, nextValue);
+        )!.set;
+        nativeInputValueSetter!.call((ref || inputRef).current, nextValue);
         const event = new Event('input', { bubbles: true });
         (ref || inputRef).current.dispatchEvent(event);
       },
@@ -287,7 +287,7 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps & Omit<InputIn
       event => {
         if (activeMaskIndex >= 0 && activeOptionIndex >= 0) {
           event.preventDefault();
-          const option = mask[activeMaskIndex].options[activeOptionIndex];
+          const option = mask[activeMaskIndex!]?.options![activeOptionIndex];
           onOption(option)();
         }
       },
@@ -368,7 +368,7 @@ const MaskedInput = forwardRef<HTMLInputElement, MaskedInputProps & Omit<InputIn
             onEsc={() => setShowDrop(false)}
           >
             <Box ref={dropRef}>
-              {mask[activeMaskIndex].options.map((option, index) => (
+              {Array.from<any>(mask[activeMaskIndex].options!).map((option: any, index) => (
                 <Box key={option} flex={false}>
                   <Button
                     tabIndex="-1"

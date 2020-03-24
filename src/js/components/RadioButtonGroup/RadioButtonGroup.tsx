@@ -14,6 +14,7 @@ import { RadioButton } from '../RadioButton';
 
 export interface RadioButtonGroupProps
   extends Pick<BoxProps, 'children' | 'gap' | 'id'> {
+  children: (...args: any[]) => any;
   disabled?: boolean;
   name: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement> | any) => void;

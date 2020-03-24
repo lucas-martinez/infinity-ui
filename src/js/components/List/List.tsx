@@ -15,6 +15,7 @@ import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { UListIntrinsicProps } from '../intrinsic-elements';
+import useTheme from '../Theme/useTheme';
 
 const StyledList = styled.ul<any>`
   list-style: none;
@@ -79,7 +80,7 @@ type BorderType =
       size?: SizeType;
     };
 
-export interface ListProps extends UListIntrinsicProps {
+export interface ListProps extends Omit<UListIntrinsicProps, 'children'> {
   a11yTitle?: A11yTitleType;
   action: any;
   alignSelf?: AlignSelfType;
@@ -89,6 +90,7 @@ export interface ListProps extends UListIntrinsicProps {
     | string[]
     | { light: string | string[]; dark: string | string[] };
   border?: BorderType;
+  children: (...args: any[]) => any;
   data?: string[] | {}[];
   focus: any;
   gridArea?: GridAreaType;
@@ -125,6 +127,7 @@ const List = React.forwardRef<HTMLUListElement, ListProps>((props, ref) => {
     ...rest
   } = props;
   const [active, setActive] = React.useState<any>();
+  const theme = useTheme();
 
   return (
     <Keyboard

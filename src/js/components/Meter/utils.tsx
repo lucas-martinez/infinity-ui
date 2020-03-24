@@ -1,7 +1,7 @@
 import { normalizeColor } from '../../utils';
 
 export const strokeProps = (color, theme) => {
-  const result = {};
+  const result: any = {};
   if (color) {
     if (typeof color === 'object') {
       result.stroke = normalizeColor(color.color, theme);

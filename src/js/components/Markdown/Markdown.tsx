@@ -12,12 +12,15 @@ import { TableFooter } from '../TableFooter';
 import { TableHeader } from '../TableHeader';
 import { TableRow } from '../TableRow';
 import { DivIntrinsicProps } from '../intrinsic-elements';
+// import useTheme from '../Theme/useTheme';
 
 export interface MarkdownProps extends DivIntrinsicProps {
+  options?: any;
   components?: {};
 }
 
-const GrommetMarkdown = ({ components, options, theme, ...rest }: MarkdownProps) => {
+const GrommetMarkdown: React.FC<MarkdownProps> = ({ components, options, ...rest }) => {
+  // const theme = useTheme();
   const heading = [1, 2, 3, 4].reduce((obj, level) => {
     const result = { ...obj };
     result[`h${level}`] = {

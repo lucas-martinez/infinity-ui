@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Box, CheckBox, Grommet } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
-const SimpleCheckBox = ({ checked: checkedProp, ...rest }) => {
+const SimpleCheckBox: React.FC<any> = ({ checked: checkedProp, ...rest }) => {
   const [checked, setChecked] = useState<any>(!!checkedProp);
   const onChange = event => setChecked(event.target.checked);
 

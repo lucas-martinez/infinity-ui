@@ -20,7 +20,7 @@ function areEqual(prevProps, nextProps) {
   );
 }
 
-const SelectOption = React.memo(({ forwardRef, ...rest }) => {
+const SelectOption = React.memo(({ forwardRef, ...rest }: any) => {
   return (
     <Box flex={false}>
       <Button

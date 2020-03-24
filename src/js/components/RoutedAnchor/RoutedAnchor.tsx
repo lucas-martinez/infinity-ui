@@ -42,10 +42,10 @@ class RoutedAnchor extends Component<RoutedAnchorProps> {
           }
           if (router) {
             event.preventDefault();
-            (router.history || router)[method](path);
+            (router.history || router)[method!](path);
           }
           if (onClick) {
-            onClick(event, ...args);
+            onClick(event);
           }
         }}
       />

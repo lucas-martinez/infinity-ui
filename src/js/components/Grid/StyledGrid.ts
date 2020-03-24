@@ -117,7 +117,7 @@ const getRepeatSize = (size, theme) => {
   return `minmax(${theme.global.size[size] || size}, 1fr)`;
 };
 
-const sizeFor = (size, props, isRow) => {
+const sizeFor = (size, props, isRow: boolean = false) => {
   const mapped = SIZE_MAP[size];
   if (
     isRow &&
@@ -206,7 +206,7 @@ const areasStyle = (props: any) => {
     .join(' ')};`;
 };
 
-const StyledGrid = styled.div.attrs((props: any) => ({
+const StyledGrid = styled.div.attrs<any, any>((props: any) => ({
   'aria-label': props.a11yTitleProp,
 }))`
   display: grid;

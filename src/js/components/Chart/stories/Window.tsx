@@ -14,7 +14,7 @@ import { generateData } from './data';
 
 // compress data for outer control chart
 const compressData = (data, max, count) => {
-  const result = [];
+  const result: any[] = [];
   const bucketSize = Math.round(data.length / count);
   let bucket = [];
   let bucketMin = max;
@@ -39,7 +39,7 @@ const compressData = (data, max, count) => {
   return result;
 };
 
-const WindowChart = ({ data, max }) => {
+const WindowChart: React.FC<any> = ({ data, max }) => {
   const [hover, setHover] = useState<any>();
   const [range, setRange] = useState<any>([
     data.length / 2,

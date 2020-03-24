@@ -16,7 +16,7 @@ const ServedDataTable = () => {
       // [ \ ^ $ . | ? * + ( )
       const escapedText = text => {
         text.replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
-        return new RegExp(escapedText, 'i');
+        return new RegExp(text, 'i');
       };
       const expressions = Object.keys(search).map(property => ({
         property,

@@ -16,7 +16,7 @@ class RoutedButton extends Component<RoutedButtonProps> {
     method: 'push',
   };
 
-  onClick = (event, ...args) => {
+  onClick = (event) => {
     const { method, onClick, path } = this.props;
     const { router } = this.context;
     if (event) {
@@ -29,10 +29,10 @@ class RoutedButton extends Component<RoutedButtonProps> {
     }
     if (router) {
       event.preventDefault();
-      (router.history || router)[method](path);
+      (router.history || router)[method!](path);
     }
     if (onClick) {
-      onClick(event, ...args);
+      onClick(event);
     }
   };
 

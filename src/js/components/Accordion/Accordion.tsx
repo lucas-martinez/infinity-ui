@@ -70,7 +70,7 @@ const Accordion = ({
         .filter(child => child)
         .map((child, index) => {
           if (child) {
-            return cloneElement(child, {
+            return cloneElement(child as any, {
               active: activeIndexes.indexOf(index) > -1,
               animate,
               onPanelChange: () => onPanelChange(index),

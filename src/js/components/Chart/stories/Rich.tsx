@@ -4,14 +4,14 @@ import { Box, Chart, Grommet, Stack, Text } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 import { calcs } from '../calcs';
 
-const RichChart = () => {
+const RichChart: React.FC<any> = () => {
   const [state, setState] = useState<any>({ values: [], yAxis: [], xAxis: [] });
 
   useEffect(() => {
     // generate data as a server might
     const date = new Date(2018, 5, 9);
     let value = 12345.678;
-    const averages = [];
+    const averages: any[] = [];
     while (averages.length < 21) {
       averages.unshift({ date: date.toISOString(), value });
       date.setTime(date.getTime() - 1000 * 3600 * 24);

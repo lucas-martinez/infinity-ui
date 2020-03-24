@@ -6,6 +6,7 @@
     "declaration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": false,
     "jsx": "react",
     "lib": [
       "dom",
@@ -16,7 +17,7 @@
     "moduleResolution": "node",
     "noEmit": false,
     "noImplicitAny": false,
-    "noImplicitThis": true,
+    "noImplicitThis": false,
     "outDir": "lib",
     "resolveJsonModule": true,
     "rootDir": "src",

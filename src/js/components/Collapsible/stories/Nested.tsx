@@ -4,7 +4,7 @@ import React from 'react';
 import { Box, Button, Collapsible, Grommet, Text } from '../../../../js';
 import { grommet } from '../../../../js/themes';
 
-const MenuButton = ({ label, open, submenu, ...rest }) => {
+const MenuButton: React.FC<any> = ({ label, open, submenu, ...rest }) => {
   const Icon = open ? FormDown : FormNext;
   return (
     <Button hoverIndicator="background" {...rest}>
@@ -21,7 +21,7 @@ const MenuButton = ({ label, open, submenu, ...rest }) => {
   );
 };
 
-const NestedCollapsible = () => {
+const NestedCollapsible: React.FC<any> = () => {
   const [openMenu1, setOpenMenu1] = React.useState<any>(false);
   const [openSubmenu1, setOpenSubmenu1] = React.useState<any>(false);
   const [openMenu2, setOpenMenu2] = React.useState<any>(false);

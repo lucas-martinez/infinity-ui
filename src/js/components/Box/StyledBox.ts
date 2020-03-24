@@ -97,15 +97,15 @@ const elevationStyle = css<any>`
 `;
 
 const FLEX_MAP = {
-  [true]: '1 1',
-  [false]: '0 0',
+  true: '1 1',
+  false: '0 0',
   grow: '1 0',
   shrink: '0 1',
 };
 
 const flexGrowShrinkProp = flex => {
   if (typeof flex === 'boolean' || typeof flex === 'string') {
-    return FLEX_MAP[flex];
+    return FLEX_MAP[String(flex)];
   }
 
   return `${flex.grow ? flex.grow : 0} ${flex.shrink ? flex.shrink : 0}`;
@@ -373,23 +373,22 @@ const animationEnding = type => {
 const animationObjectStyle = (animation, theme) => {
   const bounds = animationBounds(animation.type, animation.size);
   if (bounds) {
-    const animationTransition = css<any>`
-      from {
+    return css<any>`
+      ${keyframes} from {
         ${bounds[0]};
       }
       to {
         ${bounds[1]};
       }
+      ${normalizeTiming(
+        animation.duration,
+        (theme.global.animation[animation.type]
+          ? theme.global.animation[animation.type].duration
+          : undefined) || theme.global.animation.duration,
+      )}
+      ${normalizeTiming(animation.delay, '0s')}
+      ${animationEnding(animation.type)}
     `;
-    return css<any>`${keyframes`${animationTransition}`}
-    ${normalizeTiming(
-      animation.duration,
-      (theme.global.animation[animation.type]
-        ? theme.global.animation[animation.type].duration
-        : undefined) || theme.global.animation.duration,
-    )}
-    ${normalizeTiming(animation.delay, '0s')}
-    ${animationEnding(animation.type)}`;
   }
   return '';
 };
@@ -400,8 +399,10 @@ const animationItemStyle = (item, theme) => {
   }
   if (Array.isArray(item)) {
     return item.reduce(
-      (style, a, index) =>
-        css<any>`${style}${index > 0 ? ',' : ''} ${animationItemStyle(a, theme)}`,
+      (style, a, index) => {
+        const s = animationItemStyle(a, theme);
+        return css<any>`${style}${index > 0 ? ',' : ''} ${s}`;
+      },
       '',
     );
   }

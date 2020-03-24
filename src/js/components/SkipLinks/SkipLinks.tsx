@@ -5,7 +5,7 @@ import { Layer } from '../Layer';
 import { DivIntrinsicProps } from '../intrinsic-elements';
 
 export interface SkipLinksProps extends DivIntrinsicProps {
-  children: React.ReactNode;
+  children: React.ReactNodeArray;
   messages?: {skipTo?: string};
 }
 
@@ -49,7 +49,7 @@ const SkipLinks = ({ children, id, messages }: SkipLinksProps) => {
         <Heading level={2}>{messages?.skipTo}:</Heading>
         <Box direction="row" align="center" pad={{ bottom: 'medium' }}>
           {children.map((element, index) =>
-            cloneElement(element, {
+            cloneElement(element as React.ReactElement, {
               key: `skip-link-${index}`,
               onClick: removeLayer,
             }),

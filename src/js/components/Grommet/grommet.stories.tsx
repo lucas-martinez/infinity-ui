@@ -1,7 +1,7 @@
 import { storiesOf } from '@storybook/react';
 import { Add } from 'grommet-icons';
 import React from 'react';
-import { Anchor, Box, grommet, Grommet } from '../../../../js';
+import { Anchor, Box, grommet, Grommet } from '../../../js';
 
 const customTheme = {
   global: {

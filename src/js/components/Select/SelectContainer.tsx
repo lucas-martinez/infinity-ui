@@ -1,6 +1,6 @@
-import React, { createRef, Component } from 'react';
+import React, { Component, createRef } from 'react';
 import styled, { withTheme } from 'styled-components';
-
+import { defaultProps } from '../../default-props';
 import {
   debounce,
   debounceDelay,
@@ -9,17 +9,15 @@ import {
   selectedStyle,
   setFocusWithoutScroll,
 } from '../../utils';
-
-import { defaultProps } from '../../default-props';
-
 import { Box } from '../Box';
 import { InfiniteScroll } from '../InfiniteScroll';
 import { Keyboard } from '../Keyboard';
 import { Text } from '../Text';
 import { TextInput } from '../TextInput';
-
 import { SelectOption } from './SelectOption';
 import { StyledContainer } from './StyledSelect';
+import { SelectProps } from './Select';
+import ThemeType from '../Theme/ThemeType';
 
 // position relative is so scroll can be managed correctly
 const OptionsBox = styled(Box)`
@@ -31,7 +29,10 @@ const OptionBox = styled(Box)`
   ${props => props.selected && selectedStyle}
 `;
 
-class SelectContainer extends Component<any, any> {
+class SelectContainer extends Component<
+  SelectProps & { theme: ThemeType },
+  any
+> {
   static defaultProps = {
     children: null,
     disabled: undefined,
@@ -136,7 +137,7 @@ class SelectContainer extends Component<any, any> {
   // the debounceDelay timer starts to count when the user stopped typing
   onSearch = debounce(search => {
     const { onSearch } = this.props;
-    onSearch(search);
+    this.onSearch(search);
   }, debounceDelay(this.props));
 
   selectOption = option => () => {
@@ -146,7 +147,9 @@ class SelectContainer extends Component<any, any> {
       let nextValue = Array.isArray(value) ? value.slice() : [];
       // preserve compatibility until selected is deprecated
       if (selected) {
-        nextValue = selected.map(s => initialOptions[s]);
+        nextValue = Array.isArray(selected)
+          ? selected.map(s => initialOptions[s])
+          : initialOptions(selected);
       }
 
       if (multiple) {
@@ -316,7 +319,7 @@ class SelectContainer extends Component<any, any> {
     let result;
     if (selected) {
       // deprecated in favor of value
-      result = selected.indexOf(index) !== -1;
+      result = Array.isArray(selected) ? selected.indexOf(index) !== -1 : false;
     } else {
       const optionValue = this.optionValue(index);
       if (Array.isArray(value)) {
@@ -355,8 +358,8 @@ class SelectContainer extends Component<any, any> {
       onSearch,
       options,
       searchPlaceholder,
-      theme,
       replace,
+      theme,
     } = this.props;
     const { activeIndex, search } = this.state;
 

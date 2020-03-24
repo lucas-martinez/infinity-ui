@@ -1,9 +1,21 @@
 import { storiesOf } from '@storybook/react';
-import { Bookmark, CircleInformation, FormAdd, FormSubtract, User } from 'grommet-icons';
+import {
+  Bookmark,
+  CircleInformation,
+  FormAdd,
+  FormSubtract,
+  User,
+} from 'grommet-icons';
 import React from 'react';
 import isChromatic from 'storybook-chromatic/isChromatic';
-import { Accordion, AccordionPanel, Box, Heading, Text } from '../../js/components';
-import { ThemeContext } from '../../js/contexts';
+import {
+  Accordion,
+  AccordionPanel,
+  Box,
+  Heading,
+  Text,
+} from '../../js/components';
+import { ThemeExtend } from '../../js/components/Theme/ThemeExtend';
 
 const richAccordionTheme = {
   accordion: {
@@ -18,7 +30,12 @@ const RichPanel = ({ children, icon, label }) => {
   const [hovering, setHovering] = React.useState<any>(false);
 
   const renderPanelTitle = () => (
-    <Box direction="row" align="center" gap="small" pad={{ horizontal: 'small' }}>
+    <Box
+      direction="row"
+      align="center"
+      gap="small"
+      pad={{ horizontal: 'small' }}
+    >
       {icon}
       <Heading level={4} color={hovering ? 'dark-1' : 'dark-3'}>
         {label}
@@ -40,7 +57,13 @@ const RichPanel = ({ children, icon, label }) => {
 };
 
 const spinning = (
-  <svg version="1.1" viewBox="0 0 32 32" width="32px" height="32px" fill="#333333">
+  <svg
+    version="1.1"
+    viewBox="0 0 32 32"
+    width="32px"
+    height="32px"
+    fill="#333333"
+  >
     <path
       opacity=".25"
       d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 
@@ -83,7 +106,7 @@ const RichAccordion = () => {
               <strong>About #announcements</strong>
             </Heading>
           </Box>
-          <ThemeContext.Extend value={richAccordionTheme}>
+          <ThemeExtend value={richAccordionTheme}>
             <Accordion
               multiple
               onActive={activeIndexes => {
@@ -106,7 +129,10 @@ const RichAccordion = () => {
                     <Text color="dark-3">
                       <strong>Purpose</strong>
                     </Text>
-                    <Text>Used for general announcements like new releases, trainings...</Text>
+                    <Text>
+                      Used for general announcements like new releases,
+                      trainings...
+                    </Text>
                   </Box>
                   <Box gap="xsmall">
                     <Text color="dark-3">
@@ -116,7 +142,10 @@ const RichAccordion = () => {
                   </Box>
                 </Box>
               </RichPanel>
-              <RichPanel icon={<Bookmark color="accent-1" />} label="Highlights">
+              <RichPanel
+                icon={<Bookmark color="accent-1" />}
+                label="Highlights"
+              >
                 {highlightLoaded ? (
                   <Box
                     pad={{
@@ -133,44 +162,54 @@ const RichAccordion = () => {
                       <strong>#announcements</strong>.
                     </Text>
                     <Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                      in culpa qui officia deserunt mollit anim id est laborum.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
                     </Text>
                     <Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                      in culpa qui officia deserunt mollit anim id est laborum.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
                     </Text>
                     <Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                      in culpa qui officia deserunt mollit anim id est laborum.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
                     </Text>
                     <Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                      in culpa qui officia deserunt mollit anim id est laborum.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
                     </Text>
                     <Text>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-                      eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-                      in culpa qui officia deserunt mollit anim id est laborum.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      Duis aute irure dolor in reprehenderit in voluptate velit
+                      esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                      sint occaecat cupidatat non proident, sunt in culpa qui
+                      officia deserunt mollit anim id est laborum.
                     </Text>
                   </Box>
                 ) : (
@@ -190,7 +229,7 @@ const RichAccordion = () => {
                 </Box>
               </RichPanel>
             </Accordion>
-          </ThemeContext.Extend>
+          </ThemeExtend>
         </Box>
       </Box>
     </>
@@ -198,7 +237,7 @@ const RichAccordion = () => {
 };
 
 if (!isChromatic()) {
-  storiesOf('Grommet 2/TypeScript/Accordion', module)
-    
-    .add('Rich', () => <RichAccordion />);
+  storiesOf('Grommet 2/TypeScript/Accordion', module).add('Rich', () => (
+    <RichAccordion />
+  ));
 }
